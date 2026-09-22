@@ -1,0 +1,355 @@
+{
+  "contentVersion": "c505b68f5c9e7803b7bf62424c332882cd1db074a4981fc1de0b112f54d486c2",
+  "modules": [
+    {
+      "id": "T01-01-M001",
+      "title": "写证明前先分清已知与目标",
+      "page": "12",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1（首批试学稿）@1becc46aab75",
+      "html": "T01-01-M001.html",
+      "markdown": "T01-01-M001.md"
+    },
+    {
+      "id": "T01-01-M002",
+      "title": "元素与子集是两种关系",
+      "page": "13",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1（首批试学稿）@1e8086409062",
+      "html": "T01-01-M002.html",
+      "markdown": "T01-01-M002.md"
+    },
+    {
+      "id": "T01-01-M003",
+      "title": "子集簇：集合的集合",
+      "page": "13",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1（首批试学稿）@8d1566016a18",
+      "html": "T01-01-M003.html",
+      "markdown": "T01-01-M003.md"
+    },
+    {
+      "id": "T01-01-M004",
+      "title": "条件 (i)：底集和空集都要在簇中",
+      "page": "13",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@496232049947",
+      "html": "T01-01-M004.html",
+      "markdown": "T01-01-M004.md"
+    },
+    {
+      "id": "T01-01-M005",
+      "title": "条件 (ii)：任意选取的成员求并",
+      "page": "13",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@98e7dfcfd965",
+      "html": "T01-01-M005.html",
+      "markdown": "T01-01-M005.md"
+    },
+    {
+      "id": "T01-01-M006",
+      "title": "条件 (iii)：任意两个成员求交",
+      "page": "13",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@65b4e49b26a5",
+      "html": "T01-01-M006.html",
+      "markdown": "T01-01-M006.md"
+    },
+    {
+      "id": "T01-01-M007",
+      "title": "拓扑空间是偶对",
+      "page": "13",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@eae1dba39529",
+      "html": "T01-01-M007.html",
+      "markdown": "T01-01-M007.md"
+    },
+    {
+      "id": "T01-01-M008",
+      "title": "完成一次有限簇的拓扑核验",
+      "page": "13",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@1f27397f8a3e",
+      "html": "T01-01-M008.html",
+      "markdown": "T01-01-M008.md"
+    },
+    {
+      "id": "T01-01-M009",
+      "title": "用一次并运算否定候选簇",
+      "page": "13",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@42642fe1c1f9",
+      "html": "T01-01-M009.html",
+      "markdown": "T01-01-M009.md"
+    },
+    {
+      "id": "T01-01-M010",
+      "title": "用一次交运算否定候选簇",
+      "page": "13",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@39e2002597ea",
+      "html": "T01-01-M010.html",
+      "markdown": "T01-01-M010.md"
+    },
+    {
+      "id": "T01-01-M011",
+      "title": "有限次并不等于任意并",
+      "page": "14",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@0b27cfc6369f",
+      "html": "T01-01-M011.html",
+      "markdown": "T01-01-M011.md"
+    },
+    {
+      "id": "T01-01-M012",
+      "title": "离散拓扑：收下全部子集",
+      "page": "14",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@98d7fd733427",
+      "html": "T01-01-M012.html",
+      "markdown": "T01-01-M012.md"
+    },
+    {
+      "id": "T01-01-M013",
+      "title": "任意底集上的离散拓扑",
+      "page": "14",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@fa348d234172",
+      "html": "T01-01-M013.html",
+      "markdown": "T01-01-M013.md"
+    },
+    {
+      "id": "T01-01-M014",
+      "title": "平庸拓扑的最小成员表",
+      "page": "14",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@12ef3864a892",
+      "html": "T01-01-M014.html",
+      "markdown": "T01-01-M014.md"
+    },
+    {
+      "id": "T01-01-M015",
+      "title": "把“证明离散”展开成待证清单",
+      "page": "14—15",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@4e2f53db2898",
+      "html": "T01-01-M015.html",
+      "markdown": "T01-01-M015.md"
+    },
+    {
+      "id": "T01-01-M016",
+      "title": "三点例子的完整证明",
+      "page": "14—15",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@25507f3dd96d",
+      "html": "T01-01-M016.html",
+      "markdown": "T01-01-M016.md"
+    },
+    {
+      "id": "T01-01-M017",
+      "title": "从列举转为任取一个子集",
+      "page": "15—16",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.2（主线与内容角色局部修订）@ec0b3a1f903f",
+      "html": "T01-01-M017.html",
+      "markdown": "T01-01-M017.md"
+    },
+    {
+      "id": "T01-01-M018a",
+      "title": "读懂单点集的并式",
+      "page": "16",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.2（主线与内容角色局部修订）@9a868025d7c6",
+      "html": "T01-01-M018a.html",
+      "markdown": "T01-01-M018a.md"
+    },
+    {
+      "id": "T01-01-M018b",
+      "title": "用两个包含方向说明集合相等",
+      "page": "16",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.2（主线与内容角色局部修订）@c78f9c75c65d",
+      "html": "T01-01-M018b.html",
+      "markdown": "T01-01-M018b.md"
+    },
+    {
+      "id": "T01-01-M019",
+      "title": "单点集条件推出一般离散性",
+      "page": "15—16",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@a0d707b7da7c",
+      "html": "T01-01-M019.html",
+      "markdown": "T01-01-M019.md"
+    },
+    {
+      "id": "T01-01-M020",
+      "title": "空并也要有定义",
+      "page": "16",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@b452fbc3e277",
+      "html": "T01-01-M020.html",
+      "markdown": "T01-01-M020.md"
+    },
+    {
+      "id": "T01-01-C001",
+      "title": "阶段完整任务：从给定条件组织证明",
+      "page": "14—16",
+      "status": "usable",
+      "statusText": "可用：完整题干、折叠参考解及核对要点已作 AI 与预览核验；没有用户作答记录",
+      "version": "0.1@161d50757d17",
+      "html": "T01-01-M020-C001.html",
+      "markdown": "T01-01-M020-C001.md"
+    },
+    {
+      "id": "T01-01-C002",
+      "title": "预留的延迟检查",
+      "page": "14—16",
+      "status": "usable",
+      "statusText": "可用：题干与答案分别默认隐藏，AI 与预览核验完成；没有自动提醒或排期",
+      "version": "0.1@feaf2629093b",
+      "html": "T01-01-M020-C002.html",
+      "markdown": "T01-01-M020-C002.md"
+    },
+    {
+      "id": "T01-01-M021",
+      "title": "有限簇判别 1(a)",
+      "page": "16",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@9b4c7291ec4d",
+      "html": "T01-01-M021.html",
+      "markdown": "T01-01-M021.md"
+    },
+    {
+      "id": "T01-01-M022",
+      "title": "有限簇判别 1(b)",
+      "page": "16",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@4fdf810b7840",
+      "html": "T01-01-M022.html",
+      "markdown": "T01-01-M022.md"
+    },
+    {
+      "id": "T01-01-M023",
+      "title": "有限簇判别 1(c)",
+      "page": "16",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@cad8df49d32f",
+      "html": "T01-01-M023.html",
+      "markdown": "T01-01-M023.md"
+    },
+    {
+      "id": "T01-01-M024",
+      "title": "给出理由：习题 2(a)",
+      "page": "16",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@a9c7ebf78b44",
+      "html": "T01-01-M024.html",
+      "markdown": "T01-01-M024.md"
+    },
+    {
+      "id": "T01-01-M025",
+      "title": "给出理由：习题 2(b)",
+      "page": "16",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@39201ef6654b",
+      "html": "T01-01-M025.html",
+      "markdown": "T01-01-M025.md"
+    },
+    {
+      "id": "T01-01-M026",
+      "title": "给出理由：习题 2(c)",
+      "page": "16",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@2ea01c6ef34d",
+      "html": "T01-01-M026.html",
+      "markdown": "T01-01-M026.md"
+    },
+    {
+      "id": "T01-01-M027",
+      "title": "关系式的层次 3(a)—(d)",
+      "page": "17",
+      "status": "pending",
+      "statusText": "待修订／核验：原题语义未决；已给明示约定下的讲练",
+      "version": "0.1@d29b364ffa10",
+      "html": "T01-01-M027.html",
+      "markdown": "T01-01-M027.md"
+    },
+    {
+      "id": "T01-01-M028",
+      "title": "关系式的层次 3(e)—(h)",
+      "page": "17",
+      "status": "pending",
+      "statusText": "待修订／核验：原题语义未决；已给明示约定下的讲练",
+      "version": "0.1@3d03a9cb21d3",
+      "html": "T01-01-M028.html",
+      "markdown": "T01-01-M028.md"
+    },
+    {
+      "id": "T01-01-M029",
+      "title": "关系式的层次 3(i)—(l)",
+      "page": "17",
+      "status": "pending",
+      "statusText": "待修订／核验：原题语义未决；已给明示约定下的讲练",
+      "version": "0.1@9d04c7083f97",
+      "html": "T01-01-M029.html",
+      "markdown": "T01-01-M029.md"
+    },
+    {
+      "id": "T01-01-M030",
+      "title": "关系式的层次 3(m)—(p)",
+      "page": "17",
+      "status": "pending",
+      "statusText": "待修订／核验：原题语义未决；已给明示约定下的讲练",
+      "version": "0.1@4287d5f5080d",
+      "html": "T01-01-M030.html",
+      "markdown": "T01-01-M030.md"
+    },
+    {
+      "id": "T01-01-M031",
+      "title": "三个集合的交怎样接到两两交",
+      "page": "17",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@50c8ceebc059",
+      "html": "T01-01-M031.html",
+      "markdown": "T01-01-M031.md"
+    },
+    {
+      "id": "T01-01-M032",
+      "title": "用归纳法证明有限交",
+      "page": "17",
+      "status": "usable",
+      "statusText": "可用：AI 数学复核＋桌面预览核验",
+      "version": "0.1@397307cde333",
+      "html": "T01-01-M032.html",
+      "markdown": "T01-01-M032.md"
+    }
+  ]
+}

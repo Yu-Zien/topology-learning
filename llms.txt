@@ -1,0 +1,6 @@
+# 拓扑课件公开索引
+
+阅读目录：https://yu-zien.github.io/topology-learning/read/
+课件与 Markdown 对照：https://yu-zien.github.io/topology-learning/read/catalog.json
+
+这是一份内容导航，不包含任何个人学习记录。

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<title>继续学习 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><h1>拓扑学习</h1><p>正在读取本地学习记录…</p><noscript>请开启浏览器 JavaScript 使用记录、备份与复习功能。下方课件仍可阅读。</noscript><ul class="lesson-list"><li><span>T01-01-M001</span> <a href="T01-01-M001.html">写证明前先分清已知与目标</a> <small>可用</small></li>
+<li><span>T01-01-M002</span> <a href="T01-01-M002.html">元素与子集是两种关系</a> <small>可用</small></li>
+<li><span>T01-01-M003</span> <a href="T01-01-M003.html">子集簇：集合的集合</a> <small>可用</small></li>
+<li><span>T01-01-M004</span> <a href="T01-01-M004.html">条件 (i)：底集和空集都要在簇中</a> <small>可用</small></li>
+<li><span>T01-01-M005</span> <a href="T01-01-M005.html">条件 (ii)：任意选取的成员求并</a> <small>可用</small></li>
+<li><span>T01-01-M006</span> <a href="T01-01-M006.html">条件 (iii)：任意两个成员求交</a> <small>可用</small></li>
+<li><span>T01-01-M007</span> <a href="T01-01-M007.html">拓扑空间是偶对</a> <small>可用</small></li>
+<li><span>T01-01-M008</span> <a href="T01-01-M008.html">完成一次有限簇的拓扑核验</a> <small>可用</small></li>
+<li><span>T01-01-M009</span> <a href="T01-01-M009.html">用一次并运算否定候选簇</a> <small>可用</small></li>
+<li><span>T01-01-M010</span> <a href="T01-01-M010.html">用一次交运算否定候选簇</a> <small>可用</small></li>
+<li><span>T01-01-M011</span> <a href="T01-01-M011.html">有限次并不等于任意并</a> <small>可用</small></li>
+<li><span>T01-01-M012</span> <a href="T01-01-M012.html">离散拓扑：收下全部子集</a> <small>可用</small></li>
+<li><span>T01-01-M013</span> <a href="T01-01-M013.html">任意底集上的离散拓扑</a> <small>可用</small></li>
+<li><span>T01-01-M014</span> <a href="T01-01-M014.html">平庸拓扑的最小成员表</a> <small>可用</small></li>
+<li><span>T01-01-M015</span> <a href="T01-01-M015.html">把“证明离散”展开成待证清单</a> <small>可用</small></li>
+<li><span>T01-01-M016</span> <a href="T01-01-M016.html">三点例子的完整证明</a> <small>可用</small></li>
+<li><span>T01-01-M017</span> <a href="T01-01-M017.html">从列举转为任取一个子集</a> <small>可用</small></li>
+<li><span>T01-01-M018a</span> <a href="T01-01-M018a.html">读懂单点集的并式</a> <small>可用</small></li>
+<li><span>T01-01-M018b</span> <a href="T01-01-M018b.html">用两个包含方向说明集合相等</a> <small>可用</small></li>
+<li><span>T01-01-M019</span> <a href="T01-01-M019.html">单点集条件推出一般离散性</a> <small>可用</small></li>
+<li><span>T01-01-M020</span> <a href="T01-01-M020.html">空并也要有定义</a> <small>可用</small></li>
+<li><span>T01-01-C001</span> <a href="T01-01-M020-C001.html">阶段完整任务：从给定条件组织证明</a> <small>可用</small></li>
+<li><span>T01-01-C002</span> <a href="T01-01-M020-C002.html">预留的延迟检查</a> <small>可用</small></li>
+<li><span>T01-01-M021</span> <a href="T01-01-M021.html">有限簇判别 1(a)</a> <small>可用</small></li>
+<li><span>T01-01-M022</span> <a href="T01-01-M022.html">有限簇判别 1(b)</a> <small>可用</small></li>
+<li><span>T01-01-M023</span> <a href="T01-01-M023.html">有限簇判别 1(c)</a> <small>可用</small></li>
+<li><span>T01-01-M024</span> <a href="T01-01-M024.html">给出理由：习题 2(a)</a> <small>可用</small></li>
+<li><span>T01-01-M025</span> <a href="T01-01-M025.html">给出理由：习题 2(b)</a> <small>可用</small></li>
+<li><span>T01-01-M026</span> <a href="T01-01-M026.html">给出理由：习题 2(c)</a> <small>可用</small></li>
+<li><span>T01-01-M027</span> <a href="T01-01-M027.html">关系式的层次 3(a)—(d)</a> <small>待核验</small></li>
+<li><span>T01-01-M028</span> <a href="T01-01-M028.html">关系式的层次 3(e)—(h)</a> <small>待核验</small></li>
+<li><span>T01-01-M029</span> <a href="T01-01-M029.html">关系式的层次 3(i)—(l)</a> <small>待核验</small></li>
+<li><span>T01-01-M030</span> <a href="T01-01-M030.html">关系式的层次 3(m)—(p)</a> <small>待核验</small></li>
+<li><span>T01-01-M031</span> <a href="T01-01-M031.html">三个集合的交怎样接到两两交</a> <small>可用</small></li>
+<li><span>T01-01-M032</span> <a href="T01-01-M032.html">用归纳法证明有限交</a> <small>可用</small></li></ul></div>
+<footer>记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>

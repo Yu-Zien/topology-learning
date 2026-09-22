@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<title>用两个包含方向说明集合相等 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T01-01-M018b"><h1 id="用两个包含方向说明集合相等">用两个包含方向说明集合相等</h1>
+<p>固定编号：T01-01-M018b<br />
+内容版本：0.2（主线与内容角色局部修订）<br />
+教材出处：《没有眼泪的拓扑》，书内第 16 页 / PDF 第 16 页，命题 1.1.9
+证明中的单点并恒等式。<br />
+学习目标：对任意非空集合，明确取任意元素并分别证明两个包含方向，说明它等于自身单点集的并。</p>
+<blockquote>
+<p><strong>本段最终任务：</strong>完成命题 1.1.9
+的证明，由单点集条件推出拓扑离散。<br />
+<strong>当前环节：</strong>已经会读单点并式，现在证明它确实等于原集合。<br />
+<strong>本步只做：</strong>用两个包含方向证明非空集合的恒等式；把它用于拓扑的步骤留在
+M019。</p>
+</blockquote>
+<p>来源说明：恒等式及其作用来自教材命题 1.1.9
+的证明；下面的方法讲解、A／B 题与解答为新增讲练。</p>
+<p>沿用 <a
+href="T01-01-M018a.html">M018a</a>
+的读法：属于并集，就是至少属于其中一个参与的集合。</p>
+<h2
+id="证明中的一步单点并恒等式属于命题-1.1.9-的证明">证明中的一步：单点并恒等式（属于命题
+1.1.9 的证明）</h2>
+<p>本步要证明的完整结论是：对任意非空集合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>，都有</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><munder><mo>⋃</mo><mrow><mi>x</mi><mo>∈</mo><mi>S</mi></mrow></munder><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+S=\bigcup_{x\in S}\{x\}.
+</annotation></semantics></math></div></p>
+<p>这个结论不要求
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+有限。先看集合相等应怎样证明，再给出它的一般证明。</p>
+<h2
+id="方法取任意元素分别证明两个包含方向">方法：取任意元素，分别证明两个包含方向</h2>
+<p>比较
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">C=\{2,5\}</annotation></semantics></math>
+和
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>9</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">D=\{2,5,9\}</annotation></semantics></math>。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+的每个元素都在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+中，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>⊆</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">C\subseteq D</annotation></semantics></math>；但它们并不相等，因为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+多了元素
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>9</mn><annotation encoding="application/x-tex">9</annotation></semantics></math>。</p>
+<p>因此，一般地，要证明两个集合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>,</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">P,Q</annotation></semantics></math>
+相等，既要说明第一个的元素不会漏出第二个，也要说明第二个没有第一个以外的元素。写成符号，就是分别证明</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>⊆</mo><mi>Q</mi><mspace width="2.0em"></mspace><mtext mathvariant="normal">和</mtext><mspace width="2.0em"></mspace><mi>Q</mi><mo>⊆</mo><mi>P</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+P\subseteq Q\qquad\text{和}\qquad Q\subseteq P.
+</annotation></semantics></math></div></p>
+<p><strong>一个包含方向怎样写？</strong>以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>⊆</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">P\subseteq Q</annotation></semantics></math>
+为例：</p>
+<blockquote>
+<p>任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">u\in P</annotation></semantics></math>。根据已知条件说明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">u\in Q</annotation></semantics></math>。由于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+中任意元素，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>⊆</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">P\subseteq Q</annotation></semantics></math>。</p>
+</blockquote>
+<p>这里的“任取”不是先挑
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">u=2</annotation></semantics></math>
+再算一次，而是只使用“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">u\in P</annotation></semantics></math>”这个条件，不额外指定它是什么数或哪个特殊元素。这样，同一理由才覆盖
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+中的每个元素。</p>
+<p>反方向重新从“任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">u\in Q</annotation></semantics></math>”开始，目标变成说明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">u\in P</annotation></semantics></math>。每个方向的起点都要写清，不能只把结论中的包含号反过来。前面的具体集合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>,</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">C,D</annotation></semantics></math>
+就无法完成反方向，因为元素
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>9</mn><annotation encoding="application/x-tex">9</annotation></semantics></math>
+不符合要求。</p>
+<p>现在把 M018a 的并式记作
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><msub><mo>⋃</mo><mrow><mi>x</mi><mo>∈</mo><mi>S</mi></mrow></msub><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">U=\bigcup_{x\in S}\{x\}</annotation></semantics></math>。一般证明会用到下面两种读法：</p>
+<ul>
+<li>已知
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">u\in S</annotation></semantics></math>
+时，索引
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+可以取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>，所以单点集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{u\}</annotation></semantics></math>
+参与这个并。</li>
+<li>已知
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">u\in U</annotation></semantics></math>
+时，按并集定义，至少有一个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">x\in S</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">u\in\{x\}</annotation></semantics></math>。而
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{x\}</annotation></semantics></math>
+只有元素
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>，因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">u=x</annotation></semantics></math>。</li>
+</ul>
+<p>第二句中的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>
+是正在检查的元素，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+是使它落入某个参与集合的索引。不能预先假定二者相等；相等是从
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">u\in\{x\}</annotation></semantics></math>
+推出来的。</p>
+<h2 id="例题-a">例题 A</h2>
+<p><strong>教材恒等式的新增展开题 A。</strong></p>
+<p>设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+是任意非空集合，令</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><munder><mo>⋃</mo><mrow><mi>x</mi><mo>∈</mo><mi>S</mi></mrow></munder><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+U=\bigcup_{x\in S}\{x\}.
+</annotation></semantics></math></div></p>
+<p>用两个包含方向证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">S=U</annotation></semantics></math>。不假设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+有限，也不把它换成一个具体数集。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的完整证明
+</summary>
+<p><strong>第一方向：证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>⊆</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">S\subseteq U</annotation></semantics></math>。</strong></p>
+<p>任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">u\in S</annotation></semantics></math>。由于索引取遍
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+中的元素，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{u\}</annotation></semantics></math>
+是参与求并的一个集合。又因为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">u\in\{u\}</annotation></semantics></math>，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">u\in U</annotation></semantics></math>。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+中任意元素，因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>⊆</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">S\subseteq U</annotation></semantics></math>。</p>
+<p><strong>第二方向：证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>⊆</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">U\subseteq S</annotation></semantics></math>。</strong></p>
+<p>任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">u\in U</annotation></semantics></math>。按并集定义，存在一个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">x\in S</annotation></semantics></math>，使得
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">u\in\{x\}</annotation></semantics></math>。单点集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{x\}</annotation></semantics></math>
+的唯一元素是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">u=x</annotation></semantics></math>。由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">x\in S</annotation></semantics></math>
+得到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">u\in S</annotation></semantics></math>。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+中任意元素，因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>⊆</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">U\subseteq S</annotation></semantics></math>。</p>
+<p>两个方向合起来，得到</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><mi>U</mi><mo>=</mo><munder><mo>⋃</mo><mrow><mi>x</mi><mo>∈</mo><mi>S</mi></mrow></munder><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+S=U=\bigcup_{x\in S}\{x\}.
+</annotation></semantics></math></div></p>
+<p>这份证明只用了元素归属、单点集和并的含义，没有列举
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+的全部元素，因此同样适用于无限的非空集合。</p>
+</details>
+<span id="q-T01-01-M018b-B" class="content-anchor"></span><h2 id="相似练习-b">相似练习 B</h2>
+<p><strong>新增题 B。</strong></p>
+<p>设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+是任意非空集合，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+的一个非空子集。现在从
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+中<strong>只选出属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+的那些元素</strong>：每选出一个元素，就把它组成单点集；将所有这些单点集求并，结果记为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>。</p>
+<p>请用两个包含方向证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">V=S</annotation></semantics></math>。把选择范围与每一步依据写清楚，不把
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+或
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+换成具体例子。本题要求书写完整论证，不只说“由 A 可知”。</p>
+<span id="answer-T01-01-M018b-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+做过 B 后，展开完整证明
+</summary>
+<p><strong>先证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>⊆</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">V\subseteq S</annotation></semantics></math>。</strong></p>
+<p>任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">u\in V</annotation></semantics></math>。按并集定义，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>
+属于某个参与的单点集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{x\}</annotation></semantics></math>。这个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+是从
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+中选出的，并且选择规则要求
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">x\in S</annotation></semantics></math>。由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">u\in\{x\}</annotation></semantics></math>
+得
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">u=x</annotation></semantics></math>，因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">u\in S</annotation></semantics></math>。所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>⊆</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">V\subseteq S</annotation></semantics></math>。</p>
+<p><strong>再证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>⊆</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">S\subseteq V</annotation></semantics></math>。</strong></p>
+<p>任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">u\in S</annotation></semantics></math>。因为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>⊆</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">S\subseteq X</annotation></semantics></math>，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">u\in X</annotation></semantics></math>；它也满足“属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>”这一选择条件，因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{u\}</annotation></semantics></math>
+是参与求并的一个集合。由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">u\in\{u\}</annotation></semantics></math>
+得
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">u\in V</annotation></semantics></math>。所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>⊆</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">S\subseteq V</annotation></semantics></math>。</p>
+<p>合并两个包含方向，得到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">V=S</annotation></semantics></math>。</p>
+<p>这里没有把
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+中所有点都放进并集：只有属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+的点才被选中。也没有把“选出一些点”误读成随意漏选——题目要求选出全部满足条件的点。</p>
+</details>
+<h2 id="简短回顾与本阶段结论">简短回顾与本阶段结论</h2>
+<p>每个包含方向都从左边任取元素，用已知条件走到右边；两个方向都成立，才能得到集合相等。</p>
+<p>这一阶段已完成从具体读式到一般论证的过渡，证明了：任意非空集合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+都等于自身单点集的并。命题 1.1.9
+的完整证明还需把这个结论与拓扑的任意并条件连接起来，并覆盖空子集；这两项将在
+M019 完成，M020 再解释空并约定。</p>
+</article></div>
+<footer>只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T01-01-M018b.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>
