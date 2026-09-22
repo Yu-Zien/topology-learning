@@ -32,5 +32,6 @@ input[type=number] { width: 75px; }
 .practice-controls p { margin: 6px 0; }
 .runtime-confirm { border: 2px solid #bd9558; padding: 18px; border-radius: 8px; margin: 20px 0; }
 .runtime-status-line { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.assessment-status { min-height: 27px; }
 .runtime-meta { font-size: 14px; color: #68776a; }
 @media (max-width: 620px) { .runtime-actions button { padding: 9px 11px; } .runtime-card { padding: 15px; } }

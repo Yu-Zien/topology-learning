@@ -1,5 +1,6 @@
 import { assertISO, scheduleReview, validateCard, validateLog, SCHEDULER } from './scheduler.js';
 import { initializeFlow, refreshFlow, currentTask, moduleQuestions, confirmed, practiceItem } from './flow.js';
+import { continuous, initializeStudy, scheduleRetry, queueBoundary } from './study.js';
 
 export const SCHEMA_VERSION = 1;
 const clone = value => JSON.parse(JSON.stringify(value));
@@ -69,6 +70,7 @@ export function createInitialState(catalog, nowISO = new Date().toISOString()) {
   };
   initializeFlow(state, catalog);
   if(state.flow)state.flow.legacyPosition=null; // A fresh install has no legacy learning position.
+  initializeStudy(state,catalog,nowISO);
   return state;
 }
 
@@ -89,6 +91,7 @@ export function reduceState(previous, action, catalog, nowISO = new Date().toISO
   assertISO(nowISO); assert(object(action) && typeof action.type === 'string', '操作无效');
   assert(nowISO >= previous.updatedAt, '当前时间早于最近记录，请检查电脑时间');
   const state = clone(previous);
+  initializeStudy(state,catalog,nowISO);
   initializeFlow(state, catalog);
   const moduleFor = moduleId => {
     id(moduleId); const module = findModule(catalog, moduleId);
@@ -107,7 +110,7 @@ export function reduceState(previous, action, catalog, nowISO = new Date().toISO
     case 'syncContent': {
       const versions = contentIndex(catalog, state.contentVersions);
       enableEligible(state, catalog, nowISO);
-      if (same(versions, previous.contentVersions) && same(state.enabledReviews, previous.enabledReviews) && same(state.flow, previous.flow)) return previous;
+      if (same(versions, previous.contentVersions) && same(state.enabledReviews, previous.enabledReviews) && same(state.flow, previous.flow) && same(state.study,previous.study)) return previous;
       state.contentVersions = versions;
       break;
     }
@@ -131,6 +134,15 @@ export function reduceState(previous, action, catalog, nowISO = new Date().toISO
     case 'complete': {
       const module = moduleFor(action.moduleId); assert(module.status === 'usable', '待核验模块不能标为完成');
       if (state.flow) {
+        if(continuous(catalog)){
+          if(state.modules[module.id]?.completedAt && state.study.resumeModule!==module.id)return previous;
+          assert(!state.study.block, '请先在当前回顾末尾继续');
+          assert(currentTask(state,catalog)?.moduleId===module.id,'当前知识点已改变，请刷新');
+          completeModule(module);state.study.boundaryCount+=1;state.study.resumeModule=null;
+          queueBoundary(state,catalog,nowISO,getReviewQueue(state,catalog,nowISO).ids,module.id);
+          state.study.presentation=null;
+          break;
+        }
         assert(state.modules[module.id]?.completedAt || currentTask(state,catalog)?.moduleId === module.id, '请先处理当前主线任务');
         assert(state.modules[module.id]?.completedAt || moduleQuestions(catalog,module.id).every(qid=>confirmed(state,qid)), '请先逐题确认本轮已练习；不要求答对或订正');
         completeModule(module);
@@ -164,6 +176,7 @@ export function reduceState(previous, action, catalog, nowISO = new Date().toISO
       for (const field of ['answerViewed','helpViewed']) assert(action[field]===undefined||typeof action[field]==='boolean', '查看记录无效');
       const task=currentTask(state,catalog),m=findModule(catalog,question.moduleId);
       state.flow.confirmations[action.questionId]={at:nowISO,version:question.version,submissionId:action.submissionId,mode:action.mode,answerViewed:action.answerViewed??false,helpViewed:action.helpViewed??false};
+      if(continuous(catalog))break; // Old tabs may still send this; preserve evidence only.
       if(task?.kind==='exercise' && task.questionId===question.id)state.counter.completedSincePrompt+=1;
       if(task?.kind==='module' && task.moduleId===question.moduleId && m?.status==='usable') {
         if(moduleQuestions(catalog,m.id).every(qid=>confirmed(state,qid)))completeModule(m);
@@ -186,7 +199,7 @@ export function reduceState(previous, action, catalog, nowISO = new Date().toISO
     }
     case 'score': {
       id(action.submissionId, '提交编号'); id(action.questionId, '题目编号');
-      assert(['guided', 'direct', 'review', 'stage'].includes(action.mode), '练习模式无效');
+      assert(['guided', 'direct', 'review', 'stage', 'retry'].includes(action.mode), '练习模式无效');
       assert(['again', 'good'].includes(action.rating), '评分无效');
       for (const field of ['helpViewed', 'answerViewed']) assert(action[field] === undefined || typeof action[field] === 'boolean', '查看帮助记录无效');
       const existing = state.attempts.find(item => item.id === action.submissionId);
@@ -199,20 +212,49 @@ export function reduceState(previous, action, catalog, nowISO = new Date().toISO
       if (matchingModule) assert(matchingModule.kind === 'check' && action.mode === 'stage' &&
         (catalog.practice || []).some(item => item.id === action.questionId), '只有阶段任务可以使用相同课件编号评分');
       const review = isReview(catalog, action.questionId); assert(review === (action.mode === 'review'), '题目与练习模式不匹配');
+      const block=state.study?.block;
+      const blockIndex=block?.items.findIndex(item=>item.id===question.id)??-1;
+      if(action.mode==='retry'||(review&&block)){
+        assert(blockIndex>=0 && block.items[blockIndex].kind===action.mode && block.items[blockIndex].version===question.version,'当前回顾没有这道题或版本已改变');
+        assert(!block.items[blockIndex].attemptId,'本次回顾已评价此题');
+      }
       const attempt = {
         id: action.submissionId, questionId: action.questionId, mode: action.mode, rating: action.rating,
         at: nowISO, version: question.version, helpViewed: action.helpViewed ?? false, answerViewed: action.answerViewed ?? false,
       };
       if (review) {
         assert(reviewApplicable(state, catalog, question.id), '该复习项未启用或内容版本已改变');
-        assert(state.reviewSession && state.reviewSession.ids[state.reviewSession.index] === question.id, '请在当前复习包中评分');
-        attempt.undo = { card: state.cards[question.id] ? clone(state.cards[question.id]) : null, sessionId: state.reviewSession.id, sessionIndex: state.reviewSession.index };
+        assert(block || (state.reviewSession && state.reviewSession.ids[state.reviewSession.index] === question.id), '请在当前回顾中评分');
+        attempt.undo = { card: state.cards[question.id] ? clone(state.cards[question.id]) : null, sessionId: block?.id||state.reviewSession.id, sessionIndex: block?blockIndex:state.reviewSession.index };
         const result = scheduleReview(state.cards[question.id]?.card, action.rating, nowISO);
         attempt.fsrsLog = result.log;
         state.cards[question.id] = { version: question.version, schedulerVersion: SCHEDULER.version, card: result.card, lastLog: result.log };
-        state.reviewSession.index += 1;
+        if(!block)state.reviewSession.index += 1;
       }
-      state.attempts.push(attempt); break;
+      if(block&&(review||action.mode==='retry')){
+        block.items[blockIndex].attemptId=attempt.id;attempt.blockId=block.id;
+      }
+      state.attempts.push(attempt);
+      if(!review)scheduleRetry(state,catalog,attempt);
+      if(action.presentation && state.study)state.study.presentation=clone(action.presentation);
+      break;
+    }
+    case 'presentation': {
+      assert(state.study,'缺少连续学习记录');
+      const p=action.presentation;
+      const expected=state.study.block?state.study.block.id:currentTask(state,catalog)?.moduleId;
+      if(p?.id!==expected)return previous;
+      if(same(state.study.presentation,p))return previous;
+      state.study.presentation=clone(p);break;
+    }
+    case 'finishBoundary': {
+      assert(state.study,'缺少连续学习记录');
+      if(!state.study.block)return previous;
+      assert(action.blockId===state.study.block.id,'当前回顾已经改变');
+      (state.study.finishedBlocks ||= []).push({id:state.study.block.id,at:nowISO,
+        skipped:state.study.block.items.filter(x=>!x.attemptId).map(x=>({id:x.id,kind:x.kind}))});
+      state.study.block=null;state.study.presentation=null;state.counter.completedSincePrompt=0;
+      break;
     }
     case 'undo': {
       const attempt = [...state.attempts].reverse().find(item => !item.undoneAt); assert(attempt, '没有可撤销的评分');
@@ -228,9 +270,17 @@ export function reduceState(previous, action, catalog, nowISO = new Date().toISO
           }
         }
       }
-      attempt.undoneAt = nowISO; break;
+      if(state.study?.block)for(const item of state.study.block.items)if(item.attemptId===attempt.id)item.attemptId=null;
+      attempt.undoneAt = nowISO;
+      if(state.study && attempt.mode!=='review'){
+        delete state.study.retries[attempt.questionId];
+        const last=state.attempts.filter(a=>a.questionId===attempt.questionId&&!a.undoneAt&&a.mode!=='review').at(-1);
+        if(last)scheduleRetry(state,catalog,{...last,at:nowISO});
+      }
+      break;
     }
     case 'beginReview': {
+      assert(!continuous(catalog),'精选回顾只在知识点结束后安排');
       id(action.sessionId, '复习包编号');
       if (state.reviewSession) {
         assert(state.reviewSession.id === action.sessionId, '已有未结束的复习包'); return previous;
@@ -367,7 +417,7 @@ export function validateState(state, catalog) {
   for (const entry of state.attempts) {
     assert(object(entry), '作答日志条目无效'); id(entry.id); id(entry.questionId);
     assert(!seen.has(entry.id), '作答提交编号重复'); seen.add(entry.id);
-    assert(['guided', 'direct', 'review', 'stage'].includes(entry.mode), '作答模式无效');
+    assert(['guided', 'direct', 'review', 'stage', 'retry'].includes(entry.mode), '作答模式无效');
     assert(['again', 'good'].includes(entry.rating), '作答评分无效'); assertISO(entry.at); version(entry.version);
     assert(entry.at >= previousAt && entry.at <= state.updatedAt, '作答日志时间次序无效'); previousAt = entry.at;
     assert(typeof entry.helpViewed === 'boolean' && typeof entry.answerViewed === 'boolean', '帮助记录无效');
@@ -399,6 +449,29 @@ export function validateState(state, catalog) {
     assert(latest && same(latest, entry), '卡片与最近评分的实际FSRS结果不一致');
   }
   for (const reviewId of latestReviews.keys()) assert(own(state.cards, reviewId), '复习日志缺少对应卡片');
+  if(state.study!==undefined){
+    const s=state.study;assert(object(s)&&s.version===1,'连续学习记录版本无效');integer(s.boundaryCount,'知识点边界计数');
+    assert(object(s.retries),'再练安排无效');validateTask(s.legacyTask);
+    if(s.resumeModule)id(s.resumeModule);
+    if(s.legacyReviewSession)validateSession(s.legacyReviewSession,catalog);
+    for(const [qid,r] of Object.entries(s.retries)){
+      id(qid);assert(object(r),'再练安排无效');id(r.sourceAttemptId);version(r.version);assertISO(r.due);integer(r.notBeforeBoundary,'再练边界');
+      assert(state.attempts.some(a=>a.id===r.sourceAttemptId&&a.questionId===qid&&a.mode!=='review'&&!a.undoneAt&&a.rating==='again'),'再练缺少真实的还不会记录');
+      assert(!isReview(catalog,qid),'普通再练不能指向FSRS项');
+    }
+    if(s.block!==null){
+      const b=s.block;assert(object(b),'回顾块无效');id(b.id);inRange(b.startedAt);if(b.afterModuleId!==null)id(b.afterModuleId);
+      assert(Array.isArray(b.items)&&b.items.length>0&&b.items.length<=10&&new Set(b.items.map(i=>i.id)).size===b.items.length,'回顾项目无效');
+      for(const item of b.items){
+        id(item.id);version(item.version);assert(['retry','review'].includes(item.kind),'回顾类型无效');
+        assert(item.kind==='review'?own(state.contentVersions.reviews,item.id):own(state.contentVersions.practice,item.id)||own(state.contentVersions.exercises,item.id),'回顾缺少版本索引');
+        if(item.attemptId!==null){id(item.attemptId);assert(state.attempts.some(a=>a.id===item.attemptId&&!a.undoneAt&&a.questionId===item.id&&a.mode===item.kind&&a.blockId===b.id),'回顾评价缺少对应记录');}
+      }
+    }
+    assert(s.finishedBlocks===undefined||Array.isArray(s.finishedBlocks),'回顾结束记录无效');
+    for(const b of s.finishedBlocks||[]){id(b.id);inRange(b.at);assert(Array.isArray(b.skipped),'回顾暂缓无效');for(const q of b.skipped){id(q.id);assert(['retry','review'].includes(q.kind),'回顾暂缓类型无效');}}
+    if(s.presentation!==null){const p=s.presentation;assert(object(p)&&['module','block'].includes(p.kind),'阅读位置无效');id(p.id);integer(p.scrollY,'阅读滚动位置',10000000);assert(Array.isArray(p.openDetails)&&p.openDetails.length<=500&&p.openDetails.every(x=>typeof x==='string'&&/^[A-Za-z0-9_.:-]+$/.test(x)),'折叠状态无效');}
+  }
   validateSession(state.reviewSession, catalog);
   if (state.reviewSession) {
     inRange(state.reviewSession.startedAt);

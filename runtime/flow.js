@@ -1,6 +1,7 @@
 // A deterministic route over explicit section plans. Personal confirmations
 // never come from production status, scroll position, or an FSRS rating.
 const copy = x => JSON.parse(JSON.stringify(x));
+import { continuous } from './study.js';
 export const sectionPlans = catalog => catalog.learningPath?.sections || [];
 export const moduleItem = (catalog,id) => catalog.modules.find(m=>m.id===id);
 export const practiceItem = (catalog,id) => catalog.exercises.find(q=>q.id===id) || catalog.practice.find(q=>q.id===id);
@@ -12,6 +13,10 @@ const deferred = (state,id,version) => state.flow?.deferred[id]?.version === ver
 
 export function nextTask(state,catalog) {
   const sections=sectionPlans(catalog);
+  if(continuous(catalog)&&state.study?.resumeModule){
+    const section=sections.find(s=>s.moduleIds.includes(state.study.resumeModule));
+    if(section)return {kind:'module',id:state.study.resumeModule,moduleId:state.study.resumeModule,sectionId:section.id};
+  }
   for(const section of sections) {
     for(const id of section.moduleIds) {
       const m=moduleItem(catalog,id);
@@ -23,8 +28,11 @@ export function nextTask(state,catalog) {
       return {kind:'module',id,sectionId:section.id,moduleId:id};
     }
     for(const id of section.requiredExercises) {
-      if(confirmed(state,id))continue;
       const q=practiceItem(catalog,id);
+      // Originals already live in their corresponding knowledge-point body.
+      // Ending that knowledge point never invents a per-question assessment.
+      if(continuous(catalog)&&section.moduleIds.includes(q?.moduleId))continue;
+      if(confirmed(state,id))continue;
       if(q?.status==='usable')return {kind:'exercise',id,sectionId:section.id,questionId:id};
       if(!deferred(state,id,q?.version||'missing'))return {kind:'blocked',id,sectionId:section.id,questionId:id,version:q?.version||'missing'};
     }

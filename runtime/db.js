@@ -1,5 +1,6 @@
 import { createInitialState, reduceState, validateState, validateBackup, makeBackup } from './state.js';
 import { initializeFlow } from './flow.js';
+import { initializeStudy } from './study.js';
 
 // One authoritative state record makes each log+card+session mutation atomic.
 // All read-modify-writes happen inside an IDB transaction, including across tabs.
@@ -32,6 +33,10 @@ export async function openStore({ name = 'topology-learning-v1', catalog, clock 
           result = operation(state);
           if (mode === 'readwrite') {
             if (shouldFail()) throw new Error('测试注入：写入失败，记录未保存');
+            if(existing&&!existing.study&&result.study){
+              const backup=store.get('before-continuous-v1');
+              backup.onsuccess=()=>{if(!backup.result)store.put(existing,'before-continuous-v1');};
+            }
             store.put(result, 'state');
           }
         } catch (error) { failure = error; transaction.abort(); }
@@ -49,12 +54,18 @@ export async function openStore({ name = 'topology-learning-v1', catalog, clock 
     },
     async replace(backup) {
       const checked = validateBackup(backup, catalog); // Validate before opening any write transaction.
+      initializeStudy(checked.state,catalog,checked.state.updatedAt);
       initializeFlow(checked.state, catalog); // Add route metadata; never infer confirmations or ratings.
       checked.state = await transact('readwrite', current => ({ ...checked.state, revision: current.revision + 1 }));
       channel?.postMessage('saved');
       return checked;
     },
     async exportBackup() { return makeBackup(await transact('readonly', state => state), catalog, clock()); },
+    async exportBeforeUpgrade() {
+      const previous=await new Promise((resolve,reject)=>{const r=db.transaction('learning','readonly').objectStore('learning').get('before-continuous-v1');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});
+      if(!previous)throw new Error('当前浏览器没有升级前记录；新用户无需此备份');
+      return makeBackup(previous,catalog,clock());
+    },
     subscribe: fn => {listeners.add(fn);return ()=>listeners.delete(fn);},
     close: () => {channel?.close();db.close();},
   };
