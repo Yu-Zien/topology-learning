@@ -1,6 +1,6 @@
-# 拓扑课件私有索引
+# 拓扑课件公开索引
 
-课件目录：COURSES.md
-课件正文：read/*.md
+阅读目录：https://yu-zien.github.io/topology-learning/read/
+课件与 Markdown 对照：https://yu-zien.github.io/topology-learning/read/catalog.json
 
-本仓库未发布网页，访问需要仓库授权。不包含个人学习记录。
+这是一份内容导航，不包含任何个人学习记录。

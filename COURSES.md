@@ -1,8 +1,9 @@
 # 拓扑课件目录
 
-本仓库为私有课程快照。这里的链接指向可直接阅读的 Markdown；它们不依赖 JavaScript，也不包含任何个人学习记录。
+学习页面：https://yu-zien.github.io/topology-learning/
+只读目录：https://yu-zien.github.io/topology-learning/read/
 
-当前：35份课件；M027—M030待核。M033—M059、习题5—9及§1.2尚未制作。
+下方链接指向课件 Markdown，保留公式原写法，供聊天窗口直接读取。制作状态不代表个人已学。
 
 | 固定编号 | 课件 | 书内页码 | 制作状态 |
 |---|---|---|---|
