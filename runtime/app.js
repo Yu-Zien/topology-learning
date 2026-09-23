@@ -120,16 +120,17 @@ async function go(r,{push=true}={}) {
   else if(route.view==='lesson')await renderLesson(n);
   if(route.view!=='lesson'&&!(route.view==='main'&&state.study?.block))window.scrollTo(0,0);
 }
-async function continueCourse(){
+async function continueCourse({schedule=true}={}){
   state=await store.read();
   if(!state.study&&!await commit({type:'syncContent'}))return;
+  if(schedule&&!await commit({type:'continueSession'}))return;
   await go({view:'main'});
 }
 function renderHome(){
   view.innerHTML='<h1>拓扑课件 · 继续学习</h1>';
   const c=addHTML(view,`<h2>${state.study?.block?'知识点间隙 · 简短回顾':esc(taskTitle(task(),catalog))}</h2><p>同一知识点连续阅读讲解、A 与 B。题目自评留在原处，末尾再统一继续。</p>`,'runtime-card');
   actions(c).append(button('继续学习',continueCourse,{primary:true,name:'continue'}));
-  addHTML(view,'<p class="runtime-small">普通题可选“会做／还不会”，未评价就保持未评价，不影响学完知识点。精选回顾和稍后的再练只在知识点结束后出现。</p>');
+  addHTML(view,'<p class="runtime-small">普通题可选“会做／还不会”，未评价就保持未评价，不影响学完知识点。精选回顾和稍后的再练在知识点之间出现；没有新课时也可从这里巩固，不会打断未学完的知识点。</p>');
 }
 function renderMainTask() {
   const t=task(),section=plan();
@@ -143,21 +144,22 @@ function renderMainTask() {
     const a=actions(view);
     if(m)a.append(button('查看相关讲解与疑点',()=>go({view:'lesson',moduleId:m.id,mode:'browse'})));
     if(q)a.append(button('查看原题与疑点',()=>go({view:'exercise',questionId:q.id})));
-    a.append(button('暂缓此内容，继续',()=>commit({type:'deferTask',taskId:t.id},()=>continueCourse({offer:false,resumeReview:false})),{primary:true,name:'defer-task'}));
+    a.append(button('暂缓此内容，继续',()=>commit({type:'deferTask',taskId:t.id},()=>continueCourse({schedule:false})),{primary:true,name:'defer-task'}));
     return;
   }
   if(t.kind==='closing'){
     const count=section.requiredExercises.filter(id=>state.flow?.confirmations[id]).length;
     addHTML(view,`<p>本次安排的 ${section.requiredExercises.length} 个原题小问，保留旧版做过记录 ${count} 项。原题随对应知识点呈现；没有逐题自评门槛。</p><p>${esc(section.scopeNote)}</p>`);
-    addHTML(view,'<h2>简短回顾</h2><p>本段沿拓扑的定义、有限例子、一般离散性证明，再到有限簇判别和有限交证明推进。</p>');
-    for(const id of ['T01-01-R006','T01-01-R010']){const r=catalog.reviews.find(x=>x.id===id);if(r)addHTML(view,r.summaryHtml);}
+    addHTML(view,`<h2>简短回顾</h2><p>${esc(section.closing?.overview||'本节已制作的讲练已完成本轮学习。')}</p>`);
+    for(const id of section.closing?.summaryReviewIds||[]){const r=catalog.reviews.find(x=>x.id===id);if(r)addHTML(view,r.summaryHtml);}
     const deferred=Object.entries(state.flow.deferred).filter(([,d])=>d.sectionId===section.id);
-    if(deferred.length)addHTML(view,`<p>本次仍有 ${deferred.length} 处内容暂缓（包含原题 3 的待核内容及未制作部分），不计作完成。习题 5—9、阶段检查与其他覆盖项继续保留在辅助入口和课程目录中。</p>`,'runtime-warning');
-    addHTML(view,'<p>本次试用收尾后可进入下一节入口，无需额外测试、订正或成功回忆。当前下一节课件尚缺失，入口会如实显示待制作。</p>');
-    actions(view).append(button('完成本节收尾，进入下一节',()=>commit({type:'closeSection',sectionId:section.id},()=>continueCourse({offer:false,resumeReview:false})),{primary:true,name:'close-section'}));
+    if(deferred.length)addHTML(view,`<p>本节保留 ${deferred.length} 处暂缓记录，暂缓不计作完成。${esc(section.closing?.coverageNote||'具体内容与状态见本节目录。')}</p>`,'runtime-warning');
+    const next=sectionPlans(catalog).find(s=>s.id===section.nextSection?.id);
+    addHTML(view,`<p>收尾后${next?'继续下一节':'返回当前课程边界'}，无需额外测试、订正或成功回忆。${!next&&section.nextSection?'下一节的制作状态见后续入口。':''}</p>`);
+    actions(view).append(button('完成本节收尾，进入下一节',()=>commit({type:'closeSection',sectionId:section.id},()=>continueCourse({schedule:false})),{primary:true,name:'close-section'}));
     return;
   }
-  addHTML(view,`<h2>下一节：§${esc(section.nextSection?.number)} ${esc(section.nextSection?.title)}</h2><p>本节试用流程已收尾。下一节课件尚未制作，暂时不能开始；这不是成绩门槛。已暂缓内容和已有记录全部保留。</p>`,'runtime-card');
+  addHTML(view,`<h2>${section.nextSection?`下一节：§${esc(section.nextSection.number)} ${esc(section.nextSection.title)}`:'现有课程已完成本轮学习'}</h2><p>${section.nextSection?esc(section.nextSection.statusText||'下一节尚无可执行课件。'):'当前没有新的知识点。'}可继续从“继续学习”安排到期巩固；已有学习和暂缓记录保留。</p>`,'runtime-card');
   actions(view).append(button('查看本节记录与覆盖情况',()=>go({view:'progress'})));
 }
 async function lessonHTML(m) {
@@ -187,12 +189,13 @@ async function renderLesson(n) {
       if(!state.modules[m.id]?.startedAt)await commit({type:'start',moduleId:m.id});
       if(state.modules[m.id]?.startedAt)top.querySelector('.runtime-status-line span:last-child').textContent='本轮学习：进行中';
       const section=plan();
-      const isExercise=section.moduleIds.indexOf(m.id)>=section.moduleIds.indexOf(section.exerciseStartModule);
+      const exerciseStart=section.moduleIds.indexOf(section.exerciseStartModule);
+      const isExercise=exerciseStart>=0&&section.moduleIds.indexOf(m.id)>=exerciseStart;
       addHTML(top,`<p class="runtime-small">§${esc(section.number)} · ${isExercise?'本节教材习题与配套讲练':'微模块讲练'} → 本节收尾。当前只需完成本模块的讲练。</p>`);
       const bottom=addHTML(view,'<p>本轮学到这里即可继续。题目可以不评价；还不会也不需要订正或通关。</p>','runtime-toolbar');
       actions(bottom).append(button('本知识点学完，继续',()=>{
         clearTimeout(positionTimer);
-        commit({type:'complete',moduleId:m.id},()=>continueCourse());
+        commit({type:'complete',moduleId:m.id},()=>continueCourse({schedule:false}));
       },{primary:true,name:'complete-module'}));
     }
     wirePresentation(article,m.id);
@@ -284,7 +287,7 @@ function renderBoundary(){
     const controls=document.createElement('div');controls.className='practice-controls';card.append(controls);renderAssessment(controls,q,item.kind,answer);
     if(q.summaryHtml){const summary=addHTML(card,'<h3>简短小结</h3>'+q.summaryHtml,'after-assessment');summary.hidden=!item.attemptId;}
   }
-  actions(area).append(button('继续',()=>commit({type:'finishBoundary',blockId:block.id},()=>continueCourse()),{primary:true,name:'finish-boundary'}));
+  actions(area).append(button('继续',()=>commit({type:'finishBoundary',blockId:block.id},()=>continueCourse({schedule:false})),{primary:true,name:'finish-boundary'}));
   wirePresentation(area,block.id);restorePresentation(area,block.id);
 }
 function renderProgress() {
@@ -301,10 +304,10 @@ function renderProgress() {
     const prog=state.modules[m.id],li=document.createElement('li');
     li.innerHTML=`<strong>${esc(m.id)} · ${esc(m.title)}</strong><p class="runtime-small">制作：${m.status==='usable'?'可用':'待核验'}；个人：${prog?.completedAt?'已完成本轮':prog?.startedAt?'进行中':'未开始'}${m.kind==='check'?' · 阶段任务':''}</p>`;
     const a=actions(li);a.append(button('打开回看',()=>go({view:'lesson',moduleId:m.id,mode:'browse'})));
-    if(m.status==='usable'&&!m.delayed)a.append(button('从这里继续学习',()=>continueCourse({offer:false,resumeReview:false})));
+    if(m.status==='usable'&&!m.delayed)a.append(button('从这里继续学习',()=>continueCourse({schedule:false})));
     list.append(li);
   }
-  const settings=addHTML(view,`<h2>讲练间隙</h2><label>每学完 <input type="number" id="review-every" min="1" max="20" value="${state.settings.reviewEvery}"> 个新知识点，检查精选 FSRS 回顾</label><p class="runtime-small">只计首次完成的知识点，自评、查资料和重复完成不增加次数。达到次数而暂无可安排项目时，后续知识点结束会继续检查；出现并结束回顾块后重新计数，普通再练单独成块也会重置。</p><label>每次精选 FSRS 上限 <input type="number" id="review-limit" min="1" max="10" value="${state.settings.reviewLimit}"> 项（0.3.0 实际最多 2 项）</label><p class="runtime-small">普通题再练在知识点结束时另行检查，最多另加 1 项，不占上述上限。因此上限设为 1 时合计最多 2 项，设为 2 或更大时合计最多 3 项；不要求做完或答对才能继续。</p>`,'runtime-card');
+  const settings=addHTML(view,`<h2>讲练间隙</h2><label>每学完 <input type="number" id="review-every" min="1" max="20" value="${state.settings.reviewEvery}"> 个新知识点，检查精选 FSRS 回顾</label><p class="runtime-small">只计首次完成的知识点，自评、查资料和重复完成不增加次数。达到次数而暂无可安排项目时，后续知识点结束会继续检查；只有实际呈现精选 FSRS 项的块才重新计数；普通再练单独成块不会清零。课间重新开始或无新课时，也会检查到期巩固。</p><label>每次精选 FSRS 上限 <input type="number" id="review-limit" min="1" max="10" value="${state.settings.reviewLimit}"> 项（实际最多 2 项）</label><p class="runtime-small">普通题再练在知识点结束时另行检查，最多另加 1 项，不占上述上限。因此上限设为 1 时合计最多 2 项，设为 2 或更大时合计最多 3 项；不要求做完或答对才能继续。</p>`,'runtime-card');
   actions(settings).append(button('保存间隙设置',()=>commit({type:'settings',reviewEvery:Number(settings.querySelector('#review-every').value),reviewLimit:Number(settings.querySelector('#review-limit').value)})));
   const backups=addHTML(view,'<h2>备份与恢复</h2><p>备份包含继续位置、完成状态、作答日志、精选复习卡及设置。更换浏览器或清除网站数据前，请先导出。</p>','runtime-card');
   addHTML(backups,'<p class="runtime-small">“导出备份”保存当前进度。“升级前备份”只在本浏览器首次把已有旧状态写成连续学习格式时保留一次，不随以后的学习更新；新用户或仅查资料时不会生成。它不能代替当前进度备份。</p>');

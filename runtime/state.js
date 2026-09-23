@@ -1,6 +1,6 @@
 import { assertISO, scheduleReview, validateCard, validateLog, SCHEDULER } from './scheduler.js';
-import { initializeFlow, refreshFlow, currentTask, moduleQuestions, confirmed, practiceItem } from './flow.js';
-import { continuous, initializeStudy, scheduleRetry, queueBoundary } from './study.js';
+import { initializeFlow, refreshFlow, currentTask, moduleQuestions, confirmed, practiceItem, sectionClosed, sectionVersion } from './flow.js';
+import { continuous, initializeStudy, scheduleRetry, queueBoundary, postponeUnrated } from './study.js';
 
 export const SCHEMA_VERSION = 1;
 const clone = value => JSON.parse(JSON.stringify(value));
@@ -79,6 +79,7 @@ export function getReviewQueue(state, catalog, nowISO = new Date().toISOString()
   const due = [], fresh = [];
   for (const item of catalog.reviews || []) {
     if (!reviewApplicable(state, catalog, item.id)) continue;
+    if(state.study?.reviewSnoozes?.[item.id]>nowISO)continue;
     const saved = state.cards[item.id];
     if (!saved) fresh.push(item.id);
     else if (saved.card.due <= nowISO) due.push(item.id);
@@ -116,6 +117,16 @@ export function reduceState(previous, action, catalog, nowISO = new Date().toISO
     }
     case 'start': {
       moduleFor(action.moduleId); moduleRecord(action.moduleId).lastViewedAt = nowISO; break;
+    }
+    case 'continueSession': {
+      assert(state.study,'缺少连续学习状态');
+      if(state.study.block)return previous;
+      const task=currentTask(state,catalog);
+      if(task?.kind==='module' && (state.study.resumeModule===task.moduleId || (state.modules[task.moduleId]?.startedAt&&!state.modules[task.moduleId]?.completedAt)))return previous;
+      queueBoundary(state,catalog,nowISO,getReviewQueue(state,catalog,nowISO).ids,null,{entry:true});
+      if(!state.study.block)return previous;
+      state.study.presentation=null;
+      break;
     }
     case 'position': {
       const module = moduleFor(action.moduleId); validAnchor(action.anchor, module);
@@ -192,9 +203,11 @@ export function reduceState(previous, action, catalog, nowISO = new Date().toISO
     }
     case 'closeSection': {
       const task=currentTask(state,catalog);
-      if(state.flow?.sections[action.sectionId]?.planVersion===catalog.learningPath?.version)return previous;
+      const section=catalog.learningPath.sections.find(s=>s.id===action.sectionId);
+      assert(section,'未知小节');
+      if(sectionClosed(state,section,catalog))return previous;
       assert(task?.kind==='closing' && task.sectionId===action.sectionId, '本节仍有未确认的必做任务');
-      state.flow.sections[action.sectionId]={closedAt:nowISO,planVersion:catalog.learningPath.version};
+      state.flow.sections[action.sectionId]={closedAt:nowISO,planVersion:catalog.learningPath.version,sectionVersion:sectionVersion(section)};
       break;
     }
     case 'score': {
@@ -229,6 +242,7 @@ export function reduceState(previous, action, catalog, nowISO = new Date().toISO
         const result = scheduleReview(state.cards[question.id]?.card, action.rating, nowISO);
         attempt.fsrsLog = result.log;
         state.cards[question.id] = { version: question.version, schedulerVersion: SCHEDULER.version, card: result.card, lastLog: result.log };
+        if(state.study?.reviewSnoozes)delete state.study.reviewSnoozes[question.id];
         if(!block)state.reviewSession.index += 1;
       }
       if(block&&(review||action.mode==='retry')){
@@ -253,7 +267,8 @@ export function reduceState(previous, action, catalog, nowISO = new Date().toISO
       assert(action.blockId===state.study.block.id,'当前回顾已经改变');
       (state.study.finishedBlocks ||= []).push({id:state.study.block.id,at:nowISO,
         skipped:state.study.block.items.filter(x=>!x.attemptId).map(x=>({id:x.id,kind:x.kind}))});
-      state.study.block=null;state.study.presentation=null;state.counter.completedSincePrompt=0;
+      postponeUnrated(state,catalog,state.study.block.items,nowISO);
+      state.study.block=null;state.study.presentation=null;
       break;
     }
     case 'undo': {
@@ -380,7 +395,7 @@ export function validateState(state, catalog) {
       id(tid);assert(object(entry),'暂缓记录无效');inRange(entry.at);version(entry.version);id(entry.sectionId);
       assert(entry.reason==='content-unavailable','暂缓原因无效');
     }
-    for(const [sid,entry] of Object.entries(flow.sections)) {id(sid);assert(object(entry),'小节收尾记录无效');inRange(entry.closedAt);version(entry.planVersion);}
+    for(const [sid,entry] of Object.entries(flow.sections)) {id(sid);assert(object(entry),'小节收尾记录无效');inRange(entry.closedAt);version(entry.planVersion);if(entry.sectionVersion!==undefined)version(entry.sectionVersion);}
   }
   assert(state.reviewNotes===undefined||Array.isArray(state.reviewNotes),'复习回看记录无效');
   const noteKeys=new Set();
@@ -451,6 +466,8 @@ export function validateState(state, catalog) {
   for (const reviewId of latestReviews.keys()) assert(own(state.cards, reviewId), '复习日志缺少对应卡片');
   if(state.study!==undefined){
     const s=state.study;assert(object(s)&&s.version===1,'连续学习记录版本无效');integer(s.boundaryCount,'知识点边界计数');
+    if(s.blockSerial!==undefined)integer(s.blockSerial,'回顾编号计数');
+    if(s.reviewSnoozes!==undefined){assert(object(s.reviewSnoozes),'精选暂缓记录无效');for(const [qid,until] of Object.entries(s.reviewSnoozes)){id(qid);assertISO(until);assert(own(state.contentVersions.reviews,qid),'精选暂缓缺少内容索引');}}
     assert(object(s.retries),'再练安排无效');validateTask(s.legacyTask);
     if(s.resumeModule)id(s.resumeModule);
     if(s.legacyReviewSession)validateSession(s.legacyReviewSession,catalog);

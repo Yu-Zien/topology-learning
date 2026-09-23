@@ -10,12 +10,25 @@ export function moduleQuestions(catalog,moduleId) {
   return moduleItem(catalog,moduleId)?.practice || [];
 }
 const deferred = (state,id,version) => state.flow?.deferred[id]?.version === version;
+export const sectionVersion = section => section.completionVersion || section.id+'-v1';
+export function sectionClosed(state,section,catalog){
+  const saved=state.flow?.sections[section.id];
+  if(!saved)return false;
+  if(saved.sectionVersion)return saved.sectionVersion===sectionVersion(section);
+  return (section.legacyPlanVersions||[catalog.learningPath?.version]).includes(saved.planVersion);
+}
 
 export function nextTask(state,catalog) {
   const sections=sectionPlans(catalog);
   if(continuous(catalog)&&state.study?.resumeModule){
     const section=sections.find(s=>s.moduleIds.includes(state.study.resumeModule));
     if(section)return {kind:'module',id:state.study.resumeModule,moduleId:state.study.resumeModule,sectionId:section.id};
+  }
+  // Keep a genuinely in-progress lesson stable across unrelated catalog growth.
+  const active=state.flow?.current;
+  if(active?.kind==='module' && state.modules[active.moduleId]?.startedAt && !state.modules[active.moduleId].completedAt){
+    const section=sections.find(s=>s.moduleIds.includes(active.moduleId));
+    if(section && moduleItem(catalog,active.moduleId)?.status==='usable')return {...active,sectionId:section.id};
   }
   for(const section of sections) {
     for(const id of section.moduleIds) {
@@ -39,7 +52,7 @@ export function nextTask(state,catalog) {
     for(const gap of section.gaps||[]) {
       if(!deferred(state,gap.id,gap.version))return {kind:'blocked',id:gap.id,sectionId:section.id,gapId:gap.id,version:gap.version};
     }
-    if(state.flow?.sections[section.id]?.planVersion!==catalog.learningPath.version)
+    if(!sectionClosed(state,section,catalog))
       return {kind:'closing',id:section.id+'-close',sectionId:section.id};
   }
   const last=sections.at(-1);
@@ -50,6 +63,10 @@ export function initializeFlow(state,catalog) {
   if(!sectionPlans(catalog).length)return false;
   const added=!state.flow;
   state.flow ||= {version:1,legacyPosition:copy(state.newCourse),confirmations:{},deferred:{},sections:{},current:null};
+  for(const section of sectionPlans(catalog)){
+    const saved=state.flow.sections[section.id];
+    if(saved&&!saved.sectionVersion&&sectionClosed(state,section,catalog))saved.sectionVersion=sectionVersion(section);
+  }
   refreshFlow(state,catalog,added?state.flow.legacyPosition:null);
   return added;
 }
@@ -70,7 +87,10 @@ export function canBrowse(state,catalog,moduleId) {
   if(state.modules[moduleId]?.completedAt||state.modules[moduleId]?.startedAt)return true;
   const task=currentTask(state,catalog),section=sectionPlans(catalog).find(s=>s.id===task?.sectionId);
   if(!section)return false;
-  if(section.optionalChecks?.includes(moduleId))return !!state.modules[section.exerciseStartModule]?.startedAt||!!state.modules['T01-01-M020']?.completedAt;
+  if(section.optionalChecks?.includes(moduleId)){
+    const start=section.moduleIds.indexOf(section.exerciseStartModule);
+    return !!state.modules[section.exerciseStartModule]?.startedAt||(start>0&&!!state.modules[section.moduleIds[start-1]]?.completedAt);
+  }
   if(!section.moduleIds.includes(moduleId))return false;
   if(!task.moduleId)return true;
   return section.moduleIds.indexOf(moduleId)<=section.moduleIds.indexOf(task.moduleId);

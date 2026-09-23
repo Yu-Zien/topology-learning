@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.1">
+<title>任意整数指标子族怎样分情况 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T01-01-M034"><h1 id="任意整数指标子族怎样分情况">任意整数指标子族怎样分情况</h1>
+<p>固定编号：T01-01-M034<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 17 页 / PDF 第 17 页，习题 1.1 第
+5(i) 题前的必要短补。<br />
+学习目标：将任意正整数指标集合分为空、有界非空、无界三类，并说明有界非空时最大指标确实被选中。</p>
+<blockquote>
+<p><strong>本段主线：</strong>用任意并条件核验习题 5 的区间簇。<br />
+<strong>当前环节：</strong>每个普通成员由正整数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+标记，先说明任意选择指标有哪些可能。<br />
+<strong>这一步只做：</strong>建立不遗漏空选择和无限选择的分类。</p>
+</blockquote>
+<p>来源说明：正整数参数来自原题；下面的分类事实及 A／B
+为新增讲练。本模块尚不证明原题中的簇是拓扑。</p>
+<h2 id="方法用指标集合记录任意选择">方法：用指标集合记录任意选择</h2>
+<p>若从
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mn>1</mn></msub><mo>,</mo><msub><mi>I</mi><mn>2</mn></msub><mo>,</mo><msub><mi>I</mi><mn>3</mn></msub><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">I_1,I_2,I_3,\ldots</annotation></semantics></math>
+中选
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>I</mi><mn>2</mn></msub><annotation encoding="application/x-tex">I_2</annotation></semantics></math>
+和
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>I</mi><mn>5</mn></msub><annotation encoding="application/x-tex">I_5</annotation></semantics></math>，所选指标组成
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">J=\{2,5\}</annotation></semantics></math>。可以只选一个、选无穷多个，也可以一个不选，得到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">J=\varnothing</annotation></semantics></math>。</p>
+<p>这里
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℕ</mi><annotation encoding="application/x-tex">\mathbb N</annotation></semantics></math>
+沿用本教材的正整数约定，即
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1,2,3,\ldots\}</annotation></semantics></math>。对任意
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo>⊆</mo><mi mathvariant="double-struck">ℕ</mi></mrow><annotation encoding="application/x-tex">J\subseteq\mathbb N</annotation></semantics></math>，按下面三类处理：</p>
+<ol type="1">
+<li><strong>空集：</strong>没有选中普通成员。</li>
+<li><strong>非空且有界：</strong>存在正整数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>，使每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>∈</mo><mi>J</mi></mrow><annotation encoding="application/x-tex">n\in J</annotation></semantics></math>
+都满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≤</mo><mi>K</mi></mrow><annotation encoding="application/x-tex">n\le K</annotation></semantics></math>。</li>
+<li><strong>无界：</strong>不存在这样的上界。</li>
+</ol>
+<p>例如，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{2,5\}</annotation></semantics></math>
+属于第二类，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>6</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{2,4,6,\ldots\}</annotation></semantics></math>
+属于第三类。</p>
+<h2
+id="方法中的依据最大指标为什么存在">方法中的依据：最大指标为什么存在</h2>
+<p>第二类的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>
+是有限集合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>K</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1,2,\ldots,K\}</annotation></semantics></math>
+的非空子集，因此它有一个最大元素
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>，而且
+<strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>∈</mo><mi>J</mi></mrow><annotation encoding="application/x-tex">N\in J</annotation></semantics></math></strong>。上界未必被选中，但最大元素必须被选中。例如
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">J=\{2,5\}</annotation></semantics></math>
+的上界可以是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>8</mn><annotation encoding="application/x-tex">8</annotation></semantics></math>，最大元素仍是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>5</mn><annotation encoding="application/x-tex">5</annotation></semantics></math>。</p>
+<p>本批还使用一个实数基础事实：<strong>对任何给定实数，总能找到比它大的正整数。</strong>这称为实数的阿基米德性质。由此，无界的正整数指标集合能超过任意给定实数界限：先取更大的整数界限，再利用
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>
+无界。</p>
+<p>注意：任意无限的正整数子集都无界；但后面若参数改为实数，像
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>−</mo><mn>1</mn><mi>/</mi><mi>k</mi><mo>:</mo><mi>k</mi><mo>=</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1-1/k:k=2,3,\ldots\}</annotation></semantics></math>
+就是无限而有界的集合，不能照搬此结论。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>将下面三个指标集合分类；有最大元素时写出它：</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>J</mi><mn>1</mn></msub><mo>=</mo><mi>⌀</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>J</mi><mn>2</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>n</mi><mo>∈</mo><mi mathvariant="double-struck">ℕ</mi><mo>:</mo><mn>2</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>5</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>J</mi><mn>3</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>6</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">J_1=\varnothing,\qquad J_2=\{n\in\mathbb N:2\le n\le5\},\qquad J_3=\{2,4,6,\ldots\}.</annotation></semantics></math></div></p>
+<p>并说明为什么这三类足以处理任意
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo>⊆</mo><mi mathvariant="double-struck">ℕ</mi></mrow><annotation encoding="application/x-tex">J\subseteq\mathbb N</annotation></semantics></math>。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的分类依据
+</summary>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>J</mi><mn>1</mn></msub><annotation encoding="application/x-tex">J_1</annotation></semantics></math>
+是空集，没有最大元素。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>J</mi><mn>2</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">J_2=\{2,3,4,5\}</annotation></semantics></math>
+非空且有界，最大元素是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>5</mn><annotation encoding="application/x-tex">5</annotation></semantics></math>。</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>J</mi><mn>3</mn></msub><annotation encoding="application/x-tex">J_3</annotation></semantics></math>
+无界：给定任何实数界限
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>，可选正整数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>&gt;</mo><mi>L</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">k&gt;L/2</annotation></semantics></math>，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>k</mi><mo>∈</mo><msub><mi>J</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">2k\in J_3</annotation></semantics></math>
+且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>k</mi><mo>&gt;</mo><mi>L</mi></mrow><annotation encoding="application/x-tex">2k&gt;L</annotation></semantics></math>。所以它没有最大元素。</p>
+<p>任意
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>
+首先分为空或非空；非空时再分为有界或无界。每一种选择都落入其中一类，没有把“任意选择”限定为无限选择。</p>
+</details>
+<span id="q-T01-01-M034-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>将下面三个集合分类，区分“给出的上界”与“实际最大元素”：</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mn>1</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>n</mi><mo>∈</mo><mi mathvariant="double-struck">ℕ</mi><mo>:</mo><mi>n</mi><mo>&lt;</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>K</mi><mn>2</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>K</mi><mn>3</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>3</mn><mi>k</mi><mo>+</mo><mn>1</mn><mo>:</mo><mi>k</mi><mo>∈</mo><mi mathvariant="double-struck">ℕ</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">K_1=\{n\in\mathbb N:n&lt;1\},\quad K_2=\{1,4,7\},\quad K_3=\{3k+1:k\in\mathbb N\}.</annotation></semantics></math></div></p>
+<p>对
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mn>2</mn></msub><annotation encoding="application/x-tex">K_2</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>10</mn><annotation encoding="application/x-tex">10</annotation></semantics></math>
+是最大元素吗？对
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mn>3</mn></msub><annotation encoding="application/x-tex">K_3</annotation></semantics></math>，说明为什么给定任意实数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+后仍能选出超过
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+的指标。</p>
+<div class="practice-controls" data-question-id="T01-01-M034-B" data-module-id="T01-01-M034" data-mode="guided" data-answer-anchor="answer-T01-01-M034-B"></div><span id="answer-T01-01-M034-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开解答
+</summary>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mn>1</mn></msub><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">K_1=\varnothing</annotation></semantics></math>，因为正整数至少是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>。</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mn>2</mn></msub><annotation encoding="application/x-tex">K_2</annotation></semantics></math>
+非空且有界，最大元素是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>7</mn><annotation encoding="application/x-tex">7</annotation></semantics></math>。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>10</mn><annotation encoding="application/x-tex">10</annotation></semantics></math>
+是一个上界，但不属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mn>2</mn></msub><annotation encoding="application/x-tex">K_2</annotation></semantics></math>，所以不是最大元素。</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mn>3</mn></msub><annotation encoding="application/x-tex">K_3</annotation></semantics></math>
+无界。给定实数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>，取正整数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>&gt;</mo><mo stretchy="false" form="prefix">(</mo><mi>L</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">k&gt;(L-1)/3</annotation></semantics></math>，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>k</mi><mo>+</mo><mn>1</mn><mo>∈</mo><msub><mi>K</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">3k+1\in K_3</annotation></semantics></math>
+且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>k</mi><mo>+</mo><mn>1</mn><mo>&gt;</mo><mi>L</mi></mrow><annotation encoding="application/x-tex">3k+1&gt;L</annotation></semantics></math>，因而没有最大元素。</p>
+</details>
+<h2 id="精选复习">精选复习</h2><details class="prepared-review"><summary>精选复习内容（仅回看，不记分）</summary><p class="notice">这里保留课件中的预设问题与答案。计分复习在讲练间隙进行；只回看不会改变排期。</p><h3 id="t01-01-r011">T01-01-R011</h3>
+<p><strong>问题：</strong>任意正整数指标集合应分成哪三类？为什么有界非空的一类存在一个实际属于该集合的最大指标？</p>
+<details>
+<summary>
+回忆后查看答案
+</summary>
+<p>分为空、有界非空、无界。有界非空的集合包含在某个有限集合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>K</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1,\ldots,K\}</annotation></semantics></math>
+中，是非空有限集，所以有最大元素；这个最大元素属于所选集合，而任意给出的上界未必属于它。</p>
+</details>
+</details><h2 id="简短回顾">简短回顾</h2>
+<p>任意选出的正整数指标都落入三类之一。下一步将把“最大指标被选中”或“指标无界”转成对整个并集的说明。</p>
+</article></div>
+<footer><span data-app-version="0.3.1">网站版本 0.3.1</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>
