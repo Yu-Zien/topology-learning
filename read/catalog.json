@@ -1,6 +1,6 @@
 {
-  "appVersion": "0.3.1",
-  "contentVersion": "96bd119813376d481ba373a41fde8b221cf1b8a6b49d37fad6c2dd3748fb255f",
+  "appVersion": "0.3.2",
+  "contentVersion": "9f67ebdeb336b267bab54fddcc264fb1565d2aed905da1ec81cf3bebeab8e024",
   "modules": [
     {
       "id": "T01-01-M001",
@@ -401,6 +401,56 @@
       "version": "0.1@085172874c6e",
       "html": "T01-01-M037.html",
       "markdown": "T01-01-M037.md"
+    },
+    {
+      "id": "T01-01-M038",
+      "title": "初始段拓扑 6(i)",
+      "page": "17",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI数学二读＋有限枚举／页面核验",
+      "version": "0.1@e078bd1241cd",
+      "html": "T01-01-M038.html",
+      "markdown": "T01-01-M038.md"
+    },
+    {
+      "id": "T01-01-M039",
+      "title": "末尾段拓扑 6(ii)",
+      "page": "17",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI数学二读＋有限枚举／页面核验",
+      "version": "0.1@554082286fe9",
+      "html": "T01-01-M039.html",
+      "markdown": "T01-01-M039.md"
+    },
+    {
+      "id": "T01-01-M040",
+      "title": "两点集：列全而非举例",
+      "page": "17",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI数学二读＋有限枚举／页面核验",
+      "version": "0.1@594e2c926044",
+      "html": "T01-01-M040.html",
+      "markdown": "T01-01-M040.md"
+    },
+    {
+      "id": "T01-01-M041",
+      "title": "三点集枚举的分类框架",
+      "page": "17",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI数学二读＋有限枚举／页面核验",
+      "version": "0.1@ab204465239f",
+      "html": "T01-01-M041.html",
+      "markdown": "T01-01-M041.md"
+    },
+    {
+      "id": "T01-01-M042",
+      "title": "三点集：完成枚举与完整性说明",
+      "page": "17",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI数学二读＋有限枚举／页面核验",
+      "version": "0.1@a2db6951dc51",
+      "html": "T01-01-M042.html",
+      "markdown": "T01-01-M042.md"
     }
   ]
 }
