@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.3">
+<title>读懂例1.2.3的递减集合族 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T01-02-M004"><h1 id="读懂例1.2.3的递减集合族">读懂例1.2.3的递减集合族</h1>
+<p>固定编号：T01-02-M004<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 19 页 / PDF 第 19
+页，例1.2.3中集合族的定义。<br />
+学习目标：读出每个参与集合、核对它是开集，并计算有限个参与者的交。</p>
+<blockquote>
+<p><strong>本段主线：</strong>研究例1.2.3的无限交。<br />
+<strong>当前环节：</strong>先确认每个参与者是什么，哪些点总被保留。<br />
+<strong>这一步只做：</strong>读集合族并检查有限交，不提前猜无限交的结果。</p>
+</blockquote>
+<p>来源说明：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>n</mi></msub><annotation encoding="application/x-tex">S_n</annotation></semantics></math>
+的定义来自教材；有限交讲练与B为新增。原页后文存在并／交符号矛盾，下一模块完整说明，不能据此改变这里给出的集合族。</p>
+<h2
+id="符号解释一个固定点加上向后移动的末尾段">符号解释：一个固定点加上向后移动的末尾段</h2>
+<p>在M003的拓扑中，教材定义</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>n</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo>∪</mo><munderover><mo>⋃</mo><mrow><mi>m</mi><mo>=</mo><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo accent="false">∞</mo></munderover><mo stretchy="false" form="prefix">{</mo><mi>m</mi><mo stretchy="false" form="postfix">}</mo><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>n</mi><mo>+</mo><mn>2</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="1.0em"></mspace><mi>n</mi><mo>≥</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">S_n=\{1\}\cup\bigcup_{m=n+1}^{\infty}\{m\}=\{1\}\cup\{n+1,n+2,\ldots\},\quad n\ge1.</annotation></semantics></math></div></p>
+<p>于是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mn>1</mn></msub><mo>=</mo><mi mathvariant="double-struck">ℕ</mi></mrow><annotation encoding="application/x-tex">S_1=\mathbb N</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mn>2</mn></msub><mo>=</mo><mi mathvariant="double-struck">ℕ</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">S_2=\mathbb N\setminus\{2\}</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mn>3</mn></msub><mo>=</mo><mi mathvariant="double-struck">ℕ</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">S_3=\mathbb N\setminus\{2,3\}</annotation></semantics></math>。一般补集是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>n</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{2,3,\ldots,n\}</annotation></semantics></math>；当
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n=1</annotation></semantics></math>
+时这一段为空。每个补集有限，所以每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>n</mi></msub><annotation encoding="application/x-tex">S_n</annotation></semantics></math>
+都是开集。集合随
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+增大而变小，但1始终保留。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>给定任意正整数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>，求
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>S</mi><mn>2</mn></msub><mo>∩</mo><mi>⋯</mi><mo>∩</mo><msub><mi>S</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">S_1\cap S_2\cap\cdots\cap S_k</annotation></semantics></math>，并解释为什么结果开。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的有限交
+</summary>
+<p>若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>≤</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">i\le k</annotation></semantics></math>，从
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k+1</annotation></semantics></math>
+开始的末尾段包含在从
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i+1</annotation></semantics></math>
+开始的末尾段中，而二者都保留1。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>k</mi></msub><mo>⊆</mo><msub><mi>S</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">S_k\subseteq S_i</annotation></semantics></math>。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>k</mi></msub><annotation encoding="application/x-tex">S_k</annotation></semantics></math>
+又是参与者之一，所以有限交恰为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>k</mi></msub><annotation encoding="application/x-tex">S_k</annotation></semantics></math>。</p>
+<p>它的补集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{2,\ldots,k\}</annotation></semantics></math>
+有限，所以是开集；也可直接使用命题1.2.2的有限交结论。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k=1</annotation></semantics></math>
+时交就是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mn>1</mn></msub><mo>=</mo><mi mathvariant="double-struck">ℕ</mi></mrow><annotation encoding="application/x-tex">S_1=\mathbb N</annotation></semantics></math>，同样成立。</p>
+<p>若只选任意有限非空指标集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>，令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">k=\max J</annotation></semantics></math>，也有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>k</mi></msub><annotation encoding="application/x-tex">S_k</annotation></semantics></math>
+包含于每个参与者，且自己参与，因此交仍为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>k</mi></msub><annotation encoding="application/x-tex">S_k</annotation></semantics></math>。</p>
+</details>
+<span id="q-T01-02-M004-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>仍使用M003的拓扑，令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>n</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>n</mi><mo>+</mo><mn>2</mn><mo>,</mo><mi>n</mi><mo>+</mo><mn>3</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">T_n=\{1,2\}\cup\{n+2,n+3,\ldots\}</annotation></semantics></math>（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n\ge1</annotation></semantics></math>）。求
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub><mo>,</mo><msub><mi>T</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">T_1,T_2</annotation></semantics></math>，证明每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>n</mi></msub><annotation encoding="application/x-tex">T_n</annotation></semantics></math>
+开，并求
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub><mo>∩</mo><mi>⋯</mi><mo>∩</mo><msub><mi>T</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">T_1\cap\cdots\cap T_k</annotation></semantics></math>（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k\ge1</annotation></semantics></math>）。</p>
+<div class="practice-controls" data-question-id="T01-02-M004-B" data-module-id="T01-02-M004" data-mode="guided" data-answer-anchor="answer-T01-02-M004-B"></div><span id="answer-T01-02-M004-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开解答
+</summary>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub><mo>=</mo><mi mathvariant="double-struck">ℕ</mi></mrow><annotation encoding="application/x-tex">T_1=\mathbb N</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>2</mn></msub><mo>=</mo><mi mathvariant="double-struck">ℕ</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mn>3</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">T_2=\mathbb N\setminus\{3\}</annotation></semantics></math>。一般补集为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{3,4,\ldots,n+1\}</annotation></semantics></math>，在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n=1</annotation></semantics></math>
+时为空，始终有限，所以每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>n</mi></msub><annotation encoding="application/x-tex">T_n</annotation></semantics></math>
+开。</p>
+<p>若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>≤</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">i\le k</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>k</mi></msub><mo>⊆</mo><msub><mi>T</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">T_k\subseteq T_i</annotation></semantics></math>；所有集合都保留1、2，末尾段的起点随指标增大向后移。因为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>k</mi></msub><annotation encoding="application/x-tex">T_k</annotation></semantics></math>
+也参与，有限交恰为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>k</mi></msub><annotation encoding="application/x-tex">T_k</annotation></semantics></math>。这里任意有限次相交仍留下无限的末尾段。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>所有参与者开，任意非空有限交也开。无限交却必须要求一个点属于每个参与者，下一步按这个要求逐点检查。</p>
+</article></div>
+<footer><span data-app-version="0.3.3">网站版本 0.3.3</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>

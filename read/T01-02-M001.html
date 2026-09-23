@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.3">
+<title>开集是拓扑的成员 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T01-02-M001"><h1 id="开集是拓扑的成员">开集是拓扑的成员</h1>
+<p>固定编号：T01-02-M001<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 18 页 / PDF 第 18
+页，§1.2开头及定义1.2.1。<br />
+学习目标：在给定拓扑下按成员资格判断开集，区分子集与开集。</p>
+<blockquote>
+<p><strong>本段主线：</strong>学习§1.2“开集，闭集，及闭开集”。<br />
+<strong>当前环节：</strong>给前一节一直使用的“拓扑成员”一个名称。<br />
+<strong>这一步只做：</strong>把属于拓扑准确读成“开”，不从集合外形猜性质。</p>
+</blockquote>
+<p>来源说明：定义与术语来自教材；A/B、解释和参考解新增。第1章还没有定义实数的欧几里得拓扑，不能仅凭区间圆括号就判断它在任意拓扑中开。</p>
+<h2 id="定义1.2.1完整陈述">定义1.2.1：完整陈述</h2>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>,</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X,\tau)</annotation></semantics></math>
+为任意拓扑空间。组成
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>
+的成员称为这个空间中的<strong>开集</strong>。也就是说，子集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>⊆</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">U\subseteq X</annotation></semantics></math>
+是开集，恰当且仅当
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">U\in\tau</annotation></semantics></math>。</p>
+<p>例如在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">X=\{a,b\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo>,</mo><mi>X</mi><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\tau=\{\varnothing,X,\{a\}\}</annotation></semantics></math>
+中，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a\}</annotation></semantics></math>
+是开集；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{b\}</annotation></semantics></math>
+虽然是底集的子集，却不是开集。开不开取决于指定的拓扑，不是“集合有没有边缘”的日常意思。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>在上面的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>,</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X,\tau)</annotation></semantics></math>
+中列出全部开集，再说明同一个集合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{b\}</annotation></semantics></math>
+在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+的离散拓扑中是否开。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的成员检查
+</summary>
+<p>给定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>
+的成员正是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>⌀</mi><mo>,</mo><mi>X</mi><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\varnothing,X,\{a\}</annotation></semantics></math>，所以全部开集就是这三个。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo><mo>∉</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\{b\}\notin\tau</annotation></semantics></math>，故在当前空间中不开。</p>
+<p>离散拓扑收下
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+的全部子集，当然包含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{b\}</annotation></semantics></math>。所以它在离散拓扑中开。底集和被判断的集合没变，改变的是拓扑。</p>
+</details>
+<span id="q-T01-02-M001-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">Y=\{u,v,w\}</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo>,</mo><mi>Y</mi><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\sigma=\{\varnothing,Y,\{u,v\}\}</annotation></semantics></math>。这个簇是一个已知拓扑。列出全部开集，并分别判断
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{u\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{u,v\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
+是否开；说明“开集的每个子集也一定开”能否由定义推出。</p>
+<span id="answer-T01-02-M001-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开解答
+</summary>
+<p>全部开集为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>⌀</mi><mo>,</mo><mi>Y</mi><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\varnothing,Y,\{u,v\}</annotation></semantics></math>。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{u,v\}</annotation></semantics></math>
+和
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
+开，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{u\}</annotation></semantics></math>
+不开，因为后者没有列在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>
+中。</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo><mo>⊆</mo><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{u\}\subseteq\{u,v\}</annotation></semantics></math>，但前者不开、后者开。这就否定了“开集的每个子集也一定开”的一般说法；拓扑公理没有要求对任意取子集闭合。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>“开集”就是指定拓扑中的成员。接下来把已经证明的并、交性质换成开集语言。</p>
+</article></div>
+<footer><span data-app-version="0.3.3">网站版本 0.3.3</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T01-02-M001.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

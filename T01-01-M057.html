@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.3">
+<title>混合区间簇 9(ix) 的任意并 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T01-01-M057"><h1 id="混合区间簇-9ix-的任意并">混合区间簇 9(ix) 的任意并</h1>
+<p>固定编号：T01-01-M057<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 18 页 / PDF 第 18 页，习题 1.1 第
+*9(ix) 题。<br />
+学习目标：由上确界及实际参与的端点成员，确定任意混合并并完成三条件证明。</p>
+<blockquote>
+<p><strong>本段主线：</strong>完整判断原题9(ix)。<br />
+<strong>当前环节：</strong>两两交已覆盖，现在处理任意混合子族的并。<br />
+<strong>这一步只做：</strong>判定并的最外端点有没有被实际成员收下。</p>
+</blockquote>
+<p>来源说明：B是原题；任意混合并的方法、A和参考解新增。共同任务仍是十簇判别，不以预告的拓扑数量代替证明。</p>
+<h2
+id="方法上确界决定边界参与的方括号决定端点">方法：上确界决定边界，参与的方括号决定端点</h2>
+<p>仍记
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>O</mi><mi>r</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>r</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O_r=(-r,r)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>r</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mi>r</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">C_r=[-r,r]</annotation></semantics></math>。例如
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>O</mi><mn>2</mn></msub><mo>∪</mo><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><msub><mi>O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">O_2\cup C_1=O_2</annotation></semantics></math>；若再加入
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>2</mn></msub><annotation encoding="application/x-tex">C_2</annotation></semantics></math>，并才变成
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>2</mn></msub><annotation encoding="application/x-tex">C_2</annotation></semantics></math>。所以“半径2被选中”不够，还要问是不是<strong>含端点的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>2</mn></msub><annotation encoding="application/x-tex">C_2</annotation></semantics></math></strong>参与。</p>
+<p>对一般非空有界半径集，令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+为上确界。所有内部点
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">|x|&lt;s</annotation></semantics></math>
+会被某个更大半径收下；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>±</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">\pm s</annotation></semantics></math>
+能进入并，当且仅当
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>s</mi></msub><annotation encoding="application/x-tex">C_s</annotation></semantics></math>
+自己参加。下面把这句话写成证明。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>任取一个非空的混合区间子族
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒟</mi><annotation encoding="application/x-tex">\mathcal D</annotation></semantics></math>，其成员均为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>O</mi><mi>r</mi></msub><annotation encoding="application/x-tex">O_r</annotation></semantics></math>
+或
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>r</mi></msub><annotation encoding="application/x-tex">C_r</annotation></semantics></math>（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r&gt;0</annotation></semantics></math>）。令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+为其中全部参与半径的集合，假定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+有界，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mrow><mi mathvariant="normal">sup</mi><mo>&#8289;</mo></mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">s=\sup S</annotation></semantics></math>。证明：若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>s</mi></msub><mo>∈</mo><mi mathvariant="script">𝒟</mi></mrow><annotation encoding="application/x-tex">C_s\in\mathcal D</annotation></semantics></math>，并为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>s</mi></msub><annotation encoding="application/x-tex">C_s</annotation></semantics></math>；否则并为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>O</mi><mi>s</mi></msub><annotation encoding="application/x-tex">O_s</annotation></semantics></math>。不能假定存在最大参与半径。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的一般端点判据证明
+</summary>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+非空且全部为正，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s&gt;0</annotation></semantics></math>。每个参与半径
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>≤</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">r\le s</annotation></semantics></math>，所以所有参与区间都包含在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>s</mi></msub><annotation encoding="application/x-tex">C_s</annotation></semantics></math>
+中。</p>
+<p>若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">|x|&lt;s</annotation></semantics></math>，上确界性质保证某个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>∈</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">r\in S</annotation></semantics></math>
+满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">r&gt;|x|</annotation></semantics></math>。这个半径对应的参与者不论是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>O</mi><mi>r</mi></msub><annotation encoding="application/x-tex">O_r</annotation></semantics></math>
+还是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>r</mi></msub><annotation encoding="application/x-tex">C_r</annotation></semantics></math>，都包含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>。因此并至少包含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>O</mi><mi>s</mi></msub><annotation encoding="application/x-tex">O_s</annotation></semantics></math>。</p>
+<p>若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>s</mi></msub><mo>∈</mo><mi mathvariant="script">𝒟</mi></mrow><annotation encoding="application/x-tex">C_s\in\mathcal D</annotation></semantics></math>，所有参与者都在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>s</mi></msub><annotation encoding="application/x-tex">C_s</annotation></semantics></math>
+中且它自己参加，故并为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>s</mi></msub><annotation encoding="application/x-tex">C_s</annotation></semantics></math>。</p>
+<p>若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>s</mi></msub><mo>∉</mo><mi mathvariant="script">𝒟</mi></mrow><annotation encoding="application/x-tex">C_s\notin\mathcal D</annotation></semantics></math>，圆括号参与者不可能含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+或
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">-s</annotation></semantics></math>，因为它们半径不大于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>；方括号参与者要含这两个端点，半径必须至少为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>，只能等于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>，但这样的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>s</mi></msub><annotation encoding="application/x-tex">C_s</annotation></semantics></math>
+未参与。因此并不含两个端点，只能是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>O</mi><mi>s</mi></msub><annotation encoding="application/x-tex">O_s</annotation></semantics></math>。</p>
+</details>
+<span id="q-T01-01-E009-ix" class="content-anchor"></span><h2 id="练习-b教材习题-1.1-第-9ix-题星号题">练习 B：教材习题 1.1 第
+9(ix) 题（星号题）</h2>
+<p><strong>教材原题。</strong>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>
+为实数集。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>9</mn></msub><annotation encoding="application/x-tex">\tau_9</annotation></semantics></math>
+由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⌀</mi><annotation encoding="application/x-tex">\varnothing</annotation></semantics></math>
+和所有形如
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mi>r</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-r,r]</annotation></semantics></math>
+及
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>r</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-r,r)</annotation></semantics></math>
+的区间构成，两类中的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+均为正实数。判断它是否为拓扑并给出理由；这是第9题十簇判别的第九小问。</p>
+<div class="practice-controls" data-question-id="T01-01-E009-ix" data-module-id="T01-01-M057" data-mode="guided" data-answer-anchor="answer-T01-01-E009-ix"></div><span id="answer-T01-01-E009-ix" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试原题9(ix)后展开完整证明
+</summary>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>9</mn></msub><annotation encoding="application/x-tex">\tau_9</annotation></semantics></math>
+是拓扑。所有成员为实数子集，且底集、空集已在簇中。</p>
+<p>任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">𝒟</mi><mo>⊆</mo><msub><mi>τ</mi><mn>9</mn></msub></mrow><annotation encoding="application/x-tex">\mathcal D\subseteq\tau_9</annotation></semantics></math>。若含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>，并为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>。否则忽略空集，把其余参与区间的半径组成
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+为空，并为空集。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+无界，对任意实数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+都有参与半径
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">r&gt;|x|</annotation></semantics></math>，相应区间不论哪种括号都含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>，故并为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>。</p>
+<p>若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+非空有界，令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mrow><mi mathvariant="normal">sup</mi><mo>&#8289;</mo></mrow><mi>S</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s=\sup S&gt;0</annotation></semantics></math>。A已证明并为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>s</mi></msub><annotation encoding="application/x-tex">C_s</annotation></semantics></math>（当
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>s</mi></msub><annotation encoding="application/x-tex">C_s</annotation></semantics></math>
+参与）或
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>O</mi><mi>s</mi></msub><annotation encoding="application/x-tex">O_s</annotation></semantics></math>（否则）。两者都是允许的正实数半径成员，所以任意并闭合。</p>
+<p>两两交按M056完整分类：两个圆括号成员的交为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>O</mi><mrow><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>,</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub><annotation encoding="application/x-tex">O_{\min(r,t)}</annotation></semantics></math>，两个方括号成员的交为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mrow><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>,</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub><annotation encoding="application/x-tex">C_{\min(r,t)}</annotation></semantics></math>；混合交
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>r</mi></msub><mo>∩</mo><msub><mi>O</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">C_r\cap O_t</annotation></semantics></math>
+在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&lt;</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">r&lt;t</annotation></semantics></math>
+时为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>r</mi></msub><annotation encoding="application/x-tex">C_r</annotation></semantics></math>，在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>≥</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">r\ge t</annotation></semantics></math>
+时为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>O</mi><mi>t</mi></msub><annotation encoding="application/x-tex">O_t</annotation></semantics></math>。这些都是允许成员。与底集相交不变，与空集相交为空集。因此三条件全满足。</p>
+</details>
+<h2 id="精选复习">精选复习</h2><details class="prepared-review"><summary>精选复习内容（仅回看，不记分）</summary><p class="notice">这里保留课件中的预设问题与答案。计分复习在讲练间隙进行；只回看不会改变排期。</p><h3 id="t01-01-r018">T01-01-R018</h3>
+<p><strong>问题：</strong>混合圆括号／方括号的非空有界半径子族，上确界为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>。并何时为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mi>s</mi><mo>,</mo><mi>s</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-s,s]</annotation></semantics></math>，何时为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>s</mi><mo>,</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-s,s)</annotation></semantics></math>？只知道某个参与半径等于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+够不够？</p>
+<details>
+<summary>
+回忆后查看答案
+</summary>
+<p>当
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mi>s</mi><mo>,</mo><mi>s</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-s,s]</annotation></semantics></math>
+本身参加时，并为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mi>s</mi><mo>,</mo><mi>s</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-s,s]</annotation></semantics></math>；否则为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>s</mi><mo>,</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-s,s)</annotation></semantics></math>。只知道半径
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+被取到不够，因为参与者可能仅为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>s</mi><mo>,</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-s,s)</annotation></semantics></math>，仍未包含端点。所有内部点由上确界性质保证进入。</p>
+</details>
+</details><h2 id="简短回顾">简短回顾</h2>
+<p>原题9(ix)成立：混合任意并可能失去端点，也可能保留端点，两种结果都被允许；混合交也已覆盖。</p>
+</article></div>
+<footer><span data-app-version="0.3.3">网站版本 0.3.3</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>

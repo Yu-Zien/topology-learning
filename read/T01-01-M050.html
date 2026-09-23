@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.3">
+<title>有理半径区间簇 9(iii) · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T01-01-M050"><h1 id="有理半径区间簇-9iii">有理半径区间簇 9(iii)</h1>
+<p>固定编号：T01-01-M050<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 18 页 / PDF 第 18 页，习题 1.1 第
+*9(iii) 题。<br />
+学习目标：构造合法半径子族，证明其并的半径不再满足原参数限制。</p>
+<blockquote>
+<p><strong>本段主线：</strong>完成星号第9题的逐项判别。<br />
+<strong>当前环节：</strong>原题9(iii)只允许正有理半径。<br />
+<strong>这一步只做：</strong>检查并的上确界半径是否仍被允许。</p>
+</blockquote>
+<p>来源说明：B为原题；A、解释与参考解新增。共同任务是从十簇中找出三个拓扑并逐项给理由。</p>
+<h2 id="方法求出并以后还没结束">方法：求出并以后还没结束</h2>
+<p>M048已证明：非空有界的正半径集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>⋃</mo><mrow><mi>r</mi><mo>∈</mo><mi>S</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>r</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>s</mi><mo>,</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\bigcup_{r\in S}(-r,r)=(-s,s)</annotation></semantics></math>，其中
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mrow><mi mathvariant="normal">sup</mi><mo>&#8289;</mo></mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">s=\sup S</annotation></semantics></math>。这个<strong>集合恒等式</strong>不要求半径全体被候选簇收下；要证明闭合，还得核对新半径
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+是否在允许范围。</p>
+<p>不同正半径给出不同区间：若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>r</mi><mo>&lt;</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">0&lt;r&lt;s</annotation></semantics></math>，取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>+</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">x=(r+s)/2</annotation></semantics></math>，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>s</mi><mo>,</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">x\in(-s,s)</annotation></semantics></math>
+而
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∉</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>r</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">x\notin(-r,r)</annotation></semantics></math>。所以不能把一个不合法的半径换成合法半径而保持同一个区间。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">𝒞</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi mathvariant="double-struck">ℝ</mi><mo>,</mo><mi>⌀</mi><mo stretchy="false" form="postfix">}</mo><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>r</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo><mo>:</mo><mn>0</mn><mo>&lt;</mo><mi>r</mi><mo>&lt;</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathcal C=\{\mathbb R,\varnothing\}\cup\{(-r,r):0&lt;r&lt;1\}</annotation></semantics></math>，此处
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+是实数。用
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>n</mi></msub><mo>=</mo><mn>1</mn><mo>−</mo><mn>1</mn><mi>/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">r_n=1-1/n</annotation></semantics></math>（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n\ge2</annotation></semantics></math>）说明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒞</mi><annotation encoding="application/x-tex">\mathcal C</annotation></semantics></math>
+不是拓扑。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的三步见证
+</summary>
+<p>每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><msub><mi>r</mi><mi>n</mi></msub><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0&lt;r_n&lt;1</annotation></semantics></math>，因此参与区间都是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒞</mi><annotation encoding="application/x-tex">\mathcal C</annotation></semantics></math>
+的成员。由M047的上确界计算和M048的并公式，它们的并为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-1,1)</annotation></semantics></math>。</p>
+<p>该并非空，不是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>；半径1却被
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">r&lt;1</annotation></semantics></math>
+的限制排除。它也不等于任何半径小于1的区间，因半径不同则区间不同。所以并不在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒞</mi><annotation encoding="application/x-tex">\mathcal C</annotation></semantics></math>
+中，任意并条件失败。</p>
+</details>
+<span id="q-T01-01-E009-iii" class="content-anchor"></span><h2 id="练习-b教材习题-1.1-第-9iii-题星号题">练习 B：教材习题 1.1 第
+9(iii) 题（星号题）</h2>
+<p><strong>教材原题。</strong>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>
+为实数集。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>3</mn></msub><annotation encoding="application/x-tex">\tau_3</annotation></semantics></math>
+由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⌀</mi><annotation encoding="application/x-tex">\varnothing</annotation></semantics></math>
+和所有形如
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>r</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-r,r)</annotation></semantics></math>
+的区间构成，这里
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+是正有理数。判断它是否为拓扑并给出理由；这是第9题十簇判别的第三小问。</p>
+<span id="answer-T01-01-E009-iii" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试原题9(iii)后展开参考解
+</summary>
+<p>沿M049取正有理数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>n</mi></msub><mo>∈</mo><mo stretchy="false" form="prefix">(</mo><msqrt><mn>2</mn></msqrt><mo>−</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo>,</mo><msqrt><mn>2</mn></msqrt><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">q_n\in(\sqrt2-1/n,\sqrt2)</annotation></semantics></math>（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n\ge2</annotation></semantics></math>）。每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><msub><mi>q</mi><mi>n</mi></msub><mo>,</mo><msub><mi>q</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><msub><mi>τ</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">(-q_n,q_n)\in\tau_3</annotation></semantics></math>，而半径集上确界为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>2</mn></msqrt><annotation encoding="application/x-tex">\sqrt2</annotation></semantics></math>。</p>
+<p>为直接核对并，所有参与区间都在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><msqrt><mn>2</mn></msqrt><mo>,</mo><msqrt><mn>2</mn></msqrt><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-\sqrt2,\sqrt2)</annotation></semantics></math>
+中。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><msqrt><mn>2</mn></msqrt></mrow><annotation encoding="application/x-tex">|x|&lt;\sqrt2</annotation></semantics></math>，取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n\ge2</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mi>n</mi><mo>&lt;</mo><msqrt><mn>2</mn></msqrt><mo>−</mo><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">1/n&lt;\sqrt2-|x|</annotation></semantics></math>，就有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>n</mi></msub><mo>&gt;</mo><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">q_n&gt;|x|</annotation></semantics></math>，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+在某个参与区间中。因此并恰为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><msqrt><mn>2</mn></msqrt><mo>,</mo><msqrt><mn>2</mn></msqrt><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-\sqrt2,\sqrt2)</annotation></semantics></math>。</p>
+<p>它非空且不是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>2</mn></msqrt><annotation encoding="application/x-tex">\sqrt2</annotation></semantics></math>
+是无理数，不是允许半径，又不能用另一个不同半径表示同一区间。因此这个并不属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>3</mn></msub><annotation encoding="application/x-tex">\tau_3</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>3</mn></msub><annotation encoding="application/x-tex">\tau_3</annotation></semantics></math>
+不是拓扑。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>原题9(iii)失败在任意并：有理的参与半径可以有无理的上确界。成员合法与结果合法需要分开核对。</p>
+</article></div>
+<footer><span data-app-version="0.3.3">网站版本 0.3.3</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T01-01-M050.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

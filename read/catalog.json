@@ -1,6 +1,6 @@
 {
-  "appVersion": "0.3.2",
-  "contentVersion": "9f67ebdeb336b267bab54fddcc264fb1565d2aed905da1ec81cf3bebeab8e024",
+  "appVersion": "0.3.3",
+  "contentVersion": "9f08d3c49b1d64a42a100f69f888fdf9b6bcf6e81da40836642107eda7091540",
   "modules": [
     {
       "id": "T01-01-M001",
@@ -451,6 +451,226 @@
       "version": "0.1@a2db6951dc51",
       "html": "T01-01-M042.html",
       "markdown": "T01-01-M042.md"
+    },
+    {
+      "id": "T01-01-M043",
+      "title": "无限集构造的具体试验",
+      "page": "17",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@312619678c1a",
+      "html": "T01-01-M043.html",
+      "markdown": "T01-01-M043.md"
+    },
+    {
+      "id": "T01-01-M044",
+      "title": "把无限集构造推广到一般底集",
+      "page": "17",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@b80af88d632f",
+      "html": "T01-01-M044.html",
+      "markdown": "T01-01-M044.md"
+    },
+    {
+      "id": "T01-01-M045",
+      "title": "从无限子集条件走到离散性",
+      "page": "17",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@fa9768854898",
+      "html": "T01-01-M045.html",
+      "markdown": "T01-01-M045.md"
+    },
+    {
+      "id": "T01-01-M046",
+      "title": "任意区间簇 9(i)",
+      "page": "17",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@7535634a69e7",
+      "html": "T01-01-M046.html",
+      "markdown": "T01-01-M046.md"
+    },
+    {
+      "id": "T01-01-M047",
+      "title": "上确界和最大值的区别",
+      "page": "18",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@fb9a4d161148",
+      "html": "T01-01-M047.html",
+      "markdown": "T01-01-M047.md"
+    },
+    {
+      "id": "T01-01-M048",
+      "title": "实数半径区间簇 9(ii)",
+      "page": "18",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@f14bc65a878f",
+      "html": "T01-01-M048.html",
+      "markdown": "T01-01-M048.md"
+    },
+    {
+      "id": "T01-01-M049",
+      "title": "参数限制与逼近的短补",
+      "page": "18",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@2c0a5491d7cf",
+      "html": "T01-01-M049.html",
+      "markdown": "T01-01-M049.md"
+    },
+    {
+      "id": "T01-01-M050",
+      "title": "有理半径区间簇 9(iii)",
+      "page": "18",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@daea6386a708",
+      "html": "T01-01-M050.html",
+      "markdown": "T01-01-M050.md"
+    },
+    {
+      "id": "T01-01-M051",
+      "title": "有理半径与方括号 9(iv)",
+      "page": "18",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@31c747a2593e",
+      "html": "T01-01-M051.html",
+      "markdown": "T01-01-M051.md"
+    },
+    {
+      "id": "T01-01-M052",
+      "title": "无理半径区间簇 9(v)",
+      "page": "18",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@03cd0cad06aa",
+      "html": "T01-01-M052.html",
+      "markdown": "T01-01-M052.md"
+    },
+    {
+      "id": "T01-01-M053",
+      "title": "无理半径与方括号 9(vi)",
+      "page": "18",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@0c0f68e54c77",
+      "html": "T01-01-M053.html",
+      "markdown": "T01-01-M053.md"
+    },
+    {
+      "id": "T01-01-M054",
+      "title": "左含右不含 9(vii)",
+      "page": "18",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@68945c1f7865",
+      "html": "T01-01-M054.html",
+      "markdown": "T01-01-M054.md"
+    },
+    {
+      "id": "T01-01-M055",
+      "title": "左不含右含 9(viii)",
+      "page": "18",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@a790b8537840",
+      "html": "T01-01-M055.html",
+      "markdown": "T01-01-M055.md"
+    },
+    {
+      "id": "T01-01-M056",
+      "title": "两种区间混合时的两两交",
+      "page": "18",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@d823b585efdc",
+      "html": "T01-01-M056.html",
+      "markdown": "T01-01-M056.md"
+    },
+    {
+      "id": "T01-01-M057",
+      "title": "混合区间簇 9(ix) 的任意并",
+      "page": "18",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@edabbbb9537c",
+      "html": "T01-01-M057.html",
+      "markdown": "T01-01-M057.md"
+    },
+    {
+      "id": "T01-01-M058",
+      "title": "混合簇中两类参数范围不同",
+      "page": "18",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@82fe051683d8",
+      "html": "T01-01-M058.html",
+      "markdown": "T01-01-M058.md"
+    },
+    {
+      "id": "T01-01-M059",
+      "title": "混合区间簇 9(x) 的完整核验",
+      "page": "18",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@89972480401f",
+      "html": "T01-01-M059.html",
+      "markdown": "T01-01-M059.md"
+    },
+    {
+      "id": "T01-02-M001",
+      "title": "开集是拓扑的成员",
+      "page": "18",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@b3f3e03a6732",
+      "html": "T01-02-M001.html",
+      "markdown": "T01-02-M001.md"
+    },
+    {
+      "id": "T01-02-M002",
+      "title": "命题1.2.2：开集的并与有限交",
+      "page": "18",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@d8aaef4695e7",
+      "html": "T01-02-M002.html",
+      "markdown": "T01-02-M002.md"
+    },
+    {
+      "id": "T01-02-M003",
+      "title": "例1.2.3：核验有限闭拓扑",
+      "page": "19",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@54167e9e8206",
+      "html": "T01-02-M003.html",
+      "markdown": "T01-02-M003.md"
+    },
+    {
+      "id": "T01-02-M004",
+      "title": "读懂例1.2.3的递减集合族",
+      "page": "19",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）",
+      "version": "0.1@4b34735981f8",
+      "html": "T01-02-M004.html",
+      "markdown": "T01-02-M004.md"
+    },
+    {
+      "id": "T01-02-M005",
+      "title": "无限个开集的交未必开",
+      "page": "18—19",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段数学复核＋浏览器显示核验（非人工核验）；Q13修订明示",
+      "version": "0.1@7d6b20b0d0a0",
+      "html": "T01-02-M005.html",
+      "markdown": "T01-02-M005.md"
     }
   ]
 }

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.3">
+<title>参数限制与逼近的短补 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T01-01-M049"><h1 id="参数限制与逼近的短补">参数限制与逼近的短补</h1>
+<p>固定编号：T01-01-M049<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 18 页 / PDF 第 18 页，习题 1.1 第
+<em>9(iii) 首次需要，第 </em>9(v) 等复用。<br />
+学习目标：从指定边界下方选取满足有理／无理限制的正半径，并证明其上确界。</p>
+<blockquote>
+<p><strong>本段主线：</strong>检查参数种类受限时，区间簇是否仍对任意并闭合。<br />
+<strong>当前环节：</strong>要构造每个半径都合法、上确界却可能不合法的子族。<br />
+<strong>这一步只做：</strong>把“越来越近”写成可检查的不等式。</p>
+</blockquote>
+<p>来源说明：稠密性及逼近讲练为新增前置，不是教材原题或原解。有理数为整数之比（分母非零），无理数为不是有理数的实数。</p>
+<h2
+id="基础事实与方法在越来越窄的区间里选数">基础事实与方法：在越来越窄的区间里选数</h2>
+<p>任意实数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>&lt;</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a&lt;b</annotation></semantics></math>
+之间都有有理数，也都有无理数，这称为它们在实数中的<strong>稠密性</strong>。例如在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1.4</mn><mo>,</mo><mn>1.5</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1.4,1.5)</annotation></semantics></math>
+中既有有理数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1.45</mn><annotation encoding="application/x-tex">1.45</annotation></semantics></math>，也有无理数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>2</mn></msqrt><annotation encoding="application/x-tex">\sqrt2</annotation></semantics></math>；以下事实保证任意窄的区间也能选，不只这个例子。</p>
+<details>
+<summary>
+查看此处使用的基础事实依据
+</summary>
+<p>取正整数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>−</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m(b-a)&gt;1</annotation></semantics></math>。取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">ma</annotation></semantics></math>
+右边第一个整数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>a</mi><mo>&lt;</mo><mi>k</mi><mo>≤</mo><mi>m</mi><mi>a</mi><mo>+</mo><mn>1</mn><mo>&lt;</mo><mi>m</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">ma&lt;k\le ma+1&lt;mb</annotation></semantics></math>，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>&lt;</mo><mi>k</mi><mi>/</mi><mi>m</mi><mo>&lt;</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a&lt;k/m&lt;b</annotation></semantics></math>，中间有一个有理数。这使用已说明的阿基米德性质与整数间隔为1的事实。</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>2</mn></msqrt><annotation encoding="application/x-tex">\sqrt2</annotation></semantics></math>
+无理：若它等于最简整数比
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>/</mi><mi>q</mi></mrow><annotation encoding="application/x-tex">p/q</annotation></semantics></math>，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>p</mi><mn>2</mn></msup><mo>=</mo><mn>2</mn><msup><mi>q</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">p^2=2q^2</annotation></semantics></math>，使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+为偶数；代回又使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+为偶数，与最简矛盾。奇数的平方是奇数，所以“平方偶则自身偶”的使用有依据。</p>
+<p>在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>−</mo><msqrt><mn>2</mn></msqrt><mo>,</mo><mi>b</mi><mo>−</mo><msqrt><mn>2</mn></msqrt><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a-\sqrt2,b-\sqrt2)</annotation></semantics></math>
+中选有理数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>+</mo><msqrt><mn>2</mn></msqrt><mo>∈</mo><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">t+\sqrt2\in(a,b)</annotation></semantics></math>，且是无理数；否则减去有理数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+会使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>2</mn></msqrt><annotation encoding="application/x-tex">\sqrt2</annotation></semantics></math>
+也有理。无理数的稠密性由此得到。</p>
+</details>
+<p>想从下方接近
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">L&gt;0</annotation></semantics></math>，就在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>L</mi><mo>−</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo>,</mo><mi>L</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(L-1/n,L)</annotation></semantics></math>
+中按要求选数，并把
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+取到使左端非负。要证明这些数以上确界
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+为界：它们都小于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>；给定任意
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>&lt;</mo><mi>L</mi></mrow><annotation encoding="application/x-tex">t&lt;L</annotation></semantics></math>，取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mi>n</mi><mo>&lt;</mo><mi>L</mi><mo>−</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">1/n&lt;L-t</annotation></semantics></math>，选出的数就超过
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>对每个整数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n\ge2</annotation></semantics></math>，选有理数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mi>n</mi></msub><annotation encoding="application/x-tex">q_n</annotation></semantics></math>
+使</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>2</mn></msqrt><mo>−</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo>&lt;</mo><msub><mi>q</mi><mi>n</mi></msub><mo>&lt;</mo><msqrt><mn>2</mn></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">\sqrt2-1/n&lt;q_n&lt;\sqrt2.</annotation></semantics></math></div></p>
+<p>说明选择存在，所有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mi>n</mi></msub><annotation encoding="application/x-tex">q_n</annotation></semantics></math>
+都是正数，并证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>q</mi><mi>n</mi></msub><mo>:</mo><mi>n</mi><mo>≥</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{q_n:n\ge2\}</annotation></semantics></math>
+的上确界为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>2</mn></msqrt><annotation encoding="application/x-tex">\sqrt2</annotation></semantics></math>，且没有最大值。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的选择与上确界核验
+</summary>
+<p>两个端点相差
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mi>n</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">1/n&gt;0</annotation></semantics></math>，有理数稠密性保证每次选择存在。由于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>2</mn></msqrt><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sqrt2&gt;1</annotation></semantics></math>
+且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n\ge2</annotation></semantics></math>，左端为正，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>n</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">q_n&gt;0</annotation></semantics></math>。</p>
+<p>所有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>n</mi></msub><mo>&lt;</mo><msqrt><mn>2</mn></msqrt></mrow><annotation encoding="application/x-tex">q_n&lt;\sqrt2</annotation></semantics></math>，所以上界为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>2</mn></msqrt><annotation encoding="application/x-tex">\sqrt2</annotation></semantics></math>。任给
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>&lt;</mo><msqrt><mn>2</mn></msqrt></mrow><annotation encoding="application/x-tex">t&lt;\sqrt2</annotation></semantics></math>，取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n\ge2</annotation></semantics></math>
+且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&gt;</mo><mn>1</mn><mi>/</mi><mo stretchy="false" form="prefix">(</mo><msqrt><mn>2</mn></msqrt><mo>−</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">n&gt;1/(\sqrt2-t)</annotation></semantics></math>，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>n</mi></msub><mo>&gt;</mo><msqrt><mn>2</mn></msqrt><mo>−</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo>&gt;</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">q_n&gt;\sqrt2-1/n&gt;t</annotation></semantics></math>。没有更小的上界，故上确界恰为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>2</mn></msqrt><annotation encoding="application/x-tex">\sqrt2</annotation></semantics></math>。</p>
+<p>这个上确界无理，不是任何有理成员
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mi>n</mi></msub><annotation encoding="application/x-tex">q_n</annotation></semantics></math>，因而没有最大值。没有要求给出固定小数公式，也没有假定相邻选择一定递增；上述不等式已足以证明上确界。</p>
+</details>
+<span id="q-T01-01-M049-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>对每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>∈</mo><mi mathvariant="double-struck">ℕ</mi></mrow><annotation encoding="application/x-tex">n\in\mathbb N</annotation></semantics></math>，要求选一个<strong>无理数</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>n</mi></msub><annotation encoding="application/x-tex">s_n</annotation></semantics></math>
+满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo>&lt;</mo><msub><mi>s</mi><mi>n</mi></msub><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">1-1/n&lt;s_n&lt;1</annotation></semantics></math>。证明这种选择可以完成，所有参数均正，并求它们的上确界及最大值情况。</p>
+<span id="answer-T01-01-M049-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开解答
+</summary>
+<p>每个区间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1-1/n,1)</annotation></semantics></math>
+都非空，由无理数稠密性可选
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>n</mi></msub><annotation encoding="application/x-tex">s_n</annotation></semantics></math>。其左端非负，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>n</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s_n&gt;0</annotation></semantics></math>。</p>
+<p>1是上界。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">t&lt;1</annotation></semantics></math>，取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&gt;</mo><mn>1</mn><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">n&gt;1/(1-t)</annotation></semantics></math>，就有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>n</mi></msub><mo>&gt;</mo><mn>1</mn><mo>−</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo>&gt;</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">s_n&gt;1-1/n&gt;t</annotation></semantics></math>。因此上确界为1。所有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>n</mi></msub><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">s_n&lt;1</annotation></semantics></math>，所以1不被取到，集合没有最大值。</p>
+<p>每个参数无理，上确界却是有理数1；不能从每个参与者的种类推断上确界的种类。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>稠密性负责“能选到合法参数”，不等式负责“上确界确实是指定边界”。下一步把这类参数放回区间求并。</p>
+</article></div>
+<footer><span data-app-version="0.3.3">网站版本 0.3.3</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T01-01-M049.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

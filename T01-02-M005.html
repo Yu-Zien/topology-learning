@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.3">
+<title>无限个开集的交未必开 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T01-02-M005"><h1 id="无限个开集的交未必开">无限个开集的交未必开</h1>
+<p>固定编号：T01-02-M005<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 18—19 页 / PDF 第 18—19
+页，命题1.2.2后的问题及例1.2.3。<br />
+学习目标：用任意元素证明无限交的结果，并在给定拓扑中核对该结果不开。</p>
+<blockquote>
+<p><strong>本段主线：</strong>解释为什么开集性质只保证有限交。<br />
+<strong>当前环节：</strong>原例的拓扑与每个参与开集已经核验。<br />
+<strong>这一步只做：</strong>逐点计算无限交，构成一个完整反例。</p>
+</blockquote>
+<p>来源说明：集合族与反例思路来自教材；下面明确标注原页矛盾，并给出可直接核验的交集论证。B为新增相似题，不据修订宣称作者原意已获确认。</p>
+<h2
+id="原页核对与方法并和交的量词不同">原页核对与方法：并和交的量词不同</h2>
+<p>第18页提出“无限个开集的交不一定是开集”。第19页原例却把运算符印作大并号，式中还缺少被运算对象，并写成“并集不是开集”。按原定义
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mn>1</mn></msub><mo>=</mo><mi mathvariant="double-struck">ℕ</mi></mrow><annotation encoding="application/x-tex">S_1=\mathbb N</annotation></semantics></math>，实际
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>⋃</mo><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow></msub><msub><mi>S</mi><mi>n</mi></msub><mo>=</mo><mi mathvariant="double-struck">ℕ</mi></mrow><annotation encoding="application/x-tex">\bigcup_{n\ge1}S_n=\mathbb N</annotation></semantics></math>，不可能等于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1\}</annotation></semantics></math>。这一字面矛盾保留为Q13。</p>
+<p><strong>本课的显式编辑修订</strong>是研究
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>⋂</mo><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow></msub><msub><mi>S</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\bigcap_{n\ge1}S_n</annotation></semantics></math>，以回应前一页的无限交问题，并在下面证明其确等于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1\}</annotation></semantics></math>；这是可核验的数学陈述，不把修订当作原页原式。</p>
+<p>属于并只需属于<strong>某一个</strong>参与者，属于交则必须属于<strong>每一个</strong>。所以证明一个点不在无限交中，只需找到一个不含它的参与集合。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>在M003的有限闭拓扑中，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>n</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>n</mi><mo>+</mo><mn>2</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">S_n=\{1\}\cup\{n+1,n+2,\ldots\}</annotation></semantics></math>。证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>⋂</mo><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow></msub><msub><mi>S</mi><mi>n</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\bigcap_{n\ge1}S_n=\{1\}</annotation></semantics></math>，并说明它为什么不是开集。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的完整反例
+</summary>
+<p>1在每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>n</mi></msub><annotation encoding="application/x-tex">S_n</annotation></semantics></math>
+中，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo>⊆</mo><msub><mo>⋂</mo><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow></msub><msub><mi>S</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\{1\}\subseteq\bigcap_{n\ge1}S_n</annotation></semantics></math>。</p>
+<p>反过来，任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>∈</mo><mi mathvariant="double-struck">ℕ</mi></mrow><annotation encoding="application/x-tex">m\in\mathbb N</annotation></semantics></math>
+且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">m\ge2</annotation></semantics></math>，取指标
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n=m</annotation></semantics></math>。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>m</mi></msub><annotation encoding="application/x-tex">S_m</annotation></semantics></math>
+只含1及大于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+的正整数，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>∉</mo><msub><mi>S</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">m\notin S_m</annotation></semantics></math>，于是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+不属于所有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>n</mi></msub><annotation encoding="application/x-tex">S_n</annotation></semantics></math>
+的交。除1外每个正整数都被排除，所以交恰为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1\}</annotation></semantics></math>。</p>
+<p>每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>n</mi></msub><annotation encoding="application/x-tex">S_n</annotation></semantics></math>
+的补集有限，因而开；但
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1\}</annotation></semantics></math>
+非空且补集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{2,3,4,\ldots\}</annotation></semantics></math>
+无限，既不属于“另列的空集”，也不满足有限补集条件。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo>∉</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\{1\}\notin\tau</annotation></semantics></math>，不是开集。</p>
+<p>这是一族开集的无限交不开的反例，不与已证的有限交性质矛盾。</p>
+</details>
+<span id="q-T01-02-M005-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>使用上一模块的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>n</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>n</mi><mo>+</mo><mn>2</mn><mo>,</mo><mi>n</mi><mo>+</mo><mn>3</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">T_n=\{1,2\}\cup\{n+2,n+3,\ldots\}</annotation></semantics></math>
+和同一个有限闭拓扑。求
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>⋂</mo><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow></msub><msub><mi>T</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\bigcap_{n\ge1}T_n</annotation></semantics></math>，逐点证明结果，并判断它是否开。另说明所有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>n</mi></msub><annotation encoding="application/x-tex">T_n</annotation></semantics></math>
+的并是什么。</p>
+<div class="practice-controls" data-question-id="T01-02-M005-B" data-module-id="T01-02-M005" data-mode="guided" data-answer-anchor="answer-T01-02-M005-B"></div><span id="answer-T01-02-M005-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开解答
+</summary>
+<p>1和2属于每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>n</mi></msub><annotation encoding="application/x-tex">T_n</annotation></semantics></math>，所以它们属于交。任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≥</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">m\ge3</annotation></semantics></math>，取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mi>m</mi><mo>−</mo><mn>1</mn><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n=m-1\ge1</annotation></semantics></math>，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">T_{m-1}</annotation></semantics></math>
+的末尾段从
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m+1</annotation></semantics></math>
+开始，且其固定部分只有1、2，所以不含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>。故其他点都不在交中，得到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>⋂</mo><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow></msub><msub><mi>T</mi><mi>n</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\bigcap_{n\ge1}T_n=\{1,2\}</annotation></semantics></math>。</p>
+<p>这个集合非空，补集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{3,4,5,\ldots\}</annotation></semantics></math>
+无限，因此不是开集。每个参与的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>n</mi></msub><annotation encoding="application/x-tex">T_n</annotation></semantics></math>
+却开，理由已在M004证明。</p>
+<p>另一方面，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub><mo>=</mo><mi mathvariant="double-struck">ℕ</mi></mrow><annotation encoding="application/x-tex">T_1=\mathbb N</annotation></semantics></math>，所有参与者又都包含于底集，所以它们的并为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℕ</mi><annotation encoding="application/x-tex">\mathbb N</annotation></semantics></math>，是开集。并与交的结论不同，不能交换运算符。</p>
+</details>
+<h2 id="精选复习">精选复习</h2><details class="prepared-review"><summary>精选复习内容（仅回看，不记分）</summary><p class="notice">这里保留课件中的预设问题与答案。计分复习在讲练间隙进行；只回看不会改变排期。</p><h3 id="t01-02-r002">T01-02-R002</h3>
+<p><strong>问题：</strong>怎样用一句成员判据区分任意并与任意交？要反驳“无限个开集的交总开”，例1.2.3还核对了哪两件事？</p>
+<details>
+<summary>
+回忆后查看答案
+</summary>
+<p>并要求至少属于一个参与者，交要求属于每个参与者。反例必须确认每个参与者确实开，并确认求出的交在同一个拓扑中不开；原例经明示修订后，参与集合补集有限而交为单点集，其补集无限。</p>
+</details>
+</details><h2 id="简短回顾">简短回顾</h2>
+<p>无限交未必开的反例已完整给出，原页并／交矛盾也已显式保留。下一步先核对教材关于离散、平庸拓扑任意交的观察，再按定义1.2.4引入闭集。</p>
+</article></div>
+<footer><span data-app-version="0.3.3">网站版本 0.3.3</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>

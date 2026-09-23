@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.3">
+<title>从无限子集条件走到离散性 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T01-01-M045"><h1 id="从无限子集条件走到离散性">从无限子集条件走到离散性</h1>
+<p>固定编号：T01-01-M045<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 17 页 / PDF 第 17 页，习题 1.1 第 8
+题。<br />
+学习目标：把一般无限集构造、两两交条件与命题1.1.9连接为原题的完整证明。</p>
+<blockquote>
+<p><strong>本段主线：</strong>若每个无限子集都属于拓扑，证明它离散。<br />
+<strong>当前环节：</strong>所需的一般分拆已在M044给出。<br />
+<strong>这一步只做：</strong>逐项确认构造的集合能使用题设，再推出单点与离散性。</p>
+</blockquote>
+<p>来源说明：B是教材原题；A和参考解为新增。一般构造采用M044明确的通常选择公理背景；教材本节未说明该前提，不能抹掉此说明。</p>
+<h2
+id="方法集合构造之后还要检查成员资格">方法：集合构造之后还要检查成员资格</h2>
+<p>构造出了
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∩</mo><mi>B</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">A\cap B=\{x\}</annotation></semantics></math>，不代表已经知道
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\{x\}\in\tau</annotation></semantics></math>。还须依次写出：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A,B</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+的<strong>无限子集</strong>，所以题设保证它们属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>；再由拓扑的两两交条件推出
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\{x\}\in\tau</annotation></semantics></math>。最后要用“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+任意”，才能调用命题1.1.9。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+无限，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+上的拓扑，且每个无限子集属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>。给定不同的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>,</mo><mi>q</mi><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">p,q\in X</annotation></semantics></math>，证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo stretchy="false" form="postfix">}</mo><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\{p,q\}\in\tau</annotation></semantics></math>。请直接构造两个无限子集，其交等于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{p,q\}</annotation></semantics></math>。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的构造与拓扑依据
+</summary>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>=</mo><mi>X</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">Y=X\setminus\{p,q\}</annotation></semantics></math>
+仍无限：若它有限，添回两个点后
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+也有限。按M044的已说明前提，把
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
+分为互不相交的无限集合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>,</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">U,V</annotation></semantics></math>。</p>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>U</mi><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">A=U\cup\{p,q\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mi>V</mi><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">B=V\cup\{p,q\}</annotation></semantics></math>。它们都是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+的无限子集，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">A,B\in\tau</annotation></semantics></math>。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>,</mo><mi>q</mi></mrow><annotation encoding="application/x-tex">p,q</annotation></semantics></math>
+同在二者中；其他公共点将同时属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>,</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">U,V</annotation></semantics></math>，不可能存在。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∩</mo><mi>B</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">A\cap B=\{p,q\}</annotation></semantics></math>。</p>
+<p>由拓扑的两两交条件，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo stretchy="false" form="postfix">}</mo><mo>=</mo><mi>A</mi><mo>∩</mo><mi>B</mi><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\{p,q\}=A\cap B\in\tau</annotation></semantics></math>。这里证明的是给定二点集的成员资格，还未据此声称离散。</p>
+</details>
+<span id="q-T01-01-E008" class="content-anchor"></span><h2 id="练习-b教材习题-1.1-第-8-题">练习 B：教材习题 1.1 第 8 题</h2>
+<p><strong>教材原题。</strong>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+为一无限集，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>
+为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+上的一个拓扑。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+中的每个无限子集属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>，证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>
+为离散拓扑。</p>
+<div class="practice-controls" data-question-id="T01-01-E008" data-module-id="T01-01-M045" data-mode="guided" data-answer-anchor="answer-T01-01-E008"></div><span id="answer-T01-01-E008" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试原题8后展开完整参考解
+</summary>
+<p>任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">x\in X</annotation></semantics></math>。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">X\setminus\{x\}</annotation></semantics></math>
+无限，因为有限集添一个点仍有限。用M044的构造把它分为互不相交的无限集合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>,</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">U,V</annotation></semantics></math>。令</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>U</mi><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>B</mi><mo>=</mo><mi>V</mi><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">A=U\cup\{x\},\qquad B=V\cup\{x\}.</annotation></semantics></math></div></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A,B</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+的无限子集，故由原题假设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">A,B\in\tau</annotation></semantics></math>。又因
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>,</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">U,V</annotation></semantics></math>
+不交且都不含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>，有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∩</mo><mi>B</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">A\cap B=\{x\}</annotation></semantics></math>。由拓扑定义(iii)，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\{x\}\in\tau</annotation></semantics></math>。</p>
+<p>由于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+任意，每个单点集都属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>。命题1.1.9于是给出
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>
+为离散拓扑。展开最后一步：对任意
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>⊆</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">S\subseteq X</annotation></semantics></math>，空集情形由定义(i)保证；非空时
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><msub><mo>⋃</mo><mrow><mi>x</mi><mo>∈</mo><mi>S</mi></mrow></msub><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">S=\bigcup_{x\in S}\{x\}\in\tau</annotation></semantics></math>，因为每个参与者已属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>。所以全部子集都被收下，证明完整。</p>
+<p>此论证不假定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+可数。本参考解在通常的选择公理背景下，使用“每个无限集含一列两两不同点”这一明示前提，分拆证明见M044。教材本节未说明这一基础背景，此处另行注明，不能冒充教材原有条件。</p>
+</details>
+<h2 id="精选复习">精选复习</h2><details class="prepared-review"><summary>精选复习内容（仅回看，不记分）</summary><p class="notice">这里保留课件中的预设问题与答案。计分复习在讲练间隙进行；只回看不会改变排期。</p><h3 id="t01-01-r015">T01-01-R015</h3>
+<p><strong>问题：</strong>“所有无限子集属于拓扑”怎样帮助证明单点集属于拓扑？在写交集之前必须核对什么？</p>
+<details>
+<summary>
+回忆后查看答案
+</summary>
+<p>对任意指定点
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>，在已说明的分拆前提下构造无限子集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi><mo>⊆</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">A,B\subseteq X</annotation></semantics></math>，使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∩</mo><mi>B</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">A\cap B=\{x\}</annotation></semantics></math>。先核对两者确为无限子集，才能从题设得到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">A,B\in\tau</annotation></semantics></math>；再用两两交推出单点属于拓扑，最后以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+的任意性调用命题1.1.9。</p>
+</details>
+</details><h2 id="简短回顾">简短回顾</h2>
+<p>原题8的一般证明已完成，并明示分拆所用前提。下一题将检验十个实数区间簇，需要分别给出失败见证或完整闭合证明。</p>
+</article></div>
+<footer><span data-app-version="0.3.3">网站版本 0.3.3</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>

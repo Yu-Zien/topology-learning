@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.3">
+<title>两种区间混合时的两两交 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T01-01-M056"><h1 id="两种区间混合时的两两交">两种区间混合时的两两交</h1>
+<p>固定编号：T01-01-M056<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 18 页 / PDF 第 18 页，习题 1.1 第
+*9(ix) 题的证明准备。<br />
+学习目标：覆盖圆括号、方括号区间相交的全部类型，尤其正确处理同半径。</p>
+<blockquote>
+<p><strong>本段主线：</strong>判断同时允许两种括号的原题9(ix)。<br />
+<strong>当前环节：</strong>先检查两两交，任意并留到下一模块。<br />
+<strong>这一步只做：</strong>按半径比较决定交集，以及交集端点是否保留。</p>
+</blockquote>
+<p>来源说明：以下缩写、A/B及证明为新增铺垫，不把单独的交条件检查记为完成原题9(ix)。</p>
+<h2
+id="符号解释与方法同半径时圆括号去掉端点">符号解释与方法：同半径时圆括号去掉端点</h2>
+<p>记
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>O</mi><mi>r</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>r</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O_r=(-r,r)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>r</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mi>r</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">C_r=[-r,r]</annotation></semantics></math>，其中
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r&gt;0</annotation></semantics></math>。例如
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>O</mi><mn>2</mn></msub><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">C_1\cap O_2=C_1</annotation></semantics></math>，因为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>1</mn></msub><annotation encoding="application/x-tex">C_1</annotation></semantics></math>
+全在较大的区间内部；但
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>∩</mo><msub><mi>O</mi><mn>2</mn></msub><mo>=</mo><msub><mi>O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">C_2\cap O_2=O_2</annotation></semantics></math>，因为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>O</mi><mn>2</mn></msub><annotation encoding="application/x-tex">O_2</annotation></semantics></math>
+没有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>±</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\pm2</annotation></semantics></math>。</p>
+<p>两种同类的交取较小半径：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>O</mi><mi>r</mi></msub><mo>∩</mo><msub><mi>O</mi><mi>s</mi></msub><mo>=</mo><msub><mi>O</mi><mrow><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>,</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub></mrow><annotation encoding="application/x-tex">O_r\cap O_s=O_{\min(r,s)}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>r</mi></msub><mo>∩</mo><msub><mi>C</mi><mi>s</mi></msub><mo>=</mo><msub><mi>C</mi><mrow><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>,</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub></mrow><annotation encoding="application/x-tex">C_r\cap C_s=C_{\min(r,s)}</annotation></semantics></math>。混合时，要区分严格小于与等于，不能只说“取较小半径并保留原括号”。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>对任意正实数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>,</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">r,s</annotation></semantics></math>，按
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&lt;</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">r&lt;s</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">r=s</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">r&gt;s</annotation></semantics></math>
+分别求
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>r</mi></msub><mo>∩</mo><msub><mi>O</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">C_r\cap O_s</annotation></semantics></math>，写出每种结果的包含或端点依据。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的完整混合分类
+</summary>
+<p>若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&lt;</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">r&lt;s</annotation></semantics></math>，每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msub><mi>C</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">x\in C_r</annotation></semantics></math>
+满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>r</mi><mo>&lt;</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">|x|\le r&lt;s</annotation></semantics></math>，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>r</mi></msub><mo>⊆</mo><msub><mi>O</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">C_r\subseteq O_s</annotation></semantics></math>，交为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>r</mi></msub><annotation encoding="application/x-tex">C_r</annotation></semantics></math>，两个端点保留。</p>
+<p>若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">r=s</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>O</mi><mi>s</mi></msub><mo>⊆</mo><msub><mi>C</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">O_s\subseteq C_r</annotation></semantics></math>，但
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>±</mi><mi>r</mi><mo>∉</mo><msub><mi>O</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">\pm r\notin O_s</annotation></semantics></math>，交为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>O</mi><mi>s</mi></msub><annotation encoding="application/x-tex">O_s</annotation></semantics></math>。</p>
+<p>若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">r&gt;s</annotation></semantics></math>，每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msub><mi>O</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">x\in O_s</annotation></semantics></math>
+满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><mi>s</mi><mo>&lt;</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">|x|&lt;s&lt;r</annotation></semantics></math>，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>O</mi><mi>s</mi></msub><mo>⊆</mo><msub><mi>C</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">O_s\subseteq C_r</annotation></semantics></math>，交仍为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>O</mi><mi>s</mi></msub><annotation encoding="application/x-tex">O_s</annotation></semantics></math>。</p>
+<p>合起来：</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>r</mi></msub><mo>∩</mo><msub><mi>O</mi><mi>s</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>C</mi><mi>r</mi></msub><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>r</mi><mo>&lt;</mo><mi>s</mi><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>O</mi><mi>s</mi></msub><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>r</mi><mo>≥</mo><mi>s</mi><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">C_r\cap O_s=\begin{cases}C_r,&amp;r&lt;s,\\O_s,&amp;r\ge s.\end{cases}</annotation></semantics></math></div></p>
+<p>交换相交的先后顺序不改变结果。再加上两种同类交，以及与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⌀</mi><annotation encoding="application/x-tex">\varnothing</annotation></semantics></math>
+相交的情况，就覆盖所有成员对。</p>
+</details>
+<span id="q-T01-01-M056-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>求下列三个交，并分别说明两个端点是否保留：</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><msqrt><mn>2</mn></msqrt></msub><mo>∩</mo><msub><mi>O</mi><mn>1</mn></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>C</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>O</mi><msqrt><mn>2</mn></msqrt></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>C</mi><mrow><mn>3</mn><mi>/</mi><mn>2</mn></mrow></msub><mo>∩</mo><msub><mi>O</mi><mrow><mn>3</mn><mi>/</mi><mn>2</mn></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">C_{\sqrt2}\cap O_1,\qquad C_1\cap O_{\sqrt2},\qquad C_{3/2}\cap O_{3/2}.</annotation></semantics></math></div></p>
+<span id="answer-T01-01-M056-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开解答
+</summary>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>2</mn></msqrt><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sqrt2&gt;1</annotation></semantics></math>，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>O</mi><mn>1</mn></msub><mo>⊆</mo><msub><mi>C</mi><msqrt><mn>2</mn></msqrt></msub></mrow><annotation encoding="application/x-tex">O_1\subseteq C_{\sqrt2}</annotation></semantics></math>，第一个交为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>O</mi><mn>1</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O_1=(-1,1)</annotation></semantics></math>，不含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>±</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">\pm1</annotation></semantics></math>。</p>
+<p>第二个交中
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>&lt;</mo><msqrt><mn>2</mn></msqrt></mrow><annotation encoding="application/x-tex">1&lt;\sqrt2</annotation></semantics></math>，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>⊆</mo><msub><mi>O</mi><msqrt><mn>2</mn></msqrt></msub></mrow><annotation encoding="application/x-tex">C_1\subseteq O_{\sqrt2}</annotation></semantics></math>，结果为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">C_1=[-1,1]</annotation></semantics></math>，含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>±</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">\pm1</annotation></semantics></math>。</p>
+<p>第三个交半径相同，圆括号一方排除了
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>±</mi><mn>3</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\pm3/2</annotation></semantics></math>，因此结果为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>O</mi><mrow><mn>3</mn><mi>/</mi><mn>2</mn></mrow></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>3</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>3</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O_{3/2}=(-3/2,3/2)</annotation></semantics></math>。这里的等号情形不能误用第一类
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&lt;</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">r&lt;s</annotation></semantics></math>
+的结论。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>混合交中，小方括号区间在较大圆括号区间内部时保留端点；半径相同则由圆括号排除端点。下一步检查任意混合子族的并。</p>
+</article></div>
+<footer><span data-app-version="0.3.3">网站版本 0.3.3</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T01-01-M056.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>
