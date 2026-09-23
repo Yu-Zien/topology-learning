@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.5">
+<title>同一实数集上的多种拓扑 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T02-01-M001"><h1 id="同一实数集上的多种拓扑">同一实数集上的多种拓扑</h1>
+<p>固定编号：T02-01-M001<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 29 页 / PDF 第 29
+页，第二章导言。<br />
+学习目标：给出实数集上的具体拓扑规则后，说明集合开性必须相对于该规则判断。</p>
+<blockquote>
+<p><strong>本段主线：</strong>进入实数轴上的欧几里得拓扑。<br />
+<strong>当前环节：</strong>先回顾实数集上已经出现多种拓扑。<br />
+<strong>这一步只做：</strong>比较成员规则，暂不使用下一模块才正式给出的欧几里得开集定义。</p>
+</blockquote>
+<p>来源说明：教材导言回顾平庸、离散、有限闭以及习题1.1第5、9题给出的实数拓扑，并预告欧几里得拓扑与“基”；A/B为新增回顾。</p>
+<h2 id="方法底集相同成员表仍可不同">方法：底集相同，成员表仍可不同</h2>
+<p>在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>
+上，离散拓扑收下所有子集，平庸拓扑只收空集和底集；有限闭拓扑收下空集及补集有限的集合。习题1.1还给过整数半径对称区间等其他拓扑。</p>
+<p>所以“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>⊆</mo><mi mathvariant="double-struck">ℝ</mi></mrow><annotation encoding="application/x-tex">S\subseteq\mathbb R</annotation></semantics></math>”只说明它有资格被讨论，不说明它在哪个拓扑中开。后面说“拓扑空间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>”而未另指拓扑时，教材约定指欧几里得拓扑。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mo>⊆</mo><mi mathvariant="double-struck">ℝ</mi></mrow><annotation encoding="application/x-tex">S=\{0\}\subseteq\mathbb R</annotation></semantics></math>。分别判断它在离散拓扑、平庸拓扑和有限闭拓扑中是否开，并给成员规则依据。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的三项比较
+</summary>
+<p>离散拓扑收下所有子集，所以S开。平庸拓扑只含空集和实数集，S不是其中之一，所以不开。</p>
+<p>有限闭拓扑中非空开集须有有限补集；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℝ</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathbb R\setminus\{0\}</annotation></semantics></math>
+无限，所以S不开。这里没有使用区间外形猜测。</p>
+</details>
+<span id="q-T02-01-M001-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mi mathvariant="double-struck">ℝ</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">U=\mathbb R\setminus\{0\}</annotation></semantics></math>。分别判断它在上述三种拓扑中是否开；并说明为什么这些结论还不能代替对欧几里得拓扑的判断。</p>
+<span id="answer-T02-01-M001-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开解答
+</summary>
+<p>U是实数子集，故在离散拓扑中开；它是非空真子集，不在平庸拓扑中。它的补集只有一个点，有限，所以在有限闭拓扑中开。</p>
+<p>欧几里得拓扑有另一套成员规则，尚未在本模块正式定义。前三项结论不能自动搬过去；下一模块须按新定义重新判断。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>同一个底集可以承载多种拓扑。第二章将把欧几里得拓扑作为实数轴上的默认拓扑，并进一步引出拓扑的基。</p>
+</article></div>
+<footer><span data-app-version="0.3.5">网站版本 0.3.5</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T02-01-M001.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

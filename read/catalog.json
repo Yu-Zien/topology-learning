@@ -1,6 +1,6 @@
 {
-  "appVersion": "0.3.4",
-  "contentVersion": "77571b3be93127a42478cc4c8c0d2c8a16cab808936a26f234b6cf919f4045ab",
+  "appVersion": "0.3.5",
+  "contentVersion": "6b24aece495eea537b21af8d90867b1bcbf837a51be2abbff03ae812aabe71a5",
   "modules": [
     {
       "id": "T01-01-M001",
@@ -1161,6 +1161,346 @@
       "version": "0.1@274bd8102eee",
       "html": "T01-03-M029.html",
       "markdown": "T01-03-M029.md"
+    },
+    {
+      "id": "T01-03-M030",
+      "title": "T1空间与离散空间",
+      "page": "26",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@2c4dc90ec351",
+      "html": "T01-03-M030.html",
+      "markdown": "T01-03-M030.md"
+    },
+    {
+      "id": "T01-03-M031",
+      "title": "至少两点的平庸空间与T1",
+      "page": "26",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@9f4875d1ffc4",
+      "html": "T01-03-M031.html",
+      "markdown": "T01-03-M031.md"
+    },
+    {
+      "id": "T01-03-M032",
+      "title": "无限有限闭空间与T1",
+      "page": "26",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@244902697d94",
+      "html": "T01-03-M032.html",
+      "markdown": "T01-03-M032.md"
+    },
+    {
+      "id": "T01-03-M033",
+      "title": "六点原例与T1",
+      "page": "26",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@80f50b77a956",
+      "html": "T01-03-M033.html",
+      "markdown": "T01-03-M033.md"
+    },
+    {
+      "id": "T01-03-M034",
+      "title": "整数圆括号半径簇与T1",
+      "page": "26",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@cbdf4511bd08",
+      "html": "T01-03-M034.html",
+      "markdown": "T01-03-M034.md"
+    },
+    {
+      "id": "T01-03-M035",
+      "title": "整数方括号半径簇与T1",
+      "page": "26",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c835497094ca",
+      "html": "T01-03-M035.html",
+      "markdown": "T01-03-M035.md"
+    },
+    {
+      "id": "T01-03-M036",
+      "title": "整数起点实射线簇与T1",
+      "page": "26",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c22e11e523d6",
+      "html": "T01-03-M036.html",
+      "markdown": "T01-03-M036.md"
+    },
+    {
+      "id": "T01-03-M037",
+      "title": "正整数初始段与T1",
+      "page": "26",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@8623bf0dc1b9",
+      "html": "T01-03-M037.html",
+      "markdown": "T01-03-M037.md"
+    },
+    {
+      "id": "T01-03-M038",
+      "title": "正整数末尾段与T1",
+      "page": "26",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@62794235128b",
+      "html": "T01-03-M038.html",
+      "markdown": "T01-03-M038.md"
+    },
+    {
+      "id": "T01-03-M039",
+      "title": "有限闭又离散的底集",
+      "page": "26",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@6e9c4b6a09d1",
+      "html": "T01-03-M039.html",
+      "markdown": "T01-03-M039.md"
+    },
+    {
+      "id": "T01-03-M040",
+      "title": "T0要求区分任意两点",
+      "page": "26",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@326917b8f1e3",
+      "html": "T01-03-M040.html",
+      "markdown": "T01-03-M040.md"
+    },
+    {
+      "id": "T01-03-M041",
+      "title": "T1推出T0",
+      "page": "26",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@506a6639e62e",
+      "html": "T01-03-M041.html",
+      "markdown": "T01-03-M041.md"
+    },
+    {
+      "id": "T01-03-M042",
+      "title": "六种原空间的T0核对",
+      "page": "27",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@05f70727f8f1",
+      "html": "T01-03-M042.html",
+      "markdown": "T01-03-M042.md"
+    },
+    {
+      "id": "T01-03-M043",
+      "title": "Sierpinski空间",
+      "page": "27",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@1bffe47cd653",
+      "html": "T01-03-M043.html",
+      "markdown": "T01-03-M043.md"
+    },
+    {
+      "id": "T01-03-M044",
+      "title": "两种正整数段拓扑的T0",
+      "page": "27",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@5d3c0550799f",
+      "html": "T01-03-M044.html",
+      "markdown": "T01-03-M044.md"
+    },
+    {
+      "id": "T01-03-M045",
+      "title": "可数与至多可数的口径",
+      "page": "25—27",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c763f5ac323b",
+      "html": "T01-03-M045.html",
+      "markdown": "T01-03-M045.md"
+    },
+    {
+      "id": "T01-03-M046",
+      "title": "可数集的子集与两集合并",
+      "page": "27",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@99eb4734b624",
+      "html": "T01-03-M046.html",
+      "markdown": "T01-03-M046.md"
+    },
+    {
+      "id": "T01-03-M047",
+      "title": "可数闭拓扑的完整核验",
+      "page": "27",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@43ee9fe635df",
+      "html": "T01-03-M047.html",
+      "markdown": "T01-03-M047.md"
+    },
+    {
+      "id": "T01-03-M048",
+      "title": "两个拓扑的并未必是拓扑",
+      "page": "27",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@7b6d66b3ded0",
+      "html": "T01-03-M048.html",
+      "markdown": "T01-03-M048.md"
+    },
+    {
+      "id": "T01-03-M049",
+      "title": "两个拓扑的交仍是拓扑",
+      "page": "27",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c7088f6aa8c6",
+      "html": "T01-03-M049.html",
+      "markdown": "T01-03-M049.md"
+    },
+    {
+      "id": "T01-03-M050",
+      "title": "两个T1拓扑的交",
+      "page": "27",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@2c048dcd389d",
+      "html": "T01-03-M050.html",
+      "markdown": "T01-03-M050.md"
+    },
+    {
+      "id": "T01-03-M051",
+      "title": "两个T0拓扑的交未必T0",
+      "page": "27",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@4aad4db76ca8",
+      "html": "T01-03-M051.html",
+      "markdown": "T01-03-M051.md"
+    },
+    {
+      "id": "T01-03-M052",
+      "title": "有限多个拓扑相交",
+      "page": "27",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@46658b3592f6",
+      "html": "T01-03-M052.html",
+      "markdown": "T01-03-M052.md"
+    },
+    {
+      "id": "T01-03-M053",
+      "title": "空拓扑族的交在哪个全集中",
+      "page": "27",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@732632eef8c3",
+      "html": "T01-03-M053.html",
+      "markdown": "T01-03-M053.md"
+    },
+    {
+      "id": "T01-03-M054",
+      "title": "任意多个拓扑相交",
+      "page": "27",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@86fcde7421fb",
+      "html": "T01-03-M054.html",
+      "markdown": "T01-03-M054.md"
+    },
+    {
+      "id": "T01-04-M001",
+      "title": "第一章拓扑类型总览",
+      "page": "27—28",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@e66c6c479f7b",
+      "html": "T01-04-M001.html",
+      "markdown": "T01-04-M001.md"
+    },
+    {
+      "id": "T01-04-M002",
+      "title": "开闭名称与反证逻辑",
+      "page": "28",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d3caf016d68a",
+      "html": "T01-04-M002.html",
+      "markdown": "T01-04-M002.md"
+    },
+    {
+      "id": "T01-04-M003",
+      "title": "证明的构思与练习地图",
+      "page": "28",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@4a65d0b5c40d",
+      "html": "T01-04-M003.html",
+      "markdown": "T01-04-M003.md"
+    },
+    {
+      "id": "T01-04-M004",
+      "title": "分离性质、逆映像与下一章",
+      "page": "28",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@e779f370ef2f",
+      "html": "T01-04-M004.html",
+      "markdown": "T01-04-M004.md"
+    },
+    {
+      "id": "T02-01-M001",
+      "title": "同一实数集上的多种拓扑",
+      "page": "29",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@46ad30bc9ef0",
+      "html": "T02-01-M001.html",
+      "markdown": "T02-01-M001.md"
+    },
+    {
+      "id": "T02-01-M002",
+      "title": "欧几里得开集的局部区间条件",
+      "page": "29",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@04fe276daa26",
+      "html": "T02-01-M002.html",
+      "markdown": "T02-01-M002.md"
+    },
+    {
+      "id": "T02-01-M003",
+      "title": "欧几里得拓扑的底集与空集",
+      "page": "29—30",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c53074313d1e",
+      "html": "T02-01-M003.html",
+      "markdown": "T02-01-M003.md"
+    },
+    {
+      "id": "T02-01-M004",
+      "title": "欧几里得开集的任意并",
+      "page": "30",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@1ee4f7cd75a5",
+      "html": "T02-01-M004.html",
+      "markdown": "T02-01-M004.md"
+    },
+    {
+      "id": "T02-01-M005",
+      "title": "欧几里得开集的两两交",
+      "page": "30",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@5c3d62d42793",
+      "html": "T02-01-M005.html",
+      "markdown": "T02-01-M005.md"
     }
   ]
 }

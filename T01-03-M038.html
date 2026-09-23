@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.5">
+<title>正整数末尾段与T1 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T01-03-M038"><h1 id="正整数末尾段与t1">正整数末尾段与T1</h1>
+<p>固定编号：T01-03-M038<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 26 页 / PDF 第 26
+页，习题1.3第3(ix)题；回引习题1.1第6(ii)题。<br />
+学习目标：区分“有一个闭单点”和“每个单点闭”，完成九项T1汇总。</p>
+<blockquote>
+<p><strong>本段主线：</strong>完成教材原题3的九项判别。<br />
+<strong>当前环节：</strong>最后检查final segment拓扑。<br />
+<strong>这一步只做：</strong>给出失败点，并汇总每项的独立依据。</p>
+</blockquote>
+<p>来源说明：B保留原题及“恰有两个”总任务；A和汇总新增。</p>
+<h2
+id="方法某一单点闭不足以满足全称条件">方法：某一单点闭不足以满足全称条件</h2>
+<p>在末尾段拓扑中，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1\}</annotation></semantics></math>
+的补集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>2</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">F_2=\{2,3,\ldots\}</annotation></semantics></math>
+开，所以它闭。但
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{2\}</annotation></semantics></math>
+的补集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1,3,4,\ldots\}</annotation></semantics></math>
+不是任何末尾段：它含1却漏2。故空间仍不T1。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>逐项验证上面的两个单点，并说明哪一个决定T1结论。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的全称判断
+</summary>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℕ</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo>=</mo><msub><mi>F</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\mathbb N\setminus\{1\}=F_2</annotation></semantics></math>
+开，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1\}</annotation></semantics></math>
+闭。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℕ</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathbb N\setminus\{2\}</annotation></semantics></math>
+非空、非底集；若等于F_n，含1迫使n=1，从而也应含2，矛盾。所以它不开，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{2\}</annotation></semantics></math>
+不闭。</p>
+<p>T1要求每个单点闭，失败的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{2\}</annotation></semantics></math>
+决定空间不T1。</p>
+</details>
+<span id="q-T01-03-E003-ix" class="content-anchor"></span><h2 id="练习-b教材习题1.3第3ix题及整题汇总">练习
+B：教材习题1.3第3(ix)题及整题汇总</h2>
+<p>判断习题1.1第6(ii)题的final
+segment拓扑是否T1，并汇总原题3九项；每项保留自己的理由，不由“恰有两个”反推。</p>
+<div class="practice-controls" data-question-id="T01-03-E003-ix" data-module-id="T01-03-M038" data-mode="guided" data-answer-anchor="answer-T01-03-E003-ix"></div><span id="answer-T01-03-E003-ix" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试第3(ix)题后展开解答与汇总
+</summary>
+<p>末尾段拓扑不T1，因为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{2\}</annotation></semantics></math>
+的补集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1,3,4,\ldots\}</annotation></semantics></math>
+不是空集、底集或任何末尾段。</p>
+<p>九项汇总：</p>
+<table>
+<thead>
+<tr>
+<th>小问</th>
+<th>T1?</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(i)离散空间</td>
+<td>是</td>
+<td>所有单点补集开</td>
+</tr>
+<tr>
+<td>(ii)至少两点平庸空间</td>
+<td>否</td>
+<td>单点补集为非空真子集</td>
+</tr>
+<tr>
+<td>(iii)无限有限闭空间</td>
+<td>是</td>
+<td>所有单点有限，因而闭</td>
+</tr>
+<tr>
+<td>(iv)例1.1.2</td>
+<td>否</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{b\}</annotation></semantics></math>
+不闭</td>
+</tr>
+<tr>
+<td>(v)整数圆括号实区间簇</td>
+<td>否</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℝ</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathbb R\setminus\{0\}</annotation></semantics></math>
+不是有界区间</td>
+</tr>
+<tr>
+<td>(vi)整数方括号实区间簇</td>
+<td>否</td>
+<td>同一补集不是有界方括号区间</td>
+</tr>
+<tr>
+<td>(vii)整数起点实射线簇</td>
+<td>否</td>
+<td>同一补集向左无界</td>
+</tr>
+<tr>
+<td>(viii)正整数初始段</td>
+<td>否</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℕ</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathbb N\setminus\{1\}</annotation></semantics></math>
+不是初始段</td>
+</tr>
+<tr>
+<td>(ix)正整数末尾段</td>
+<td>否</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℕ</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathbb N\setminus\{2\}</annotation></semantics></math>
+不是末尾段</td>
+</tr>
+</tbody>
+</table>
+<p>恰有(i)(iii)两个T1空间，与教材提示一致；一致的数量只是逐项核验后的复核。</p>
+</details>
+<h2 id="精选复习">精选复习</h2><details class="prepared-review"><summary>精选复习内容（仅回看，不记分）</summary><p class="notice">这里保留课件中的预设问题与答案。计分复习在讲练间隙进行；只回看不会改变排期。</p><h3 id="t01-03-r009">T01-03-R009</h3>
+<p><strong>问题：</strong>判断T1时，为什么一个闭单点不能作为成功证据，而一个不闭单点可以作为失败证据？九项中哪两个成立？</p>
+<details>
+<summary>
+回忆后查看答案
+</summary>
+<p>T1是“每个单点闭”的全称条件，成功要覆盖任意点，失败只需一个反例。离散空间和无限有限闭空间T1；其余各有具体不闭单点见证。</p>
+</details>
+</details><h2 id="简短回顾">简短回顾</h2>
+<p>原题3九项全部完成，恰有离散与无限有限闭空间T1。下一题反过来要求有限闭且离散的底集必须有限。</p>
+</article></div>
+<footer><span data-app-version="0.3.5">网站版本 0.3.5</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.5">
+<title>第一章拓扑类型总览 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T01-04-M001"><h1 id="第一章拓扑类型总览">第一章拓扑类型总览</h1>
+<p>固定编号：T01-04-M001<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 27—28 页 / PDF 第 27—28
+页，§1.4后记关于第一章拓扑例子的回顾。<br />
+学习目标：对同一集合与子集，准确指出所用拓扑后再判断开集，区分本章主要例子。</p>
+<blockquote>
+<p><strong>本段主线：</strong>收拢第一章并准备进入欧几里得拓扑。<br />
+<strong>当前环节：</strong>先整理教材点名的平庸、离散、有限闭、initial
+segment和final segment拓扑。<br />
+<strong>这一步只做：</strong>把判断与具体成员规则绑定，避免只说“这个集合开”。</p>
+</blockquote>
+<p>来源说明：本章拓扑类型及下一章欧几里得拓扑的预告来自教材后记；A/B与表格为新增回顾，不引入第二章定义。</p>
+<h2
+id="简短回顾同一个集合的资格随拓扑变化">简短回顾：同一个集合的资格随拓扑变化</h2>
+<table>
+<thead>
+<tr>
+<th>拓扑</th>
+<th>开集规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>平庸拓扑</td>
+<td>只有空集与底集</td>
+</tr>
+<tr>
+<td>离散拓扑</td>
+<td>全部子集</td>
+</tr>
+<tr>
+<td>无限底集的有限闭拓扑</td>
+<td>空集及补集有限的子集</td>
+</tr>
+<tr>
+<td>正整数initial segment拓扑</td>
+<td>空集、底集、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>n</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1,\ldots,n\}</annotation></semantics></math></td>
+</tr>
+<tr>
+<td>正整数final segment拓扑</td>
+<td>空集、底集、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>n</mi><mo>,</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{n,n+1,\ldots\}</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+<p>教材强调，在一个集合上可以定义许多不同拓扑。写“U开”时必须知道在哪个空间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>,</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X,\tau)</annotation></semantics></math>
+中判断。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℕ</mi><annotation encoding="application/x-tex">\mathbb N</annotation></semantics></math>
+上判断
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">U=\{2,3,4,\ldots\}</annotation></semantics></math>
+分别是否属于平庸、离散、有限闭、initial segment与final
+segment拓扑，并说明理由。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的五项核对
+</summary>
+<p>U非空且不等于底集，所以不在平庸拓扑；离散拓扑收下全部子集，所以在。</p>
+<p>U的补集为单点
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1\}</annotation></semantics></math>，有限，因此U在有限闭拓扑中开。它不是从1开始的有限初始段，所以不在initial
+segment拓扑；它正是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mn>2</mn></msub><annotation encoding="application/x-tex">F_2</annotation></semantics></math>，所以在final
+segment拓扑中开。</p>
+</details>
+<span id="q-T01-04-M001-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>在同样五种正整数拓扑中判断
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">V=\{1,2,3\}</annotation></semantics></math>
+是否开。每项给出成员规则，不用“显然”。</p>
+<div class="practice-controls" data-question-id="T01-04-M001-B" data-module-id="T01-04-M001" data-mode="guided" data-answer-anchor="answer-T01-04-M001-B"></div><span id="answer-T01-04-M001-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开五项判断
+</summary>
+<p>V是非空真子集，所以不在平庸拓扑；离散拓扑收下它。</p>
+<p>V的补集无限，V非空，所以不在有限闭拓扑。它正是初始段
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>I</mi><mn>3</mn></msub><annotation encoding="application/x-tex">I_3</annotation></semantics></math>，故在initial
+segment拓扑中开；它有限且不等于底集，不可能是任何无限末尾段，故不在final
+segment拓扑中。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>集合本身不携带“开”的标签，拓扑才给出成员规则。下一章将正式引入实数轴上的欧几里得拓扑。</p>
+</article></div>
+<footer><span data-app-version="0.3.5">网站版本 0.3.5</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>

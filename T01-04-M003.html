@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.5">
+<title>证明的构思与练习地图 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T01-04-M003"><h1 id="证明的构思与练习地图">证明的构思与练习地图</h1>
+<p>固定编号：T01-04-M003<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 28 页 / PDF 第 28
+页，§1.4后记关于证明的重要性及推荐练习。<br />
+学习目标：把一个一般证明组织成目标、关键中间目标与可用结论，避免用若干特例冒充证明。</p>
+<blockquote>
+<p><strong>本段主线：</strong>提炼第一章真正反复使用的证明方法。<br />
+<strong>当前环节：</strong>回看例1.1.8、命题1.1.9、例1.3.3及教材点名的练习。<br />
+<strong>这一步只做：</strong>从结论倒推关键中间目标，再检查该目标覆盖全部量词。</p>
+</blockquote>
+<p>来源说明：证明主题和教材推荐的练习编号来自后记；A/B为新增方法回顾，不替代对应原题的完整课件。</p>
+<h2 id="方法先问什么中间结论足够">方法：先问什么中间结论足够</h2>
+<p>命题1.1.9要证离散，足够证明任意子集开；单点集已知开，便把任意子集写成单点并。例1.3.3要证X有限，足够把X写成两个已知有限集的并；第三个闭开集正好提供这两部分。</p>
+<p>本章已完整处理教材后记点名的好练习：1.1第8题、1.2第2与第4题、1.3第1与第4题。每题的一般量词、空集或无限边界均在原位置展开。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>题设：拓扑τ含X的每个单点集。目标：τ离散。写出一个三步证明骨架，每一步说明依据，不展开所有细节。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的证明骨架
+</summary>
+<ol type="1">
+<li>任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>⊆</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">S\subseteq X</annotation></semantics></math>，离散性要求证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">S\in\tau</annotation></semantics></math>。</li>
+<li>非空时写
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><msub><mo>⋃</mo><mrow><mi>x</mi><mo>∈</mo><mi>S</mi></mrow></msub><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">S=\bigcup_{x\in S}\{x\}</annotation></semantics></math>；每个单点由题设在τ中，任意并条件给S在τ中。空集由拓扑条件(i)处理。</li>
+<li>S任意，故全部子集属于τ，τ离散。</li>
+</ol>
+<p>骨架保留任意S及空集，没有缩成有限底集列举。</p>
+</details>
+<span id="q-T01-04-M003-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>题设：X上的有限闭拓扑至少有三个不同闭开集。目标：X有限。写出对应三步证明骨架，指出“第三个”如何使用。</p>
+<div class="practice-controls" data-question-id="T01-04-M003-B" data-module-id="T01-04-M003" data-mode="guided" data-answer-anchor="answer-T01-04-M003-B"></div><span id="answer-T01-04-M003-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开骨架
+</summary>
+<ol type="1">
+<li>空集与底集已是两个闭开集，第三个给出非空真闭开集S。</li>
+<li>S闭且非底集，所以有限；S开使补集闭，S非空使补集非底集，所以补集也有限。</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mi>S</mi><mo>∪</mo><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>\</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X=S\cup(X\setminus S)</annotation></semantics></math>，为两个有限集的并，所以有限。</li>
+</ol>
+<p>每个条件都有明确用途，不能只写“由定义显然”。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>证明构思不是猜答案，而是找一个足以推出目标、又能由题设获得的中间结论，并保持原命题的全部量词。</p>
+</article></div>
+<footer><span data-app-version="0.3.5">网站版本 0.3.5</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>
