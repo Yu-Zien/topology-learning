@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.6">
+<title>基判别命题充分性：任意并 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T02-02-M012"><h1 id="基判别命题充分性任意并">基判别命题充分性：任意并</h1>
+<p>固定编号：T02-02-M012<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 36 页 / PDF 第 36
+页，命题2.2.8充分性证明的拓扑条件(ii)。<br />
+学习目标：把“一族基元素之并”的任意并展平成一次基元素之并，证明构造出的τ对任意并封闭。</p>
+<blockquote>
+<p><strong>本段主线：</strong>继续命题2.2.8的充分方向。<br />
+<strong>当前环节：</strong>τ已经含X和空集，现在核验任意多个τ成员的并。<br />
+<strong>这一步只做：</strong>合并两层索引，不使用条件(b)。</p>
+</blockquote>
+<p>来源说明：教材说明每个τ成员都是基元素的并，所有这类集合的并仍是基元素的并；本模块把索引与元素论证写全。A/B为新增。</p>
+<h2 id="方法两层并可以展平">方法：两层并可以展平</h2>
+<p>设对每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow><annotation encoding="application/x-tex">j\in J</annotation></semantics></math>，</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>j</mi></msub><mo>=</mo><munder><mo>⋃</mo><mrow><mi>k</mi><mo>∈</mo><msub><mi>K</mi><mi>j</mi></msub></mrow></munder><msub><mi>B</mi><mrow><mi>j</mi><mo>,</mo><mi>k</mi></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>B</mi><mrow><mi>j</mi><mo>,</mo><mi>k</mi></mrow></msub><mo>∈</mo><mi mathvariant="script">ℬ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+T_j=\bigcup_{k\in K_j}B_{j,k},\qquad B_{j,k}\in\mathcal B.
+</annotation></semantics></math></div></p>
+<p>那么</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>⋃</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></munder><msub><mi>T</mi><mi>j</mi></msub><mo>=</mo><munder><mo>⋃</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></munder><munder><mo>⋃</mo><mrow><mi>k</mi><mo>∈</mo><msub><mi>K</mi><mi>j</mi></msub></mrow></munder><msub><mi>B</mi><mrow><mi>j</mi><mo>,</mo><mi>k</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\bigcup_{j\in J}T_j
+=\bigcup_{j\in J}\bigcup_{k\in K_j}B_{j,k}.
+</annotation></semantics></math></div></p>
+<p>右边仍只是一些
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+成员的并，所以属于τ。J为空时结果为空集，已经在τ中。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">ℬ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>B</mi><mn>1</mn></msub><mo>,</mo><msub><mi>B</mi><mn>2</mn></msub><mo>,</mo><msub><mi>B</mi><mn>3</mn></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathcal B=\{B_1,B_2,B_3\}</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub><mo>=</mo><msub><mi>B</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>B</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">T_1=B_1\cup B_2</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>2</mn></msub><mo>=</mo><msub><mi>B</mi><mn>2</mn></msub><mo>∪</mo><msub><mi>B</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">T_2=B_2\cup B_3</annotation></semantics></math>。把
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>T</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">T_1\cup T_2</annotation></semantics></math>
+展平为基元素的并。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的展平
+</summary>
+<p>直接合并参与成员：</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>T</mi><mn>2</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>B</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>B</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>∪</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>B</mi><mn>2</mn></msub><mo>∪</mo><msub><mi>B</mi><mn>3</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>B</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>B</mi><mn>2</mn></msub><mo>∪</mo><msub><mi>B</mi><mn>3</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+T_1\cup T_2
+=(B_1\cup B_2)\cup(B_2\cup B_3)
+=B_1\cup B_2\cup B_3.
+</annotation></semantics></math></div></p>
+<p>重复的B2只保留一次也不改变并集。结果仍是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+成员的并，所以若T1、T2在构造的τ中，它们的并也在τ中。</p>
+</details>
+<span id="q-T02-02-M012-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>设τ是所有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+成员之并组成的集合簇，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>T</mi><mi>j</mi></msub><mo>:</mo><mi>j</mi><mo>∈</mo><mi>J</mi><mo stretchy="false" form="postfix">}</mo><mo>⊆</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\{T_j:j\in J\}\subseteq\tau</annotation></semantics></math>。完整证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>⋃</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></msub><msub><mi>T</mi><mi>j</mi></msub><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\bigcup_{j\in J}T_j\in\tau</annotation></semantics></math>，并覆盖J为空的情形。</p>
+<span id="answer-T02-02-M012-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开一般证明
+</summary>
+<p>对每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow><annotation encoding="application/x-tex">j\in J</annotation></semantics></math>，因为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>j</mi></msub><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">T_j\in\tau</annotation></semantics></math>，存在子族
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">𝒜</mi><mi>j</mi></msub><mo>⊆</mo><mi mathvariant="script">ℬ</mi></mrow><annotation encoding="application/x-tex">\mathcal A_j\subseteq\mathcal B</annotation></semantics></math>
+使</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>j</mi></msub><mo>=</mo><munder><mo>⋃</mo><mrow><mi>B</mi><mo>∈</mo><msub><mi mathvariant="script">𝒜</mi><mi>j</mi></msub></mrow></munder><mi>B</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+T_j=\bigcup_{B\in\mathcal A_j}B.
+</annotation></semantics></math></div></p>
+<p>于是</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>⋃</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></munder><msub><mi>T</mi><mi>j</mi></msub><mo>=</mo><munder><mo>⋃</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></munder><munder><mo>⋃</mo><mrow><mi>B</mi><mo>∈</mo><msub><mi mathvariant="script">𝒜</mi><mi>j</mi></msub></mrow></munder><mi>B</mi><mo>=</mo><munder><mo>⋃</mo><mrow><mi>B</mi><mo>∈</mo><munder><mo>⋃</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></munder><msub><mi mathvariant="script">𝒜</mi><mi>j</mi></msub></mrow></munder><mi>B</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\bigcup_{j\in J}T_j
+=\bigcup_{j\in J}\bigcup_{B\in\mathcal A_j}B
+=\bigcup_{B\in\bigcup_{j\in J}\mathcal A_j}B.
+</annotation></semantics></math></div></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>⋃</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></msub><msub><mi mathvariant="script">𝒜</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\bigcup_{j\in J}\mathcal A_j</annotation></semantics></math>
+仍是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+的子族，所以最后一个集合属于τ。若J为空，左边为空集，也属于τ。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>τ的成员本来就是基元素并；任意多个这样的集合再取并，只需把参与的基元素合并到同一层。</p>
+</article></div>
+<footer><span data-app-version="0.3.6">网站版本 0.3.6</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T02-02-M012.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

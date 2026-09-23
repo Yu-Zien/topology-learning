@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.6">
+<title>高维单位球面是闭集 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T02-02-M031"><h1 id="高维单位球面是闭集">高维单位球面是闭集</h1>
+<p>固定编号：T02-02-M031<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 39 页 / PDF 第 39
+页，习题2.2第5(c)题。<br />
+学习目标：把圆周证明中的长度差推广到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">\mathbb R^{n+1}</annotation></semantics></math>，为每个球面外点构造留在补集内的开盒。</p>
+<blockquote>
+<p><strong>本段主线：</strong>把平面闭集合的局部余量方法推广到高维。<br />
+<strong>当前环节：</strong>单位圆周闭已证明，现在只增加坐标数。<br />
+<strong>这一步只做：</strong>用欧氏范数的反三角不等式证明单位n球面闭。</p>
+</blockquote>
+<p>来源说明：B为教材习题2.2第5(c)题；高维开盒半径控制与参考解为新增，不使用后文连续映射理论。</p>
+<h2
+id="方法范数差控制所有坐标的共同扰动">方法：范数差控制所有坐标的共同扰动</h2>
+<p>在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">\mathbb R^{n+1}</annotation></semantics></math>
+中记</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><mo stretchy="false" form="postfix">∥</mo><mo>=</mo><msqrt><mrow><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><mi>⋯</mi><mo>+</mo><msubsup><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></msubsup></mrow></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\|x\|=\sqrt{x_1^2+\cdots+x_{n+1}^2}.
+</annotation></semantics></math></div></p>
+<p>单位n球面为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>S</mi><mi>n</mi></msup><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo>:</mo><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><mo stretchy="false" form="postfix">∥</mo><mo>=</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">S^n=\{x:\|x\|=1\}</annotation></semantics></math>。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∉</mo><msup><mi>S</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">p\notin S^n</annotation></semantics></math>，令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mo stretchy="false" form="prefix">|</mo><mo stretchy="false" form="postfix">∥</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>−</mo><mn>1</mn><mo stretchy="false" form="prefix">|</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s=|\|p\|-1|&gt;0</annotation></semantics></math>。</p>
+<p>为了得到一个基开盒，取每个坐标半宽</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><mfrac><mi>s</mi><mrow><mn>4</mn><msqrt><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msqrt></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\delta=\frac{s}{4\sqrt{n+1}}.
+</annotation></semantics></math></div></p>
+<p>盒内点q满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><msqrt><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msqrt><mspace width="0.167em"></mspace><mi>δ</mi><mo>=</mo><mi>s</mi><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">\|q-p\|&lt;\sqrt{n+1}\,\delta=s/4</annotation></semantics></math>，所以其范数不可能跳到1。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mn>3</mn></msup><annotation encoding="application/x-tex">\mathbb R^3</annotation></semantics></math>
+中，取单位球面外点
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p=(0,0,0)</annotation></semantics></math>。给出一个含p且完全避开单位球面的开盒。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的具体开盒
+</summary>
+<p>p的范数为0，到单位范数的差s为1。可直接取</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><mi>/</mi><mn>4</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>4</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>3</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+(-1/4,1/4)^3.
+</annotation></semantics></math></div></p>
+<p>盒内点q的范数小于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>3</mn></msqrt><mi>/</mi><mn>4</mn><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sqrt3/4&lt;1</annotation></semantics></math>，所以不可能落在范数等于1的单位球面上。该开盒包含于球面补集。</p>
+</details>
+<span id="q-T02-02-E005-c" class="content-anchor"></span><h2 id="练习-b教材习题2.2第5c题">练习 B：教材习题2.2第5(c)题</h2>
+<p>设</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>S</mi><mi>n</mi></msup><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>:</mo><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><mi>⋯</mi><mo>+</mo><msubsup><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></msubsup><mo>=</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">
+S^n=\{(x_1,\ldots,x_{n+1})\in\mathbb R^{n+1}:x_1^2+\cdots+x_{n+1}^2=1\}
+</annotation></semantics></math></div></p>
+<p>为单位n球面。证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>S</mi><mi>n</mi></msup><annotation encoding="application/x-tex">S^n</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">\mathbb R^{n+1}</annotation></semantics></math>
+中的闭子集。</p>
+<div class="practice-controls" data-question-id="T02-02-E005-c" data-module-id="T02-02-M031" data-mode="guided" data-answer-anchor="answer-T02-02-E005-c"></div><span id="answer-T02-02-E005-c" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试教材第5(c)题后展开完整证明
+</summary>
+<p>任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∉</mo><msup><mi>S</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">p\notin S^n</annotation></semantics></math>，令</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mo stretchy="false" form="prefix">|</mo><mo stretchy="false" form="postfix">∥</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>−</mo><mn>1</mn><mo stretchy="false" form="prefix">|</mo><mo>&gt;</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><mi>δ</mi><mo>=</mo><mfrac><mi>s</mi><mrow><mn>4</mn><msqrt><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msqrt></mrow></mfrac><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+s=|\|p\|-1|&gt;0,
+\qquad
+\delta=\frac{s}{4\sqrt{n+1}}&gt;0.
+</annotation></semantics></math></div></p>
+<p>取以p各坐标为中点、半宽δ的开盒R。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>∈</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">q\in R</annotation></semantics></math>，每个坐标差的绝对值小于δ，所以</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><msqrt><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msqrt><mspace width="0.167em"></mspace><mi>δ</mi><mo>=</mo><mfrac><mi>s</mi><mn>4</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\|q-p\|&lt;\sqrt{n+1}\,\delta=\frac s4.
+</annotation></semantics></math></div></p>
+<p>若q在S^n上，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo stretchy="false" form="postfix">∥</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\|q\|=1</annotation></semantics></math>，反三角不等式给</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mo stretchy="false" form="prefix">|</mo><mo stretchy="false" form="postfix">∥</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mi>−</mi><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo stretchy="false" form="postfix">∥</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mo stretchy="false" form="postfix">∥</mo><mi>p</mi><mo>−</mo><mi>q</mi><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><mfrac><mi>s</mi><mn>4</mn></mfrac><mo>,</mo></mrow><annotation encoding="application/x-tex">
+s=|\|p\|-\|q\||\le\|p-q\|&lt;\frac s4,
+</annotation></semantics></math></div></p>
+<p>矛盾。因此R避开S<sup>n。补集每点都有包含于补集的开盒，所以补集开，S</sup>n闭。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>高维球面仍由“范数等于1”刻画；把每个坐标扰动控制得足够小，范数就无法跨过与1的正差。</p>
+</article></div>
+<footer><span data-app-version="0.3.6">网站版本 0.3.6</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>

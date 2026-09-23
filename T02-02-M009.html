@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.6">
+<title>基判别命题与覆盖必要性 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T02-02-M009"><h1 id="基判别命题与覆盖必要性">基判别命题与覆盖必要性</h1>
+<p>固定编号：T02-02-M009<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 35—36 页 / PDF 第 35—36
+页，命题2.2.8陈述及必要性条件(a)。<br />
+学习目标：先掌握命题2.2.8的完整双条件，再从“底集开且由基生成”证明基元素必须覆盖底集。</p>
+<blockquote>
+<p><strong>本段主线：</strong>给出不预先知道拓扑时判断候选族能否成为基的准则。<br />
+<strong>当前环节：</strong>先陈述完整命题，并证明已有基必然满足覆盖条件。<br />
+<strong>这一步只做：</strong>证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><msub><mo>⋃</mo><mrow><mi>B</mi><mo>∈</mo><mi mathvariant="script">ℬ</mi></mrow></msub><mi>B</mi></mrow><annotation encoding="application/x-tex">X=\bigcup_{B\in\mathcal B}B</annotation></semantics></math>
+的必要性。</p>
+</blockquote>
+<p>来源说明：命题2.2.8及本段必要性证明来自教材；A/B为新增讲练。条件(b)和充分性依次留到后续模块。</p>
+<h2 id="命题2.2.8完整陈述">命题2.2.8：完整陈述</h2>
+<p>令X为非空集合，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+为X的子集组成的集合簇。则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+是X上某个拓扑的基，当且仅当：</p>
+<p><strong>(a)</strong></p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><munder><mo>⋃</mo><mrow><mi>B</mi><mo>∈</mo><mi mathvariant="script">ℬ</mi></mrow></munder><mi>B</mi><mo>;</mo></mrow><annotation encoding="application/x-tex">
+X=\bigcup_{B\in\mathcal B}B;
+</annotation></semantics></math></div></p>
+<p><strong>(b)</strong> 对任意
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub><mo>,</mo><msub><mi>B</mi><mn>2</mn></msub><mo>∈</mo><mi mathvariant="script">ℬ</mi></mrow><annotation encoding="application/x-tex">B_1,B_2\in\mathcal B</annotation></semantics></math>，交集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>B</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">B_1\cap B_2</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+中成员的并。</p>
+<p>条件(a)保证每个点至少被一个基元素覆盖；条件(b)保证两个基元素相交后仍能由更细的基元素拼回。</p>
+<h2 id="证明中的一步已有基必覆盖x">证明中的一步：已有基必覆盖X</h2>
+<p>若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+是拓扑τ的基，底集X属于τ。按基定义，X是某些基元素的并，所以每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">x\in X</annotation></semantics></math>
+至少属于一个基元素。又每个基元素都是X的子集，因此全部基元素的并恰为X。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">X=\{p,q,r\}</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">ℬ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>q</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathcal B=\{\{p\},\{q,r\}\}</annotation></semantics></math>。验证条件(a)，并解释它只保证覆盖、还没有单独完成基判定。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的覆盖检查
+</summary>
+<p>有</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>⋃</mo><mrow><mi>B</mi><mo>∈</mo><mi mathvariant="script">ℬ</mi></mrow></munder><mi>B</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo stretchy="false" form="postfix">}</mo><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>q</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">}</mo><mo>=</mo><mi>X</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\bigcup_{B\in\mathcal B}B=\{p\}\cup\{q,r\}=X,
+</annotation></semantics></math></div></p>
+<p>所以条件(a)成立，每个点都被某个基元素覆盖。</p>
+<p>但命题还要求条件(b)。本例中两成员交为空，可由空族并表示，所以实际上(b)也成立；只有把两项都核验后，才能由命题判定它是某拓扑的基。</p>
+</details>
+<span id="q-T02-02-M009-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>假设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+已是X上拓扑τ的一组基。从基定义证明</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><munder><mo>⋃</mo><mrow><mi>B</mi><mo>∈</mo><mi mathvariant="script">ℬ</mi></mrow></munder><mi>B</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+X=\bigcup_{B\in\mathcal B}B.
+</annotation></semantics></math></div></p>
+<p>你的证明要说明两个包含方向。</p>
+<div class="practice-controls" data-question-id="T02-02-M009-B" data-module-id="T02-02-M009" data-mode="guided" data-answer-anchor="answer-T02-02-M009-B"></div><span id="answer-T02-02-M009-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开必要性证明
+</summary>
+<p>因为X是τ中的开集，而
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+是基，X可以写成某个子族
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">𝒜</mi><mo>⊆</mo><mi mathvariant="script">ℬ</mi></mrow><annotation encoding="application/x-tex">\mathcal A\subseteq\mathcal B</annotation></semantics></math>
+的并。故每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">x\in X</annotation></semantics></math>
+属于某个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∈</mo><mi mathvariant="script">𝒜</mi></mrow><annotation encoding="application/x-tex">A\in\mathcal A</annotation></semantics></math>，进而属于全部基元素的并。这给出</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>⊆</mo><munder><mo>⋃</mo><mrow><mi>B</mi><mo>∈</mo><mi mathvariant="script">ℬ</mi></mrow></munder><mi>B</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+X\subseteq\bigcup_{B\in\mathcal B}B.
+</annotation></semantics></math></div></p>
+<p>每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>∈</mo><mi mathvariant="script">ℬ</mi></mrow><annotation encoding="application/x-tex">B\in\mathcal B</annotation></semantics></math>
+都是X的子集，所以反向包含成立。于是两边相等。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>任何基都必须覆盖底集；否则漏掉的点不可能出现在由基元素并成的开集X中。</p>
+</article></div>
+<footer><span data-app-version="0.3.6">网站版本 0.3.6</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>

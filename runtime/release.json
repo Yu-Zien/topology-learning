@@ -1,6 +1,6 @@
 {
-  "version": "0.3.5",
-  "contentVersion": "6b24aece495eea537b21af8d90867b1bcbf837a51be2abbff03ae812aabe71a5",
+  "version": "0.3.6",
+  "contentVersion": "fe0676db472dc9bb14d4defd916ded317fd6b2926348efaa6c31c2c4812f84f3",
   "runtimeSha256": {
     "app.css": "cb53d3c96d71ca4de7887eb4ca3aa0a33c1c91726e2d0db2580a37703a231968",
     "app.js": "45578b36de8ecb57847b2ac1f5e6b2a69d57799ee0b7c3b8510a4ab32e67d1c5",

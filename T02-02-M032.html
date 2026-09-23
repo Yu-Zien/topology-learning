@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.6">
+<title>闭单位n球是闭集 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T02-02-M032"><h1 id="闭单位n球是闭集">闭单位n球是闭集</h1>
+<p>固定编号：T02-02-M032<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 39 页 / PDF 第 39
+页，习题2.2第5(d)题。<br />
+学习目标：对闭单位球外范数大于1的点，用超出量构造完全留在补集内的开盒。</p>
+<blockquote>
+<p><strong>本段主线：</strong>继续高维范数集合的闭性证明。<br />
+<strong>当前环节：</strong>球面要求范数等于1；闭球允许范数小于等于1。<br />
+<strong>这一步只做：</strong>在补集点利用
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>−</mo><mn>1</mn><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\|p\|-1&gt;0</annotation></semantics></math>，证明闭球补集开。</p>
+</blockquote>
+<p>来源说明：B为教材习题2.2第5(d)题；开盒构造为新增展开。</p>
+<h2
+id="方法盒内移动量小于超出单位球的余量">方法：盒内移动量小于超出单位球的余量</h2>
+<p>闭单位n球为</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>B</mi><mi>n</mi></msup><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mo>:</mo><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><mo stretchy="false" form="postfix">∥</mo><mo>≤</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+B^n=\{x\in\mathbb R^n:\|x\|\le1\}.
+</annotation></semantics></math></div></p>
+<p>若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∉</mo><msup><mi>B</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">p\notin B^n</annotation></semantics></math>，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mo stretchy="false" form="postfix">∥</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">r=\|p\|&gt;1</annotation></semantics></math>。取</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><mfrac><mrow><mi>r</mi><mo>−</mo><mn>1</mn></mrow><mrow><mn>4</mn><msqrt><mi>n</mi></msqrt></mrow></mfrac><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\delta=\frac{r-1}{4\sqrt n}&gt;0.
+</annotation></semantics></math></div></p>
+<p>以p为中心、各坐标半宽δ的开盒中，每个点q都满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">\|q-p\|&lt;(r-1)/4</annotation></semantics></math>。反三角不等式给
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo stretchy="false" form="postfix">∥</mo><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\|q\|&gt;1</annotation></semantics></math>，所以整个盒留在补集内。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\mathbb R^2</annotation></semantics></math>
+中取闭单位圆盘外点
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p=(2,0)</annotation></semantics></math>。给出一个含p且完全位于闭圆盘补集内的开矩形。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的具体余量
+</summary>
+<p>p的范数r为2，超出量为1。可取比公式更简单的半宽
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">\delta=1/4</annotation></semantics></math>，开矩形</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>7</mn><mi>/</mi><mn>4</mn><mo>,</mo><mn>9</mn><mi>/</mi><mn>4</mn><mo stretchy="false" form="postfix">)</mo><mo>×</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><mi>/</mi><mn>4</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>4</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+(7/4,9/4)\times(-1/4,1/4).
+</annotation></semantics></math></div></p>
+<p>其中任一点q与p的距离小于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>2</mn></msqrt><mi>/</mi><mn>4</mn><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sqrt2/4&lt;1</annotation></semantics></math>，所以</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo stretchy="false" form="postfix">∥</mo><mo>≥</mo><mo stretchy="false" form="postfix">∥</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mi>−</mi><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>&gt;</mo><mn>2</mn><mo>−</mo><mn>1</mn><mo>=</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\|q\|\ge\|p\|-\|q-p\|&gt;2-1=1.
+</annotation></semantics></math></div></p>
+<p>故矩形完全在闭单位圆盘外。</p>
+</details>
+<span id="q-T02-02-E005-d" class="content-anchor"></span><h2 id="练习-b教材习题2.2第5d题">练习 B：教材习题2.2第5(d)题</h2>
+<p>设</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>B</mi><mi>n</mi></msup><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mo>:</mo><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><mi>⋯</mi><mo>+</mo><msubsup><mi>x</mi><mi>n</mi><mn>2</mn></msubsup><mo>≤</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">
+B^n=\{(x_1,\ldots,x_n)\in\mathbb R^n:x_1^2+\cdots+x_n^2\le1\}
+</annotation></semantics></math></div></p>
+<p>为闭单位n球。证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>B</mi><mi>n</mi></msup><annotation encoding="application/x-tex">B^n</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb R^n</annotation></semantics></math>
+中的闭子集。</p>
+<div class="practice-controls" data-question-id="T02-02-E005-d" data-module-id="T02-02-M032" data-mode="guided" data-answer-anchor="answer-T02-02-E005-d"></div><span id="answer-T02-02-E005-d" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试教材第5(d)题后展开完整证明
+</summary>
+<p>任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><mo>\</mo><msup><mi>B</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">p\in\mathbb R^n\setminus B^n</annotation></semantics></math>，令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mo stretchy="false" form="postfix">∥</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">r=\|p\|&gt;1</annotation></semantics></math>，并取</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><mfrac><mrow><mi>r</mi><mo>−</mo><mn>1</mn></mrow><mrow><mn>4</mn><msqrt><mi>n</mi></msqrt></mrow></mfrac><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\delta=\frac{r-1}{4\sqrt n}&gt;0.
+</annotation></semantics></math></div></p>
+<p>令R为以p各坐标为中点、半宽δ的开盒。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>∈</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">q\in R</annotation></semantics></math>，则</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><msqrt><mi>n</mi></msqrt><mspace width="0.167em"></mspace><mi>δ</mi><mo>=</mo><mfrac><mrow><mi>r</mi><mo>−</mo><mn>1</mn></mrow><mn>4</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\|q-p\|&lt;\sqrt n\,\delta=\frac{r-1}{4}.
+</annotation></semantics></math></div></p>
+<p>由反三角不等式，</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo stretchy="false" form="postfix">∥</mo><mo>≥</mo><mi>r</mi><mi>−</mi><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>&gt;</mo><mi>r</mi><mo>−</mo><mfrac><mrow><mi>r</mi><mo>−</mo><mn>1</mn></mrow><mn>4</mn></mfrac><mo>=</mo><mn>1</mn><mo>+</mo><mfrac><mrow><mn>3</mn><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><mn>4</mn></mfrac><mo>&gt;</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\|q\|\ge r-\|q-p\|
+&gt;r-\frac{r-1}{4}
+=1+\frac{3(r-1)}4&gt;1.
+</annotation></semantics></math></div></p>
+<p>所以q仍在B<sup>n外。补集每点都有留在补集内的开盒，故补集开，B</sup>n闭。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>闭球外点的范数严格大于1；控制局部移动小于超出量，就能构造不回到闭球内的开盒。</p>
+</article></div>
+<footer><span data-app-version="0.3.6">网站版本 0.3.6</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>

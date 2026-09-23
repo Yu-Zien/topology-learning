@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.6">
+<title>给定拓扑的局部基判别：充分方向 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T02-03-M003"><h1
+id="给定拓扑的局部基判别充分方向">给定拓扑的局部基判别：充分方向</h1>
+<p>固定编号：T02-03-M003<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 40 页 / PDF 第 40
+页，命题2.3.2充分方向(ii)及正文读者验证。<br />
+学习目标：在每个开集点处选取内部基元素，用两个包含方向证明开集等于这些基元素的并，从而证明候选族为基。</p>
+<blockquote>
+<p><strong>本段主线：</strong>完成给定拓扑的局部基判别。<br />
+<strong>当前环节：</strong>必要方向已证，现在假设每点都有局部基元素。<br />
+<strong>这一步只做：</strong>验证
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><msub><mo>⋃</mo><mrow><mi>x</mi><mo>∈</mo><mi>U</mi></mrow></msub><msub><mi>B</mi><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">U=\bigcup_{x\in U}B_x</annotation></semantics></math>
+并完成命题2.3.2。</p>
+</blockquote>
+<p>来源说明：教材给出逐点选择并要求读者验证并等式；本模块补齐两个包含方向与空集边界。A/B为新增讲练。</p>
+<h2 id="充分性把局部选择全部并起来">充分性：把局部选择全部并起来</h2>
+<p>假设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+由τ中的开集组成，并且对每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">U\in\tau</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in U</annotation></semantics></math>
+都能选</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msub><mi>B</mi><mi>x</mi></msub><mo>⊆</mo><mi>U</mi><mo>,</mo><mi>q</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>d</mi><msub><mi>B</mi><mi>x</mi></msub><mo>∈</mo><mi mathvariant="script">ℬ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+x\in B_x\subseteq U,qquad B_x\in\mathcal B.
+</annotation></semantics></math></div></p>
+<p>每个x属于自己的B_x，所以U包含于这些B_x的并；每个B_x又在U中，所以并不越出U。故U是基元素之并。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">X=\{p,q,r\}</annotation></semantics></math>，</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mi>X</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi mathvariant="script">ℬ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mi>X</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\tau=\{\varnothing,\{p\},\{p,q\},X\},
+\qquad
+\mathcal B=\{\{p\},\{p,q\},X\}.
+</annotation></semantics></math></div></p>
+<p>用局部条件验证
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+是τ的一组基。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的逐开集检查
+</summary>
+<p>空集没有点，条件自动成立。对
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">U=\{p\}</annotation></semantics></math>，点p可选B=<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{p\}</annotation></semantics></math>。对
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">U=\{p,q\}</annotation></semantics></math>，p、q都可选B=<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{p,q\}</annotation></semantics></math>。对U=X，每个点都可选B=X。</p>
+<p>每个开集中的每点都有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>B</mi><mo>⊆</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in B\subseteq U</annotation></semantics></math>，且候选成员都属于τ。命题2.3.2说明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+是τ的基。</p>
+</details>
+<span id="q-T02-03-M003-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">ℬ</mi><mo>⊆</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\mathcal B\subseteq\tau</annotation></semantics></math>，并假设对每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">U\in\tau</annotation></semantics></math>
+与每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in U</annotation></semantics></math>，存在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>x</mi></msub><mo>∈</mo><mi mathvariant="script">ℬ</mi></mrow><annotation encoding="application/x-tex">B_x\in\mathcal B</annotation></semantics></math>
+满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msub><mi>B</mi><mi>x</mi></msub><mo>⊆</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in B_x\subseteq U</annotation></semantics></math>。证明每个开集U都是基元素的并，并处理U为空的情形。</p>
+<div class="practice-controls" data-question-id="T02-03-M003-B" data-module-id="T02-03-M003" data-mode="guided" data-answer-anchor="answer-T02-03-M003-B"></div><span id="answer-T02-03-M003-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开两个包含方向
+</summary>
+<p>先设U非空。对每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in U</annotation></semantics></math>
+选定B_x。因为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msub><mi>B</mi><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">x\in B_x</annotation></semantics></math>，每个U中的点都属于右侧并，所以</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>⊆</mo><munder><mo>⋃</mo><mrow><mi>x</mi><mo>∈</mo><mi>U</mi></mrow></munder><msub><mi>B</mi><mi>x</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+U\subseteq\bigcup_{x\in U}B_x.
+</annotation></semantics></math></div></p>
+<p>又因每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>x</mi></msub><mo>⊆</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">B_x\subseteq U</annotation></semantics></math>，所以</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>⋃</mo><mrow><mi>x</mi><mo>∈</mo><mi>U</mi></mrow></munder><msub><mi>B</mi><mi>x</mi></msub><mo>⊆</mo><mi>U</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\bigcup_{x\in U}B_x\subseteq U.
+</annotation></semantics></math></div></p>
+<p>于是等号成立，U是基元素的并。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">U=\varnothing</annotation></semantics></math>，它是空族基元素的并。故每个τ中开集都由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+生成，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+是τ的一组基。</p>
+</details>
+<h2 id="精选复习">精选复习</h2><details class="prepared-review"><summary>精选复习内容（仅回看，不记分）</summary><p class="notice">这里保留课件中的预设问题与答案。计分复习在讲练间隙进行；只回看不会改变排期。</p><h3 id="t02-03-r001">T02-03-R001</h3>
+<p><strong>问题：</strong>命题2.3.2的局部条件是什么？怎样从逐点选择恢复整个开集？</p>
+<details>
+<summary>
+回忆后查看答案
+</summary>
+<p>对每个给定开集U和每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in U</annotation></semantics></math>，要有基元素B满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>B</mi><mo>⊆</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in B\subseteq U</annotation></semantics></math>。为每个x选B_x后，U中每点由自己的B_x覆盖，而所有B_x又留在U内，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><msub><mo>⋃</mo><mrow><mi>x</mi><mo>∈</mo><mi>U</mi></mrow></msub><msub><mi>B</mi><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">U=\bigcup_{x\in U}B_x</annotation></semantics></math>。</p>
+</details>
+</details><h2 id="简短回顾与命题结论">简短回顾与命题结论</h2>
+<p>候选开集族是给定拓扑的基，当且仅当它能在每个开集的每个点处提供一个内部局部基元素。</p>
+</article></div>
+<footer><span data-app-version="0.3.6">网站版本 0.3.6</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.6">
+<title>Rⁿ满足第二可数公理 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T02-02-M027"><h1 id="rⁿ满足第二可数公理">Rⁿ满足第二可数公理</h1>
+<p>固定编号：T02-02-M027<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 38 页 / PDF 第 38
+页，习题2.2第4(iii)题。<br />
+学习目标：用所有有理端点开盒构造
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb R^n</annotation></semantics></math>
+欧几里得拓扑的可数基。</p>
+<blockquote>
+<p><strong>本段主线：</strong>把实数轴的有理端点可数基推广到有限维欧几里得空间。<br />
+<strong>当前环节：</strong>一维稠密性方法与n维开盒基都已学过。<br />
+<strong>这一步只做：</strong>证明候选开盒族可数，并且生成原有欧几里得拓扑。</p>
+</blockquote>
+<p>来源说明：B为教材习题2.2第4(iii)题；教材未给细节。A先练二维坐标选择，B完成任意正整数n。</p>
+<h2
+id="方法每个坐标两侧各选一个有理端点">方法：每个坐标两侧各选一个有理端点</h2>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi mathvariant="script">ℬ</mi><mi mathvariant="double-struck">ℚ</mi><mi>n</mi></msubsup><annotation encoding="application/x-tex">\mathcal B_{\mathbb Q}^n</annotation></semantics></math>
+为所有</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mi>i</mi></msub><mo>,</mo><msub><mi>q</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mi>q</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>d</mi><msub><mi>p</mi><mi>i</mi></msub><mo>,</mo><msub><mi>q</mi><mi>i</mi></msub><mo>∈</mo><mi mathvariant="double-struck">ℚ</mi><mo>,</mo><msub><mi>p</mi><mi>i</mi></msub><mo>&lt;</mo><msub><mi>q</mi><mi>i</mi></msub><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\prod_{i=1}^{n}(p_i,q_i),qquad p_i,q_i\in\mathbb Q, p_i&lt;q_i,
+</annotation></semantics></math></div></p>
+<p>组成的开盒族。参数组属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℚ</mi><mrow><mn>2</mn><mi>n</mi></mrow></msup><annotation encoding="application/x-tex">\mathbb Q^{2n}</annotation></semantics></math>，有限个可数集的乘积可数，所以候选族可数。</p>
+<p>若x位于某个实端点开盒内，对每个坐标i用有理数稠密性选</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub><mo>&lt;</mo><msub><mi>p</mi><mi>i</mi></msub><mo>&lt;</mo><msub><mi>x</mi><mi>i</mi></msub><mo>&lt;</mo><msub><mi>q</mi><mi>i</mi></msub><mo>&lt;</mo><msub><mi>b</mi><mi>i</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+a_i&lt;p_i&lt;x_i&lt;q_i&lt;b_i.
+</annotation></semantics></math></div></p>
+<p>所得有理开盒含x并落在原开盒内，因此生成同一欧几里得拓扑。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>在实端点开矩形
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>×</mo><mo stretchy="false" form="prefix">(</mo><msqrt><mn>2</mn></msqrt><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,2)\times(\sqrt2,2)</annotation></semantics></math>
+中，为点
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msqrt><mn>2</mn></msqrt><mo>,</mo><mn>3</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\sqrt2,3/2)</annotation></semantics></math>
+找一个含该点的有理端点开矩形。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的逐坐标选择
+</summary>
+<p>第一坐标可取有理端点
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>/</mi><mn>3</mn><mo>&lt;</mo><msqrt><mn>2</mn></msqrt><mo>&lt;</mo><mn>3</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">4/3&lt;\sqrt2&lt;3/2</annotation></semantics></math>。第二坐标可取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>29</mn><mi>/</mi><mn>20</mn></mrow><annotation encoding="application/x-tex">29/20</annotation></semantics></math>
+与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn><mi>/</mi><mn>5</mn></mrow><annotation encoding="application/x-tex">8/5</annotation></semantics></math>；因为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>29</mn><mi>/</mi><mn>20</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>=</mo><mn>841</mn><mi>/</mi><mn>400</mn><mo>&gt;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">(29/20)^2=841/400&gt;2</annotation></semantics></math>，有</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>2</mn></msqrt><mo>&lt;</mo><mfrac><mn>29</mn><mn>20</mn></mfrac><mo>&lt;</mo><mfrac><mn>3</mn><mn>2</mn></mfrac><mo>&lt;</mo><mfrac><mn>8</mn><mn>5</mn></mfrac><mo>&lt;</mo><mn>2</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\sqrt2&lt;\frac{29}{20}&lt;\frac32&lt;\frac85&lt;2.
+</annotation></semantics></math></div></p>
+<p>所以</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mi>/</mi><mn>3</mn><mo>,</mo><mn>3</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>×</mo><mo stretchy="false" form="prefix">(</mo><mn>29</mn><mi>/</mi><mn>20</mn><mo>,</mo><mn>8</mn><mi>/</mi><mn>5</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+(4/3,3/2)\times(29/20,8/5)
+</annotation></semantics></math></div></p>
+<p>含给定点并包含于原矩形，四个端点均有理。</p>
+</details>
+<span id="q-T02-02-E004-iii" class="content-anchor"></span><h2 id="练习-b教材习题2.2第4iii题">练习 B：教材习题2.2第4(iii)题</h2>
+<p>证明对每个正整数n，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb R^n</annotation></semantics></math>
+的欧几里得拓扑满足第二可数公理。</p>
+<span id="answer-T02-02-E004-iii" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试教材第4(iii)题后展开完整证明
+</summary>
+<p>取有理端点开盒族
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi mathvariant="script">ℬ</mi><mi mathvariant="double-struck">ℚ</mi><mi>n</mi></msubsup><annotation encoding="application/x-tex">\mathcal B_{\mathbb Q}^n</annotation></semantics></math>。它由满足端点次序的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">2n</annotation></semantics></math>
+个有理数参数决定，是可数集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℚ</mi><mrow><mn>2</mn><mi>n</mi></mrow></msup><annotation encoding="application/x-tex">\mathbb Q^{2n}</annotation></semantics></math>
+的子集所对应的像，因此可数。</p>
+<p>每个候选开盒都是普通实端点开盒，所以在欧几里得拓扑中开。反过来，任取欧几里得开集U与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x=(x_1,\ldots,x_n)\in U</annotation></semantics></math>。开盒基给出</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><munderover><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mi>i</mi></msub><mo>,</mo><msub><mi>b</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>⊆</mo><mi>U</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+x\in\prod_{i=1}^{n}(a_i,b_i)\subseteq U.
+</annotation></semantics></math></div></p>
+<p>对每个i分别选有理数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>i</mi></msub><mo>,</mo><msub><mi>q</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">p_i,q_i</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub><mo>&lt;</mo><msub><mi>p</mi><mi>i</mi></msub><mo>&lt;</mo><msub><mi>x</mi><mi>i</mi></msub><mo>&lt;</mo><msub><mi>q</mi><mi>i</mi></msub><mo>&lt;</mo><msub><mi>b</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i&lt;p_i&lt;x_i&lt;q_i&lt;b_i</annotation></semantics></math>。则</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><munderover><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mi>i</mi></msub><mo>,</mo><msub><mi>q</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>⊆</mo><munderover><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mi>i</mi></msub><mo>,</mo><msub><mi>b</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>⊆</mo><mi>U</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+x\in\prod_{i=1}^{n}(p_i,q_i)
+\subseteq\prod_{i=1}^{n}(a_i,b_i)
+\subseteq U.
+</annotation></semantics></math></div></p>
+<p>所以每个欧几里得开集由有理端点开盒并成。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi mathvariant="script">ℬ</mi><mi mathvariant="double-struck">ℚ</mi><mi>n</mi></msubsup><annotation encoding="application/x-tex">\mathcal B_{\mathbb Q}^n</annotation></semantics></math>
+是一组可数基，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb R^n</annotation></semantics></math>
+满足第二可数公理。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>有限维只增加有限多个有理端点参数；候选族仍可数，逐坐标稠密性又保证它生成原欧几里得拓扑。</p>
+</article></div>
+<footer><span data-app-version="0.3.6">网站版本 0.3.6</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T02-02-M027.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

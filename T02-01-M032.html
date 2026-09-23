@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.6">
+<title>本版本外的非Gδ引用 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T02-01-M032"><h1 id="本版本外的非gδ引用">本版本外的非Gδ引用</h1>
+<p>固定编号：T02-01-M032<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 33 页 / PDF 第 33
+页，习题2.1第8(iii)题括注；疑点 Q9。<br />
+学习目标：说明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>σ</mi></msub><annotation encoding="application/x-tex">F_\sigma</annotation></semantics></math>
+与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">G_\delta</annotation></semantics></math>
+两类可以重叠，并准确区分本节已证结论与当前教材文件缺失的后续证明。</p>
+<blockquote>
+<p><strong>本段主线：</strong>处理习题8(iii)的来源边界。<br />
+<strong>当前环节：</strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℚ</mi><annotation encoding="application/x-tex">\mathbb Q</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>σ</mi></msub><annotation encoding="application/x-tex">F_\sigma</annotation></semantics></math>
+已经证明；原页另称后文将证明它不是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">G_\delta</annotation></semantics></math>。<br />
+<strong>这一步只做：</strong>排除“是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>σ</mi></msub><annotation encoding="application/x-tex">F_\sigma</annotation></semantics></math>
+所以不是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">G_\delta</annotation></semantics></math>”的错误推理，并保留缺失引用。</p>
+</blockquote>
+<p>来源说明：原页的§6.5习题3引用来自教材；当前109页PDF只有第一至第五章，无法对照所引证明。A/B为新增的逻辑边界讲练，不补造第六章内容。</p>
+<h2 id="方法两个类别不是互斥标签">方法：两个类别不是互斥标签</h2>
+<p>一个集合可以同时是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>σ</mi></msub><annotation encoding="application/x-tex">F_\sigma</annotation></semantics></math>
+和
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">G_\delta</annotation></semantics></math>。例如单点集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0\}</annotation></semantics></math>
+闭，所以是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>σ</mi></msub><annotation encoding="application/x-tex">F_\sigma</annotation></semantics></math>；M029又已经写出</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mo>=</mo><munderover><mo>⋂</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">∞</mo></munderover><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><mi>/</mi><mi>n</mi><mo>,</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\{0\}=\bigcap_{n=1}^{\infty}(-1/n,1/n),
+</annotation></semantics></math></div></p>
+<p>所以它也是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">G_\delta</annotation></semantics></math>。</p>
+<p>因此，M031给出的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℚ</mi><annotation encoding="application/x-tex">\mathbb Q</annotation></semantics></math>
+的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>σ</mi></msub><annotation encoding="application/x-tex">F_\sigma</annotation></semantics></math>
+表示不能推出它不是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">G_\delta</annotation></semantics></math>。原页把后一结论的证明指向§6.5习题3，但该节不在当前文件中；本课程保留这条陈述和缺口，不把未见证明写成已核验。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>完整说明为什么
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0\}</annotation></semantics></math>
+同时是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>σ</mi></msub><annotation encoding="application/x-tex">F_\sigma</annotation></semantics></math>
+集和
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">G_\delta</annotation></semantics></math>
+集，并据此否定“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>σ</mi></msub><annotation encoding="application/x-tex">F_\sigma</annotation></semantics></math>
+集一定不是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">G_\delta</annotation></semantics></math>
+集”。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的两个表示
+</summary>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0\}</annotation></semantics></math>
+是闭集。重复它得到</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mo>=</mo><munderover><mo>⋃</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">∞</mo></munderover><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\{0\}=\bigcup_{n=1}^{\infty}\{0\},
+</annotation></semantics></math></div></p>
+<p>所以它是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>σ</mi></msub><annotation encoding="application/x-tex">F_\sigma</annotation></semantics></math>
+集。</p>
+<p>每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><mi>/</mi><mi>n</mi><mo>,</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-1/n,1/n)</annotation></semantics></math>
+都开，而且M029已证明</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mo>=</mo><munderover><mo>⋂</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">∞</mo></munderover><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><mi>/</mi><mi>n</mi><mo>,</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\{0\}=\bigcap_{n=1}^{\infty}(-1/n,1/n),
+</annotation></semantics></math></div></p>
+<p>所以它也是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">G_\delta</annotation></semantics></math>
+集。存在同时属于两类的集合，故两类不互斥。</p>
+</details>
+<span id="q-T02-01-M032-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>目前能否仅凭</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℚ</mi><mo>=</mo><munderover><mo>⋃</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">∞</mo></munderover><mo stretchy="false" form="prefix">{</mo><msub><mi>q</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">
+\mathbb Q=\bigcup_{n=1}^{\infty}\{q_n\}
+</annotation></semantics></math></div></p>
+<p>断定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℚ</mi><annotation encoding="application/x-tex">\mathbb Q</annotation></semantics></math>
+不是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">G_\delta</annotation></semantics></math>
+集？请说明这条表示实际证明了什么、没有证明什么，以及当前课程怎样记录原页的后续引用。</p>
+<div class="practice-controls" data-question-id="T02-01-M032-B" data-module-id="T02-01-M032" data-mode="guided" data-answer-anchor="answer-T02-01-M032-B"></div><span id="answer-T02-01-M032-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开来源边界
+</summary>
+<p>不能。这个等式只证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℚ</mi><annotation encoding="application/x-tex">\mathbb Q</annotation></semantics></math>
+是可数个闭单点集的并，也就是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>σ</mi></msub><annotation encoding="application/x-tex">F_\sigma</annotation></semantics></math>
+集。由于某些集合能同时是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>σ</mi></msub><annotation encoding="application/x-tex">F_\sigma</annotation></semantics></math>
+和
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">G_\delta</annotation></semantics></math>，它没有排除另一种表示。</p>
+<p>原页说将在§6.5习题3证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℚ</mi><annotation encoding="application/x-tex">\mathbb Q</annotation></semantics></math>
+不是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">G_\delta</annotation></semantics></math>，但当前提供的PDF没有第六章。课程将“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℚ</mi><annotation encoding="application/x-tex">\mathbb Q</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>σ</mi></msub><annotation encoding="application/x-tex">F_\sigma</annotation></semantics></math>”记为本节已证，将“不是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">G_\delta</annotation></semantics></math>”记为教材陈述但证明来源缺失的Q9；在取得对应原页或独立允许的证明前，不标成已核验推论。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>σ</mi></msub><annotation encoding="application/x-tex">F_\sigma</annotation></semantics></math>
+与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">G_\delta</annotation></semantics></math>
+可以重叠；有理数集的非
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">G_\delta</annotation></semantics></math>
+性质不能由已得可数闭并直接推出，当前版本的证明引用仍缺失。</p>
+</article></div>
+<footer><span data-app-version="0.3.6">网站版本 0.3.6</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>

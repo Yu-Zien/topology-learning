@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.6">
+<title>基判别命题充分性：底集与空集 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T02-02-M011"><h1 id="基判别命题充分性底集与空集">基判别命题充分性：底集与空集</h1>
+<p>固定编号：T02-02-M011<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 36 页 / PDF 第 36
+页，命题2.2.8充分性证明的拓扑条件(i)。<br />
+学习目标：从候选基的覆盖条件与空并约定，证明由全部基元素并组成的集合簇同时含X和空集。</p>
+<blockquote>
+<p><strong>本段主线：</strong>完成命题2.2.8的充分方向。<br />
+<strong>当前环节：</strong>假设候选族满足(a)(b)，定义τ为所有基元素之并，先检查拓扑第一条件。<br />
+<strong>这一步只做：</strong>证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>,</mo><mi>⌀</mi><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">X,\varnothing\in\tau</annotation></semantics></math>。</p>
+</blockquote>
+<p>来源说明：命题充分性构造与本步证明来自教材；A/B为新增讲练。任意并与两两交留到M012—M013。</p>
+<h2 id="构造把所有可生成的并收集成τ">构造：把所有可生成的并收集成τ</h2>
+<p>设非空集合X上的子集族
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+满足命题2.2.8的(a)(b)。定义</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mo>⋃</mo><mi mathvariant="script">𝒜</mi><mo>:</mo><mi mathvariant="script">𝒜</mi><mo>⊆</mo><mi mathvariant="script">ℬ</mi><mo stretchy="true" form="postfix">}</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\tau=\left\{\bigcup\mathcal A:\mathcal A\subseteq\mathcal B\right\}.
+</annotation></semantics></math></div></p>
+<p>也就是说，τ由所有可能的基元素之并组成。</p>
+<p>条件(a)给出
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><msub><mo>⋃</mo><mrow><mi>B</mi><mo>∈</mo><mi mathvariant="script">ℬ</mi></mrow></msub><mi>B</mi></mrow><annotation encoding="application/x-tex">X=\bigcup_{B\in\mathcal B}B</annotation></semantics></math>，所以X在τ中。空集是空子族的并，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>⌀</mi><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\varnothing\in\tau</annotation></semantics></math>。这就验证了拓扑条件(i)。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">X=\{p,q,r\}</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">ℬ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>q</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathcal B=\{\{p\},\{q,r\}\}</annotation></semantics></math>。写出由所有基元素并组成的τ，并核对X与空集出现的方式。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的全部并
+</summary>
+<p>空子族并为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⌀</mi><annotation encoding="application/x-tex">\varnothing</annotation></semantics></math>；两个单元素子族分别给
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{p\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>q</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{q,r\}</annotation></semantics></math>；全族并给X。因此</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>q</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mi>X</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\tau=\{\varnothing,\{p\},\{q,r\},X\}.
+</annotation></semantics></math></div></p>
+<p>X来自全部基元素的并，空集来自空并，二者都在τ中。</p>
+</details>
+<span id="q-T02-02-M011-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+满足命题2.2.8(a)，并令τ为所有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+成员之并组成的集合簇。完整证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">X\in\tau</annotation></semantics></math>
+与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>⌀</mi><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\varnothing\in\tau</annotation></semantics></math>；说明哪一项需要(a)，哪一项只需空并约定。</p>
+<div class="practice-controls" data-question-id="T02-02-M011-B" data-module-id="T02-02-M011" data-mode="guided" data-answer-anchor="answer-T02-02-M011-B"></div><span id="answer-T02-02-M011-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开证明
+</summary>
+<p>由条件(a)，</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><munder><mo>⋃</mo><mrow><mi>B</mi><mo>∈</mo><mi mathvariant="script">ℬ</mi></mrow></munder><mi>B</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+X=\bigcup_{B\in\mathcal B}B.
+</annotation></semantics></math></div></p>
+<p>右边是一个允许的基元素并，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">X\in\tau</annotation></semantics></math>。这一项使用了覆盖条件(a)。</p>
+<p>取空子族
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">𝒜</mi><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">\mathcal A=\varnothing</annotation></semantics></math>，相对于底集的并为</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>⋃</mo><mrow><mi>B</mi><mo>∈</mo><mi mathvariant="script">𝒜</mi></mrow></munder><mi>B</mi><mo>=</mo><mi>⌀</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\bigcup_{B\in\mathcal A}B=\varnothing.
+</annotation></semantics></math></div></p>
+<p>所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>⌀</mi><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\varnothing\in\tau</annotation></semantics></math>。这一项不需(a)，只使用空并约定。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>覆盖条件让全部基元素并成X，空子族并产生空集；由基元素并构造的τ因此满足第一条拓扑公理。</p>
+</article></div>
+<footer><span data-app-version="0.3.6">网站版本 0.3.6</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>

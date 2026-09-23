@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.6">
+<title>两个开圆盘交内仍有小圆盘 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T02-02-M021"><h1 id="两个开圆盘交内仍有小圆盘">两个开圆盘交内仍有小圆盘</h1>
+<p>固定编号：T02-02-M021<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 38 页 / PDF 第 38
+页，习题2.2第2(i)题及提示。<br />
+学习目标：对两个开圆盘交中的任意点，取它到两圆边界余量的较小值，构造以该点为中心且包含于交的小开圆盘。</p>
+<blockquote>
+<p><strong>本段主线：</strong>验证所有开圆盘能否作为平面上一组拓扑基。<br />
+<strong>当前环节：</strong>命题2.2.8要求两个基元素的交能由基元素并成，先在交内每点周围找小圆盘。<br />
+<strong>这一步只做：</strong>构造共同小半径并证明包含于两个原圆盘。</p>
+</blockquote>
+<p>来源说明：B为教材习题2.2第2(i)题，提示要求画图并仿照习题1(i)。共同余量公式与完整证明为新增展开。</p>
+<h2 id="方法取到两条边界的较小余量">方法：取到两条边界的较小余量</h2>
+<p>设开圆盘D_i的圆心为c_i、半径为R_i。若点p属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>D</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">D_1\cap D_2</annotation></semantics></math>，则</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>i</mi></msub><mi>−</mi><mo stretchy="false" form="postfix">∥</mo><mi>p</mi><mo>−</mo><msub><mi>c</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">∥</mo><mo>&gt;</mo><mn>0</mn><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+R_i-\|p-c_i\|&gt;0\qquad(i=1,2).
+</annotation></semantics></math></div></p>
+<p>取</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>R</mi><mn>1</mn></msub><mi>−</mi><mo stretchy="false" form="postfix">∥</mo><mi>p</mi><mo>−</mo><msub><mi>c</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">∥</mo><mo>,</mo><mspace width="0.222em"></mspace><msub><mi>R</mi><mn>2</mn></msub><mi>−</mi><mo stretchy="false" form="postfix">∥</mo><mi>p</mi><mo>−</mo><msub><mi>c</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">∥</mo><mo stretchy="false" form="postfix">}</mo><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\varepsilon=\frac12\min\{R_1-\|p-c_1\|,\ R_2-\|p-c_2\|\}&gt;0.
+</annotation></semantics></math></div></p>
+<p>若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>z</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><mi>ε</mi></mrow><annotation encoding="application/x-tex">\|z-p\|&lt;\varepsilon</annotation></semantics></math>，三角不等式给
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>z</mi><mo>−</mo><msub><mi>c</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><msub><mi>R</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\|z-c_i\|&lt;R_i</annotation></semantics></math>，所以以p为中心、半径ε的圆盘同时落在两个原圆盘内。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>令D1、D2分别为以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,0)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,0)</annotation></semantics></math>
+为圆心的单位开圆盘，取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p=(1/2,0)</annotation></semantics></math>。按上述方法给出一个以p为中心且包含于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>D</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">D_1\cap D_2</annotation></semantics></math>
+的开圆盘。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的共同余量
+</summary>
+<p>p到两个圆心的距离都为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math>，所以两边界余量都为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1-1/2=1/2</annotation></semantics></math>。按公式可取</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⋅</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\varepsilon=\frac12\cdot\frac12=\frac14.
+</annotation></semantics></math></div></p>
+<p>若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>z</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">\|z-p\|&lt;1/4</annotation></semantics></math>，则</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>z</mi><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>=</mo><mfrac><mn>3</mn><mn>4</mn></mfrac><mo>&lt;</mo><mn>1</mn><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\|z-(0,0)\|&lt;\frac14+\frac12=\frac34&lt;1,
+</annotation></semantics></math></div></p>
+<p>并且同理
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>z</mi><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><mn>3</mn><mi>/</mi><mn>4</mn><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\|z-(1,0)\|&lt;3/4&lt;1</annotation></semantics></math>。故以p为中心、半径
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">1/4</annotation></semantics></math>
+的开圆盘包含于交。</p>
+</details>
+<span id="q-T02-02-E002-i" class="content-anchor"></span><h2 id="练习-b教材习题2.2第2i题">练习 B：教材习题2.2第2(i)题</h2>
+<p>设D1和D2是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\mathbb R^2</annotation></semantics></math>
+中任意两个满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>D</mi><mn>2</mn></msub><mo>≠</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">D_1\cap D_2\ne\varnothing</annotation></semantics></math>
+的开圆盘。如果
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mo stretchy="false" form="prefix">⟨</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">p=\langle a,b\rangle</annotation></semantics></math>
+是任意
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>D</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">D_1\cap D_2</annotation></semantics></math>
+中的点，证明存在以p为中心的开圆盘
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>D</mi><mi>p</mi></msub><annotation encoding="application/x-tex">D_p</annotation></semantics></math>，使</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>p</mi></msub><mo>⊆</mo><msub><mi>D</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>D</mi><mn>2</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+D_p\subseteq D_1\cap D_2.
+</annotation></semantics></math></div></p>
+<span id="answer-T02-02-E002-i" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试教材第2(i)题后展开完整证明
+</summary>
+<p>写D_i的圆心为c_i、半径为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>i</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">R_i&gt;0</annotation></semantics></math>。因为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∈</mo><msub><mi>D</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">p\in D_i</annotation></semantics></math>，有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>p</mi><mo>−</mo><msub><mi>c</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><msub><mi>R</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\|p-c_i\|&lt;R_i</annotation></semantics></math>。令</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>R</mi><mn>1</mn></msub><mi>−</mi><mo stretchy="false" form="postfix">∥</mo><mi>p</mi><mo>−</mo><msub><mi>c</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">∥</mo><mo>,</mo><mspace width="0.222em"></mspace><msub><mi>R</mi><mn>2</mn></msub><mi>−</mi><mo stretchy="false" form="postfix">∥</mo><mi>p</mi><mo>−</mo><msub><mi>c</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">∥</mo><mo stretchy="false" form="postfix">}</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">
+\varepsilon=\frac12\min\{R_1-\|p-c_1\|,\ R_2-\|p-c_2\|\}&gt;0
+</annotation></semantics></math></div></p>
+<p>并令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>p</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>z</mi><mo>:</mo><mo stretchy="false" form="postfix">∥</mo><mi>z</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><mi>ε</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">D_p=\{z:\|z-p\|&lt;\varepsilon\}</annotation></semantics></math>。</p>
+<p>任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>∈</mo><msub><mi>D</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">z\in D_p</annotation></semantics></math>。对i=1,2，</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>z</mi><mo>−</mo><msub><mi>c</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">∥</mo><mo>≤</mo><mo stretchy="false" form="postfix">∥</mo><mi>z</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mi>+</mi><mo stretchy="false" form="postfix">∥</mo><mi>p</mi><mo>−</mo><msub><mi>c</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><mi>ε</mi><mi>+</mi><mo stretchy="false" form="postfix">∥</mo><mi>p</mi><mo>−</mo><msub><mi>c</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><msub><mi>R</mi><mi>i</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\|z-c_i\|\le\|z-p\|+\|p-c_i\|
+&lt;\varepsilon+\|p-c_i\|
+&lt;R_i.
+</annotation></semantics></math></div></p>
+<p>最后一个严格不等式来自
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ε</mi><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math>
+小于每个边界余量。因此z同时属于D1、D2，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>p</mi></msub><mo>⊆</mo><msub><mi>D</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>D</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">D_p\subseteq D_1\cap D_2</annotation></semantics></math>。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>交内点到两圆边界都有正余量；取较小余量的一部分，就得到同时留在两个圆盘内的共同小圆盘。</p>
+</article></div>
+<footer><span data-app-version="0.3.6">网站版本 0.3.6</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T02-02-M021.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

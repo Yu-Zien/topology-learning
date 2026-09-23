@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.6">
+<title>乘积基的交与乘积拓扑 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T02-02-M035"><h1 id="乘积基的交与乘积拓扑">乘积基的交与乘积拓扑</h1>
+<p>固定编号：T02-02-M035<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 39 页 / PDF 第 39
+页，习题2.2第6题及“乘积拓扑”命名。<br />
+学习目标：把两个基矩形的交写成因子交的乘积，再展开成基矩形之并，完成乘积基判定。</p>
+<blockquote>
+<p><strong>本段主线：</strong>完成两个拓扑空间的乘积基构造。<br />
+<strong>当前环节：</strong>覆盖条件已证，现在核验命题2.2.8(b)。<br />
+<strong>这一步只做：</strong>证明交可由乘积基元素并成，并给生成拓扑命名。</p>
+</blockquote>
+<p>来源说明：B为教材习题2.2第6题完整结论，提示参见例2.2.9；交的分配展开和参考解为新增。</p>
+<h2
+id="方法乘积交等于两个因子交的乘积">方法：乘积交等于两个因子交的乘积</h2>
+<p>有恒等式</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>B</mi><mn>1</mn></msub><mo>×</mo><msub><mi>B</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>∩</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>C</mi><mn>1</mn></msub><mo>×</mo><msub><mi>C</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>B</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>C</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>×</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>B</mi><mn>2</mn></msub><mo>∩</mo><msub><mi>C</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+(B_1\times B_2)\cap(C_1\times C_2)
+=(B_1\cap C_1)\times(B_2\cap C_2).
+</annotation></semantics></math></div></p>
+<p>因子基的交条件给</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><munder><mo>⋃</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow></munder><msub><mi>A</mi><mi>i</mi></msub><mo>,</mo><mi>q</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>d</mi><msub><mi>B</mi><mn>2</mn></msub><mo>∩</mo><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><munder><mo>⋃</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></munder><msub><mi>D</mi><mi>j</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+B_1\cap C_1=\bigcup_{i\in I}A_i,qquad
+B_2\cap C_2=\bigcup_{j\in J}D_j.
+</annotation></semantics></math></div></p>
+<p>于是</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>B</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>C</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>×</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>B</mi><mn>2</mn></msub><mo>∩</mo><msub><mi>C</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>⋃</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi><mo>,</mo><mspace width="0.167em"></mspace><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></munder><mo stretchy="false" form="prefix">(</mo><msub><mi>A</mi><mi>i</mi></msub><mo>×</mo><msub><mi>D</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+(B_1\cap C_1)\times(B_2\cap C_2)
+=\bigcup_{i\in I,\,j\in J}(A_i\times D_j),
+</annotation></semantics></math></div></p>
+<p>右边每项都是候选乘积基元素。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>验证集合恒等式</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>×</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>∩</mo><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo>×</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>∩</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>×</mo><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo>∩</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+(A\times B)\cap(C\times D)=(A\cap C)\times(B\cap D)
+</annotation></semantics></math></div></p>
+<p>的两个包含方向。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的有序对论证
+</summary>
+<p>有序对
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math>
+在左边，当且仅当它同时满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>A</mi><mo>,</mo><mi>y</mi><mo>∈</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">x\in A,y\in B</annotation></semantics></math>
+与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>C</mi><mo>,</mo><mi>y</mi><mo>∈</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">x\in C,y\in D</annotation></semantics></math>。这等价于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>A</mi><mo>∩</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">x\in A\cap C</annotation></semantics></math>
+且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mi>B</mi><mo>∩</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">y\in B\cap D</annotation></semantics></math>，也就是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math>
+在右边。</p>
+<p>逐项等价同时给出两个包含方向，恒等式成立。</p>
+</details>
+<span id="q-T02-02-E006" class="content-anchor"></span><h2 id="练习-b教材习题2.2第6题">练习 B：教材习题2.2第6题</h2>
+<p>设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="script">ℬ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\mathcal B_1</annotation></semantics></math>
+为X上拓扑
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>
+的一组基，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="script">ℬ</mi><mn>2</mn></msub><annotation encoding="application/x-tex">\mathcal B_2</annotation></semantics></math>
+为Y上拓扑
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>2</mn></msub><annotation encoding="application/x-tex">\tau_2</annotation></semantics></math>
+的一组基。令</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">ℬ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>B</mi><mn>1</mn></msub><mo>×</mo><msub><mi>B</mi><mn>2</mn></msub><mo>:</mo><msub><mi>B</mi><mn>1</mn></msub><mo>∈</mo><msub><mi mathvariant="script">ℬ</mi><mn>1</mn></msub><mo>,</mo><mspace width="0.222em"></mspace><msub><mi>B</mi><mn>2</mn></msub><mo>∈</mo><msub><mi mathvariant="script">ℬ</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\mathcal B=\{B_1\times B_2:B_1\in\mathcal B_1,\ B_2\in\mathcal B_2\}.
+</annotation></semantics></math></div></p>
+<p>证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>×</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X\times Y</annotation></semantics></math>
+上某个拓扑的一组基。如此定义的拓扑称为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>×</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X\times Y</annotation></semantics></math>
+上的乘积拓扑。</p>
+<div class="practice-controls" data-question-id="T02-02-E006" data-module-id="T02-02-M035" data-mode="guided" data-answer-anchor="answer-T02-02-E006"></div><span id="answer-T02-02-E006" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试教材第6题后展开完整证明
+</summary>
+<p>M034已证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+覆盖
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>×</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X\times Y</annotation></semantics></math>，即命题2.2.8(a)。</p>
+<p>任取两个乘积基元素
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub><mo>×</mo><msub><mi>B</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">B_1\times B_2</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>×</mo><msub><mi>C</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">C_1\times C_2</annotation></semantics></math>。因
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="script">ℬ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\mathcal B_1</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="script">ℬ</mi><mn>2</mn></msub><annotation encoding="application/x-tex">\mathcal B_2</annotation></semantics></math>
+各为基，存在基元素族
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>A</mi><mi>i</mi></msub><mo>:</mo><mi>i</mi><mo>∈</mo><mi>I</mi><mo stretchy="false" form="postfix">}</mo><mo>⊆</mo><msub><mi mathvariant="script">ℬ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\{A_i:i\in I\}\subseteq\mathcal B_1</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>D</mi><mi>j</mi></msub><mo>:</mo><mi>j</mi><mo>∈</mo><mi>J</mi><mo stretchy="false" form="postfix">}</mo><mo>⊆</mo><msub><mi mathvariant="script">ℬ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\{D_j:j\in J\}\subseteq\mathcal B_2</annotation></semantics></math>，使</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><munder><mo>⋃</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow></munder><msub><mi>A</mi><mi>i</mi></msub><mo>,</mo><mi>q</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>d</mi><msub><mi>B</mi><mn>2</mn></msub><mo>∩</mo><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><munder><mo>⋃</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></munder><msub><mi>D</mi><mi>j</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+B_1\cap C_1=\bigcup_{i\in I}A_i,qquad
+B_2\cap C_2=\bigcup_{j\in J}D_j.
+</annotation></semantics></math></div></p>
+<p>于是</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mo stretchy="false" form="prefix">(</mo><msub><mi>B</mi><mn>1</mn></msub><mo>×</mo><msub><mi>B</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>∩</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>C</mi><mn>1</mn></msub><mo>×</mo><msub><mi>C</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>B</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>C</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>×</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>B</mi><mn>2</mn></msub><mo>∩</mo><msub><mi>C</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><munder><mo>⋃</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi><mo>,</mo><mspace width="0.167em"></mspace><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></munder><mo stretchy="false" form="prefix">(</mo><msub><mi>A</mi><mi>i</mi></msub><mo>×</mo><msub><mi>D</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+(B_1\times B_2)\cap(C_1\times C_2)
+&amp;=(B_1\cap C_1)\times(B_2\cap C_2)\\
+&amp;=\bigcup_{i\in I,\,j\in J}(A_i\times D_j).
+\end{aligned}
+</annotation></semantics></math></div></p>
+<p>每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub><mo>×</mo><msub><mi>D</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">A_i\times D_j</annotation></semantics></math>
+属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>；若某个因子交为空，对应索引集为空，整个交为空并。故条件(b)成立。</p>
+<p>命题2.2.8说明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℬ</mi><annotation encoding="application/x-tex">\mathcal B</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>×</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X\times Y</annotation></semantics></math>
+上某个拓扑的基；该拓扑按教材定义称为乘积拓扑。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>乘积基的交可按两个坐标分别细分，再把因子基元素两两相乘；覆盖与交条件共同定义乘积拓扑。</p>
+</article></div>
+<footer><span data-app-version="0.3.6">网站版本 0.3.6</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>
