@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.4">
+<title>每个子集闭则离散 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T01-02-M018"><h1 id="每个子集闭则离散">每个子集闭则离散</h1>
+<p>固定编号：T01-02-M018<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 21 页 / PDF 第 21
+页，习题1.2第2题。<br />
+学习目标：对任意子集选择其补集调用假设，从“全部闭”推出“全部开”。</p>
+<blockquote>
+<p><strong>本段主线：</strong>完成原题2的一般离散性证明。<br />
+<strong>当前环节：</strong>假设说闭，离散性目标说所有子集属于拓扑。<br />
+<strong>这一步只做：</strong>把假设用在所取子集的补集上，而非只用在它自身上。</p>
+</blockquote>
+<p>来源说明：B为原题；A及参考解为新增。无需假定底集有限。</p>
+<h2
+id="方法为目标选对应用假设的集合">方法：为目标选对应用假设的集合</h2>
+<p>若目标是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+开，只知道
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+闭不够。应考察
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">X\setminus S</annotation></semantics></math>：如果它闭，它的补集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>\</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">X\setminus(X\setminus S)=S</annotation></semantics></math>
+就开。题设对每个子集成立，因此也适用于这个补集。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>,</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X,\tau)</annotation></semantics></math>
+的每个子集都闭。一份草稿说：“任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>⊆</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">U\subseteq X</annotation></semantics></math>，由假设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+闭，因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+开。”指出缺少的依据，并补成证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+开的论证。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的修补
+</summary>
+<p>闭不直接推出开，草稿这一步没有依据。正确做法是：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">X\setminus U</annotation></semantics></math>
+也是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+的子集，故由题设闭。按闭集定义，其补集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>\</mo><mi>U</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X\setminus(X\setminus U)</annotation></semantics></math>
+开；这个补集恰为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+开。</p>
+<p>这里没有添加任何特殊性质给
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>，所以适用于任意子集。</p>
+</details>
+<span id="q-T01-02-E002" class="content-anchor"></span><h2 id="练习-b教材习题1.2第2题">练习 B：教材习题1.2第2题</h2>
+<p><strong>教材原题。</strong>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>,</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X,\tau)</annotation></semantics></math>
+为一拓扑空间，其每一个子集都为闭集。证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>,</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X,\tau)</annotation></semantics></math>
+为离散拓扑空间。</p>
+<span id="answer-T01-02-E002" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试原题2后展开完整证明
+</summary>
+<p>任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>⊆</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">S\subseteq X</annotation></semantics></math>。集合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><mi>S</mi><mo>⊆</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">X\setminus S\subseteq X</annotation></semantics></math>，因此按假设是闭集；所以它的补集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>\</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">X\setminus(X\setminus S)=S</annotation></semantics></math>
+是开集，即
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">S\in\tau</annotation></semantics></math>。</p>
+<p>这对所有子集成立，包括空集、有限子集和可能的无限子集。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>
+含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+的全部子集，正是离散拓扑。没有依靠列举，也没有把“闭”直接等同于“开”。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>对所有子集的假设可以用在目标的补集上。补两次回到目标，把“全部闭”转成了“全部开”。</p>
+</article></div>
+<footer><span data-app-version="0.3.4">网站版本 0.3.4</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T01-02-M018.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

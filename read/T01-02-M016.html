@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.4">
+<title>六点集分类前的系统列举 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T01-02-M016"><h1 id="六点集分类前的系统列举">六点集分类前的系统列举</h1>
+<p>固定编号：T01-02-M016<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 21 页 / PDF 第 21
+页，习题1.2第1题的新增铺垫。<br />
+学习目标：按子集大小和固定点序产生完整、不重复的候选清单。</p>
+<blockquote>
+<p><strong>本段主线：</strong>完成原六点集全部64个子集的开闭分类。<br />
+<strong>当前环节：</strong>先确保没有漏掉需要判断的对象。<br />
+<strong>这一步只做：</strong>建立系统列举方法，开闭分类在下一模块完成。</p>
+</blockquote>
+<p>来源说明：教材要求列出64个子集；本模块A/B为新增列举训练，不记作已完成原题1。</p>
+<h2
+id="方法先固定大小再按点序向后选">方法：先固定大小，再按点序向后选</h2>
+<p>若点按
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">a,b,c,d</annotation></semantics></math>
+排序，列二元子集时先选较前的点，再选它后面的点。这样
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a,b\}</annotation></semantics></math>
+只写一次，不把
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{b,a\}</annotation></semantics></math>
+当成新集合。</p>
+<p>按大小分组也不会重叠。较大的子集还可以由较小子集取补集产生：补集再补回来是原集合，所以不会漏掉或把不同小集变成同一个大集。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>列出
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">Y=\{a,b,c,d\}</annotation></semantics></math>
+的全部二元子集，并据此说明全部子集按大小分别有多少个。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的列举与分组
+</summary>
+<p>以a开头有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>d</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a,b\},\{a,c\},\{a,d\}</annotation></semantics></math>；以b开头有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>d</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{b,c\},\{b,d\}</annotation></semantics></math>；以c开头有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{c,d\}</annotation></semantics></math>。这六个覆盖所有前后点对，且没有交换重复。</p>
+<p>大小为0、1、2、3、4的子集数分别是1、4、6、4、1。三元子集分别为四个单点集的补集，大小0和4只有空集与底集。因此共有16个子集。</p>
+</details>
+<span id="q-T01-02-M016-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>对
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo>,</mo><mi>e</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">X=\{a,b,c,d,e,f\}</annotation></semantics></math>，列全二元子集；再按大小0至6给出各组数量及理由，确认总数64。此处还不作开闭分类。</p>
+<span id="answer-T01-02-M016-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开系统清单
+</summary>
+<p>二元子集为</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>d</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>e</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>d</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>e</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">{</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>c</mi><mo>,</mo><mi>e</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>c</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">{</mo><mi>d</mi><mo>,</mo><mi>e</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>d</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>e</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{gathered}
+\{a,b\},\{a,c\},\{a,d\},\{a,e\},\{a,f\},\\
+\{b,c\},\{b,d\},\{b,e\},\{b,f\},\\
+\{c,d\},\{c,e\},\{c,f\},\\
+\{d,e\},\{d,f\},\{e,f\}.
+\end{gathered}</annotation></semantics></math></div></p>
+<p>按最前点分组，有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mo>+</mo><mn>4</mn><mo>+</mo><mn>3</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>1</mn><mo>=</mo><mn>15</mn></mrow><annotation encoding="application/x-tex">5+4+3+2+1=15</annotation></semantics></math>
+个。</p>
+<p>三元子集的最前点只能是a、b、c、d；后两个点分别从剩余5、4、3、2个点中选，有10、6、3、1种（同样用二元列举法），合计20个。四元子集与二元子集互为补集，所以15个；五元与单点互补，所以6个。</p>
+<p>从大小0至6，各组为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>15</mn><mo>,</mo><mn>20</mn><mo>,</mo><mn>15</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">1,6,15,20,15,6,1</annotation></semantics></math>，合计64。固定大小和前后点序保证不重复，任意子集也必在相应大小组中。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>64个候选的组织方式已经明确。下一步每个候选都要检查自身及其补集，不只给出四类的代表。</p>
+</article></div>
+<footer><span data-app-version="0.3.4">网站版本 0.3.4</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T01-02-M016.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

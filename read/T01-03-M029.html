@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.4">
+<title>末尾段拓扑是不是有限闭拓扑 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T01-03-M029"><h1 id="末尾段拓扑是不是有限闭拓扑">末尾段拓扑是不是有限闭拓扑</h1>
+<p>固定编号：T01-03-M029<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 26 页 / PDF 第 26
+页，习题1.3第2题；回引书内/PDF17页习题1.1第6(ii)。<br />
+学习目标：比较末尾段拓扑与有限闭拓扑的完整闭集规则，给出不同性的见证。</p>
+<blockquote>
+<p><strong>本段主线：</strong>完成原题2的拓扑比较。<br />
+<strong>当前环节：</strong>两种拓扑都已定义，不能仅凭部分闭集相同就认作相同。<br />
+<strong>这一步只做：</strong>找一个有限闭拓扑必收下、原拓扑却不闭的有限集合。</p>
+</blockquote>
+<p>来源说明：B保留回引题的完整底集与成员规则；A及参考解新增。</p>
+<h2
+id="方法缺一个应有闭集就足够区分">方法：缺一个应有闭集就足够区分</h2>
+<p>有限闭拓扑要求每个有限子集都闭。在末尾段拓扑中，一个集合闭当且仅当其补集是允许的末尾段、空集或全体。某些有限初始段闭，并不表示所有有限集合都闭。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">X=\{1,2,3,4\}</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo>,</mo><mi>X</mi><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\sigma=\{\varnothing,X,\{1,2\},\{1,2,3\}\}</annotation></semantics></math>
+是链式拓扑。证明它不是X上的有限闭拓扑；用一个有限集的闭性作见证。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的不同性见证
+</summary>
+<p>在有限底集上，有限闭拓扑使全部子集闭。但
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{2\}</annotation></semantics></math>
+在σ中不闭，因为补集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1,3,4\}</annotation></semantics></math>
+不在σ中。它是一个本应闭的有限子集，足以说明两个拓扑不同。</p>
+<p>这里不需要列出所有不闭子集；比较完整成员规则时，一个违反规则的对象就可否定相同。</p>
+</details>
+<span id="q-T01-03-E002" class="content-anchor"></span><h2 id="练习-b教材习题1.3第2题">练习 B：教材习题1.3第2题</h2>
+<p><strong>教材原题。</strong>习题1.1第6(ii)给出的拓扑是有限闭拓扑吗？给出理由。</p>
+<p>该题完整对象是正整数底集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℕ</mi><annotation encoding="application/x-tex">\mathbb N</annotation></semantics></math>，拓扑由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℕ</mi><mo>,</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">\mathbb N,\varnothing</annotation></semantics></math>
+及所有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>n</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>n</mi><mo>,</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>n</mi><mo>+</mo><mn>2</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">F_n=\{n,n+1,n+2,\ldots\}</annotation></semantics></math>（n为正整数）组成，称为final
+segment拓扑。</p>
+<span id="answer-T01-03-E002" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试原题2后展开参考解
+</summary>
+<p>不是。这个拓扑的闭集由全部开集的补集得到：空集、底集以及有限初始段
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1,2,\ldots,k\}</annotation></semantics></math>（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k\ge1</annotation></semantics></math>）。这并不是“所有有限子集”的名单。</p>
+<p>具体地，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{2\}</annotation></semantics></math>
+有限却不闭。其补集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℕ</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathbb N\setminus\{2\}</annotation></semantics></math>
+非空、不等于底集，并含1；若它是某个末尾段
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>n</mi></msub><annotation encoding="application/x-tex">F_n</annotation></semantics></math>，含1就迫使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n=1</annotation></semantics></math>，此时
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>n</mi></msub><mo>=</mo><mi mathvariant="double-struck">ℕ</mi></mrow><annotation encoding="application/x-tex">F_n=\mathbb N</annotation></semantics></math>
+又含2，矛盾。所以补集不开，单点集不闭。</p>
+<p>有限闭拓扑会把这个有限集判为闭集，二者因此不同。虽然
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1\}</annotation></semantics></math>
+的补集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mn>2</mn></msub><annotation encoding="application/x-tex">F_2</annotation></semantics></math>
+开、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1\}</annotation></semantics></math>
+闭，也不能由这一例推广到所有单点。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>末尾段拓扑不等于有限闭拓扑。下一原题将正式用“每个单点都闭”定义T1空间。</p>
+</article></div>
+<footer><span data-app-version="0.3.4">网站版本 0.3.4</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T01-03-M029.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

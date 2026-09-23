@@ -1,6 +1,6 @@
 {
-  "appVersion": "0.3.3",
-  "contentVersion": "9f08d3c49b1d64a42a100f69f888fdf9b6bcf6e81da40836642107eda7091540",
+  "appVersion": "0.3.4",
+  "contentVersion": "77571b3be93127a42478cc4c8c0d2c8a16cab808936a26f234b6cf919f4045ab",
   "modules": [
     {
       "id": "T01-01-M001",
@@ -671,6 +671,496 @@
       "version": "0.1@7d6b20b0d0a0",
       "html": "T01-02-M005.html",
       "markdown": "T01-02-M005.md"
+    },
+    {
+      "id": "T01-02-M006",
+      "title": "为什么熟悉的拓扑未必提供反例",
+      "page": "19",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@b1e9103eef36",
+      "html": "T01-02-M006.html",
+      "markdown": "T01-02-M006.md"
+    },
+    {
+      "id": "T01-02-M007",
+      "title": "用补集定义闭集",
+      "page": "19",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@3fb957af736d",
+      "html": "T01-02-M007.html",
+      "markdown": "T01-02-M007.md"
+    },
+    {
+      "id": "T01-02-M008",
+      "title": "原例的全部闭集",
+      "page": "19",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c07324170779",
+      "html": "T01-02-M008.html",
+      "markdown": "T01-02-M008.md"
+    },
+    {
+      "id": "T01-02-M009",
+      "title": "命题1.2.5：陈述与起点",
+      "page": "19—20",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c15beba82d39",
+      "html": "T01-02-M009.html",
+      "markdown": "T01-02-M009.md"
+    },
+    {
+      "id": "T01-02-M010",
+      "title": "有限并的补集恒等式",
+      "page": "20",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@94efb52efe67",
+      "html": "T01-02-M010.html",
+      "markdown": "T01-02-M010.md"
+    },
+    {
+      "id": "T01-02-M011",
+      "title": "有限个闭集的并",
+      "page": "20",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@bf5fa4015482",
+      "html": "T01-02-M011.html",
+      "markdown": "T01-02-M011.md"
+    },
+    {
+      "id": "T01-02-M012",
+      "title": "任意交的补集恒等式",
+      "page": "20",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@70374c872b2a",
+      "html": "T01-02-M012.html",
+      "markdown": "T01-02-M012.md"
+    },
+    {
+      "id": "T01-02-M013",
+      "title": "任意个闭集的交",
+      "page": "20",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@673071eadeaf",
+      "html": "T01-02-M013.html",
+      "markdown": "T01-02-M013.md"
+    },
+    {
+      "id": "T01-02-M014",
+      "title": "开与闭的四种组合",
+      "page": "20",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@7a052ff43813",
+      "html": "T01-02-M014.html",
+      "markdown": "T01-02-M014.md"
+    },
+    {
+      "id": "T01-02-M015",
+      "title": "闭开集的定义与边界例子",
+      "page": "20—21",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@38a18f36ee02",
+      "html": "T01-02-M015.html",
+      "markdown": "T01-02-M015.md"
+    },
+    {
+      "id": "T01-02-M016",
+      "title": "六点集分类前的系统列举",
+      "page": "21",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋有限枚举及页面核验",
+      "version": "0.1@61f7d6a87509",
+      "html": "T01-02-M016.html",
+      "markdown": "T01-02-M016.md"
+    },
+    {
+      "id": "T01-02-M017",
+      "title": "64个子集的开闭分类",
+      "page": "21",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋有限枚举及页面核验",
+      "version": "0.1@d711b7ad35df",
+      "html": "T01-02-M017.html",
+      "markdown": "T01-02-M017.md"
+    },
+    {
+      "id": "T01-02-M018",
+      "title": "每个子集闭则离散",
+      "page": "21",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋有限枚举及页面核验",
+      "version": "0.1@5c5b3113427a",
+      "html": "T01-02-M018.html",
+      "markdown": "T01-02-M018.md"
+    },
+    {
+      "id": "T01-02-M019",
+      "title": "全部开集闭却未必离散",
+      "page": "21",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋有限枚举及页面核验",
+      "version": "0.1@0afbdb3f2ece",
+      "html": "T01-02-M019.html",
+      "markdown": "T01-02-M019.md"
+    },
+    {
+      "id": "T01-02-M020",
+      "title": "无限子集闭的离散性",
+      "page": "21",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋有限枚举及页面核验",
+      "version": "0.1@f5fea0a0f7a6",
+      "html": "T01-02-M020.html",
+      "markdown": "T01-02-M020.md"
+    },
+    {
+      "id": "T01-02-M021",
+      "title": "只有底集是无限开集",
+      "page": "21",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋有限枚举及页面核验",
+      "version": "0.1@fdf3473cdc63",
+      "html": "T01-02-M021.html",
+      "markdown": "T01-02-M021.md"
+    },
+    {
+      "id": "T01-02-M022",
+      "title": "四成员拓扑的必要分类",
+      "page": "21",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋有限枚举及页面核验",
+      "version": "0.1@1b281b6651d3",
+      "html": "T01-02-M022.html",
+      "markdown": "T01-02-M022.md"
+    },
+    {
+      "id": "T01-02-M023",
+      "title": "三个条件恰有一个成立",
+      "page": "21",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋有限枚举及页面核验",
+      "version": "0.1@ec85d9224fb9",
+      "html": "T01-02-M023.html",
+      "markdown": "T01-02-M023.md"
+    },
+    {
+      "id": "T01-02-M024",
+      "title": "四点四成员拓扑的枚举框架",
+      "page": "21",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋有限枚举及页面核验",
+      "version": "0.1@bb6409b4d361",
+      "html": "T01-02-M024.html",
+      "markdown": "T01-02-M024.md"
+    },
+    {
+      "id": "T01-02-M025",
+      "title": "列全四点集的四成员拓扑",
+      "page": "21",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋有限枚举及页面核验",
+      "version": "0.1@3e950d125cfe",
+      "html": "T01-02-M025.html",
+      "markdown": "T01-02-M025.md"
+    },
+    {
+      "id": "T01-03-M001",
+      "title": "有限闭拓扑的完整成员规则",
+      "page": "21—22",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d19c94481553",
+      "html": "T01-03-M001.html",
+      "markdown": "T01-03-M001.md"
+    },
+    {
+      "id": "T01-03-M002",
+      "title": "验证一般底集的有限闭拓扑",
+      "page": "22",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@76ea9483848d",
+      "html": "T01-03-M002.html",
+      "markdown": "T01-03-M002.md"
+    },
+    {
+      "id": "T01-03-M003",
+      "title": "所有闭集恰为这些集合",
+      "page": "22",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d0c2760f619a",
+      "html": "T01-03-M003.html",
+      "markdown": "T01-03-M003.md"
+    },
+    {
+      "id": "T01-03-M004",
+      "title": "例1.3.2：无限不等于开",
+      "page": "22",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@aaa26b490695",
+      "html": "T01-03-M004.html",
+      "markdown": "T01-03-M004.md"
+    },
+    {
+      "id": "T01-03-M005",
+      "title": "从第三个闭开集开始",
+      "page": "22—23",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@54ed2f61a8a5",
+      "html": "T01-03-M005.html",
+      "markdown": "T01-03-M005.md"
+    },
+    {
+      "id": "T01-03-M006",
+      "title": "两个真闭集为什么有限",
+      "page": "23",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d670468782f3",
+      "html": "T01-03-M006.html",
+      "markdown": "T01-03-M006.md"
+    },
+    {
+      "id": "T01-03-M007",
+      "title": "例1.3.3的完整证明",
+      "page": "22—23",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d81ba12fcfef",
+      "html": "T01-03-M007.html",
+      "markdown": "T01-03-M007.md"
+    },
+    {
+      "id": "T01-03-M008",
+      "title": "同一集合的三种拓扑",
+      "page": "23",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@894e4e6dae50",
+      "html": "T01-03-M008.html",
+      "markdown": "T01-03-M008.md"
+    },
+    {
+      "id": "T01-03-M009",
+      "title": "映射先满足什么条件",
+      "page": "23—24",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@cc2a35d4b645",
+      "html": "T01-03-M009.html",
+      "markdown": "T01-03-M009.md"
+    },
+    {
+      "id": "T01-03-M010",
+      "title": "单映射比较的是不同输入",
+      "page": "23—24",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@1e294adf191a",
+      "html": "T01-03-M010.html",
+      "markdown": "T01-03-M010.md"
+    },
+    {
+      "id": "T01-03-M011",
+      "title": "满映射覆盖整个陪域",
+      "page": "23",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@837522c683bf",
+      "html": "T01-03-M011.html",
+      "markdown": "T01-03-M011.md"
+    },
+    {
+      "id": "T01-03-M012",
+      "title": "双映射同时满足两条",
+      "page": "23",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d9a750b4473d",
+      "html": "T01-03-M012.html",
+      "markdown": "T01-03-M012.md"
+    },
+    {
+      "id": "T01-03-M013",
+      "title": "逆映射的两个方向",
+      "page": "23",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@8fd1658f9cc9",
+      "html": "T01-03-M013.html",
+      "markdown": "T01-03-M013.md"
+    },
+    {
+      "id": "T01-03-M014",
+      "title": "有逆推出双射",
+      "page": "23—24",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@96533a054525",
+      "html": "T01-03-M014.html",
+      "markdown": "T01-03-M014.md"
+    },
+    {
+      "id": "T01-03-M015",
+      "title": "双射怎样定义逆映射",
+      "page": "24",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@dd5bd9a11558",
+      "html": "T01-03-M015.html",
+      "markdown": "T01-03-M015.md"
+    },
+    {
+      "id": "T01-03-M016",
+      "title": "逆映射为什么唯一",
+      "page": "24",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@def7f56ba20b",
+      "html": "T01-03-M016.html",
+      "markdown": "T01-03-M016.md"
+    },
+    {
+      "id": "T01-03-M017",
+      "title": "互为逆的对称性",
+      "page": "24",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@2dd82b4ffbae",
+      "html": "T01-03-M017.html",
+      "markdown": "T01-03-M017.md"
+    },
+    {
+      "id": "T01-03-M018",
+      "title": "逆映像不要求逆函数",
+      "page": "24",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@f66efc7aed9a",
+      "html": "T01-03-M018.html",
+      "markdown": "T01-03-M018.md"
+    },
+    {
+      "id": "T01-03-M019",
+      "title": "绝对值函数的逆映像",
+      "page": "24",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@2164e849d4fd",
+      "html": "T01-03-M019.html",
+      "markdown": "T01-03-M019.md"
+    },
+    {
+      "id": "T01-03-M020",
+      "title": "例1.3.9：目标与端点成员",
+      "page": "24—25",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@94c72d6d059a",
+      "html": "T01-03-M020.html",
+      "markdown": "T01-03-M020.md"
+    },
+    {
+      "id": "T01-03-M021",
+      "title": "任意并与逆映像",
+      "page": "25",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@7b2e1fabb46f",
+      "html": "T01-03-M021.html",
+      "markdown": "T01-03-M021.md"
+    },
+    {
+      "id": "T01-03-M022",
+      "title": "两两交与逆映像",
+      "page": "25",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@b1e558948a87",
+      "html": "T01-03-M022.html",
+      "markdown": "T01-03-M022.md"
+    },
+    {
+      "id": "T01-03-M023",
+      "title": "逆映像成员族的任意并",
+      "page": "25",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@43047d07210c",
+      "html": "T01-03-M023.html",
+      "markdown": "T01-03-M023.md"
+    },
+    {
+      "id": "T01-03-M024",
+      "title": "例1.3.9的完整证明",
+      "page": "24—25",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@7f3053ebb5fd",
+      "html": "T01-03-M024.html",
+      "markdown": "T01-03-M024.md"
+    },
+    {
+      "id": "T01-03-M025",
+      "title": "原题1(a)：逆映像任意并",
+      "page": "25—26",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@52b4e94ccf08",
+      "html": "T01-03-M025.html",
+      "markdown": "T01-03-M025.md"
+    },
+    {
+      "id": "T01-03-M026",
+      "title": "原题1(b)：逆映像两两交",
+      "page": "26",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d97a7a537e0b",
+      "html": "T01-03-M026.html",
+      "markdown": "T01-03-M026.md"
+    },
+    {
+      "id": "T01-03-M027",
+      "title": "集合的像怎样定义",
+      "page": "26",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@fa301d19d50f",
+      "html": "T01-03-M027.html",
+      "markdown": "T01-03-M027.md"
+    },
+    {
+      "id": "T01-03-M028",
+      "title": "集合像不总保持交",
+      "page": "26",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@76073851f529",
+      "html": "T01-03-M028.html",
+      "markdown": "T01-03-M028.md"
+    },
+    {
+      "id": "T01-03-M029",
+      "title": "末尾段拓扑是不是有限闭拓扑",
+      "page": "26",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@274bd8102eee",
+      "html": "T01-03-M029.html",
+      "markdown": "T01-03-M029.md"
     }
   ]
 }

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.4">
+<title>例1.3.9：目标与端点成员 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T01-03-M020"><h1 id="例1.3.9目标与端点成员">例1.3.9：目标与端点成员</h1>
+<p>固定编号：T01-03-M020<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 24—25 页 / PDF 第 24—25
+页，例1.3.9陈述及条件(i)验证。<br />
+学习目标：读清逆映像组成的子集簇，并证明底集与空集属于它。</p>
+<blockquote>
+<p><strong>本段主线：</strong>证明教材例1.3.9给出的子集簇是拓扑。<br />
+<strong>当前环节：</strong>先陈述完整目标并核验条件(i)。<br />
+<strong>这一步只做：</strong>分清两个底集与两个子集簇的层级，找到所需两个成员。</p>
+</blockquote>
+<p>来源说明：原例陈述与证明次序来自教材；A/B为新增展开。没有假定f单、满或具有后文才定义的连续性。</p>
+<h2 id="例1.3.9完整陈述">例1.3.9：完整陈述</h2>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo>,</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(Y,\tau)</annotation></semantics></math>
+是拓扑空间，X是非空集合，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>X</mi><mo>→</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">f:X\to Y</annotation></semantics></math>
+是映射。记</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mn>1</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo>:</mo><mi>S</mi><mo>∈</mo><mi>τ</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\tau_1=\{f^{-1}(S):S\in\tau\}.</annotation></semantics></math></div></p>
+<p>证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>
+是X上的一个拓扑。</p>
+<h2
+id="符号解释目标开集变成输入子集">符号解释：目标开集变成输入子集</h2>
+<p>S是Y的子集、τ的成员；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f^{-1}(S)</annotation></semantics></math>
+是X的子集、候选簇
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>
+的成员。不同S可能给出相同逆映像，重复不增加新的成员。</p>
+<p>对任意映射，所有输入的值都在Y中，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">f^{-1}(Y)=X</annotation></semantics></math>；没有值属于空集，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>⌀</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">f^{-1}(\varnothing)=\varnothing</annotation></semantics></math>。再利用
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>,</mo><mi>⌀</mi><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">Y,\varnothing\in\tau</annotation></semantics></math>
+才能把这两个逆映像放进
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>在原例全部条件下，证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>
+确由X的子集组成，且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>,</mo><mi>⌀</mi><mo>∈</mo><msub><mi>τ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">X,\varnothing\in\tau_1</annotation></semantics></math>。不得使用f有逆或满的假设。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的一般核验
+</summary>
+<p>每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f^{-1}(S)</annotation></semantics></math>
+按定义只包含X中满足条件的输入，故是X的子集。</p>
+<p>任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">x\in X</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">f(x)\in Y</annotation></semantics></math>，所以x属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f^{-1}(Y)</annotation></semantics></math>；反向包含由逆映像定义给出，因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">f^{-1}(Y)=X</annotation></semantics></math>。没有输入能把像放进空集，因此空集的逆映像为空集。</p>
+<p>因为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>,</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">Y,\varnothing</annotation></semantics></math>
+都在给定拓扑τ中，这两者的逆映像都在候选簇
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>
+中，条件(i)成立。没有要求Y中每个点都被取到。</p>
+</details>
+<span id="q-T01-03-M020-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mi mathvariant="double-struck">ℕ</mi></mrow><annotation encoding="application/x-tex">X=\mathbb N</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">Y=\{u,v\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo>,</mo><mi>Y</mi><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\tau=\{\varnothing,Y,\{u\}\}</annotation></semantics></math>。把奇正整数映为u，偶正整数映为v。列出
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>
+的全部成员，并核对底集、空集来自哪个目标成员的逆映像。</p>
+<span id="answer-T01-03-M020-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开成员表
+</summary>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>⌀</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">f^{-1}(\varnothing)=\varnothing</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi mathvariant="double-struck">ℕ</mi></mrow><annotation encoding="application/x-tex">f^{-1}(Y)=\mathbb N</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f^{-1}(\{u\})</annotation></semantics></math>
+是全体奇正整数的集合O。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mn>1</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo>,</mo><mi mathvariant="double-struck">ℕ</mi><mo>,</mo><mi>O</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\tau_1=\{\varnothing,\mathbb N,O\}</annotation></semantics></math>。</p>
+<p>目标拓扑只有三个成员，已全部取逆映像，所以名单完整。底集来自Y，空集来自目标空集。一般例1.3.9还需任意并和两两交的证明，不能由这一个具体名单就宣布整证完成。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>原例目标已明确，候选成员层级与条件(i)已核验。下面准备教材用到的逆映像运算恒等式。</p>
+</article></div>
+<footer><span data-app-version="0.3.4">网站版本 0.3.4</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T01-03-M020.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

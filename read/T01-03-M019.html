@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.4">
+<title>绝对值函数的逆映像 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T01-03-M019"><h1 id="绝对值函数的逆映像">绝对值函数的逆映像</h1>
+<p>固定编号：T01-03-M019<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 24 页 / PDF 第 24
+页，例1.3.8。<br />
+学习目标：对原例的两个目标集合列全逆映像，核验负目标值不贡献输入。</p>
+<blockquote>
+<p><strong>本段主线：</strong>用教材原例确认逆映像的含义。<br />
+<strong>当前环节：</strong>函数既不单也不满，仍可以对集合取逆映像。<br />
+<strong>这一步只做：</strong>对每个允许目标值列全满足条件的整数输入。</p>
+</blockquote>
+<p>来源说明：B完整保留原函数和两个目标集，A与解释新增。</p>
+<h2
+id="方法解绝对值方程时保留全部输入">方法：解绝对值方程时保留全部输入</h2>
+<p>对于整数函数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">f(x)=|x|</annotation></semantics></math>，目标正整数k对应两个输入
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>k</mi><mo>,</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">-k,k</annotation></semantics></math>；0只对应0；负整数没有输入，因为绝对值不为负。目标集的逆映像把所有这些输入合起来，不能遗漏负输入，也不能把负目标点直接复制成输入。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi mathvariant="double-struck">ℤ</mi><mo>→</mo><mi mathvariant="double-struck">ℤ</mi></mrow><annotation encoding="application/x-tex">f:\mathbb Z\to\mathbb Z</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">f(x)=|x|</annotation></semantics></math>。求
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>2</mn><mo>,</mo><mi>−</mi><mn>3</mn><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f^{-1}(\{0,2,-3\})</annotation></semantics></math>，逐一说明三个目标值的贡献。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的全部来源
+</summary>
+<p>目标0对应输入0；目标2对应输入-2和2；目标-3没有输入。故逆映像为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>−</mi><mn>2</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{-2,0,2\}</annotation></semantics></math>。</p>
+<p>例如输入-3的像是3，反而不在本题目标集中，因此不能把-3因为写在目标集中就原样收下。</p>
+</details>
+<span id="q-T01-03-M019-B" class="content-anchor"></span><h2 id="练习-b教材例1.3.8的完整核验">练习 B：教材例1.3.8的完整核验</h2>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi mathvariant="double-struck">ℤ</mi><mo>→</mo><mi mathvariant="double-struck">ℤ</mi></mrow><annotation encoding="application/x-tex">f:\mathbb Z\to\mathbb Z</annotation></semantics></math>，对每个整数x规定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">f(x)=|x|</annotation></semantics></math>。说明它不单、不满，因而没有逆映射；再求教材两个逆映像：</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">{</mo><mi>−</mi><mn>5</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>9</mn><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">f^{-1}(\{1,2,3\}),\qquad f^{-1}(\{-5,3,5,7,9\}).</annotation></semantics></math></div></p>
+<span id="answer-T01-03-M019-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开原例核验
+</summary>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≠</mo><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">1\ne-1</annotation></semantics></math>
+却有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f(1)=f(-1)=1</annotation></semantics></math>，故f不单。陪域中的-1没有原像，故f不满。因此f不双，由命题1.3.6第1项没有逆映射。</p>
+<p>目标1、2、3各对应正负两个输入，故第一项为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>−</mi><mn>3</mn><mo>,</mo><mi>−</mi><mn>2</mn><mo>,</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{-3,-2,-1,1,2,3\}</annotation></semantics></math>。</p>
+<p>第二个目标集中的-5没有输入；3、5、7、9分别贡献对应正负输入。因此结果为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>−</mi><mn>9</mn><mo>,</mo><mi>−</mi><mn>7</mn><mo>,</mo><mi>−</mi><mn>5</mn><mo>,</mo><mi>−</mi><mn>3</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>9</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{-9,-7,-5,-3,3,5,7,9\}</annotation></semantics></math>。其中-5是因为其像5在目标集中才被收下，不是因为目标-5本身有原像。</p>
+<p>列表顺序与教材可不同，集合成员相同；全部可能的绝对值结果已分类，不遗漏其他整数输入。</p>
+</details>
+<h2 id="精选复习">精选复习</h2><details class="prepared-review"><summary>精选复习内容（仅回看，不记分）</summary><p class="notice">这里保留课件中的预设问题与答案。计分复习在讲练间隙进行；只回看不会改变排期。</p><h3 id="t01-03-r005">T01-03-R005</h3>
+<p><strong>问题：</strong>没有逆映射的f能否有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f^{-1}(S)</annotation></semantics></math>？这个集合的元素属于定义域还是陪域？</p>
+<details>
+<summary>
+回忆后查看答案
+</summary>
+<p>能。对任何目标子集S，逆映像都是定义域中满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">f(x)\in S</annotation></semantics></math>
+的全部输入，不要求f单或满。逆映射是另一个函数，需要两条复合恒等式，与这个集合运算不同。</p>
+</details>
+</details><h2 id="简短回顾">简短回顾</h2>
+<p>原例两个逆映像及非单非满的理由已核验。接下来用开集的逆映像组成候选拓扑。</p>
+</article></div>
+<footer><span data-app-version="0.3.4">网站版本 0.3.4</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T01-03-M019.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

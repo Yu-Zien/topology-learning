@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.4">
+<title>逆映像成员族的任意并 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T01-03-M023"><h1 id="逆映像成员族的任意并">逆映像成员族的任意并</h1>
+<p>固定编号：T01-03-M023<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 25 页 / PDF 第 25
+页，例1.3.9的条件(ii)证明及任意索引警示。<br />
+学习目标：为任意候选成员族找到目标来源，并用开并和逆映像并式证明闭合。</p>
+<blockquote>
+<p><strong>本段主线：</strong>完成例1.3.9的拓扑验证。<br />
+<strong>当前环节：</strong>把已证集合恒等式与目标拓扑的并条件连接。<br />
+<strong>这一步只做：</strong>从任意候选成员族出发，证明它的并仍在候选簇中。</p>
+</blockquote>
+<p>来源说明：主要证明路线与任意索引警示来自教材；A/B为新增展开。来源代表的选取沿用此前已明示的通常集合论背景，不假定f可逆或代表唯一。</p>
+<h2
+id="方法等式之后仍须检查结果来源开">方法：等式之后仍须检查结果来源开</h2>
+<p>设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mn>1</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>:</mo><mi>B</mi><mo>∈</mo><mi>τ</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\tau_1=\{f^{-1}(B):B\in\tau\}</annotation></semantics></math>。一个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∈</mo><msub><mi>τ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">A\in\tau_1</annotation></semantics></math>，就意味着至少有一个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">B\in\tau</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">A=f^{-1}(B)</annotation></semantics></math>；不同B可能有相同逆映像，不必要求唯一。</p>
+<p>要把一族A的并放回
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>，可找一个仍属于τ的目标集合，并证明其逆映像恰是所求并。这正是教材取各个来源后再求并的思路。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>在例1.3.9条件下，任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>A</mi><mi>j</mi></msub><mo>:</mo><mi>j</mi><mo>∈</mo><mi>J</mi><mo stretchy="false" form="postfix">}</mo><mo>⊆</mo><msub><mi>τ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\{A_j:j\in J\}\subseteq\tau_1</annotation></semantics></math>，J任意。证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>⋃</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></msub><msub><mi>A</mi><mi>j</mi></msub><mo>∈</mo><msub><mi>τ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\bigcup_{j\in J}A_j\in\tau_1</annotation></semantics></math>。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的一般并条件
+</summary>
+<p>对每个j，因
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>j</mi></msub><mo>∈</mo><msub><mi>τ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">A_j\in\tau_1</annotation></semantics></math>，取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>j</mi></msub><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">B_j\in\tau</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>j</mi></msub><mo>=</mo><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><msub><mi>B</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">A_j=f^{-1}(B_j)</annotation></semantics></math>。目标空间的拓扑τ允许任意并，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><msub><mo>⋃</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></msub><msub><mi>B</mi><mi>j</mi></msub><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">B=\bigcup_{j\in J}B_j\in\tau</annotation></semantics></math>。</p>
+<p>由M021的恒等式，</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>⋃</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></munder><msub><mi>A</mi><mi>j</mi></msub><mo>=</mo><munder><mo>⋃</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></munder><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><msub><mi>B</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\bigcup_{j\in J}A_j=\bigcup_{j\in J}f^{-1}(B_j)=f^{-1}(B).</annotation></semantics></math></div></p>
+<p>因为B在τ中，按
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>
+的定义，其逆映像属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>。若J为空，B为空集，所求并也为空集，仍成立。</p>
+</details>
+<span id="q-T01-03-M023-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>有草稿写：“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>⋃</mo><mi>j</mi></msub><msub><mi>A</mi><mi>j</mi></msub><mo>=</mo><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><msub><mo>⋃</mo><mi>j</mi></msub><msub><mi>B</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\bigcup_jA_j=f^{-1}(\bigcup_jB_j)</annotation></semantics></math>，所以左侧属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>。”请补上
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mi>j</mi></msub><annotation encoding="application/x-tex">B_j</annotation></semantics></math>
+的来源、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>⋃</mo><mi>j</mi></msub><msub><mi>B</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\bigcup_jB_j</annotation></semantics></math>
+的资格与指标范围，写成完整条件(ii)证明。</p>
+<span id="answer-T01-03-M023-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开完整逻辑链
+</summary>
+<p>先令J为任意指标集，取任意族
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>j</mi></msub><mo>∈</mo><msub><mi>τ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">A_j\in\tau_1</annotation></semantics></math>。成员定义给出每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>A</mi><mi>j</mi></msub><annotation encoding="application/x-tex">A_j</annotation></semantics></math>
+的来源
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>j</mi></msub><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">B_j\in\tau</annotation></semantics></math>，且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>j</mi></msub><mo>=</mo><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><msub><mi>B</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">A_j=f^{-1}(B_j)</annotation></semantics></math>。因为τ是拓扑，全部来源的并
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>⋃</mo><mi>j</mi></msub><msub><mi>B</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\bigcup_jB_j</annotation></semantics></math>
+仍属于τ。</p>
+<p>再使用已证的逆映像并式，得到左侧等于这个开来源集合的逆映像，因此属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>。J为空时用空并及空集逆映像为空集，仍是成员。</p>
+<p>只有集合等式还不够，必须说明等式中的目标来源是τ的成员。</p>
+</details>
+<h2 id="精选复习">精选复习</h2><details class="prepared-review"><summary>精选复习内容（仅回看，不记分）</summary><p class="notice">这里保留课件中的预设问题与答案。计分复习在讲练间隙进行；只回看不会改变排期。</p><h3 id="t01-03-r006">T01-03-R006</h3>
+<p><strong>问题：</strong>在例1.3.9中，写出并等于某集合的逆映像后，还须检查什么？为什么不能只处理
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>,</mo><msub><mi>A</mi><mn>2</mn></msub><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">A_1,A_2,\ldots</annotation></semantics></math>？</p>
+<details>
+<summary>
+回忆后查看答案
+</summary>
+<p>还须检查目标来源集合属于τ，这样逆映像才按定义属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>。拓扑并条件允许任意成员族，没有保证所有子族都能用正整数列出，所以必须保留任意指标集J。</p>
+</details>
+</details><h2 id="简短回顾">简短回顾</h2>
+<p>任意并条件已证，来源资格与索引范围都已交代。最后整合端点与交条件，完成原例。</p>
+</article></div>
+<footer><span data-app-version="0.3.4">网站版本 0.3.4</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T01-03-M023.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

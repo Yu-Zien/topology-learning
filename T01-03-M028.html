@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.4">
+<title>集合像不总保持交 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T01-03-M028"><h1 id="集合像不总保持交">集合像不总保持交</h1>
+<p>固定编号：T01-03-M028<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 26 页 / PDF 第 26
+页，习题1.3第1(c)题。<br />
+学习目标：构造两个不交的非空输入集合，其像却有共同值，并核验原题全部对象条件。</p>
+<blockquote>
+<p><strong>本段主线：</strong>完成原题1(c)。<br />
+<strong>当前环节：</strong>用同值输入说明像与逆映像的交性质不同。<br />
+<strong>这一步只做：</strong>分别算交后取像和取像后交，给出确实不同的结果。</p>
+</blockquote>
+<p>来源说明：B保留原题不等式及原印属号，A与参考解新增。Q16记录原文
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>∈</mo><mi>X</mi><mo>,</mo><msub><mi>A</mi><mn>2</mn></msub><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">A_1\in X,A_2\in X</annotation></semantics></math>
+与通常子集表达的区别。下面选择A1、A2既是X元素又是X子集的例子，保守满足两种要求，不必擅自替换属号；作者原意仍不推断。</p>
+<h2
+id="方法不同来源可以汇到同一个值">方法：不同来源可以汇到同一个值</h2>
+<p>若两个不交非空集合中的点全被映到同一点u，交集为空，其像为空；但两个像都是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{u\}</annotation></semantics></math>，相交仍为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{u\}</annotation></semantics></math>。</p>
+<p>原题的属号还涉及对象层级。可以明确取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">p=\varnothing</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">q=\{p\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>q</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">r=\{q\}</annotation></semantics></math>，则在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">X=\{p,q,r\}</annotation></semantics></math>
+中，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo stretchy="false" form="postfix">}</mo><mo>=</mo><mi>q</mi></mrow><annotation encoding="application/x-tex">\{p\}=q</annotation></semantics></math>
+既是X的元素又是X的子集；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>q</mi><mo stretchy="false" form="postfix">}</mo><mo>=</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">\{q\}=r</annotation></semantics></math>
+也一样。这些内部结构在本题明确给定，不套用到原题1.1第3题那些未给内部结构的字母点上。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">U=\{a,b,c\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">V=\{u\}</annotation></semantics></math>，把三个输入都映到u。取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">C=\{a\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">D=\{b\}</annotation></semantics></math>，计算
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo>∩</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(C\cap D)</annotation></semantics></math>
+与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>∩</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(C)\cap f(D)</annotation></semantics></math>。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的失败机制
+</summary>
+<p>C、D不交，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo>∩</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>⌀</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">f(C\cap D)=f(\varnothing)=\varnothing</annotation></semantics></math>。但两个非空集合中所有输入的值都为u，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">f(C)=f(D)=\{u\}</annotation></semantics></math>，两像的交为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{u\}</annotation></semantics></math>，不等于左侧。</p>
+<p>失败不在逆映像交式，而在不同输入可有同一个像。</p>
+</details>
+<span id="q-T01-03-E001-c" class="content-anchor"></span><h2 id="练习-b教材习题1.3第1c题">练习 B：教材习题1.3第1(c)题</h2>
+<p><strong>教材原题。</strong>找出具体的集合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>,</mo><msub><mi>A</mi><mn>2</mn></msub><mo>,</mo><mi>X</mi><mo>,</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">A_1,A_2,X,Y</annotation></semantics></math>
+以及映射
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>X</mi><mo>→</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">f:X\to Y</annotation></semantics></math>，使</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>A</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>A</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>≠</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>A</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>∩</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>A</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">f(A_1\cap A_2)\ne f(A_1)\cap f(A_2).</annotation></semantics></math></div></p>
+<p>原页末写“这里
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>∈</mo><mi>X</mi><mo>,</mo><msub><mi>A</mi><mn>2</mn></msub><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">A_1\in X,A_2\in X</annotation></semantics></math>”。为保留此原文并让集合像有定义，本课要求所给例子同时满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>,</mo><msub><mi>A</mi><mn>2</mn></msub><mo>⊆</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">A_1,A_2\subseteq X</annotation></semantics></math>
+与该属号条件；这不是声称原印符号的意图已确认。</p>
+<div class="practice-controls" data-question-id="T01-03-E001-c" data-module-id="T01-03-M028" data-mode="guided" data-answer-anchor="answer-T01-03-E001-c"></div><span id="answer-T01-03-E001-c" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试原题1(c)后展开兼容两种条件的例子
+</summary>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">p=\varnothing</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">q=\{p\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>q</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">r=\{q\}</annotation></semantics></math>，它们两两不同：p为空，q与r非空；q的唯一元素p不同于r的唯一元素q。取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">X=\{p,q,r\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">Y=\{u\}</annotation></semantics></math>，对每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">x\in X</annotation></semantics></math>
+定义
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">f(x)=u</annotation></semantics></math>。</p>
+<p>取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo stretchy="false" form="postfix">}</mo><mo>=</mo><mi>q</mi></mrow><annotation encoding="application/x-tex">A_1=\{p\}=q</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>2</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>q</mi><mo stretchy="false" form="postfix">}</mo><mo>=</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">A_2=\{q\}=r</annotation></semantics></math>。它们是X的子集，因为各自的元素p、q都在X中；同时它们也是X的元素q、r。因此原属号条件和集合像所需的子集条件都满足。</p>
+<p>因为p与q不同，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>A</mi><mn>2</mn></msub><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">A_1\cap A_2=\varnothing</annotation></semantics></math>。为区分“把集合当作一个点的函数值”和“集合中全部点的像”，此处暂将集合像写为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">[</mo><mi>A</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">f[A]</annotation></semantics></math>，含义就是M027及原题所用的集合像。于是</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>A</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>A</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">]</mo><mo>=</mo><mi>⌀</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>f</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>A</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">]</mo><mo>=</mo><mi>f</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>A</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">]</mo><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">f[A_1\cap A_2]=\varnothing,\qquad f[A_1]=f[A_2]=\{u\}.</annotation></semantics></math></div></p>
+<p>因此两像的交非空，确实不等于交集的像，给出原题要求的不等式。没有把集合像与某一个输入点的值混为一谈，也没有静默修改原属号。</p>
+</details>
+<h2 id="精选复习">精选复习</h2><details class="prepared-review"><summary>精选复习内容（仅回看，不记分）</summary><p class="notice">这里保留课件中的预设问题与答案。计分复习在讲练间隙进行；只回看不会改变排期。</p><h3 id="t01-03-r007">T01-03-R007</h3>
+<p><strong>问题：</strong>逆映像总保持两两交，集合像也总保持吗？导致失败的基本机制是什么？</p>
+<details>
+<summary>
+回忆后查看答案
+</summary>
+<p>不总保持。两个不交的输入集合可能通过不同输入得到同一输出，使两像有公共元素，而输入交为空、其像也为空。不能把逆映像的恒等式直接反向套到集合像。</p>
+</details>
+</details><h2 id="简短回顾">简短回顾</h2>
+<p>原题1(a)(b)(c)均已有完整论证或反例。Q16的原文表述保留，本题给出的例子同时核对了属号与子集条件。</p>
+</article></div>
+<footer><span data-app-version="0.3.4">网站版本 0.3.4</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>

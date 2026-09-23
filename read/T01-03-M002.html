@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.4">
+<title>验证一般底集的有限闭拓扑 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T01-03-M002"><h1 id="验证一般底集的有限闭拓扑">验证一般底集的有限闭拓扑</h1>
+<p>固定编号：T01-03-M002<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 22 页 / PDF 第 22
+页，定义1.3.1后要求再次验证的正文任务。<br />
+学习目标：对任意非空底集证明有限补集成员簇是拓扑，不限于正整数底集。</p>
+<blockquote>
+<p><strong>本段主线：</strong>确认定义1.3.1确实给出了拓扑。<br />
+<strong>当前环节：</strong>复用上一节的方法，移除对底集为N的限定。<br />
+<strong>这一步只做：</strong>对一般底集完成任意并与两两交证明。</p>
+</blockquote>
+<p>来源说明：验证任务来自教材；证明及A/B为新增展开，不把定义中的名称当作已经验证的结论。</p>
+<h2
+id="方法证明用的是有限性不是整数次序">方法：证明用的是有限性，不是整数次序</h2>
+<p>上一节证明中，并的补集包含于某个参与者的有限补集；交的补集等于两个有限补集的并。这两点对任何底集都成立，不需要正负、大小次序或能把所有点排成一列。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+非空，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">𝒯</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo stretchy="false" form="postfix">}</mo><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>U</mi><mo>⊆</mo><mi>X</mi><mo>:</mo><mi>X</mi><mo>\</mo><mi>U</mi><mtext mathvariant="normal">有限</mtext><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathcal T=\{\varnothing\}\cup\{U\subseteq X:X\setminus U\text{有限}\}</annotation></semantics></math>。证明它对任意并闭合。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的一般并证明
+</summary>
+<p>任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">𝒟</mi><mo>⊆</mo><mi mathvariant="script">𝒯</mi></mrow><annotation encoding="application/x-tex">\mathcal D\subseteq\mathcal T</annotation></semantics></math>。若没有非空参与者，其并为空集，在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒯</mi><annotation encoding="application/x-tex">\mathcal T</annotation></semantics></math>
+中。否则取一个非空参与者
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mn>0</mn></msub><annotation encoding="application/x-tex">U_0</annotation></semantics></math>，它的补集有限。</p>
+<p>由于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mn>0</mn></msub><mo>⊆</mo><mo>⋃</mo><mi mathvariant="script">𝒟</mi></mrow><annotation encoding="application/x-tex">U_0\subseteq\bigcup\mathcal D</annotation></semantics></math>，有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><mo>⋃</mo><mi mathvariant="script">𝒟</mi><mo>⊆</mo><mi>X</mi><mo>\</mo><msub><mi>U</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">X\setminus\bigcup\mathcal D\subseteq X\setminus U_0</annotation></semantics></math>。有限集的子集仍有限，故整个并是补集有限的成员，属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒯</mi><annotation encoding="application/x-tex">\mathcal T</annotation></semantics></math>。参与族可以无限，证明未作可数性限制。</p>
+</details>
+<span id="q-T01-03-M002-B" class="content-anchor"></span><h2 id="练习-b定义1.3.1的正文验证">练习 B：定义1.3.1的正文验证</h2>
+<p>对任意非空集合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>，完整验证A中
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒯</mi><annotation encoding="application/x-tex">\mathcal T</annotation></semantics></math>
+是拓扑。再由上一模块的双向转换确认其闭集恰为底集与有限子集。覆盖底集有限的情况。</p>
+<span id="answer-T01-03-M002-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开完整核验
+</summary>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒯</mi><annotation encoding="application/x-tex">\mathcal T</annotation></semantics></math>
+是底集子集组成的簇，空集已另列；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+的补集为空集，有限，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>∈</mo><mi mathvariant="script">𝒯</mi></mrow><annotation encoding="application/x-tex">X\in\mathcal T</annotation></semantics></math>。</p>
+<p>对任意子族，若没有非空成员，并为空集；否则它的补集包含于某个非空参与者的有限补集，因此有限，并仍属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒯</mi><annotation encoding="application/x-tex">\mathcal T</annotation></semantics></math>。</p>
+<p>任取两个成员
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>,</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">U,V</annotation></semantics></math>。有空集参与时交为空；否则两个补集有限，且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo>∩</mo><mi>V</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>\</mo><mi>U</mi><mo stretchy="false" form="postfix">)</mo><mo>∪</mo><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>\</mo><mi>V</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X\setminus(U\cap V)=(X\setminus U)\cup(X\setminus V)</annotation></semantics></math>
+是有限集。因此交也属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒯</mi><annotation encoding="application/x-tex">\mathcal T</annotation></semantics></math>，三条件成立。</p>
+<p>由M001的双向转换，闭集恰为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+与全部有限子集。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+有限，每个子集的补集都有限，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒯</mi><annotation encoding="application/x-tex">\mathcal T</annotation></semantics></math>
+是全部子集，即离散拓扑；这也在一般证明范围内。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>一般有限闭拓扑的存在已经完整核验。接下来读教材的量词警示：已知某些集合闭，不等于已知全部闭集。</p>
+</article></div>
+<footer><span data-app-version="0.3.4">网站版本 0.3.4</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T01-03-M002.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

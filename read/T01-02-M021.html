@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.4">
+<title>只有底集是无限开集 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T01-02-M021"><h1 id="只有底集是无限开集">只有底集是无限开集</h1>
+<p>固定编号：T01-02-M021<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 21 页 / PDF 第 21
+页，习题1.2第5题。<br />
+学习目标：区分对无限开集的限制与对全部开集的限制，构造并核验反例。</p>
+<blockquote>
+<p><strong>本段主线：</strong>判断原题5的“是否一定”断言。<br />
+<strong>当前环节：</strong>题设没有排除有限的非空真开集。<br />
+<strong>这一步只做：</strong>利用这个自由构造反例，同时检查全部题设。</p>
+</blockquote>
+<p>来源说明：B为教材原题；A、解释和参考解新增。</p>
+<h2 id="方法为有限成员留下位置">方法：为有限成员留下位置</h2>
+<p>“唯一的无限开子集是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>”没有说“唯一的非空开集是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>”。例如可以试着在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>⌀</mi><mo>,</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">\varnothing,X</annotation></semantics></math>
+之外加入一个非空有限集合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>。只要验证这个三成员簇确为拓扑，就有机会否定必然平庸的结论。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mi mathvariant="double-struck">ℕ</mi></mrow><annotation encoding="application/x-tex">X=\mathbb N</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">F=\{1,2\}</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo>,</mo><mi>F</mi><mo>,</mo><mi mathvariant="double-struck">ℕ</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\tau=\{\varnothing,F,\mathbb N\}</annotation></semantics></math>。核验它是拓扑、唯一无限开集为底集，且不平庸。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的完整反例核验
+</summary>
+<p>成员是底集子集，含底集与空集，并且依包含关系排成
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>⌀</mi><mo>⊊</mo><mi>F</mi><mo>⊊</mo><mi mathvariant="double-struck">ℕ</mi></mrow><annotation encoding="application/x-tex">\varnothing\subsetneq F\subsetneq\mathbb N</annotation></semantics></math>。任意非空成员子族的并是其中最大的成员；因只有三种不同成员，最大者必存在。空族的并为空集。两两交是较小成员。故三条件成立。</p>
+<p>开集只有列出的三个，前两个有限，底集无限，因此唯一无限开集为底集。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+却是额外的非空真开集，故不是平庸拓扑。</p>
+</details>
+<span id="q-T01-02-E005" class="content-anchor"></span><h2 id="练习-b教材习题1.2第5题">练习 B：教材习题1.2第5题</h2>
+<p><strong>教材原题。</strong>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+为无限集，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+上的一个拓扑，并且唯一的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+的无限开子集为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+自身。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>,</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X,\tau)</annotation></semantics></math>
+一定是平庸空间吗？请给出理由。</p>
+<span id="answer-T01-02-E005" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试原题5后展开反例
+</summary>
+<p>不一定。取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mi mathvariant="double-struck">ℤ</mi></mrow><annotation encoding="application/x-tex">X=\mathbb Z</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">F=\{-1,0,1\}</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo>,</mo><mi>F</mi><mo>,</mo><mi mathvariant="double-struck">ℤ</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\tau=\{\varnothing,F,\mathbb Z\}</annotation></semantics></math>。</p>
+<p>三个成员按包含关系排成链，任意成员子族的并为其中最大成员（空族并为空集），两两交为较小成员，因此是拓扑。只有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℤ</mi><annotation encoding="application/x-tex">\mathbb Z</annotation></semantics></math>
+这个成员无限，另外两个成员有限，所以满足题设。</p>
+<p>但
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+是不同于空集、底集的开集，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>≠</mo><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo>,</mo><mi>X</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\tau\ne\{\varnothing,X\}</annotation></semantics></math>，不是平庸拓扑。一例已足以否定“一定”，不需要证明所有符合条件的空间都不平庸。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>限定无限开集不等于限定全部开集。反例中的有限额外成员既满足题设，又直接否定所问结论。</p>
+</article></div>
+<footer><span data-app-version="0.3.4">网站版本 0.3.4</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T01-02-M021.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.4">
+<title>有限个闭集的并 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T01-02-M011"><h1 id="有限个闭集的并">有限个闭集的并</h1>
+<p>固定编号：T01-02-M011<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 20 页 / PDF 第 20
+页，命题1.2.5(iii)的证明及式(1.1)。<br />
+学习目标：连接补集恒等式与有限开交，完成有限闭并的证明。</p>
+<blockquote>
+<p><strong>本段主线：</strong>证明命题1.2.5的三条闭集性质。<br />
+<strong>当前环节：</strong>沿教材次序先完成(iii)。<br />
+<strong>这一步只做：</strong>证明并的补集开，而不直接把闭集当开集使用。</p>
+</blockquote>
+<p>来源说明：主要证明思路和式(1.1)来自教材；A/B为新增展开。原页在式后将“左手边／右手边”的说明颠倒：有限开交实际在等式右侧。下文按原式的实际两侧证明，此文字修订登记为Q14；未改变原式或编号。</p>
+<h2 id="方法目标闭转换为补集开">方法：目标“闭”转换为补集“开”</h2>
+<p>如两个闭集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>,</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">F,G</annotation></semantics></math>，已知的是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">X\setminus F</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">X\setminus G</annotation></semantics></math>
+开。要证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>∪</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">F\cup G</annotation></semantics></math>
+闭，应研究它的补集；式(1.1)把该补集变为两个开集的交。因此使用的是有限<strong>开交</strong>，不是把“闭集的并闭”本身当作依据。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>F</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">F_1,\ldots,F_n</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>,</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X,\tau)</annotation></semantics></math>
+的闭集，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n\ge1</annotation></semantics></math>。证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>1</mn></msub><mo>∪</mo><mi>⋯</mi><mo>∪</mo><msub><mi>F</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">F_1\cup\cdots\cup F_n</annotation></semantics></math>
+闭，并指出每一步依据。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 与教材对应的证明
+</summary>
+<p>每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>i</mi></msub><annotation encoding="application/x-tex">F_i</annotation></semantics></math>
+闭，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><msub><mi>F</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">X\setminus F_i</annotation></semantics></math>
+开。由M010已证的式(1.1)，</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><munderover><mo>⋃</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>F</mi><mi>i</mi></msub><mo>=</mo><munderover><mo>⋂</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>\</mo><msub><mi>F</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">X\setminus\bigcup_{i=1}^nF_i=\bigcap_{i=1}^n(X\setminus F_i).</annotation></semantics></math></div></p>
+<p>右侧是有限个开集的交，由命题1.2.2(iii)开。所以等式左侧也开，即所求并的补集开。按定义1.2.4，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>⋃</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>F</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\bigcup_{i=1}^nF_i</annotation></semantics></math>
+闭。</p>
+<p>若也考虑零个集合的并，结果为空集，由M009已证的命题1.2.5(i)闭。这里没有假设每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>i</mi></msub><annotation encoding="application/x-tex">F_i</annotation></semantics></math>
+的元素个数有限。</p>
+</details>
+<span id="q-T01-02-M011-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>在任意拓扑空间中，给定任意有限个闭集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>C</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">C_1,\ldots,C_k</annotation></semantics></math>（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k\ge1</annotation></semantics></math>），写出它们的并为闭集的完整证明。指出证明中“有限”究竟用在哪一步；不要以待证结论作依据。</p>
+<span id="answer-T01-02-M011-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开完整证明
+</summary>
+<p>因
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>j</mi></msub><annotation encoding="application/x-tex">C_j</annotation></semantics></math>
+闭，每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><msub><mi>C</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">X\setminus C_j</annotation></semantics></math>
+开。并的补集等于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>⋂</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>k</mi></msubsup><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>\</mo><msub><mi>C</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\bigcap_{j=1}^k(X\setminus C_j)</annotation></semantics></math>。这一交只有有限个开集，故开。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>⋃</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>k</mi></msubsup><msub><mi>C</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\bigcup_{j=1}^k C_j</annotation></semantics></math>
+的补集开，所以该并闭。</p>
+<p>有限性用在“有限个开集的交开”。若把
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+改成任意无限族，此处就没有一般保证；不能只删去“有限”二字。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>命题1.2.5的(i)与(iii)已证。下面补齐教材略写的(ii)，它需要另一方向的补集恒等式。</p>
+</article></div>
+<footer><span data-app-version="0.3.4">网站版本 0.3.4</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T01-02-M011.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

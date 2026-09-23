@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.4">
+<title>任意交的补集恒等式 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T01-02-M012"><h1 id="任意交的补集恒等式">任意交的补集恒等式</h1>
+<p>固定编号：T01-02-M012<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 20 页 / PDF 第 20
+页，命题1.2.5(ii)略证所需的新增展开。<br />
+学习目标：对任意指标族证明交的补集等于补集的并，并覆盖空族。</p>
+<blockquote>
+<p><strong>本段主线：</strong>补全命题1.2.5(ii)：任意闭交闭。<br />
+<strong>当前环节：</strong>把交的补集变为开集可使用的并。<br />
+<strong>这一步只做：</strong>准确处理“并非每个都属于”等价于“至少一个不属于”。</p>
+</blockquote>
+<p>来源说明：教材只说(ii)的证明类似；本模块恒等式的逐点证明与讲练为新增补全。</p>
+<h2
+id="方法否定每一个得到至少一个不">方法：否定“每一个”得到“至少一个不”</h2>
+<p>例如
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+不在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∩</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A\cap B</annotation></semantics></math>
+中，表示它至少不在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A,B</annotation></semantics></math>
+之一中，不要求两者都不在。对无限族也是同样的量词关系。</p>
+<p>所有集合均为同一底集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+的子集。对任意族
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>F</mi><mi>i</mi></msub><mo>:</mo><mi>i</mi><mo>∈</mo><mi>I</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{F_i:i\in I\}</annotation></semantics></math>，所需恒等式为</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><munder><mo>⋂</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow></munder><msub><mi>F</mi><mi>i</mi></msub><mo>=</mo><munder><mo>⋃</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow></munder><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>\</mo><msub><mi>F</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">X\setminus\bigcap_{i\in I}F_i=\bigcup_{i\in I}(X\setminus F_i).</annotation></semantics></math></div></p>
+<p>这里的交与补集都相对于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math>
+可无限，不能用列完有限指标的办法代替证明。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>对任意非空指标集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math>
+和任意
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>i</mi></msub><mo>⊆</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">F_i\subseteq X</annotation></semantics></math>，用任取元素证明上式的两个包含方向。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的任意族证明
+</summary>
+<p>任取左侧的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>。它在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+中却不在每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>i</mi></msub><annotation encoding="application/x-tex">F_i</annotation></semantics></math>
+都必须满足的交集中，故存在某个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>0</mn></msub><mo>∈</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">i_0\in I</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∉</mo><msub><mi>F</mi><msub><mi>i</mi><mn>0</mn></msub></msub></mrow><annotation encoding="application/x-tex">x\notin F_{i_0}</annotation></semantics></math>。于是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>X</mi><mo>\</mo><msub><mi>F</mi><msub><mi>i</mi><mn>0</mn></msub></msub></mrow><annotation encoding="application/x-tex">x\in X\setminus F_{i_0}</annotation></semantics></math>，从而在右侧并中。</p>
+<p>反过来，若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+在右侧并中，则存在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>0</mn></msub><mo>∈</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">i_0\in I</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>X</mi><mo>\</mo><msub><mi>F</mi><msub><mi>i</mi><mn>0</mn></msub></msub></mrow><annotation encoding="application/x-tex">x\in X\setminus F_{i_0}</annotation></semantics></math>。这个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+中却不属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><msub><mi>i</mi><mn>0</mn></msub></msub><annotation encoding="application/x-tex">F_{i_0}</annotation></semantics></math>，不可能同时属于全部
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>i</mi></msub><annotation encoding="application/x-tex">F_i</annotation></semantics></math>，因此在交的补集中，也就是左侧。</p>
+<p>两个包含方向都成立。只用了“存在一个失败的条件”，未要求所有指标可列成有限序列。</p>
+</details>
+<span id="q-T01-02-M012-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>j</mi></msub><mo>⊆</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">U_j\subseteq X</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow><annotation encoding="application/x-tex">j\in J</annotation></semantics></math>，其中
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>
+可以为空或无限。证明</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>⋃</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></munder><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>\</mo><msub><mi>U</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>X</mi><mo>\</mo><munder><mo>⋂</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></munder><msub><mi>U</mi><mi>j</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">\bigcup_{j\in J}(X\setminus U_j)=X\setminus\bigcap_{j\in J}U_j.</annotation></semantics></math></div></p>
+<p>另指出把右侧成员解释成“对每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+都不在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi>j</mi></msub><annotation encoding="application/x-tex">U_j</annotation></semantics></math>
+中”为什么过强。</p>
+<span id="answer-T01-02-M012-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开证明与空族
+</summary>
+<p>当
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>
+非空，左侧成员在至少一个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi>j</mi></msub><annotation encoding="application/x-tex">U_j</annotation></semantics></math>
+的补集中，因此不可能在全部
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi>j</mi></msub><annotation encoding="application/x-tex">U_j</annotation></semantics></math>
+中，属于右侧。右侧成员在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+中却不在交中，必存在一个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi>j</mi></msub><annotation encoding="application/x-tex">U_j</annotation></semantics></math>
+不含它，于是它进入相应补集，属于左侧。</p>
+<p>当
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>
+为空，左侧是空并
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⌀</mi><annotation encoding="application/x-tex">\varnothing</annotation></semantics></math>；右侧的空交约定为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>，所以补集为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><mi>X</mi><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">X\setminus X=\varnothing</annotation></semantics></math>，两侧仍相等。</p>
+<p>只须至少一个条件失败，不要求全部失败。例如
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">X=\{1,2\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mn>1</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">U_1=\{1\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mn>2</mn></msub><mo>=</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">U_2=X</annotation></semantics></math>
+时，2不在交中，却在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mn>2</mn></msub><annotation encoding="application/x-tex">U_2</annotation></semantics></math>
+中。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>任意交的补集变成任意并，空族也一致。下一步将每个补集确认为开集，完成闭交结论。</p>
+</article></div>
+<footer><span data-app-version="0.3.4">网站版本 0.3.4</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T01-02-M012.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>
