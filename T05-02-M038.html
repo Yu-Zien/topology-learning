@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.8">
+<title>原题10(v)：平面的可数子空间完全不连通 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T05-02-M038"><h1
+id="原题10v平面的可数子空间完全不连通">原题10(v)：平面的可数子空间完全不连通</h1>
+<p>固定编号：T05-02-M038<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 84 页 / PDF 第 84
+页，习题5.2第10(v)题。<br />
+学习目标：对可数平面子空间中的任意两点，选择未被该子空间采用的中间坐标，构造相对闭开分割。</p>
+<blockquote>
+<p><strong>本段主线：</strong>把有理数空间的“缺失切点”方法推广到任意可数平面子空间。<br />
+<strong>当前环节：</strong>两点至少有一个坐标不同，该坐标投影仍可数。<br />
+<strong>这一步只做：</strong>在两个坐标值之间选一个不属于投影的切值。</p>
+</blockquote>
+<p>来源说明：B为教材原题10(v)；切分证明为新增完整展开。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>设Y是平面的可数子集，p、q在Y中且第一坐标满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>q</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">p_1&lt;q_1</annotation></semantics></math>。为什么能选
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>∈</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mn>1</mn></msub><mo>,</mo><msub><mi>q</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">c\in(p_1,q_1)</annotation></semantics></math>，使Y中没有点的第一坐标等于c？</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A
+</summary>
+<p>Y的第一坐标投影是可数集，而区间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mn>1</mn></msub><mo>,</mo><msub><mi>q</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(p_1,q_1)</annotation></semantics></math>
+不可数，所以其中存在不属于该投影的c。</p>
+</details>
+<span id="q-T05-02-E010-v" class="content-anchor"></span><h2 id="练习-b教材习题5.2第10v题">练习 B：教材习题5.2第10(v)题</h2>
+<p>证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\mathbb R^2</annotation></semantics></math>
+的每个可数子空间都是完全不连通的。</p>
+<div class="practice-controls" data-question-id="T05-02-E010-v" data-module-id="T05-02-M038" data-mode="guided" data-answer-anchor="answer-T05-02-E010-v"></div><span id="answer-T05-02-E010-v" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试原题后展开完整证明
+</summary>
+<p>设Y是可数子空间。反设Y有含不同点p、q的连通子集A。两点至少一个坐标不同；不妨
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>q</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">p_1&lt;q_1</annotation></semantics></math>。</p>
+<p>按例题A选c，使Y中没有点落在竖线
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">x=c</annotation></semantics></math>
+上。令
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mi>Y</mi><mo>∩</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>:</mo><mi>x</mi><mo>&lt;</mo><mi>c</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>V</mi><mo>=</mo><mi>Y</mi><mo>∩</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>:</mo><mi>x</mi><mo>&gt;</mo><mi>c</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+U=Y\cap\{(x,y):x&lt;c\},\qquad
+V=Y\cap\{(x,y):x&gt;c\}.
+</annotation></semantics></math></div>
+它们在Y中开；因为竖线不交Y，二者互为补集，所以也闭。A与U、V的交分别含p、q，构成A的非平凡闭开分割，矛盾。</p>
+<p>故Y中任何连通子集至多一点，Y完全不连通。若不同的是第二坐标，同理使用水平切线。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>可数子空间无法占满两坐标值之间的区间；缺失的坐标线把任意两个不同点分开。</p>
+</article></div>
+<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>

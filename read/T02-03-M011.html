@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.8">
+<title>每个开等边三角形都是欧几里得开集 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T02-03-M011"><h1
+id="每个开等边三角形都是欧几里得开集">每个开等边三角形都是欧几里得开集</h1>
+<p>固定编号：T02-03-M011<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 42—43 页 / PDF 第 42—43
+页，例2.3.5图形略证的局部矩形方向。<br />
+学习目标：对开等边三角形内的任意点，用到三条边所在直线的正距离构造完全落在三角形内的开矩形。</p>
+<blockquote>
+<p><strong>本段主线：</strong>证明底边平行X轴的开等边三角形基生成平面欧几里得拓扑。<br />
+<strong>当前环节：</strong>上一模块已证明三角形族生成某个拓扑；现在先证明每个三角形都是欧几里得开集。<br />
+<strong>这一步只做：</strong>在三角形内点周围放入一个开矩形。</p>
+</blockquote>
+<p>来源说明：教材用图示声称开矩形内可放小三角形、三角形内可放小矩形，并把详细证明留给读者。本模块补足“三角形内有开矩形”的量词与距离控制；A/B为新增讲练。</p>
+<h2
+id="方法到三条边的最小距离给出安全半径">方法：到三条边的最小距离给出安全半径</h2>
+<p>开三角形T是三个边界直线所确定的三个开半平面的交。任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∈</mo><mi>T</mi></mrow><annotation encoding="application/x-tex">p\in T</annotation></semantics></math>，p到三条边所在直线的垂直距离分别为正数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>1</mn></msub><mo>,</mo><msub><mi>d</mi><mn>2</mn></msub><mo>,</mo><msub><mi>d</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">d_1,d_2,d_3</annotation></semantics></math>。令</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>d</mi><mn>1</mn></msub><mo>,</mo><msub><mi>d</mi><mn>2</mn></msub><mo>,</mo><msub><mi>d</mi><mn>3</mn></msub><mo stretchy="false" form="postfix">}</mo><mo>&gt;</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><mi>δ</mi><mo>=</mo><mfrac><mi>d</mi><mrow><mn>2</mn><msqrt><mn>2</mn></msqrt></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+d=\min\{d_1,d_2,d_3\}&gt;0,
+\qquad
+\delta=\frac{d}{2\sqrt2}.
+</annotation></semantics></math></div></p>
+<p>若q位于以p为中心、两个坐标半宽均为δ的开矩形中，则</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><msqrt><mn>2</mn></msqrt><mspace width="0.167em"></mspace><mi>δ</mi><mo>=</mo><mfrac><mi>d</mi><mn>2</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\|q-p\|&lt;\sqrt2\,\delta=\frac d2.
+</annotation></semantics></math></div></p>
+<p>q不可能越过任何一条距离p至少d的边界直线，所以仍在三个内侧半平面中，即
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>∈</mo><mi>T</mi></mrow><annotation encoding="application/x-tex">q\in T</annotation></semantics></math>。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>设T为顶点
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-1,0)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,0)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><msqrt><mn>3</mn></msqrt><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,\sqrt3)</annotation></semantics></math>
+的开等边三角形，p为其重心
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><msqrt><mn>3</mn></msqrt><mi>/</mi><mn>3</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,\sqrt3/3)</annotation></semantics></math>。证明开矩形</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><mi>/</mi><mn>8</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>8</mn><mo stretchy="false" form="postfix">)</mo><mo>×</mo><mo stretchy="false" form="prefix">(</mo><msqrt><mn>3</mn></msqrt><mi>/</mi><mn>3</mn><mo>−</mo><mn>1</mn><mi>/</mi><mn>8</mn><mo>,</mo><msqrt><mn>3</mn></msqrt><mi>/</mi><mn>3</mn><mo>+</mo><mn>1</mn><mi>/</mi><mn>8</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+(-1/8,1/8)\times(\sqrt3/3-1/8,\sqrt3/3+1/8)
+</annotation></semantics></math></div></p>
+<p>包含于T。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的距离核对
+</summary>
+<p>等边三角形的重心到三条边距离相同，等于内切圆半径
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>3</mn></msqrt><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">\sqrt3/3</annotation></semantics></math>。矩形中任一点q到p的距离小于</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>8</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>8</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow></msqrt><mo>=</mo><mfrac><msqrt><mn>2</mn></msqrt><mn>8</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\sqrt{(1/8)^2+(1/8)^2}=\frac{\sqrt2}{8}.
+</annotation></semantics></math></div></p>
+<p>而
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>2</mn></msqrt><mi>/</mi><mn>8</mn><mo>&lt;</mo><msqrt><mn>3</mn></msqrt><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">\sqrt2/8&lt;\sqrt3/3</annotation></semantics></math>。因此q不可能越过三条边中的任何一条，整个矩形都在开三角形内部。</p>
+</details>
+<span id="q-T02-03-M011-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>设T为任意开等边三角形，底边平行X轴。证明对每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∈</mo><mi>T</mi></mrow><annotation encoding="application/x-tex">p\in T</annotation></semantics></math>，存在坐标轴平行的开矩形R，使</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∈</mo><mi>R</mi><mo>⊆</mo><mi>T</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+p\in R\subseteq T.
+</annotation></semantics></math></div></p>
+<p>由此证明T是平面欧几里得开集。</p>
+<span id="answer-T02-03-M011-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开一般证明
+</summary>
+<p>任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∈</mo><mi>T</mi></mrow><annotation encoding="application/x-tex">p\in T</annotation></semantics></math>。p在三条边的严格内侧，所以到三条边所在直线的距离
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>1</mn></msub><mo>,</mo><msub><mi>d</mi><mn>2</mn></msub><mo>,</mo><msub><mi>d</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">d_1,d_2,d_3</annotation></semantics></math>
+都为正。令</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>d</mi><mn>1</mn></msub><mo>,</mo><msub><mi>d</mi><mn>2</mn></msub><mo>,</mo><msub><mi>d</mi><mn>3</mn></msub><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>δ</mi><mo>=</mo><mfrac><mi>d</mi><mrow><mn>2</mn><msqrt><mn>2</mn></msqrt></mrow></mfrac><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+d=\min\{d_1,d_2,d_3\},
+\qquad
+\delta=\frac{d}{2\sqrt2}&gt;0.
+</annotation></semantics></math></div></p>
+<p>取以p为中心、两个坐标半宽均为δ的开矩形R。任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>∈</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">q\in R</annotation></semantics></math>，有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><mi>d</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\|q-p\|&lt;d/2</annotation></semantics></math>。若q越过某条边界直线，从p到q的线段必先碰到该直线，于是p到该直线的距离小于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><mi>d</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\|q-p\|&lt;d/2</annotation></semantics></math>，与该距离至少为d矛盾。因此q仍在三条边的内侧，R包含于T。</p>
+<p>每个T中点都有内部开矩形基元素。命题2.3.3说明T是欧几里得开集。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>三角形内点到有限条边都有正距离；取足够小的坐标矩形，就能把图形上的“留有空间”写成欧几里得开性的严格证明。</p>
+</article></div>
+<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T02-03-M011.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

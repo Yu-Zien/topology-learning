@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.8">
+<title>十二类拓扑不变量清单 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T04-03-M004"><h1 id="十二类拓扑不变量清单">十二类拓扑不变量清单</h1>
+<p>固定编号：T04-03-M004<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 68—69 页 / PDF 第 68—69
+页，正文清单。<br />
+学习目标：按用途整理教材列出的12类同胚不变量，并区分清单与证明。</p>
+<blockquote>
+<p><strong>本段主线：</strong>建立不同胚证明的工具箱。<br />
+<strong>当前环节：</strong>连通性不变量已证明。<br />
+<strong>这一步只做：</strong>识别可用于反证的性质，不把列举本身冒充证明。</p>
+</blockquote>
+<p>来源说明：清单来自教材；部分性质已在§4.2习题7证明，其余依各自定义使用。</p>
+<h2 id="清单">清单</h2>
+<p>教材列出：T0、T1、T2/Hausdorff、正则、T3、第二可数、可分、离散、平庸、有限闭、可数闭，再加连通性，共12类性质。</p>
+<p>使用方式是：若X具有其中一项而Y不具有，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>≆</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X\not\cong Y</annotation></semantics></math>。其中T0、T1、T2、第二可数、可分已在§4.2逐项证明保持；连通性由命题4.3.2证明。其他项目仍应根据定义或相应习题说明，不能只引用清单字样替代论证。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>若X离散而Y不是离散空间，可否立即排除同胚？</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A
+</summary>
+<p>可以。同胚把每个开单点送到开单点，也由逆映射保留全部开集，所以离散性保持。</p>
+</details>
+<span id="q-T04-03-M004-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>从清单中分别选一个“分离性质”“可数性性质”和“整体形状性质”。</p>
+<span id="answer-T04-03-M004-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试后展开答案
+</summary>
+<p>例如T1是分离性质，第二可数是可数性性质，连通性是整体形状性质。不同问题应选择最容易核对且能区分两空间的那一项。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>不变量清单提供候选工具；真正证明仍要说明该性质为何保持，以及两空间为何在该性质上不同。</p>
+</article></div>
+<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T04-03-M004.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.8">
+<title>局部同胚映射是开映射 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T04-03-M035"><h1 id="局部同胚映射是开映射">局部同胚映射是开映射</h1>
+<p>固定编号：T04-03-M035<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 73 页 / PDF 第 73
+页，习题4.3第9(iii)星号题。<br />
+学习目标：把源开集分成局部同胚邻域内的开片，证明其像是目标开集之并。</p>
+<blockquote>
+<p><strong>本段主线：</strong>完成§4.3最后一道题。<br />
+<strong>当前环节：</strong>局部同胚只逐点给出同胚限制。<br />
+<strong>这一步只做：</strong>把逐点开像拼成整个开集的像。</p>
+</blockquote>
+<p>来源说明：B为教材星号原题9(iii)。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>若U在X中开，W也是X中开集，为什么
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>∩</mo><mi>W</mi></mrow><annotation encoding="application/x-tex">U\cap W</annotation></semantics></math>
+在子空间W中开？</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A
+</summary>
+<p>它是环境开集U与W的交，按子空间定义在W中相对开。</p>
+</details>
+<span id="q-T04-03-E009-iii" class="content-anchor"></span><h2 id="练习-b教材习题4.3第9iii题星号">练习
+B：教材习题4.3第9(iii)题（星号）</h2>
+<p>证明若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>X</mi><mo>→</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">f:X\to Y</annotation></semantics></math>
+是局部同胚映射，则f把X的每个开子集映成Y的开子集。</p>
+<span id="answer-T04-03-E009-iii" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试原题后展开证明
+</summary>
+<p>任取开集O。对每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>O</mi></mrow><annotation encoding="application/x-tex">x\in O</annotation></semantics></math>，由局部同胚定义取开邻域
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi>x</mi></msub><annotation encoding="application/x-tex">U_x</annotation></semantics></math>，使
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mi>x</mi></msub><mo>=</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>U</mi><mi>x</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+V_x=f(U_x)
+</annotation></semantics></math></div> 在Y中开，且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>U</mi><mi>x</mi></msub></msub><mo>:</mo><msub><mi>U</mi><mi>x</mi></msub><mo>→</mo><msub><mi>V</mi><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">f|_{U_x}:U_x\to V_x</annotation></semantics></math>
+为同胚。</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo>∩</mo><msub><mi>U</mi><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">O\cap U_x</annotation></semantics></math>
+在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi>x</mi></msub><annotation encoding="application/x-tex">U_x</annotation></semantics></math>
+中开，同胚限制把它送到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>V</mi><mi>x</mi></msub><annotation encoding="application/x-tex">V_x</annotation></semantics></math>
+中的开集。因
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>V</mi><mi>x</mi></msub><annotation encoding="application/x-tex">V_x</annotation></semantics></math>
+在Y中开，这个像也在Y中开。</p>
+<p>而且
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>O</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>⋃</mo><mrow><mi>x</mi><mo>∈</mo><mi>O</mi></mrow></munder><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>O</mi><mo>∩</mo><msub><mi>U</mi><mi>x</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+f(O)=\bigcup_{x\in O}f(O\cap U_x).
+</annotation></semantics></math></div>
+右边是Y中开集的并，所以f(O)开。因此f是开映射。</p>
+</details>
+<h2 id="精选复习">精选复习</h2><details class="prepared-review"><summary>精选复习内容（仅回看，不记分）</summary><p class="notice">这里保留课件中的预设问题与答案。计分复习在讲练间隙进行；只回看不会改变排期。</p><h3 id="t04-03-r008">T04-03-R008</h3>
+<p><strong>问题：</strong>局部同胚为何自动是开映射？</p>
+<details>
+<summary>
+回忆后查看答案
+</summary>
+<p>把开集O与每个局部同胚邻域相交；每个开片的像在目标开邻域中开，也就在Y中开。所有开片像的并恰为f(O)。</p>
+</details>
+</details><h2 id="简短回顾">简短回顾</h2>
+<p>局部同胚在每个小块上都是开映射；任意并把这些局部结论拼成全局开映射。</p>
+</article></div>
+<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T04-03-M035.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

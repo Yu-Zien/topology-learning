@@ -1,6 +1,6 @@
 {
-  "appVersion": "0.3.6",
-  "contentVersion": "fe0676db472dc9bb14d4defd916ded317fd6b2926348efaa6c31c2c4812f84f3",
+  "appVersion": "0.3.8",
+  "contentVersion": "9d262816a98a6805ab3122e85de8a7e7ec0f760910a4cd4dd4cf3fe1aab938d8",
   "modules": [
     {
       "id": "T01-01-M001",
@@ -296,9 +296,9 @@
       "id": "T01-01-M027",
       "title": "关系式的层次 3(a)—(d)",
       "page": "17",
-      "status": "pending",
-      "statusText": "待修订／核验：原题语义未决；已给明示约定下的讲练",
-      "version": "0.1@d29b364ffa10",
+      "status": "usable",
+      "statusText": "可用：中英文原页核对＋AI逐项复核；中文版第(k)项差异明示",
+      "version": "0.1@9be397199079",
       "html": "T01-01-M027.html",
       "markdown": "T01-01-M027.md"
     },
@@ -306,8 +306,8 @@
       "id": "T01-01-M028",
       "title": "关系式的层次 3(e)—(h)",
       "page": "17",
-      "status": "pending",
-      "statusText": "待修订／核验：原题语义未决；已给明示约定下的讲练",
+      "status": "usable",
+      "statusText": "可用：中英文原页核对＋AI逐项复核；中文版第(k)项差异明示",
       "version": "0.1@3d03a9cb21d3",
       "html": "T01-01-M028.html",
       "markdown": "T01-01-M028.md"
@@ -316,9 +316,9 @@
       "id": "T01-01-M029",
       "title": "关系式的层次 3(i)—(l)",
       "page": "17",
-      "status": "pending",
-      "statusText": "待修订／核验：原题语义未决；已给明示约定下的讲练",
-      "version": "0.1@9d04c7083f97",
+      "status": "usable",
+      "statusText": "可用：中英文原页核对＋AI逐项复核；中文版第(k)项差异明示",
+      "version": "0.1@8e8d27ea24e2",
       "html": "T01-01-M029.html",
       "markdown": "T01-01-M029.md"
     },
@@ -326,9 +326,9 @@
       "id": "T01-01-M030",
       "title": "关系式的层次 3(m)—(p)",
       "page": "17",
-      "status": "pending",
-      "statusText": "待修订／核验：原题语义未决；已给明示约定下的讲练",
-      "version": "0.1@4287d5f5080d",
+      "status": "usable",
+      "statusText": "可用：中英文原页核对＋AI逐项复核；中文版第(k)项差异明示",
+      "version": "0.1@bdcc94f46c05",
       "html": "T01-01-M030.html",
       "markdown": "T01-01-M030.md"
     },
@@ -1838,7 +1838,7 @@
       "page": "35",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@7c9982235f70",
+      "version": "0.1@0cc7b5be6085",
       "html": "T02-02-M006.html",
       "markdown": "T02-02-M006.md"
     },
@@ -1878,7 +1878,7 @@
       "page": "36",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@4e4423cd2d8a",
+      "version": "0.1@449847a8d02f",
       "html": "T02-02-M010.html",
       "markdown": "T02-02-M010.md"
     },
@@ -1908,7 +1908,7 @@
       "page": "36",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@0879fa724969",
+      "version": "0.1@f5b5d0726482",
       "html": "T02-02-M013.html",
       "markdown": "T02-02-M013.md"
     },
@@ -2018,7 +2018,7 @@
       "page": "38",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@37b5e12db78f",
+      "version": "0.1@37314d745cf3",
       "html": "T02-02-M024.html",
       "markdown": "T02-02-M024.md"
     },
@@ -2048,7 +2048,7 @@
       "page": "38",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@1151dbcdef21",
+      "version": "0.1@6473f0e2b8a3",
       "html": "T02-02-M027.html",
       "markdown": "T02-02-M027.md"
     },
@@ -2128,7 +2128,7 @@
       "page": "39",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@68ed37147078",
+      "version": "0.1@b8ab91ca5088",
       "html": "T02-02-M035.html",
       "markdown": "T02-02-M035.md"
     },
@@ -2158,7 +2158,7 @@
       "page": "40",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@02fed917b5a4",
+      "version": "0.1@833b5640339a",
       "html": "T02-03-M002.html",
       "markdown": "T02-03-M002.md"
     },
@@ -2168,7 +2168,7 @@
       "page": "40",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@138ad8d443e0",
+      "version": "0.1@59118fd18be3",
       "html": "T02-03-M003.html",
       "markdown": "T02-03-M003.md"
     },
@@ -2218,7 +2218,7 @@
       "page": "41",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@941c5d5dc2eb",
+      "version": "0.1@4862147dacfd",
       "html": "T02-03-M008.html",
       "markdown": "T02-03-M008.md"
     },
@@ -2241,6 +2241,3426 @@
       "version": "0.1@668b095a2787",
       "html": "T02-03-M010.html",
       "markdown": "T02-03-M010.md"
+    },
+    {
+      "id": "T02-03-M011",
+      "title": "每个开等边三角形都是欧几里得开集",
+      "page": "42—43",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@4d4de83937fd",
+      "html": "T02-03-M011.html",
+      "markdown": "T02-03-M011.md"
+    },
+    {
+      "id": "T02-03-M012",
+      "title": "每个开矩形内可放小开等边三角形",
+      "page": "42—43",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@3672543db13d",
+      "html": "T02-03-M012.html",
+      "markdown": "T02-03-M012.md"
+    },
+    {
+      "id": "T02-03-M013",
+      "title": "坐标轴平行开正方形构成欧几里得基",
+      "page": "43",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@0b4f46e68ae3",
+      "html": "T02-03-M013.html",
+      "markdown": "T02-03-M013.md"
+    },
+    {
+      "id": "T02-03-M014",
+      "title": "所有开圆盘构成欧几里得基",
+      "page": "43",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@09f51d2cf7d5",
+      "html": "T02-03-M014.html",
+      "markdown": "T02-03-M014.md"
+    },
+    {
+      "id": "T02-03-M015",
+      "title": "任意方向开正方形构成欧几里得基",
+      "page": "43",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@3d2439808a5b",
+      "html": "T02-03-M015.html",
+      "markdown": "T02-03-M015.md"
+    },
+    {
+      "id": "T02-03-M016",
+      "title": "所有开矩形构成欧几里得基",
+      "page": "43",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@732ba50161b8",
+      "html": "T02-03-M016.html",
+      "markdown": "T02-03-M016.md"
+    },
+    {
+      "id": "T02-03-M017",
+      "title": "所有开三角形构成欧几里得基",
+      "page": "43",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@adb4810e016f",
+      "html": "T02-03-M017.html",
+      "markdown": "T02-03-M017.md"
+    },
+    {
+      "id": "T02-03-M018",
+      "title": "在一组基与拓扑之间扩充仍为基",
+      "page": "43",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@eb667cc00c77",
+      "html": "T02-03-M018.html",
+      "markdown": "T02-03-M018.md"
+    },
+    {
+      "id": "T02-03-M019",
+      "title": "实数欧几里得拓扑有不可数多个不同基",
+      "page": "43",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@ff87c9dd8e29",
+      "html": "T02-03-M019.html",
+      "markdown": "T02-03-M019.md"
+    },
+    {
+      "id": "T02-03-M020",
+      "title": "普通开区间在半开区间拓扑中开",
+      "page": "44",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@cf02de40dfdc",
+      "html": "T02-03-M020.html",
+      "markdown": "T02-03-M020.md"
+    },
+    {
+      "id": "T02-03-M021",
+      "title": "积分距离函数球覆盖C[0,1]",
+      "page": "44",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@24fa0a7cf154",
+      "html": "T02-03-M021.html",
+      "markdown": "T02-03-M021.md"
+    },
+    {
+      "id": "T02-03-M022",
+      "title": "积分距离球构成一组基",
+      "page": "44",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@daca63bbc6ea",
+      "html": "T02-03-M022.html",
+      "markdown": "T02-03-M022.md"
+    },
+    {
+      "id": "T02-03-M023",
+      "title": "一致距离函数球覆盖C[0,1]",
+      "page": "44",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@386d10b4dade",
+      "html": "T02-03-M023.html",
+      "markdown": "T02-03-M023.md"
+    },
+    {
+      "id": "T02-03-M024",
+      "title": "一致距离函数球构成一组基",
+      "page": "44",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@cd0693f823bc",
+      "html": "T02-03-M024.html",
+      "markdown": "T02-03-M024.md"
+    },
+    {
+      "id": "T02-03-M025",
+      "title": "一致拓扑细于积分拓扑",
+      "page": "44",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@6fbfd372e521",
+      "html": "T02-03-M025.html",
+      "markdown": "T02-03-M025.md"
+    },
+    {
+      "id": "T02-03-M026",
+      "title": "连续尖峰区分两种函数拓扑",
+      "page": "44",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@120af2c1a2d2",
+      "html": "T02-03-M026.html",
+      "markdown": "T02-03-M026.md"
+    },
+    {
+      "id": "T02-03-M027",
+      "title": "子基：有限交先形成基",
+      "page": "44",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@ec5584659258",
+      "html": "T02-03-M027.html",
+      "markdown": "T02-03-M027.md"
+    },
+    {
+      "id": "T02-03-M028",
+      "title": "两类开射线构成实数欧几里得子基",
+      "page": "44",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@92b43d6e41d8",
+      "html": "T02-03-M028.html",
+      "markdown": "T02-03-M028.md"
+    },
+    {
+      "id": "T02-03-M029",
+      "title": "六点有限拓扑的三元素子基",
+      "page": "44",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@bc5abec18646",
+      "html": "T02-03-M029.html",
+      "markdown": "T02-03-M029.md"
+    },
+    {
+      "id": "T02-03-M030",
+      "title": "含全部闭区间的子基生成离散拓扑",
+      "page": "44",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@f00abc26ea37",
+      "html": "T02-03-M030.html",
+      "markdown": "T02-03-M030.md"
+    },
+    {
+      "id": "T02-03-M031",
+      "title": "去单点集族生成有限闭拓扑",
+      "page": "44",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@54a3d804347a",
+      "html": "T02-03-M031.html",
+      "markdown": "T02-03-M031.md"
+    },
+    {
+      "id": "T02-03-M032",
+      "title": "无单点成员的离散子基",
+      "page": "44",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@1745c72bd775",
+      "html": "T02-03-M032.html",
+      "markdown": "T02-03-M032.md"
+    },
+    {
+      "id": "T02-03-M033",
+      "title": "全部直线作子基生成离散拓扑",
+      "page": "44",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@1f22d66f3589",
+      "html": "T02-03-M033.html",
+      "markdown": "T02-03-M033.md"
+    },
+    {
+      "id": "T02-03-M034",
+      "title": "水平直线子基生成的拓扑",
+      "page": "44",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@0135616d9292",
+      "html": "T02-03-M034.html",
+      "markdown": "T02-03-M034.md"
+    },
+    {
+      "id": "T02-03-M035",
+      "title": "全部圆作子基生成离散拓扑",
+      "page": "45",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@ff8669b889d5",
+      "html": "T02-03-M035.html",
+      "markdown": "T02-03-M035.md"
+    },
+    {
+      "id": "T02-03-M036",
+      "title": "圆心在X轴上的圆生成反射不变拓扑",
+      "page": "45",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@3a5ed5674ad3",
+      "html": "T02-03-M036.html",
+      "markdown": "T02-03-M036.md"
+    },
+    {
+      "id": "T02-04-M001",
+      "title": "从实数开集回看拓扑的基",
+      "page": "45",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@9aa1a62d2705",
+      "html": "T02-04-M001.html",
+      "markdown": "T02-04-M001.md"
+    },
+    {
+      "id": "T02-04-M002",
+      "title": "三个基判别命题各解决什么问题",
+      "page": "45",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d9cdf3c093a3",
+      "html": "T02-04-M002.html",
+      "markdown": "T02-04-M002.md"
+    },
+    {
+      "id": "T02-04-M003",
+      "title": "从R到Rⁿ的几何基",
+      "page": "45",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@6750ca78f460",
+      "html": "T02-04-M003.html",
+      "markdown": "T02-04-M003.md"
+    },
+    {
+      "id": "T02-04-M004",
+      "title": "可数并交、函数空间与子基的下一步",
+      "page": "45",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@fe7a1115515f",
+      "html": "T02-04-M004.html",
+      "markdown": "T02-04-M004.md"
+    },
+    {
+      "id": "T03-01-M001",
+      "title": "没有距离函数时怎样表达“接近”",
+      "page": "46",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@436b96ee426e",
+      "html": "T03-01-M001.html",
+      "markdown": "T03-01-M001.md"
+    },
+    {
+      "id": "T03-01-M002",
+      "title": "极限点定义：每个开集都遇到另一个A点",
+      "page": "46",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@81a7e49034d7",
+      "html": "T03-01-M002.html",
+      "markdown": "T03-01-M002.md"
+    },
+    {
+      "id": "T03-01-M003",
+      "title": "用一个开集否定极限点",
+      "page": "46—47",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@3d359427ad8d",
+      "html": "T03-01-M003.html",
+      "markdown": "T03-01-M003.md"
+    },
+    {
+      "id": "T03-01-M004",
+      "title": "列出含点开集证明极限点",
+      "page": "47",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@41ae83884040",
+      "html": "T03-01-M004.html",
+      "markdown": "T03-01-M004.md"
+    },
+    {
+      "id": "T03-01-M005",
+      "title": "离散空间没有极限点",
+      "page": "47",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@4be22b65bdf8",
+      "html": "T03-01-M005.html",
+      "markdown": "T03-01-M005.md"
+    },
+    {
+      "id": "T03-01-M006",
+      "title": "实数半开区间的内部点与右端点",
+      "page": "47",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@2a409ac49953",
+      "html": "T03-01-M006.html",
+      "markdown": "T03-01-M006.md"
+    },
+    {
+      "id": "T03-01-M007",
+      "title": "平庸空间为何要求A至少有两点",
+      "page": "47",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@1c490d2d3ab6",
+      "html": "T03-01-M007.html",
+      "markdown": "T03-01-M007.md"
+    },
+    {
+      "id": "T03-01-M008",
+      "title": "闭集必含全部极限点",
+      "page": "47—48",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a3da299be352",
+      "html": "T03-01-M008.html",
+      "markdown": "T03-01-M008.md"
+    },
+    {
+      "id": "T03-01-M009",
+      "title": "含全部极限点推出闭集",
+      "page": "48",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@986afb8611cf",
+      "html": "T03-01-M009.html",
+      "markdown": "T03-01-M009.md"
+    },
+    {
+      "id": "T03-01-M010",
+      "title": "用极限点判断四类区间闭性",
+      "page": "48",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@224e29362945",
+      "html": "T03-01-M010.html",
+      "markdown": "T03-01-M010.md"
+    },
+    {
+      "id": "T03-01-M011",
+      "title": "极限点集A′",
+      "page": "48",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d3e077dbbcab",
+      "html": "T03-01-M011.html",
+      "markdown": "T03-01-M011.md"
+    },
+    {
+      "id": "T03-01-M012",
+      "title": "A∪A′为何闭",
+      "page": "48",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@fe87fb8268e4",
+      "html": "T03-01-M012.html",
+      "markdown": "T03-01-M012.md"
+    },
+    {
+      "id": "T03-01-M013",
+      "title": "闭包定义",
+      "page": "48",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@26d6833e3436",
+      "html": "T03-01-M013.html",
+      "markdown": "T03-01-M013.md"
+    },
+    {
+      "id": "T03-01-M014",
+      "title": "闭包是包含A的最小闭集",
+      "page": "48",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@5f1d9f20c2c2",
+      "html": "T03-01-M014.html",
+      "markdown": "T03-01-M014.md"
+    },
+    {
+      "id": "T03-01-M015",
+      "title": "有限拓扑中的三个闭包计算",
+      "page": "49",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c01eafdd6f92",
+      "html": "T03-01-M015.html",
+      "markdown": "T03-01-M015.md"
+    },
+    {
+      "id": "T03-01-M016",
+      "title": "有理数闭包是实数",
+      "page": "49",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@5133d6a95f49",
+      "html": "T03-01-M016.html",
+      "markdown": "T03-01-M016.md"
+    },
+    {
+      "id": "T03-01-M017",
+      "title": "稠密与处处稠密",
+      "page": "49",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@84eac1e9c189",
+      "html": "T03-01-M017.html",
+      "markdown": "T03-01-M017.md"
+    },
+    {
+      "id": "T03-01-M018",
+      "title": "离散空间唯一稠密集是X",
+      "page": "49",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@ad135fc7319e",
+      "html": "T03-01-M018.html",
+      "markdown": "T03-01-M018.md"
+    },
+    {
+      "id": "T03-01-M019",
+      "title": "稠密推出每个非空开集相交",
+      "page": "49—50",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@8949c27a6f19",
+      "html": "T03-01-M019.html",
+      "markdown": "T03-01-M019.md"
+    },
+    {
+      "id": "T03-01-M020",
+      "title": "每个非空开集相交推出稠密",
+      "page": "50",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@23102ec19f51",
+      "html": "T03-01-M020.html",
+      "markdown": "T03-01-M020.md"
+    },
+    {
+      "id": "T03-01-M021",
+      "title": "原题1(a)(i)：底集X的全部极限点",
+      "page": "50",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@2c653250bf41",
+      "html": "T03-01-M021.html",
+      "markdown": "T03-01-M021.md"
+    },
+    {
+      "id": "T03-01-M022",
+      "title": "原题1(a)(ii)：单点集{a}的极限点",
+      "page": "50",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@7ddc570d651e",
+      "html": "T03-01-M022.html",
+      "markdown": "T03-01-M022.md"
+    },
+    {
+      "id": "T03-01-M023",
+      "title": "原题1(a)(iii)：{b,c}的极限点",
+      "page": "50",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@e303b771b50d",
+      "html": "T03-01-M023.html",
+      "markdown": "T03-01-M023.md"
+    },
+    {
+      "id": "T03-01-M024",
+      "title": "原题1(a)(iv)：{a,c,d}的极限点",
+      "page": "50",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@3326cd6ea556",
+      "html": "T03-01-M024.html",
+      "markdown": "T03-01-M024.md"
+    },
+    {
+      "id": "T03-01-M025",
+      "title": "原题1(a)(v)：{b,d,e,f}的极限点",
+      "page": "50",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@6d0ce79158c7",
+      "html": "T03-01-M025.html",
+      "markdown": "T03-01-M025.md"
+    },
+    {
+      "id": "T03-01-M026",
+      "title": "原题1(b)：由极限点集求五个闭包",
+      "page": "50",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@09415837a974",
+      "html": "T03-01-M026.html",
+      "markdown": "T03-01-M026.md"
+    },
+    {
+      "id": "T03-01-M027",
+      "title": "原题1(c)：用最小闭集复核闭包",
+      "page": "50",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c946f7e72964",
+      "html": "T03-01-M027.html",
+      "markdown": "T03-01-M027.md"
+    },
+    {
+      "id": "T03-01-M028",
+      "title": "整数有限闭拓扑中有限集没有极限点",
+      "page": "50",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@11da509d0940",
+      "html": "T03-01-M028.html",
+      "markdown": "T03-01-M028.md"
+    },
+    {
+      "id": "T03-01-M029",
+      "title": "偶整数集的每个整数都是极限点",
+      "page": "50",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@5f81eb4f1127",
+      "html": "T03-01-M029.html",
+      "markdown": "T03-01-M029.md"
+    },
+    {
+      "id": "T03-01-M030",
+      "title": "实数开区间的极限点集是闭区间",
+      "page": "50",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@ab8a94bb13b3",
+      "html": "T03-01-M030.html",
+      "markdown": "T03-01-M030.md"
+    },
+    {
+      "id": "T03-01-M031",
+      "title": "倒数序列的闭包",
+      "page": "50",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@942e33e225bc",
+      "html": "T03-01-M031.html",
+      "markdown": "T03-01-M031.md"
+    },
+    {
+      "id": "T03-01-M032",
+      "title": "整数集的闭包",
+      "page": "50",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c3ce56dab741",
+      "html": "T03-01-M032.html",
+      "markdown": "T03-01-M032.md"
+    },
+    {
+      "id": "T03-01-M033",
+      "title": "无理数集的闭包",
+      "page": "50",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@fe854699a925",
+      "html": "T03-01-M033.html",
+      "markdown": "T03-01-M033.md"
+    },
+    {
+      "id": "T03-01-M034",
+      "title": "用1/n序列刻画实数闭包",
+      "page": "51",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@9095f9aee134",
+      "html": "T03-01-M034.html",
+      "markdown": "T03-01-M034.md"
+    },
+    {
+      "id": "T03-01-M035",
+      "title": "子集包含与极限点单调性",
+      "page": "51",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@008192d503b2",
+      "html": "T03-01-M035.html",
+      "markdown": "T03-01-M035.md"
+    },
+    {
+      "id": "T03-01-M036",
+      "title": "闭包的单调性",
+      "page": "51",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@76c10e415687",
+      "html": "T03-01-M036.html",
+      "markdown": "T03-01-M036.md"
+    },
+    {
+      "id": "T03-01-M037",
+      "title": "稠密性的向上封闭",
+      "page": "51",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@7ad949729ca4",
+      "html": "T03-01-M037.html",
+      "markdown": "T03-01-M037.md"
+    },
+    {
+      "id": "T03-01-M038",
+      "title": "不可数多个不同稠密子集",
+      "page": "51",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d03584a798c5",
+      "html": "T03-01-M038.html",
+      "markdown": "T03-01-M038.md"
+    },
+    {
+      "id": "T03-01-M039",
+      "title": "可数与不可数稠密子集的数量",
+      "page": "51",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@1bd1ec463ab5",
+      "html": "T03-01-M039.html",
+      "markdown": "T03-01-M039.md"
+    },
+    {
+      "id": "T03-02-M001",
+      "title": "邻域定义与闭区间例",
+      "page": "51",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@8eeb18f8224f",
+      "html": "T03-02-M001.html",
+      "markdown": "T03-02-M001.md"
+    },
+    {
+      "id": "T03-02-M002",
+      "title": "同一集合对不同点未必都是邻域",
+      "page": "51",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@977314ad9697",
+      "html": "T03-02-M002.html",
+      "markdown": "T03-02-M002.md"
+    },
+    {
+      "id": "T03-02-M003",
+      "title": "开集是其中每一点的邻域",
+      "page": "51",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@ee240e3442e3",
+      "html": "T03-02-M003.html",
+      "markdown": "T03-02-M003.md"
+    },
+    {
+      "id": "T03-02-M004",
+      "title": "邻域的任意超集仍是邻域",
+      "page": "51",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@3d1ccacc8393",
+      "html": "T03-02-M004.html",
+      "markdown": "T03-02-M004.md"
+    },
+    {
+      "id": "T03-02-M005",
+      "title": "用邻域识别极限点：正向",
+      "page": "51—52",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d790f501910b",
+      "html": "T03-02-M005.html",
+      "markdown": "T03-02-M005.md"
+    },
+    {
+      "id": "T03-02-M006",
+      "title": "用邻域识别极限点：反向",
+      "page": "51—52",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@197628aff74d",
+      "html": "T03-02-M006.html",
+      "markdown": "T03-02-M006.md"
+    },
+    {
+      "id": "T03-02-M007",
+      "title": "闭集外点有补集内邻域：正向",
+      "page": "52",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@2f8a65e5b0ca",
+      "html": "T03-02-M007.html",
+      "markdown": "T03-02-M007.md"
+    },
+    {
+      "id": "T03-02-M008",
+      "title": "外点邻域条件推出闭集",
+      "page": "52",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@884183499790",
+      "html": "T03-02-M008.html",
+      "markdown": "T03-02-M008.md"
+    },
+    {
+      "id": "T03-02-M009",
+      "title": "用内部邻域判别开集",
+      "page": "52",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a43992613286",
+      "html": "T03-02-M009.html",
+      "markdown": "T03-02-M009.md"
+    },
+    {
+      "id": "T03-02-M010",
+      "title": "用内部开集判别开集",
+      "page": "52",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@0fb559aa2503",
+      "html": "T03-02-M010.html",
+      "markdown": "T03-02-M010.md"
+    },
+    {
+      "id": "T03-02-M011",
+      "title": "用邻域刻画稠密",
+      "page": "52",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@7e6be9f391a7",
+      "html": "T03-02-M011.html",
+      "markdown": "T03-02-M011.md"
+    },
+    {
+      "id": "T03-02-M012",
+      "title": "交的闭包包含于闭包的交",
+      "page": "52",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@64c769037585",
+      "html": "T03-02-M012.html",
+      "markdown": "T03-02-M012.md"
+    },
+    {
+      "id": "T03-02-M013",
+      "title": "交的闭包可以严格小于闭包的交",
+      "page": "52",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@6849f954198e",
+      "html": "T03-02-M013.html",
+      "markdown": "T03-02-M013.md"
+    },
+    {
+      "id": "T03-02-M014",
+      "title": "有限闭拓扑推出T1",
+      "page": "52",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c29109e7f36b",
+      "html": "T03-02-M014.html",
+      "markdown": "T03-02-M014.md"
+    },
+    {
+      "id": "T03-02-M015",
+      "title": "有限闭拓扑中无限集稠密",
+      "page": "52",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@e9889e5815d6",
+      "html": "T03-02-M015.html",
+      "markdown": "T03-02-M015.md"
+    },
+    {
+      "id": "T03-02-M016",
+      "title": "由T1与无限集稠密推出有限闭拓扑",
+      "page": "52",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c648f5789d46",
+      "html": "T03-02-M016.html",
+      "markdown": "T03-02-M016.md"
+    },
+    {
+      "id": "T03-02-M017",
+      "title": "通常拓扑的实数轴可分",
+      "page": "52",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@3aa20ebab635",
+      "html": "T03-02-M017.html",
+      "markdown": "T03-02-M017.md"
+    },
+    {
+      "id": "T03-02-M018",
+      "title": "可数离散空间可分",
+      "page": "52",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@787072e52dce",
+      "html": "T03-02-M018.html",
+      "markdown": "T03-02-M018.md"
+    },
+    {
+      "id": "T03-02-M019",
+      "title": "可数有限闭空间可分",
+      "page": "52",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@64a1320ce474",
+      "html": "T03-02-M019.html",
+      "markdown": "T03-02-M019.md"
+    },
+    {
+      "id": "T03-02-M020",
+      "title": "有限底集上的任意拓扑空间可分",
+      "page": "53",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@4038e13c4d03",
+      "html": "T03-02-M020.html",
+      "markdown": "T03-02-M020.md"
+    },
+    {
+      "id": "T03-02-M021",
+      "title": "有限拓扑空间可分",
+      "page": "53",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@7b6bb8ff341c",
+      "html": "T03-02-M021.html",
+      "markdown": "T03-02-M021.md"
+    },
+    {
+      "id": "T03-02-M022",
+      "title": "不可数离散空间不可分",
+      "page": "53",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@11dda7ea128e",
+      "html": "T03-02-M022.html",
+      "markdown": "T03-02-M022.md"
+    },
+    {
+      "id": "T03-02-M023",
+      "title": "不可数有限闭空间可分",
+      "page": "53",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a64b7fb0a265",
+      "html": "T03-02-M023.html",
+      "markdown": "T03-02-M023.md"
+    },
+    {
+      "id": "T03-02-M024",
+      "title": "第二可数空间可分",
+      "page": "53",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@bd67022c9b52",
+      "html": "T03-02-M024.html",
+      "markdown": "T03-02-M024.md"
+    },
+    {
+      "id": "T03-02-M025",
+      "title": "内部定义与闭区间的内部",
+      "page": "53",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c335e06a5cf3",
+      "html": "T03-02-M025.html",
+      "markdown": "T03-02-M025.md"
+    },
+    {
+      "id": "T03-02-M026",
+      "title": "开区间的内部等于自身",
+      "page": "53",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@ba5629762536",
+      "html": "T03-02-M026.html",
+      "markdown": "T03-02-M026.md"
+    },
+    {
+      "id": "T03-02-M027",
+      "title": "开集的内部等于自身",
+      "page": "53",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@768a563f8458",
+      "html": "T03-02-M027.html",
+      "markdown": "T03-02-M027.md"
+    },
+    {
+      "id": "T03-02-M028",
+      "title": "实数单点集的内部为空",
+      "page": "53",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@baf26143cf18",
+      "html": "T03-02-M028.html",
+      "markdown": "T03-02-M028.md"
+    },
+    {
+      "id": "T03-02-M029",
+      "title": "平庸空间真子集的内部为空",
+      "page": "53",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@b38575bcd0e3",
+      "html": "T03-02-M029.html",
+      "markdown": "T03-02-M029.md"
+    },
+    {
+      "id": "T03-02-M030",
+      "title": "实数可数子集的内部为空",
+      "page": "53",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@547d0b6a1e45",
+      "html": "T03-02-M030.html",
+      "markdown": "T03-02-M030.md"
+    },
+    {
+      "id": "T03-02-M031",
+      "title": "内部与补集闭包的关系",
+      "page": "53",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d8e1bfd477b4",
+      "html": "T03-02-M031.html",
+      "markdown": "T03-02-M031.md"
+    },
+    {
+      "id": "T03-02-M032",
+      "title": "用补集内部刻画稠密",
+      "page": "53",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@1d5d5e14c454",
+      "html": "T03-02-M032.html",
+      "markdown": "T03-02-M032.md"
+    },
+    {
+      "id": "T03-02-M033",
+      "title": "内部保持有限交",
+      "page": "53",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@4b5b6042b8c0",
+      "html": "T03-02-M033.html",
+      "markdown": "T03-02-M033.md"
+    },
+    {
+      "id": "T03-02-M034",
+      "title": "内部不保持有限并",
+      "page": "53",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d54d17e8c13a",
+      "html": "T03-02-M034.html",
+      "markdown": "T03-02-M034.md"
+    },
+    {
+      "id": "T03-02-M035",
+      "title": "闭包保持有限并",
+      "page": "53",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@fceb1b83b1fc",
+      "html": "T03-02-M035.html",
+      "markdown": "T03-02-M035.md"
+    },
+    {
+      "id": "T03-02-M036",
+      "title": "稠密集与开集相交的闭包",
+      "page": "54",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a80bf70e08c1",
+      "html": "T03-02-M036.html",
+      "markdown": "T03-02-M036.md"
+    },
+    {
+      "id": "T03-02-M037",
+      "title": "一个稠密集开时两稠密集的交仍稠密",
+      "page": "54",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@36655021a95c",
+      "html": "T03-02-M037.html",
+      "markdown": "T03-02-M037.md"
+    },
+    {
+      "id": "T03-02-M038",
+      "title": "Sorgenfrey线的半开区间基",
+      "page": "54",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@cd323f4b6247",
+      "html": "T03-02-M038.html",
+      "markdown": "T03-02-M038.md"
+    },
+    {
+      "id": "T03-02-M039",
+      "title": "Sorgenfrey拓扑严格细于欧几里得拓扑",
+      "page": "54",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@2263d03b4502",
+      "html": "T03-02-M039.html",
+      "markdown": "T03-02-M039.md"
+    },
+    {
+      "id": "T03-02-M040",
+      "title": "Sorgenfrey线中的半开区间是闭集",
+      "page": "54",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@607a262138a8",
+      "html": "T03-02-M040.html",
+      "markdown": "T03-02-M040.md"
+    },
+    {
+      "id": "T03-02-M041",
+      "title": "Sorgenfrey线可分",
+      "page": "54",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@dd4521cc15ae",
+      "html": "T03-02-M041.html",
+      "markdown": "T03-02-M041.md"
+    },
+    {
+      "id": "T03-02-M042",
+      "title": "Sorgenfrey线不满足第二可数性",
+      "page": "54",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@414ff2830888",
+      "html": "T03-02-M042.html",
+      "markdown": "T03-02-M042.md"
+    },
+    {
+      "id": "T03-03-M001",
+      "title": "最大最小元素与上下界",
+      "page": "54",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@824ecdd9403b",
+      "html": "T03-03-M001.html",
+      "markdown": "T03-03-M001.md"
+    },
+    {
+      "id": "T03-03-M002",
+      "title": "上确界与下确界",
+      "page": "54",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@434e9d524407",
+      "html": "T03-03-M002.html",
+      "markdown": "T03-03-M002.md"
+    },
+    {
+      "id": "T03-03-M003",
+      "title": "闭集含上确界：从补集开取得间隙",
+      "page": "54—55",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@e62ea7a3b5a2",
+      "html": "T03-03-M003.html",
+      "markdown": "T03-03-M003.md"
+    },
+    {
+      "id": "T03-03-M004",
+      "title": "闭集含上确界：用最小上界导出矛盾",
+      "page": "55",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@77e71fa75982",
+      "html": "T03-03-M004.html",
+      "markdown": "T03-03-M004.md"
+    },
+    {
+      "id": "T03-03-M005",
+      "title": "实数闭开子集证明的有界切片",
+      "page": "55",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d4da6b37762e",
+      "html": "T03-03-M005.html",
+      "markdown": "T03-03-M005.md"
+    },
+    {
+      "id": "T03-03-M006",
+      "title": "上确界点与开性矛盾",
+      "page": "55",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@3f597b76b777",
+      "html": "T03-03-M006.html",
+      "markdown": "T03-03-M006.md"
+    },
+    {
+      "id": "T03-03-M007",
+      "title": "连通定义与实数轴连通",
+      "page": "55",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@66a77ff3a6cc",
+      "html": "T03-03-M007.html",
+      "markdown": "T03-03-M007.md"
+    },
+    {
+      "id": "T03-03-M008",
+      "title": "离散空间与平庸空间的连通性",
+      "page": "55",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@ea05ba6a125b",
+      "html": "T03-03-M008.html",
+      "markdown": "T03-03-M008.md"
+    },
+    {
+      "id": "T03-03-M009",
+      "title": "五点有限空间中的非平凡闭开集",
+      "page": "55",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@2cc9dc25cf5e",
+      "html": "T03-03-M009.html",
+      "markdown": "T03-03-M009.md"
+    },
+    {
+      "id": "T03-03-M010",
+      "title": "用两个不交非空开集刻画不连通",
+      "page": "56",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@1dcf535b959d",
+      "html": "T03-03-M010.html",
+      "markdown": "T03-03-M010.md"
+    },
+    {
+      "id": "T03-03-M011",
+      "title": "欧几里得空间连通性结论与证明边界",
+      "page": "56",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@aeb11a88be4b",
+      "html": "T03-03-M011.html",
+      "markdown": "T03-03-M011.md"
+    },
+    {
+      "id": "T03-03-M012",
+      "title": "上下界在取负后的对应",
+      "page": "56",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@920405fc3121",
+      "html": "T03-03-M012.html",
+      "markdown": "T03-03-M012.md"
+    },
+    {
+      "id": "T03-03-M013",
+      "title": "用最小上界公理证明下确界存在",
+      "page": "56",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@373baaf15318",
+      "html": "T03-03-M013.html",
+      "markdown": "T03-03-M013.md"
+    },
+    {
+      "id": "T03-03-M014",
+      "title": "实数集没有最大元素和上确界",
+      "page": "56",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@1ba934fda3e9",
+      "html": "T03-03-M014.html",
+      "markdown": "T03-03-M014.md"
+    },
+    {
+      "id": "T03-03-M015",
+      "title": "整数集没有最大元素和上确界",
+      "page": "56",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c0f08c05f81c",
+      "html": "T03-03-M015.html",
+      "markdown": "T03-03-M015.md"
+    },
+    {
+      "id": "T03-03-M016",
+      "title": "半开区间的上确界未被取到",
+      "page": "56",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@6bc67f19297b",
+      "html": "T03-03-M016.html",
+      "markdown": "T03-03-M016.md"
+    },
+    {
+      "id": "T03-03-M017",
+      "title": "逼近1的序列集合没有最大元素",
+      "page": "56",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@34664f3fb1d1",
+      "html": "T03-03-M017.html",
+      "markdown": "T03-03-M017.md"
+    },
+    {
+      "id": "T03-03-M018",
+      "title": "左射线的上确界就是最大元素",
+      "page": "56",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c61b5cdd58fc",
+      "html": "T03-03-M018.html",
+      "markdown": "T03-03-M018.md"
+    },
+    {
+      "id": "T03-03-M019",
+      "title": "不连通与开分离",
+      "page": "56",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@7e229cb02148",
+      "html": "T03-03-M019.html",
+      "markdown": "T03-03-M019.md"
+    },
+    {
+      "id": "T03-03-M020",
+      "title": "例1.1.2中的有限空间不连通",
+      "page": "56",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c56b152b263a",
+      "html": "T03-03-M020.html",
+      "markdown": "T03-03-M020.md"
+    },
+    {
+      "id": "T03-03-M021",
+      "title": "无限有限闭空间连通",
+      "page": "56",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@0ea8f467c556",
+      "html": "T03-03-M021.html",
+      "markdown": "T03-03-M021.md"
+    },
+    {
+      "id": "T03-03-M022",
+      "title": "无限可数闭空间的连通性取决于底集大小",
+      "page": "56",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@4051542e854c",
+      "html": "T03-03-M022.html",
+      "markdown": "T03-03-M022.md"
+    },
+    {
+      "id": "T03-03-M023",
+      "title": "习题1.1第9题中哪些候选真的是拓扑",
+      "page": "56",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@313a8b80d982",
+      "html": "T03-03-M023.html",
+      "markdown": "T03-03-M023.md"
+    },
+    {
+      "id": "T03-03-M024",
+      "title": "三个同心区间拓扑没有非平凡闭开集",
+      "page": "56",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@deea362f7b6c",
+      "html": "T03-03-M024.html",
+      "markdown": "T03-03-M024.md"
+    },
+    {
+      "id": "T03-03-M025",
+      "title": "十类候选中的连通拓扑空间总核对",
+      "page": "56",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@e9772f43c8f2",
+      "html": "T03-03-M025.html",
+      "markdown": "T03-03-M025.md"
+    },
+    {
+      "id": "T03-04-M001",
+      "title": "从极限点到最小闭包",
+      "page": "57",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@0fe85e65375f",
+      "html": "T03-04-M001.html",
+      "markdown": "T03-04-M001.md"
+    },
+    {
+      "id": "T03-04-M002",
+      "title": "稠密、邻域与内部的互补视角",
+      "page": "57",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@46f8411a093a",
+      "html": "T03-04-M002.html",
+      "markdown": "T03-04-M002.md"
+    },
+    {
+      "id": "T03-04-M003",
+      "title": "连通性结论与后续研究",
+      "page": "57",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a67c1d1bc7cc",
+      "html": "T03-04-M003.html",
+      "markdown": "T03-04-M003.md"
+    },
+    {
+      "id": "T04-01-M001",
+      "title": "从集合等势到拓扑同胚问题",
+      "page": "58",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c4f33641db6f",
+      "html": "T04-01-M001.html",
+      "markdown": "T04-01-M001.md"
+    },
+    {
+      "id": "T04-01-M002",
+      "title": "子空间拓扑定义：与Y取交",
+      "page": "58",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@b64e230a7bab",
+      "html": "T04-01-M002.html",
+      "markdown": "T04-01-M002.md"
+    },
+    {
+      "id": "T04-01-M003",
+      "title": "验证诱导集合簇确实是拓扑",
+      "page": "58",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@bd98e7286b15",
+      "html": "T04-01-M003.html",
+      "markdown": "T04-01-M003.md"
+    },
+    {
+      "id": "T04-01-M004",
+      "title": "六点空间的子空间拓扑",
+      "page": "58",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@28845290cba9",
+      "html": "T04-01-M004.html",
+      "markdown": "T04-01-M004.md"
+    },
+    {
+      "id": "T04-01-M005",
+      "title": "五点空间的子空间拓扑",
+      "page": "58",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@ca48c77f4916",
+      "html": "T04-01-M005.html",
+      "markdown": "T04-01-M005.md"
+    },
+    {
+      "id": "T04-01-M006",
+      "title": "基在子空间中的覆盖",
+      "page": "58",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@f6d691590802",
+      "html": "T04-01-M006.html",
+      "markdown": "T04-01-M006.md"
+    },
+    {
+      "id": "T04-01-M007",
+      "title": "基在子空间中的交内细化",
+      "page": "58",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@079c3ef28074",
+      "html": "T04-01-M007.html",
+      "markdown": "T04-01-M007.md"
+    },
+    {
+      "id": "T04-01-M008",
+      "title": "开区间子空间的诱导基",
+      "page": "58",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@5bba7f9f910c",
+      "html": "T04-01-M008.html",
+      "markdown": "T04-01-M008.md"
+    },
+    {
+      "id": "T04-01-M009",
+      "title": "闭区间子空间的相对开集",
+      "page": "59",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@f9fa18e14d6a",
+      "html": "T04-01-M009.html",
+      "markdown": "T04-01-M009.md"
+    },
+    {
+      "id": "T04-01-M010",
+      "title": "整数子空间的诱导拓扑离散",
+      "page": "59",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a94b9a2e5b3e",
+      "html": "T04-01-M010.html",
+      "markdown": "T04-01-M010.md"
+    },
+    {
+      "id": "T04-01-M011",
+      "title": "常用数集默认采用实数诱导拓扑",
+      "page": "59—60",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@ac183657be40",
+      "html": "T04-01-M011.html",
+      "markdown": "T04-01-M011.md"
+    },
+    {
+      "id": "T04-01-M012",
+      "title": "两个有限诱导拓扑",
+      "page": "60",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@17bb5590cd9f",
+      "html": "T04-01-M012.html",
+      "markdown": "T04-01-M012.md"
+    },
+    {
+      "id": "T04-01-M013",
+      "title": "正整数上的诱导拓扑",
+      "page": "60",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@6ecd7d9258bd",
+      "html": "T04-01-M013.html",
+      "markdown": "T04-01-M013.md"
+    },
+    {
+      "id": "T04-01-M014",
+      "title": "半开区间$[a,b)$的通常拓扑基",
+      "page": "60",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@32d0bd363600",
+      "html": "T04-01-M014.html",
+      "markdown": "T04-01-M014.md"
+    },
+    {
+      "id": "T04-01-M015",
+      "title": "半开区间$(a,b]$的通常拓扑基",
+      "page": "60",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@f877fe1a4c5b",
+      "html": "T04-01-M015.html",
+      "markdown": "T04-01-M015.md"
+    },
+    {
+      "id": "T04-01-M016",
+      "title": "左射线$(-\\infty,a]$的通常拓扑基",
+      "page": "60",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@cd11e8789ce9",
+      "html": "T04-01-M016.html",
+      "markdown": "T04-01-M016.md"
+    },
+    {
+      "id": "T04-01-M017",
+      "title": "开左射线$(-\\infty,a)$的通常拓扑基",
+      "page": "60",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@e0750cbf475c",
+      "html": "T04-01-M017.html",
+      "markdown": "T04-01-M017.md"
+    },
+    {
+      "id": "T04-01-M018",
+      "title": "开右射线$(a,\\infty)$的通常拓扑基",
+      "page": "60",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@38f2644ef88d",
+      "html": "T04-01-M018.html",
+      "markdown": "T04-01-M018.md"
+    },
+    {
+      "id": "T04-01-M019",
+      "title": "闭右射线$[a,\\infty)$的通常拓扑基",
+      "page": "60",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@dd202875ef76",
+      "html": "T04-01-M019.html",
+      "markdown": "T04-01-M019.md"
+    },
+    {
+      "id": "T04-01-M020",
+      "title": "子空间的子空间仍是同一诱导拓扑",
+      "page": "60",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@67f23846f59e",
+      "html": "T04-01-M020.html",
+      "markdown": "T04-01-M020.md"
+    },
+    {
+      "id": "T04-01-M021",
+      "title": "子空间闭集的迹刻画",
+      "page": "60",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@ba59d08678ca",
+      "html": "T04-01-M021.html",
+      "markdown": "T04-01-M021.md"
+    },
+    {
+      "id": "T04-01-M022",
+      "title": "离散空间的每个子空间仍离散",
+      "page": "60",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@164b24c68222",
+      "html": "T04-01-M022.html",
+      "markdown": "T04-01-M022.md"
+    },
+    {
+      "id": "T04-01-M023",
+      "title": "平庸空间的每个子空间仍平庸",
+      "page": "60",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@610351218d24",
+      "html": "T04-01-M023.html",
+      "markdown": "T04-01-M023.md"
+    },
+    {
+      "id": "T04-01-M024",
+      "title": "两段区间子空间的全部闭开子集",
+      "page": "60",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@60a9cd8e252b",
+      "html": "T04-01-M024.html",
+      "markdown": "T04-01-M024.md"
+    },
+    {
+      "id": "T04-01-M025",
+      "title": "连通空间的子空间未必连通",
+      "page": "60",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@b9468469a691",
+      "html": "T04-01-M025.html",
+      "markdown": "T04-01-M025.md"
+    },
+    {
+      "id": "T04-01-M026",
+      "title": "诱导拓扑包含于原拓扑的判别",
+      "page": "61",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@738bafbdad4f",
+      "html": "T04-01-M026.html",
+      "markdown": "T04-01-M026.md"
+    },
+    {
+      "id": "T04-01-M027",
+      "title": "相交连通子空间之并仍连通",
+      "page": "61",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@f6c09b939b3c",
+      "html": "T04-01-M027.html",
+      "markdown": "T04-01-M027.md"
+    },
+    {
+      "id": "T04-01-M028",
+      "title": "T1性质遗传到子空间",
+      "page": "61",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@e0a1c07fe17d",
+      "html": "T04-01-M028.html",
+      "markdown": "T04-01-M028.md"
+    },
+    {
+      "id": "T04-01-M029",
+      "title": "实数轴是Hausdorff空间",
+      "page": "61",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@fd7346f132c7",
+      "html": "T04-01-M029.html",
+      "markdown": "T04-01-M029.md"
+    },
+    {
+      "id": "T04-01-M030",
+      "title": "离散空间是Hausdorff空间",
+      "page": "61",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@3e0e8ed7e6c5",
+      "html": "T04-01-M030.html",
+      "markdown": "T04-01-M030.md"
+    },
+    {
+      "id": "T04-01-M031",
+      "title": "T2空间必为T1空间",
+      "page": "61",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@aa46efc8ce90",
+      "html": "T04-01-M031.html",
+      "markdown": "T04-01-M031.md"
+    },
+    {
+      "id": "T04-01-M032",
+      "title": "有限闭整数空间T1但非T2",
+      "page": "61",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d27b40829231",
+      "html": "T04-01-M032.html",
+      "markdown": "T04-01-M032.md"
+    },
+    {
+      "id": "T04-01-M033",
+      "title": "T2性质遗传到子空间",
+      "page": "61",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@f3e093acf4cd",
+      "html": "T04-01-M033.html",
+      "markdown": "T04-01-M033.md"
+    },
+    {
+      "id": "T04-01-M034",
+      "title": "第二可数性遗传到子空间",
+      "page": "61",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@9f3e954837b4",
+      "html": "T04-01-M034.html",
+      "markdown": "T04-01-M034.md"
+    },
+    {
+      "id": "T04-01-M035",
+      "title": "闭区间连通",
+      "page": "61",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@2d0b32635237",
+      "html": "T04-01-M035.html",
+      "markdown": "T04-01-M035.md"
+    },
+    {
+      "id": "T04-01-M036",
+      "title": "有理数与无理数子空间都非离散",
+      "page": "61",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@85b54d774a23",
+      "html": "T04-01-M036.html",
+      "markdown": "T04-01-M036.md"
+    },
+    {
+      "id": "T04-01-M037",
+      "title": "有理数与无理数子空间都不连通",
+      "page": "61",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@89fee9e0452c",
+      "html": "T04-01-M037.html",
+      "markdown": "T04-01-M037.md"
+    },
+    {
+      "id": "T04-01-M038",
+      "title": "有理数与无理数子空间都是Hausdorff",
+      "page": "61",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@9b15fe8785af",
+      "html": "T04-01-M038.html",
+      "markdown": "T04-01-M038.md"
+    },
+    {
+      "id": "T04-01-M039",
+      "title": "有理数与无理数子空间都不是有限闭拓扑",
+      "page": "61",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@691225a0c108",
+      "html": "T04-01-M039.html",
+      "markdown": "T04-01-M039.md"
+    },
+    {
+      "id": "T04-01-M040",
+      "title": "正则性遗传到子空间",
+      "page": "61—62",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a53129ffd414",
+      "html": "T04-01-M040.html",
+      "markdown": "T04-01-M040.md"
+    },
+    {
+      "id": "T04-01-M041",
+      "title": "五个常见空间的正则性",
+      "page": "62",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@8fc7659d9535",
+      "html": "T04-01-M041.html",
+      "markdown": "T04-01-M041.md"
+    },
+    {
+      "id": "T04-01-M042",
+      "title": "正则T1空间必为T2空间",
+      "page": "62",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@325f21bbb4a2",
+      "html": "T04-01-M042.html",
+      "markdown": "T04-01-M042.md"
+    },
+    {
+      "id": "T04-01-M043",
+      "title": "Sorgenfrey线正则",
+      "page": "62",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a91f4044eb2d",
+      "html": "T04-01-M043.html",
+      "markdown": "T04-01-M043.md"
+    },
+    {
+      "id": "T04-01-M044",
+      "title": "一个Hausdorff但不正则的星号例",
+      "page": "62",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@2e9639de9982",
+      "html": "T04-01-M044.html",
+      "markdown": "T04-01-M044.md"
+    },
+    {
+      "id": "T04-02-M001",
+      "title": "同胚映射的四个条件",
+      "page": "62—63",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@b711d4641194",
+      "html": "T04-02-M001.html",
+      "markdown": "T04-02-M001.md"
+    },
+    {
+      "id": "T04-02-M002",
+      "title": "逆像开与像开分别约束哪个方向",
+      "page": "62—63",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a10fe4348a28",
+      "html": "T04-02-M002.html",
+      "markdown": "T04-02-M002.md"
+    },
+    {
+      "id": "T04-02-M003",
+      "title": "复合同胚：先证明双射",
+      "page": "63",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@adfa4029a473",
+      "html": "T04-02-M003.html",
+      "markdown": "T04-02-M003.md"
+    },
+    {
+      "id": "T04-02-M004",
+      "title": "复合同胚保持开集结构",
+      "page": "63",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d74e09494f9f",
+      "html": "T04-02-M004.html",
+      "markdown": "T04-02-M004.md"
+    },
+    {
+      "id": "T04-02-M005",
+      "title": "同胚是等价关系",
+      "page": "63",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@9672bde724b0",
+      "html": "T04-02-M005.html",
+      "markdown": "T04-02-M005.md"
+    },
+    {
+      "id": "T04-02-M006",
+      "title": "仿射映射把$(0,1)$双射到$(a,b)$",
+      "page": "64",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@09f4b48f7acd",
+      "html": "T04-02-M006.html",
+      "markdown": "T04-02-M006.md"
+    },
+    {
+      "id": "T04-02-M007",
+      "title": "仿射映射保持两边开集",
+      "page": "64—65",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@11bf6492fd52",
+      "html": "T04-02-M007.html",
+      "markdown": "T04-02-M007.md"
+    },
+    {
+      "id": "T04-02-M008",
+      "title": "$x/(1-|x|)$的双射与逆映射",
+      "page": "65",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@47d82d22aa94",
+      "html": "T04-02-M008.html",
+      "markdown": "T04-02-M008.md"
+    },
+    {
+      "id": "T04-02-M009",
+      "title": "$(-1,1)$与实数轴的同胚证明",
+      "page": "65",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@2ae5dc960a46",
+      "html": "T04-02-M009.html",
+      "markdown": "T04-02-M009.md"
+    },
+    {
+      "id": "T04-02-M010",
+      "title": "所有非空开区间都与实数轴同胚",
+      "page": "66",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@6f337cd49544",
+      "html": "T04-02-M010.html",
+      "markdown": "T04-02-M010.md"
+    },
+    {
+      "id": "T04-02-M011",
+      "title": "闭区间彼此同胚",
+      "page": "66",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@4f5365bae4b1",
+      "html": "T04-02-M011.html",
+      "markdown": "T04-02-M011.md"
+    },
+    {
+      "id": "T04-02-M012",
+      "title": "任意两个闭区间同胚",
+      "page": "66",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@92334522f01c",
+      "html": "T04-02-M012.html",
+      "markdown": "T04-02-M012.md"
+    },
+    {
+      "id": "T04-02-M013",
+      "title": "四类闭射线彼此同胚",
+      "page": "66",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@0edd232998e0",
+      "html": "T04-02-M013.html",
+      "markdown": "T04-02-M013.md"
+    },
+    {
+      "id": "T04-02-M014",
+      "title": "四类半开区间的同胚链",
+      "page": "66",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@5ff2f3e7775f",
+      "html": "T04-02-M014.html",
+      "markdown": "T04-02-M014.md"
+    },
+    {
+      "id": "T04-02-M015",
+      "title": "半开区间与闭射线的同胚链",
+      "page": "66",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@58cdbaca5cb9",
+      "html": "T04-02-M015.html",
+      "markdown": "T04-02-M015.md"
+    },
+    {
+      "id": "T04-02-M016",
+      "title": "整数与正整数同胚",
+      "page": "66",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@20695f829def",
+      "html": "T04-02-M016.html",
+      "markdown": "T04-02-M016.md"
+    },
+    {
+      "id": "T04-02-M017",
+      "title": "非垂直直线与实数轴同胚",
+      "page": "66",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@ffe9dbf8221c",
+      "html": "T04-02-M017.html",
+      "markdown": "T04-02-M017.md"
+    },
+    {
+      "id": "T04-02-M018",
+      "title": "两个闭矩形同胚",
+      "page": "66",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@85865e7df46b",
+      "html": "T04-02-M018.html",
+      "markdown": "T04-02-M018.md"
+    },
+    {
+      "id": "T04-02-M019",
+      "title": "两个闭圆盘同胚",
+      "page": "67",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a4d2e950a450",
+      "html": "T04-02-M019.html",
+      "markdown": "T04-02-M019.md"
+    },
+    {
+      "id": "T04-02-M020",
+      "title": "闭矩形与闭圆盘同胚",
+      "page": "67",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@0d4e509ceaea",
+      "html": "T04-02-M020.html",
+      "markdown": "T04-02-M020.md"
+    },
+    {
+      "id": "T04-02-M021",
+      "title": "两个双区间子空间同胚",
+      "page": "67",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d450f92f99b6",
+      "html": "T04-02-M021.html",
+      "markdown": "T04-02-M021.md"
+    },
+    {
+      "id": "T04-02-M022",
+      "title": "自同胚映射在复合下构成群",
+      "page": "67",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@7c1646bdcb02",
+      "html": "T04-02-M022.html",
+      "markdown": "T04-02-M022.md"
+    },
+    {
+      "id": "T04-02-M023",
+      "title": "闭区间的自同胚群无限",
+      "page": "67",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@dffacac5131f",
+      "html": "T04-02-M023.html",
+      "markdown": "T04-02-M023.md"
+    },
+    {
+      "id": "T04-02-M024",
+      "title": "闭区间自同胚群不是阿贝尔群",
+      "page": "67",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@3be298f3d390",
+      "html": "T04-02-M024.html",
+      "markdown": "T04-02-M024.md"
+    },
+    {
+      "id": "T04-02-M025",
+      "title": "T0性质在同胚下保持",
+      "page": "67",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@871fced7c930",
+      "html": "T04-02-M025.html",
+      "markdown": "T04-02-M025.md"
+    },
+    {
+      "id": "T04-02-M026",
+      "title": "T1性质在同胚下保持",
+      "page": "67",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@7ea4aa2e815b",
+      "html": "T04-02-M026.html",
+      "markdown": "T04-02-M026.md"
+    },
+    {
+      "id": "T04-02-M027",
+      "title": "Hausdorff性质在同胚下保持",
+      "page": "67",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a24faca2549b",
+      "html": "T04-02-M027.html",
+      "markdown": "T04-02-M027.md"
+    },
+    {
+      "id": "T04-02-M028",
+      "title": "第二可数性在同胚下保持",
+      "page": "67",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@49fff1d78c17",
+      "html": "T04-02-M028.html",
+      "markdown": "T04-02-M028.md"
+    },
+    {
+      "id": "T04-02-M029",
+      "title": "可分性在同胚下保持",
+      "page": "67",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@b9540fc00d06",
+      "html": "T04-02-M029.html",
+      "markdown": "T04-02-M029.md"
+    },
+    {
+      "id": "T04-02-M030",
+      "title": "可数离散空间的实数子空间刻画",
+      "page": "67",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@8f36b2697ae7",
+      "html": "T04-02-M030.html",
+      "markdown": "T04-02-M030.md"
+    },
+    {
+      "id": "T04-03-M001",
+      "title": "证明不同胚要寻找不变量",
+      "page": "68",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c325cd85bfb6",
+      "html": "T04-03-M001.html",
+      "markdown": "T04-03-M001.md"
+    },
+    {
+      "id": "T04-03-M002",
+      "title": "连通区间与断开子空间不同胚",
+      "page": "68",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@8f23884dcf21",
+      "html": "T04-03-M002.html",
+      "markdown": "T04-03-M002.md"
+    },
+    {
+      "id": "T04-03-M003",
+      "title": "连通性在同胚下保持",
+      "page": "68",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@e0ccbfcbb287",
+      "html": "T04-03-M003.html",
+      "markdown": "T04-03-M003.md"
+    },
+    {
+      "id": "T04-03-M004",
+      "title": "十二类拓扑不变量清单",
+      "page": "68—69",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@4c2d4453cee4",
+      "html": "T04-03-M004.html",
+      "markdown": "T04-03-M004.md"
+    },
+    {
+      "id": "T04-03-M005",
+      "title": "底集与拓扑的势也是必要条件",
+      "page": "69",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@f3501637bf40",
+      "html": "T04-03-M005.html",
+      "markdown": "T04-03-M005.md"
+    },
+    {
+      "id": "T04-03-M006",
+      "title": "实数区间的定义与全部形状",
+      "page": "69",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d4b3eeaa05be",
+      "html": "T04-03-M006.html",
+      "markdown": "T04-03-M006.md"
+    },
+    {
+      "id": "T04-03-M007",
+      "title": "每个实数区间连通",
+      "page": "69—70",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@9702587bc55d",
+      "html": "T04-03-M007.html",
+      "markdown": "T04-03-M007.md"
+    },
+    {
+      "id": "T04-03-M008",
+      "title": "非区间集合产生闭开切分",
+      "page": "70",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@e415ff7d3c56",
+      "html": "T04-03-M008.html",
+      "markdown": "T04-03-M008.md"
+    },
+    {
+      "id": "T04-03-M009",
+      "title": "实数子空间连通当且仅当为区间",
+      "page": "69—70",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@6be862d25a5c",
+      "html": "T04-03-M009.html",
+      "markdown": "T04-03-M009.md"
+    },
+    {
+      "id": "T04-03-M010",
+      "title": "同胚限制到删点子空间",
+      "page": "70",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@cb00ebeedf9c",
+      "html": "T04-03-M010.html",
+      "markdown": "T04-03-M010.md"
+    },
+    {
+      "id": "T04-03-M011",
+      "title": "开区间与半开区间不同胚",
+      "page": "70—71",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d7920d6f3109",
+      "html": "T04-03-M011.html",
+      "markdown": "T04-03-M011.md"
+    },
+    {
+      "id": "T04-03-M012",
+      "title": "开区间与闭区间不同胚",
+      "page": "70—71",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a250b958913b",
+      "html": "T04-03-M012.html",
+      "markdown": "T04-03-M012.md"
+    },
+    {
+      "id": "T04-03-M013",
+      "title": "半开区间与闭区间不同胚",
+      "page": "70—71",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@01bc08b56e7a",
+      "html": "T04-03-M013.html",
+      "markdown": "T04-03-M013.md"
+    },
+    {
+      "id": "T04-03-M014",
+      "title": "每个实区间属于唯一标准同胚型",
+      "page": "71",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@73146924839e",
+      "html": "T04-03-M014.html",
+      "markdown": "T04-03-M014.md"
+    },
+    {
+      "id": "T04-03-M015",
+      "title": "多点可数实子集不连通",
+      "page": "71",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@fab2c4d3e7c4",
+      "html": "T04-03-M015.html",
+      "markdown": "T04-03-M015.md"
+    },
+    {
+      "id": "T04-03-M016",
+      "title": "单位圆删一点同胚于开区间",
+      "page": "71",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@8f77039d6d20",
+      "html": "T04-03-M016.html",
+      "markdown": "T04-03-M016.md"
+    },
+    {
+      "id": "T04-03-M017",
+      "title": "圆周不同胚于开区间和闭区间",
+      "page": "71",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@214abdd5d76a",
+      "html": "T04-03-M017.html",
+      "markdown": "T04-03-M017.md"
+    },
+    {
+      "id": "T04-03-M018",
+      "title": "圆周不同胚于半开区间",
+      "page": "71",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c9c4b9cf57da",
+      "html": "T04-03-M018.html",
+      "markdown": "T04-03-M018.md"
+    },
+    {
+      "id": "T04-03-M019",
+      "title": "圆周不同胚于任何实区间",
+      "page": "71",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@12003707a20c",
+      "html": "T04-03-M019.html",
+      "markdown": "T04-03-M019.md"
+    },
+    {
+      "id": "T04-03-M020",
+      "title": "两个相切圆与单圆不同胚",
+      "page": "71—72",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@bb7bceed0614",
+      "html": "T04-03-M020.html",
+      "markdown": "T04-03-M020.md"
+    },
+    {
+      "id": "T04-03-M021",
+      "title": "相切双圆不同胚于任何区间",
+      "page": "72",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@4d173e90edca",
+      "html": "T04-03-M021.html",
+      "markdown": "T04-03-M021.md"
+    },
+    {
+      "id": "T04-03-M022",
+      "title": "重叠圆空间不同胚于任何区间",
+      "page": "72",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@40bd338d30ec",
+      "html": "T04-03-M022.html",
+      "markdown": "T04-03-M022.md"
+    },
+    {
+      "id": "T04-03-M023",
+      "title": "重叠圆空间不同胚于单圆和相切双圆",
+      "page": "72",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@5bb624b9bfcb",
+      "html": "T04-03-M023.html",
+      "markdown": "T04-03-M023.md"
+    },
+    {
+      "id": "T04-03-M024",
+      "title": "Sorgenfrey线不同胚于欧几里得空间的任何子空间",
+      "page": "72",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d0b1f40b87b7",
+      "html": "T04-03-M024.html",
+      "markdown": "T04-03-M024.md"
+    },
+    {
+      "id": "T04-03-M025",
+      "title": "整数半径拓扑与实数半径拓扑不同胚",
+      "page": "72",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@3cb403e40dc3",
+      "html": "T04-03-M025.html",
+      "markdown": "T04-03-M025.md"
+    },
+    {
+      "id": "T04-03-M026",
+      "title": "整数半径开区间与闭区间拓扑同胚",
+      "page": "72",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@1531ea1f70a8",
+      "html": "T04-03-M026.html",
+      "markdown": "T04-03-M026.md"
+    },
+    {
+      "id": "T04-03-M027",
+      "title": "实数半径拓扑与混合区间拓扑不同胚",
+      "page": "72",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@33474b45ef14",
+      "html": "T04-03-M027.html",
+      "markdown": "T04-03-M027.md"
+    },
+    {
+      "id": "T04-03-M028",
+      "title": "无限空间含平庸或T0的可数子空间",
+      "page": "72",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@9936fc09c523",
+      "html": "T04-03-M028.html",
+      "markdown": "T04-03-M028.md"
+    },
+    {
+      "id": "T04-03-M029",
+      "title": "T1空间含有限闭或离散的可数子空间",
+      "page": "72",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@f2fe3b581741",
+      "html": "T04-03-M029.html",
+      "markdown": "T04-03-M029.md"
+    },
+    {
+      "id": "T04-03-M030",
+      "title": "无限Hausdorff空间含无限离散子空间",
+      "page": "72",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a33b3621aa02",
+      "html": "T04-03-M030.html",
+      "markdown": "T04-03-M030.md"
+    },
+    {
+      "id": "T04-03-M031",
+      "title": "无无限T1子空间时出现初始段或末尾段",
+      "page": "72",
+      "status": "usable",
+      "statusText": "可用：中英文原页与Ginsburg–Sands来源核对＋完整Ramsey偏序证明",
+      "version": "0.2@0e6be5dc1b50",
+      "html": "T04-03-M031.html",
+      "markdown": "T04-03-M031.md"
+    },
+    {
+      "id": "T04-03-M032",
+      "title": "五类正整数拓扑两两不同胚",
+      "page": "72",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@9737343a3d9b",
+      "html": "T04-03-M032.html",
+      "markdown": "T04-03-M032.md"
+    },
+    {
+      "id": "T04-03-M033",
+      "title": "同胚空间必局部同胚",
+      "page": "73",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@afca7b102e25",
+      "html": "T04-03-M033.html",
+      "markdown": "T04-03-M033.md"
+    },
+    {
+      "id": "T04-03-M034",
+      "title": "开子空间与环境局部同胚",
+      "page": "73",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@b748dd5595b7",
+      "html": "T04-03-M034.html",
+      "markdown": "T04-03-M034.md"
+    },
+    {
+      "id": "T04-03-M035",
+      "title": "局部同胚映射是开映射",
+      "page": "73",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a1465edfc90e",
+      "html": "T04-03-M035.html",
+      "markdown": "T04-03-M035.md"
+    },
+    {
+      "id": "T04-04-M001",
+      "title": "生成子空间与后续两种空间构造",
+      "page": "73",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@223b4a4a8ac0",
+      "html": "T04-04-M001.html",
+      "markdown": "T04-04-M001.md"
+    },
+    {
+      "id": "T04-04-M002",
+      "title": "同胚、不变量与实区间分类",
+      "page": "73",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@7aa225956234",
+      "html": "T04-04-M002.html",
+      "markdown": "T04-04-M002.md"
+    },
+    {
+      "id": "T04-04-M003",
+      "title": "维数问题与自同胚群的后续方向",
+      "page": "73",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@aea5a2d73a5b",
+      "html": "T04-04-M003.html",
+      "markdown": "T04-04-M003.md"
+    },
+    {
+      "id": "T05-01-M001",
+      "title": "从数轴上的连续说起",
+      "page": "74",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@dfc858d03f49",
+      "html": "T05-01-M001.html",
+      "markdown": "T05-01-M001.md"
+    },
+    {
+      "id": "T05-01-M002",
+      "title": "把误差区间改写成开邻域",
+      "page": "74",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@738fc5fa7c53",
+      "html": "T05-01-M002.html",
+      "markdown": "T05-01-M002.md"
+    },
+    {
+      "id": "T05-01-M003",
+      "title": "从连续推出开邻域条件",
+      "page": "74—75",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@b0751d23ff7b",
+      "html": "T05-01-M003.html",
+      "markdown": "T05-01-M003.md"
+    },
+    {
+      "id": "T05-01-M004",
+      "title": "从开邻域条件恢复误差定义",
+      "page": "75",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@ecdc073642da",
+      "html": "T05-01-M004.html",
+      "markdown": "T05-01-M004.md"
+    },
+    {
+      "id": "T05-01-M005",
+      "title": "由开集逆像推出逐点邻域条件",
+      "page": "75",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@6d2fb445d379",
+      "html": "T05-01-M005.html",
+      "markdown": "T05-01-M005.md"
+    },
+    {
+      "id": "T05-01-M006",
+      "title": "由逐点邻域条件推出开集逆像",
+      "page": "75",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@28b3833d7950",
+      "html": "T05-01-M006.html",
+      "markdown": "T05-01-M006.md"
+    },
+    {
+      "id": "T05-01-M007",
+      "title": "连续映射的开集逆像定义",
+      "page": "75—76",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@18b7c2322461",
+      "html": "T05-01-M007.html",
+      "markdown": "T05-01-M007.md"
+    },
+    {
+      "id": "T05-01-M008",
+      "title": "恒等映射连续",
+      "page": "76",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@e0283f621e4c",
+      "html": "T05-01-M008.html",
+      "markdown": "T05-01-M008.md"
+    },
+    {
+      "id": "T05-01-M009",
+      "title": "常映射连续",
+      "page": "76",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@2155b4def003",
+      "html": "T05-01-M009.html",
+      "markdown": "T05-01-M009.md"
+    },
+    {
+      "id": "T05-01-M010",
+      "title": "用一个非开逆像证明不连续",
+      "page": "76",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@0376e60122f0",
+      "html": "T05-01-M010.html",
+      "markdown": "T05-01-M010.md"
+    },
+    {
+      "id": "T05-01-M011",
+      "title": "连续性的逐点邻域判据",
+      "page": "77",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@f91dbca8b985",
+      "html": "T05-01-M011.html",
+      "markdown": "T05-01-M011.md"
+    },
+    {
+      "id": "T05-01-M012",
+      "title": "复合连续命题与逆像公式",
+      "page": "77",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@9ea5abd7695e",
+      "html": "T05-01-M012.html",
+      "markdown": "T05-01-M012.md"
+    },
+    {
+      "id": "T05-01-M013",
+      "title": "复合映射连续的完整证明",
+      "page": "77",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@9c9b98238b0b",
+      "html": "T05-01-M013.html",
+      "markdown": "T05-01-M013.md"
+    },
+    {
+      "id": "T05-01-M014",
+      "title": "用闭集逆像刻画连续",
+      "page": "77",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@bdbc3495a0ee",
+      "html": "T05-01-M014.html",
+      "markdown": "T05-01-M014.md"
+    },
+    {
+      "id": "T05-01-M015",
+      "title": "连续映射与同胚映射的关系",
+      "page": "77",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@5503923b705e",
+      "html": "T05-01-M015.html",
+      "markdown": "T05-01-M015.md"
+    },
+    {
+      "id": "T05-01-M016",
+      "title": "同胚的连续双射判据",
+      "page": "78",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@0bddd578991b",
+      "html": "T05-01-M016.html",
+      "markdown": "T05-01-M016.md"
+    },
+    {
+      "id": "T05-01-M017",
+      "title": "连续映射限制到子空间",
+      "page": "78",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@1a227d3fb1ee",
+      "html": "T05-01-M017.html",
+      "markdown": "T05-01-M017.md"
+    },
+    {
+      "id": "T05-01-M018",
+      "title": "正文判据的选择顺序",
+      "page": "74—78",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@b9e881842a46",
+      "html": "T05-01-M018.html",
+      "markdown": "T05-01-M018.md"
+    },
+    {
+      "id": "T05-01-M019",
+      "title": "原题1(i)：常映射连续",
+      "page": "78",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a8cde8aff961",
+      "html": "T05-01-M019.html",
+      "markdown": "T05-01-M019.md"
+    },
+    {
+      "id": "T05-01-M020",
+      "title": "原题1(ii)：恒等映射连续",
+      "page": "78",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@224a65668cd4",
+      "html": "T05-01-M020.html",
+      "markdown": "T05-01-M020.md"
+    },
+    {
+      "id": "T05-01-M021",
+      "title": "原题2(i)：用开逆像证明阶跃函数不连续",
+      "page": "78",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@9858d80dc1c1",
+      "html": "T05-01-M021.html",
+      "markdown": "T05-01-M021.md"
+    },
+    {
+      "id": "T05-01-M022",
+      "title": "原题2(ii)：用闭逆像证明阶跃函数不连续",
+      "page": "78",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@f00b9e884c16",
+      "html": "T05-01-M022.html",
+      "markdown": "T05-01-M022.md"
+    },
+    {
+      "id": "T05-01-M023",
+      "title": "原题3：判断跳跃函数是否连续",
+      "page": "78",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@13992f9b00af",
+      "html": "T05-01-M023.html",
+      "markdown": "T05-01-M023.md"
+    },
+    {
+      "id": "T05-01-M024",
+      "title": "原题4：断开定义域上的分段常值映射",
+      "page": "79",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@25ad33743d6b",
+      "html": "T05-01-M024.html",
+      "markdown": "T05-01-M024.md"
+    },
+    {
+      "id": "T05-01-M025",
+      "title": "原题5：只检查一组基的逆像",
+      "page": "79",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a5c7bc7b6389",
+      "html": "T05-01-M025.html",
+      "markdown": "T05-01-M025.md"
+    },
+    {
+      "id": "T05-01-M026",
+      "title": "原题6：离散定义域上的任意映射",
+      "page": "79",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@864ef5a250c6",
+      "html": "T05-01-M026.html",
+      "markdown": "T05-01-M026.md"
+    },
+    {
+      "id": "T05-01-M027",
+      "title": "原题7：平庸目标空间上的任意映射",
+      "page": "79",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@5b3abe85d34a",
+      "html": "T05-01-M027.html",
+      "markdown": "T05-01-M027.md"
+    },
+    {
+      "id": "T05-01-M028",
+      "title": "原题8：限制映射与两个诱导拓扑",
+      "page": "79",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@252bc5c5f13f",
+      "html": "T05-01-M028.html",
+      "markdown": "T05-01-M028.md"
+    },
+    {
+      "id": "T05-01-M029",
+      "title": "原题9：用邻域刻画连续",
+      "page": "79",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@104bc998e869",
+      "html": "T05-01-M029.html",
+      "markdown": "T05-01-M029.md"
+    },
+    {
+      "id": "T05-01-M030",
+      "title": "原题10(i)：欧几里得拓扑比有限闭拓扑更细",
+      "page": "79",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@fac06784c614",
+      "html": "T05-01-M030.html",
+      "markdown": "T05-01-M030.md"
+    },
+    {
+      "id": "T05-01-M031",
+      "title": "原题10(ii)：恒等映射连续与拓扑细粗",
+      "page": "79",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@f73c5e7edf92",
+      "html": "T05-01-M031.html",
+      "markdown": "T05-01-M031.md"
+    },
+    {
+      "id": "T05-01-M032",
+      "title": "原题11：有理点取零的连续函数恒为零",
+      "page": "79",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@000e693266a3",
+      "html": "T05-01-M032.html",
+      "markdown": "T05-01-M032.md"
+    },
+    {
+      "id": "T05-01-M033",
+      "title": "原题12(i)：连续一一映射保留Hausdorff性",
+      "page": "79",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@706ec407ef75",
+      "html": "T05-01-M033.html",
+      "markdown": "T05-01-M033.md"
+    },
+    {
+      "id": "T05-01-M034",
+      "title": "原题12(ii)：连续一一映射保留T1性",
+      "page": "80",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@51e0579d8188",
+      "html": "T05-01-M034.html",
+      "markdown": "T05-01-M034.md"
+    },
+    {
+      "id": "T05-01-M035",
+      "title": "原题13：连续性与闭包的像包含",
+      "page": "80",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@3ddf6daf99e2",
+      "html": "T05-01-M035.html",
+      "markdown": "T05-01-M035.md"
+    },
+    {
+      "id": "T05-02-M001",
+      "title": "连续满射保持连通：先拉回闭开集",
+      "page": "80",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@ea865e2c7146",
+      "html": "T05-02-M001.html",
+      "markdown": "T05-02-M001.md"
+    },
+    {
+      "id": "T05-02-M002",
+      "title": "连续满射保持连通：用满射排除平凡逆像",
+      "page": "80",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@5940dd91f4a0",
+      "html": "T05-02-M002.html",
+      "markdown": "T05-02-M002.md"
+    },
+    {
+      "id": "T05-02-M003",
+      "title": "满射条件不能删去",
+      "page": "80",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@5da9099762d1",
+      "html": "T05-02-M003.html",
+      "markdown": "T05-02-M003.md"
+    },
+    {
+      "id": "T05-02-M004",
+      "title": "路径连通与连接两点的路径",
+      "page": "80",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@18c3c71efe93",
+      "html": "T05-02-M004.html",
+      "markdown": "T05-02-M004.md"
+    },
+    {
+      "id": "T05-02-M005",
+      "title": "区间中的直线路径",
+      "page": "80",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@eb281eb23232",
+      "html": "T05-02-M005.html",
+      "markdown": "T05-02-M005.md"
+    },
+    {
+      "id": "T05-02-M006",
+      "title": "欧几里得空间中的线段路径",
+      "page": "80",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@edfd9a455d8f",
+      "html": "T05-02-M006.html",
+      "markdown": "T05-02-M006.md"
+    },
+    {
+      "id": "T05-02-M007",
+      "title": "路径连通必连通：命题与反设",
+      "page": "81",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@395a8234a9bd",
+      "html": "T05-02-M007.html",
+      "markdown": "T05-02-M007.md"
+    },
+    {
+      "id": "T05-02-M008",
+      "title": "路径逆像产生区间闭开矛盾",
+      "page": "81",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a472402c5073",
+      "html": "T05-02-M008.html",
+      "markdown": "T05-02-M008.md"
+    },
+    {
+      "id": "T05-02-M009",
+      "title": "连通未必路径连通：拓扑学家正弦曲线",
+      "page": "81",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@438ff8ec70cc",
+      "html": "T05-02-M009.html",
+      "markdown": "T05-02-M009.md"
+    },
+    {
+      "id": "T05-02-M010",
+      "title": "用删点路径连通区分实线与平面",
+      "page": "81",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d8eb67417585",
+      "html": "T05-02-M010.html",
+      "markdown": "T05-02-M010.md"
+    },
+    {
+      "id": "T05-02-M011",
+      "title": "Weierstrass介值定理",
+      "page": "81",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@072f90b053c3",
+      "html": "T05-02-M011.html",
+      "markdown": "T05-02-M011.md"
+    },
+    {
+      "id": "T05-02-M012",
+      "title": "异号连续函数存在零点",
+      "page": "82",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@3567a87bd4bf",
+      "html": "T05-02-M012.html",
+      "markdown": "T05-02-M012.md"
+    },
+    {
+      "id": "T05-02-M013",
+      "title": "区间自映射不动点定理",
+      "page": "82",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@ee68370a7976",
+      "html": "T05-02-M013.html",
+      "markdown": "T05-02-M013.md"
+    },
+    {
+      "id": "T05-02-M014",
+      "title": "用差函数证明存在不动点",
+      "page": "82",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@6218d26fd076",
+      "html": "T05-02-M014.html",
+      "markdown": "T05-02-M014.md"
+    },
+    {
+      "id": "T05-02-M015",
+      "title": "Brouwer不动点定理的后续边界",
+      "page": "82",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@73a41a71c2f1",
+      "html": "T05-02-M015.html",
+      "markdown": "T05-02-M015.md"
+    },
+    {
+      "id": "T05-02-M016",
+      "title": "从连通像到不动点的正文串联",
+      "page": "80—82",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@6d851db954ac",
+      "html": "T05-02-M016.html",
+      "markdown": "T05-02-M016.md"
+    },
+    {
+      "id": "T05-02-M017",
+      "title": "原题1：连续映像保持路径连通",
+      "page": "82",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@4fad65a038e8",
+      "html": "T05-02-M017.html",
+      "markdown": "T05-02-M017.md"
+    },
+    {
+      "id": "T05-02-M018",
+      "title": "原题2：任意闭区间自映射存在不动点",
+      "page": "82",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@3c2c162bf194",
+      "html": "T05-02-M018.html",
+      "markdown": "T05-02-M018.md"
+    },
+    {
+      "id": "T05-02-M019",
+      "title": "原题3(i)：开区间不具有不动点性质",
+      "page": "82",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@e3cec7a75280",
+      "html": "T05-02-M019.html",
+      "markdown": "T05-02-M019.md"
+    },
+    {
+      "id": "T05-02-M020",
+      "title": "原题3(ii)：只有闭区间具有不动点性质",
+      "page": "82",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a973ca9b6c96",
+      "html": "T05-02-M020.html",
+      "markdown": "T05-02-M020.md"
+    },
+    {
+      "id": "T05-02-M021",
+      "title": "原题3(iii)：离散空间与平庸空间没有不动点性质",
+      "page": "82",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@1adecae7541e",
+      "html": "T05-02-M021.html",
+      "markdown": "T05-02-M021.md"
+    },
+    {
+      "id": "T05-02-M022",
+      "title": "原题3(iv)：有限闭拓扑不必有不动点性质",
+      "page": "82",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@79a135d363e4",
+      "html": "T05-02-M022.html",
+      "markdown": "T05-02-M022.md"
+    },
+    {
+      "id": "T05-02-M023",
+      "title": "原题3(v)：不动点性质在同胚下保持",
+      "page": "83",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@6810b6572e6c",
+      "html": "T05-02-M023.html",
+      "markdown": "T05-02-M023.md"
+    },
+    {
+      "id": "T05-02-M024",
+      "title": "原题4：有公共点的连通子空间之并连通",
+      "page": "83",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@fd832981a0dd",
+      "html": "T05-02-M024.html",
+      "markdown": "T05-02-M024.md"
+    },
+    {
+      "id": "T05-02-M025",
+      "title": "原题5：连通集的闭包及夹层仍连通",
+      "page": "83",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@121d7cec6b1e",
+      "html": "T05-02-M025.html",
+      "markdown": "T05-02-M025.md"
+    },
+    {
+      "id": "T05-02-M026",
+      "title": "原题6(i)：振荡曲线部分连通",
+      "page": "83",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@04aeed245aa0",
+      "html": "T05-02-M026.html",
+      "markdown": "T05-02-M026.md"
+    },
+    {
+      "id": "T05-02-M027",
+      "title": "原题6(ii)：求振荡曲线的闭包",
+      "page": "83",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@dcd5dd67db5f",
+      "html": "T05-02-M027.html",
+      "markdown": "T05-02-M027.md"
+    },
+    {
+      "id": "T05-02-M028",
+      "title": "原题6(iii)：拓扑学家正弦曲线连通",
+      "page": "83",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@b45f026362ae",
+      "html": "T05-02-M028.html",
+      "markdown": "T05-02-M028.md"
+    },
+    {
+      "id": "T05-02-M029",
+      "title": "原题7：平面删去双有理点集仍路径连通",
+      "page": "83",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d2df9a197bd9",
+      "html": "T05-02-M029.html",
+      "markdown": "T05-02-M029.md"
+    },
+    {
+      "id": "T05-02-M030",
+      "title": "星号原题8：平面删去任意可数集仍路径连通",
+      "page": "83",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@efe8c403e6cc",
+      "html": "T05-02-M030.html",
+      "markdown": "T05-02-M030.md"
+    },
+    {
+      "id": "T05-02-M031",
+      "title": "原题9(i)：点的分量是连通的",
+      "page": "83",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@34c565a8a9fb",
+      "html": "T05-02-M031.html",
+      "markdown": "T05-02-M031.md"
+    },
+    {
+      "id": "T05-02-M032",
+      "title": "原题9(ii)：分量是最大连通集",
+      "page": "83",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@8624b720ffe2",
+      "html": "T05-02-M032.html",
+      "markdown": "T05-02-M032.md"
+    },
+    {
+      "id": "T05-02-M033",
+      "title": "原题9(iii)：分量是闭集",
+      "page": "83",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@9c2a22776aef",
+      "html": "T05-02-M033.html",
+      "markdown": "T05-02-M033.md"
+    },
+    {
+      "id": "T05-02-M034",
+      "title": "原题10(i)：完全不连通与单点分量",
+      "page": "83",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@96b0ce0b2555",
+      "html": "T05-02-M034.html",
+      "markdown": "T05-02-M034.md"
+    },
+    {
+      "id": "T05-02-M035",
+      "title": "原题10(ii)：有理数空间完全不连通",
+      "page": "83",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@153bd47f076b",
+      "html": "T05-02-M035.html",
+      "markdown": "T05-02-M035.md"
+    },
+    {
+      "id": "T05-02-M036",
+      "title": "原题10(iii)：到有理数空间的连续映射为常映射",
+      "page": "84",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@879d66c06884",
+      "html": "T05-02-M036.html",
+      "markdown": "T05-02-M036.md"
+    },
+    {
+      "id": "T05-02-M037",
+      "title": "原题10(iv)：完全不连通性遗传给子空间",
+      "page": "84",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@45183bd077b5",
+      "html": "T05-02-M037.html",
+      "markdown": "T05-02-M037.md"
+    },
+    {
+      "id": "T05-02-M038",
+      "title": "原题10(v)：平面的可数子空间完全不连通",
+      "page": "84",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d4aa6c0a579c",
+      "html": "T05-02-M038.html",
+      "markdown": "T05-02-M038.md"
+    },
+    {
+      "id": "T05-02-M039",
+      "title": "原题10(vi)：Sorgenfrey线完全不连通",
+      "page": "84",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@d2d7f4799b20",
+      "html": "T05-02-M039.html",
+      "markdown": "T05-02-M039.md"
+    },
+    {
+      "id": "T05-02-M040",
+      "title": "原题11(i)：定义点的路径分量",
+      "page": "84",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@92ab01fd8a43",
+      "html": "T05-02-M040.html",
+      "markdown": "T05-02-M040.md"
+    },
+    {
+      "id": "T05-02-M041",
+      "title": "原题11(ii)：每个路径分量路径连通",
+      "page": "84",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@c6fe81aa5ef6",
+      "html": "T05-02-M041.html",
+      "markdown": "T05-02-M041.md"
+    },
+    {
+      "id": "T05-02-M042",
+      "title": "原题11(iii)：局部路径连通时路径分量闭开",
+      "page": "84",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@319087061085",
+      "html": "T05-02-M042.html",
+      "markdown": "T05-02-M042.md"
+    },
+    {
+      "id": "T05-02-M043",
+      "title": "原题11(iv)：平面开集连通当且仅当路径连通",
+      "page": "84",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@5d56de21c6e7",
+      "html": "T05-02-M043.html",
+      "markdown": "T05-02-M043.md"
+    },
+    {
+      "id": "T05-02-M044",
+      "title": "星号原题12：由并与交的连通性反推两集合连通",
+      "page": "84",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@e86d164ea912",
+      "html": "T05-02-M044.html",
+      "markdown": "T05-02-M044.md"
+    },
+    {
+      "id": "T05-02-M045",
+      "title": "原题13(i)：有理数与无理数空间零维",
+      "page": "84",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@79f378a4d2b5",
+      "html": "T05-02-M045.html",
+      "markdown": "T05-02-M045.md"
+    },
+    {
+      "id": "T05-02-M046",
+      "title": "原题13(ii)：零维空间的子空间仍零维",
+      "page": "84",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@83e1078011da",
+      "html": "T05-02-M046.html",
+      "markdown": "T05-02-M046.md"
+    },
+    {
+      "id": "T05-02-M047",
+      "title": "原题13(iii)：零维Hausdorff空间完全不连通",
+      "page": "84",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a8a643ce270f",
+      "html": "T05-02-M047.html",
+      "markdown": "T05-02-M047.md"
+    },
+    {
+      "id": "T05-02-M048",
+      "title": "原题13(iv)：平庸空间零维",
+      "page": "84",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@a8623e15a86c",
+      "html": "T05-02-M048.html",
+      "markdown": "T05-02-M048.md"
+    },
+    {
+      "id": "T05-02-M049",
+      "title": "原题13(v)：离散空间零维",
+      "page": "84",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@3a8a4fe0669c",
+      "html": "T05-02-M049.html",
+      "markdown": "T05-02-M049.md"
+    },
+    {
+      "id": "T05-02-M050",
+      "title": "原题13(vi)：多点平庸空间并非完全不连通",
+      "page": "84",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@2c2b8dcc9346",
+      "html": "T05-02-M050.html",
+      "markdown": "T05-02-M050.md"
+    },
+    {
+      "id": "T05-02-M051",
+      "title": "原题13(vii)：零维T0空间是Hausdorff空间",
+      "page": "84",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@72f99a483cef",
+      "html": "T05-02-M051.html",
+      "markdown": "T05-02-M051.md"
+    },
+    {
+      "id": "T05-02-M052",
+      "title": "星号原题13(viii)：实数子空间的零维与完全不连通",
+      "page": "84",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@729b3022e138",
+      "html": "T05-02-M052.html",
+      "markdown": "T05-02-M052.md"
+    },
+    {
+      "id": "T05-02-M053",
+      "title": "原题14：每个局部同胚映射连续",
+      "page": "84",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@e4ed06c98bdc",
+      "html": "T05-02-M053.html",
+      "markdown": "T05-02-M053.md"
+    },
+    {
+      "id": "T05-03-M001",
+      "title": "连续映射定义的拓扑意义",
+      "page": "85",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@bd1181174be7",
+      "html": "T05-03-M001.html",
+      "markdown": "T05-03-M001.md"
+    },
+    {
+      "id": "T05-03-M002",
+      "title": "介值定理与路径连通的角色",
+      "page": "85",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@9db8d8cb8fed",
+      "html": "T05-03-M002.html",
+      "markdown": "T05-03-M002.md"
+    },
+    {
+      "id": "T05-03-M003",
+      "title": "不动点、分量与第五章收尾",
+      "page": "85",
+      "status": "usable",
+      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
+      "version": "0.1@5f4709dd1c09",
+      "html": "T05-03-M003.html",
+      "markdown": "T05-03-M003.md"
     }
   ]
 }

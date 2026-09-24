@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.8">
+<title>连通定义与实数轴连通 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T03-03-M007"><h1 id="连通定义与实数轴连通">连通定义与实数轴连通</h1>
+<p>固定编号：T03-03-M007<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 55 页 / PDF 第 55
+页，定义3.3.4与命题3.3.5。<br />
+学习目标：用闭开集定义连通空间，并由命题3.3.3证明通常拓扑的实数轴连通。</p>
+<blockquote>
+<p><strong>本段主线：</strong>把“没有非平凡闭开集”命名为连通性。<br />
+<strong>当前环节：</strong>命题3.3.3已经完成。<br />
+<strong>这一步只做：</strong>引入定义并立刻应用于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>。</p>
+</blockquote>
+<p>来源说明：定义3.3.4与命题3.3.5来自教材；A为新增辨析。</p>
+<h2 id="定义3.3.4连通">定义3.3.4：连通</h2>
+<p>拓扑空间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>,</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X,\tau)</annotation></semantics></math>
+称为<strong>连通的</strong>，如果X的闭开集只有
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mspace width="1.0em"></mspace><mtext mathvariant="normal">和</mtext><mspace width="1.0em"></mspace><mi>⌀</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+X\quad\text{和}\quad\varnothing.
+</annotation></semantics></math></div>
+若还存在既非空又不等于X的闭开集，空间就不连通。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>为什么
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+和
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⌀</mi><annotation encoding="application/x-tex">\varnothing</annotation></semantics></math>
+在每个拓扑空间中都是闭开集？</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A
+</summary>
+<p>拓扑公理保证
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>,</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">X,\varnothing</annotation></semantics></math>
+都开；二者互为补集，所以也都闭。因此连通定义并不要求“没有闭开集”，而是要求没有这两个之外的闭开集。</p>
+</details>
+<span id="q-T03-03-M007-B" class="content-anchor"></span><h2 id="练习-b命题3.3.5">练习 B：命题3.3.5</h2>
+<p>证明带通常拓扑的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>
+是连通空间。</p>
+<div class="practice-controls" data-question-id="T03-03-M007-B" data-module-id="T03-03-M007" data-mode="guided" data-answer-anchor="answer-T03-03-M007-B"></div><span id="answer-T03-03-M007-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试后展开证明
+</summary>
+<p>命题3.3.3已经证明：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>
+的闭开子集只能是
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℝ</mi><mspace width="1.0em"></mspace><mtext mathvariant="normal">或</mtext><mspace width="1.0em"></mspace><mi>⌀</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\mathbb R\quad\text{或}\quad\varnothing.
+</annotation></semantics></math></div> 这正好满足定义3.3.4，所以通常拓扑的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>
+连通。</p>
+</details>
+<h2 id="精选复习">精选复习</h2><details class="prepared-review"><summary>精选复习内容（仅回看，不记分）</summary><p class="notice">这里保留课件中的预设问题与答案。计分复习在讲练间隙进行；只回看不会改变排期。</p><h3 id="t03-03-r003">T03-03-R003</h3>
+<p><strong>问题：</strong>证明实数轴连通时，为什么要把闭开集截成
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>∩</mo><mo stretchy="false" form="prefix">[</mo><mi>x</mi><mo>,</mo><mi>z</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">T\cap[x,z]</annotation></semantics></math>？</p>
+<details>
+<summary>
+回忆后查看答案
+</summary>
+<p>原闭开集T可能无界，不能直接取上确界。用T内点x和T外点z截出非空、闭、上有界的集合，才能使用引理3.3.2；其上确界属于T，而T开又允许越过它，产生矛盾。</p>
+</details>
+</details><h2 id="简短回顾">简短回顾</h2>
+<p>连通性排除非平凡闭开集；命题3.3.3已经完成实数轴所需的全部证明。</p>
+</article></div>
+<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>

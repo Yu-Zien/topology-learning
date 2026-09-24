@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.8">
+<title>正文判据的选择顺序 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T05-01-M018"><h1 id="正文判据的选择顺序">正文判据的选择顺序</h1>
+<p>固定编号：T05-01-M018<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 74—78 页 / PDF 第 74—78
+页，§5.1正文回顾。<br />
+学习目标：面对连续性问题时，能根据已知信息在开集逆像、逐点邻域、闭集逆像、复合与限制五种工具中选择直接入口。</p>
+<blockquote>
+<p><strong>本段主线：</strong>在进入习题前整理本节正文的证明工具。<br />
+<strong>当前环节：</strong>定义和命题5.1.7—5.1.12已经依次建立。<br />
+<strong>这一步只做：</strong>根据题目给出的对象选择最短的已证判据。</p>
+</blockquote>
+<p>来源说明：所列结论均来自本节教材正文；选择顺序与A、B为新增教学整理，不另造教材命题。</p>
+<h2 id="方法整理">方法整理</h2>
+<ul>
+<li>给出目标开集：直接算
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f^{-1}(U)</annotation></semantics></math>。</li>
+<li>给出一点及其邻域：用命题5.1.7，在源点周围找开集V使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>V</mi><mo stretchy="false" form="postfix">)</mo><mo>⊆</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">f(V)\subseteq U</annotation></semantics></math>。</li>
+<li>给出闭集：用命题5.1.9检查闭集逆像。</li>
+<li>映射写成两步复合：分别证明两步连续，再用命题5.1.8。</li>
+<li>定义域缩为子集：写成限制映射，用命题5.1.12。</li>
+</ul>
+<p>证明不连续时，一个失败的目标开集逆像就够；证明连续时，必须覆盖任意目标开集，或完整调用一个等价判据。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>某题直接告诉你Y中的闭集S满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f^{-1}(S)</annotation></semantics></math>
+容易计算。最合适先尝试哪个判据？</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A
+</summary>
+<p>先尝试命题5.1.9的闭集逆像判据。如果能对任意Y中闭集S证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f^{-1}(S)</annotation></semantics></math>
+在X中闭，就得到f连续；若找到一个闭集逆像不闭，则可否定连续性。</p>
+</details>
+<span id="q-T05-01-M018-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>把下列三种题面分别配给最直接的工具：</p>
+<ol type="1">
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><mi>g</mi><mo>∘</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">f=g\circ h</annotation></semantics></math>，并已知g、h连续；</li>
+<li>只研究连续映射f在子集A上的取值；</li>
+<li>给定点x及含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math>
+的任意开邻域。</li>
+</ol>
+<div class="practice-controls" data-question-id="T05-01-M018-B" data-module-id="T05-01-M018" data-mode="guided" data-answer-anchor="answer-T05-01-M018-B"></div><span id="answer-T05-01-M018-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试后展开答案
+</summary>
+<ol type="1">
+<li>用命题5.1.8的复合连续性；</li>
+<li>用命题5.1.12的限制映射连续性；</li>
+<li>用命题5.1.7的逐点邻域判据。</li>
+</ol>
+<p>三者都以开集逆像定义为基础，但不用每次从定义重新展开全部细节。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>先看题目给的是开集、闭集、点邻域、复合还是限制，再选择已经证明的对应判据。</p>
+</article></div>
+<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>

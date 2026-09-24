@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.8">
+<title>一致拓扑细于积分拓扑 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T02-03-M025"><h1 id="一致拓扑细于积分拓扑">一致拓扑细于积分拓扑</h1>
+<p>固定编号：T02-03-M025<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 44 页 / PDF 第 44
+页，星号习题2.3第4(iii)题的第一步。<br />
+学习目标：证明区间长度为1时积分距离不超过一致距离，并在每个积分球内点周围放入一致距离球，得到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mn>1</mn></msub><mo>⊆</mo><msub><mi>τ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\tau_1\subseteq\tau_2</annotation></semantics></math>。</p>
+<blockquote>
+<p><strong>本段主线：</strong>比较两种函数空间拓扑。<br />
+<strong>当前环节：</strong>两组函数球都已证明为基；先建立一个拓扑包含。<br />
+<strong>这一步只做：</strong>证明一致拓扑至少和积分拓扑一样细；严格不等留到M026。</p>
+</blockquote>
+<p>来源说明：原题只要求最终证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mn>1</mn></msub><mo>≠</mo><msub><mi>τ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\tau_1\ne\tau_2</annotation></semantics></math>；本模块新增必要中间台阶。积分与sup不等式及局部细化方向均完整展开。</p>
+<h2 id="方法最大差控制总积分差">方法：最大差控制总积分差</h2>
+<p>对任意连续h、k，所有x都有</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>h</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>k</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msub><mi>d</mi><mi>∞</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+|h(x)-k(x)|\le d_\infty(h,k).
+</annotation></semantics></math></div></p>
+<p>在长度为1的区间积分，得到</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><mo stretchy="false" form="prefix">|</mo><mi>h</mi><mo>−</mo><mi>k</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msub><mi>d</mi><mi>∞</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+d_1(h,k)
+=\int_0^1|h-k|
+\le d_\infty(h,k).
+</annotation></semantics></math></div></p>
+<p>现取积分球
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mi>ε</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">M(f,\varepsilon)</annotation></semantics></math>
+中的任意h。令</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mi>ε</mi><mo>−</mo><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mi>h</mi><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><mi>η</mi><mo>=</mo><mi>α</mi><mi>/</mi><mn>2</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\alpha=\varepsilon-d_1(f,h)&gt;0,
+\qquad \eta=\alpha/2.
+</annotation></semantics></math></div></p>
+<p>若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>∈</mo><mi>U</mi><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>η</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">k\in U(h,\eta)</annotation></semantics></math>，则</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mi>h</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mi>h</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>d</mi><mi>∞</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mi>h</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>η</mi><mo>&lt;</mo><mi>ε</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+d_1(f,k)
+\le d_1(f,h)+d_1(h,k)
+\le d_1(f,h)+d_\infty(h,k)
+&lt;d_1(f,h)+\eta&lt;\varepsilon.
+</annotation></semantics></math></div></p>
+<p>所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>η</mi><mo stretchy="false" form="postfix">)</mo><mo>⊆</mo><mi>M</mi><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mi>ε</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">U(h,\eta)\subseteq M(f,\varepsilon)</annotation></semantics></math>。每个积分基元素在每点都含内部一致基元素，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mn>1</mn></msub><mo>⊆</mo><msub><mi>τ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\tau_1\subseteq\tau_2</annotation></semantics></math>。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mi>h</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0.6</mn></mrow><annotation encoding="application/x-tex">d_1(f,h)=0.6</annotation></semantics></math>
+且h属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">M(f,1)</annotation></semantics></math>，给出一个以h为中心、保证包含于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">M(f,1)</annotation></semantics></math>
+的一致距离球半径。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的半径选择
+</summary>
+<p>积分余量为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mn>0.6</mn><mo>=</mo><mn>0.4</mn></mrow><annotation encoding="application/x-tex">1-0.6=0.4</annotation></semantics></math>，可取一致半径η=0.2。</p>
+<p>若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>∞</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mn>0.2</mn></mrow><annotation encoding="application/x-tex">d_\infty(h,k)&lt;0.2</annotation></semantics></math>，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><msub><mi>d</mi><mi>∞</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mn>0.2</mn></mrow><annotation encoding="application/x-tex">d_1(h,k)\le d_\infty(h,k)&lt;0.2</annotation></semantics></math>，从而</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mi>h</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mn>0.6</mn><mo>+</mo><mn>0.2</mn><mo>=</mo><mn>0.8</mn><mo>&lt;</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+d_1(f,k)\le d_1(f,h)+d_1(h,k)&lt;0.6+0.2=0.8&lt;1.
+</annotation></semantics></math></div></p>
+<p>因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mn>0.2</mn><mo stretchy="false" form="postfix">)</mo><mo>⊆</mo><mi>M</mi><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">U(h,0.2)\subseteq M(f,1)</annotation></semantics></math>。</p>
+</details>
+<span id="q-T02-03-M025-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>证明对任意
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>,</mo><mi>k</mi><mo>∈</mo><mi>C</mi><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">h,k\in C[0,1]</annotation></semantics></math>，有</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><msub><mi>d</mi><mi>∞</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+d_1(h,k)\le d_\infty(h,k),
+</annotation></semantics></math></div></p>
+<p>并用命题2.3.4的单向论证证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mn>1</mn></msub><mo>⊆</mo><msub><mi>τ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\tau_1\subseteq\tau_2</annotation></semantics></math>。说明为什么这还不能推出两拓扑不相等。</p>
+<span id="answer-T02-03-M025-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开包含证明
+</summary>
+<p>由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>h</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>k</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msub><mi>d</mi><mi>∞</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">|h(x)-k(x)|\le d_\infty(h,k)</annotation></semantics></math>
+对每个x成立，</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><mo stretchy="false" form="prefix">|</mo><mi>h</mi><mo>−</mo><mi>k</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><msub><mi>d</mi><mi>∞</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><msub><mi>d</mi><mi>∞</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+d_1(h,k)=\int_0^1|h-k|
+\le\int_0^1d_\infty(h,k)\,dx
+=d_\infty(h,k).
+</annotation></semantics></math></div></p>
+<p>任取积分基元素M(f,ε)与h∈M(f,ε)。取</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo stretchy="false" form="prefix">(</mo><mi>ε</mi><mo>−</mo><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mi>h</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\eta=\frac12(\varepsilon-d_1(f,h))&gt;0.
+</annotation></semantics></math></div></p>
+<p>上述估计和积分三角不等式给
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>η</mi><mo stretchy="false" form="postfix">)</mo><mo>⊆</mo><mi>M</mi><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mi>ε</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">U(h,\eta)\subseteq M(f,\varepsilon)</annotation></semantics></math>。因此一致基逐点细化积分基，命题2.3.4中对应的单向证明给</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mn>1</mn></msub><mo>⊆</mo><msub><mi>τ</mi><mn>2</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\tau_1\subseteq\tau_2.
+</annotation></semantics></math></div></p>
+<p>包含可能是等号；要证明不相等，还必须找一个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>2</mn></msub><annotation encoding="application/x-tex">\tau_2</annotation></semantics></math>
+开集不是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>
+开集，或证明反向局部细化失败。M026将构造连续尖峰完成这一步。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>一致距离控制每一点，因此也控制总积分差；一致拓扑更细或相等。仅有包含还不能证明严格不同。</p>
+</article></div>
+<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T02-03-M025.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

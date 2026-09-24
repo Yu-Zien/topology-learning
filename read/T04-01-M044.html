@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.8">
+<title>一个Hausdorff但不正则的星号例 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T04-01-M044"><h1
+id="一个hausdorff但不正则的星号例">一个Hausdorff但不正则的星号例</h1>
+<p>固定编号：T04-01-M044<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 62 页 / PDF 第 62
+页，习题4.1第17(v)星号题。<br />
+学习目标：核验题给闭集族定义拓扑，证明该拓扑Hausdorff但不能分离0与闭集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">S=\{1/n\}</annotation></semantics></math>。</p>
+<blockquote>
+<p><strong>本段主线：</strong>完成§4.1最后一道星号题。<br />
+<strong>当前环节：</strong>T3推出T2；现在证明T2不推出正则。<br />
+<strong>这一步只做：</strong>依次核验闭集族、Hausdorff性和非正则性。</p>
+</blockquote>
+<p>来源说明：B为教材原题17(v)；闭集公理及非正则局部论证为新增完整展开。</p>
+<h2 id="题给闭集族">题给闭集族</h2>
+<p>令
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo>:</mo><mi>n</mi><mo>∈</mo><mi mathvariant="double-struck">ℕ</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+S=\{1/n:n\in\mathbb N\}.
+</annotation></semantics></math></div> 规定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>⊆</mo><mi mathvariant="double-struck">ℝ</mi></mrow><annotation encoding="application/x-tex">C\subseteq\mathbb R</annotation></semantics></math>
+为闭集，当且仅当
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mi>A</mi><mo>∪</mo><mi>T</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">
+C=A\cup T,
+</annotation></semantics></math></div>
+其中A是欧几里得闭集，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>⊆</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">T\subseteq S</annotation></semantics></math>。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>说明S在这个新拓扑中闭，而
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>∉</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">0\notin S</annotation></semantics></math>。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A
+</summary>
+<p>取欧几里得闭集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">A=\varnothing</annotation></semantics></math>、取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>=</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">T=S</annotation></semantics></math>，便有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><mi>A</mi><mo>∪</mo><mi>T</mi></mrow><annotation encoding="application/x-tex">S=A\cup T</annotation></semantics></math>，所以S按题给规则闭。显然
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mi>n</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">1/n&gt;0</annotation></semantics></math>，没有一项等于0，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>∉</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">0\notin S</annotation></semantics></math>。</p>
+</details>
+<span id="q-T04-01-E017-v" class="content-anchor"></span><h2 id="练习-b教材习题4.1第17v题星号">练习
+B：教材习题4.1第17(v)题（星号）</h2>
+<p>证明上述闭集的补集构成
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>
+上的一个拓扑；该拓扑是Hausdorff的，但不是正则的。</p>
+<span id="answer-T04-01-E017-v" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试原题后展开完整证明
+</summary>
+<p><strong>一、闭集公理。</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>⌀</mi><mo>=</mo><mi>⌀</mi><mo>∪</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">\varnothing=\varnothing\cup\varnothing</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℝ</mi><mo>=</mo><mi mathvariant="double-struck">ℝ</mi><mo>∪</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">\mathbb R=\mathbb R\cup\varnothing</annotation></semantics></math>，二者都在闭集族中。</p>
+<p>有限并保持形状：
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>A</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>T</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>∪</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>A</mi><mn>2</mn></msub><mo>∪</mo><msub><mi>T</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>A</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>A</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>∪</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>T</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>T</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+(A_1\cup T_1)\cup(A_2\cup T_2)
+=(A_1\cup A_2)\cup(T_1\cup T_2),
+</annotation></semantics></math></div> 其中
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>A</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">A_1\cup A_2</annotation></semantics></math>
+欧几里得闭，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>T</mi><mn>2</mn></msub><mo>⊆</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">T_1\cup T_2\subseteq S</annotation></semantics></math>。</p>
+<p>对任意族
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>i</mi></msub><mo>=</mo><msub><mi>A</mi><mi>i</mi></msub><mo>∪</mo><msub><mi>T</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">C_i=A_i\cup T_i</annotation></semantics></math>，令
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><munder><mo>⋂</mo><mi>i</mi></munder><msub><mi>A</mi><mi>i</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>C</mi><mo>=</mo><munder><mo>⋂</mo><mi>i</mi></munder><msub><mi>C</mi><mi>i</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>T</mi><mo>=</mo><mi>C</mi><mo>∩</mo><mi>S</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+A=\bigcap_iA_i,
+\qquad C=\bigcap_iC_i,
+\qquad T=C\cap S.
+</annotation></semantics></math></div>
+A欧几里得闭，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>⊆</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">T\subseteq S</annotation></semantics></math>。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">x\in C</annotation></semantics></math>
+且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∉</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">x\notin S</annotation></semantics></math>，则x不可能靠任何
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>i</mi></msub><annotation encoding="application/x-tex">T_i</annotation></semantics></math>
+进入
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>i</mi></msub><annotation encoding="application/x-tex">C_i</annotation></semantics></math>，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msub><mi>A</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">x\in A_i</annotation></semantics></math>
+对所有i成立，即
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">x\in A</annotation></semantics></math>。由此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mi>A</mi><mo>∪</mo><mi>T</mi></mrow><annotation encoding="application/x-tex">C=A\cup T</annotation></semantics></math>。故任意交仍在闭集族中。闭集三条件成立，其补集构成拓扑。</p>
+<p><strong>二、Hausdorff。</strong> 每个欧几里得闭集A都可写成
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∪</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">A\cup\varnothing</annotation></semantics></math>，所以它在新拓扑中仍闭。于是每个欧几里得开集在新拓扑中仍开。欧几里得拓扑已经能用不交开区间分离任意不同实数，因此新拓扑也是Hausdorff的。</p>
+<p><strong>三、非正则。</strong> 例题A说明S闭且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>∉</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">0\notin S</annotation></semantics></math>。反设存在不交新开集U、V，使
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>∈</mo><mi>U</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>S</mi><mo>⊆</mo><mi>V</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+0\in U,
+\qquad S\subseteq V.
+</annotation></semantics></math></div> 写
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℝ</mi><mo>\</mo><mi>U</mi><mo>=</mo><mi>A</mi><mo>∪</mo><mi>T</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\mathbb R\setminus U=A\cup T,
+</annotation></semantics></math></div>
+其中A欧几里得闭、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>⊆</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">T\subseteq S</annotation></semantics></math>。因
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>∈</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">0\in U</annotation></semantics></math>，有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>∉</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">0\notin A</annotation></semantics></math>，所以存在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\varepsilon&gt;0</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>ε</mi><mo>,</mo><mi>ε</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-\varepsilon,\varepsilon)</annotation></semantics></math>
+避开A。因此
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>ε</mi><mo>,</mo><mi>ε</mi><mo stretchy="false" form="postfix">)</mo><mo>\</mo><mi>S</mi><mo>⊆</mo><mi>U</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+(-\varepsilon,\varepsilon)\setminus S\subseteq U.
+</annotation></semantics></math></div></p>
+<p>取n足够大使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo>&lt;</mo><mi>ε</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">s=1/n&lt;\varepsilon/2</annotation></semantics></math>。因为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>∈</mo><mi>S</mi><mo>⊆</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">s\in S\subseteq V</annotation></semantics></math>，写
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℝ</mi><mo>\</mo><mi>V</mi><mo>=</mo><mi>B</mi><mo>∪</mo><mi>W</mi></mrow><annotation encoding="application/x-tex">\mathbb R\setminus V=B\cup W</annotation></semantics></math>，其中B欧几里得闭、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>⊆</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">W\subseteq S</annotation></semantics></math>，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>∉</mo><mi>B</mi><mo>∪</mo><mi>W</mi></mrow><annotation encoding="application/x-tex">s\notin B\cup W</annotation></semantics></math>。B闭且不含s，所以有一个含s的实开区间I避开B；把I缩小到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>ε</mi><mo>,</mo><mi>ε</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-\varepsilon,\varepsilon)</annotation></semantics></math>
+内。I中可取一个无理数y，于是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∉</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">y\notin S</annotation></semantics></math>，也不在B或W中。因此
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">
+y\in V
+</annotation></semantics></math></div> 且
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>ε</mi><mo>,</mo><mi>ε</mi><mo stretchy="false" form="postfix">)</mo><mo>\</mo><mi>S</mi><mo>⊆</mo><mi>U</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+y\in(-\varepsilon,\varepsilon)\setminus S\subseteq U.
+</annotation></semantics></math></div> 这与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>∩</mo><mi>V</mi><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">U\cap V=\varnothing</annotation></semantics></math>
+矛盾。故0与闭集S不能由不交开集分离，该拓扑不正则。</p>
+</details>
+<h2 id="精选复习">精选复习</h2><details class="prepared-review"><summary>精选复习内容（仅回看，不记分）</summary><p class="notice">这里保留课件中的预设问题与答案。计分复习在讲练间隙进行；只回看不会改变排期。</p><h3 id="t04-01-r012">T04-01-R012</h3>
+<p><strong>问题：</strong>星号例为什么Hausdorff却不正则？非正则证明选择了哪个点和闭集？</p>
+<details>
+<summary>
+回忆后查看答案
+</summary>
+<p>新拓扑包含全部欧几里得开集，所以仍Hausdorff。闭集取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">S=\{1/n\}</annotation></semantics></math>、外点取0；任何含0新开集都含靠近0的非S点，任何含S新开集在足够小的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">1/n</annotation></semantics></math>
+附近也含这样的点，因此两者必相交。</p>
+</details>
+</details><h2 id="简短回顾">简短回顾</h2>
+<p>T2只要求分离两点；正则还要分离点与整个闭集。这个加细拓扑保留两点分离，却在0与序列闭集S之间失败。</p>
+</article></div>
+<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T04-01-M044.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

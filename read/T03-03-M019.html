@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.8">
+<title>不连通与开分离 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T03-03-M019"><h1 id="不连通与开分离">不连通与开分离</h1>
+<p>固定编号：T03-03-M019<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 56 页 / PDF 第 56
+页，习题3.3第3题。<br />
+学习目标：完整证明空间不连通等价于能写成两个不交非空真开集之并。</p>
+<blockquote>
+<p><strong>本段主线：</strong>把注3.3.9的开分离形式写成完整一般证明。<br />
+<strong>当前环节：</strong>M010已练习两种证据之间的局部转换。<br />
+<strong>这一步只做：</strong>完成两个方向并核对非空、真子集、不交和覆盖四个条件。</p>
+</blockquote>
+<p>来源说明：B为教材原题3；完整双向证明为新增展开。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>若A、B非空、不交且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∪</mo><mi>B</mi><mo>=</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">A\cup B=X</annotation></semantics></math>，证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mi>X</mi><mo>\</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">B=X\setminus A</annotation></semantics></math>。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A
+</summary>
+<p>不交说明B中的点都不在A，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>⊆</mo><mi>X</mi><mo>\</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">B\subseteq X\setminus A</annotation></semantics></math>。反过来，若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>X</mi><mo>\</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">x\in X\setminus A</annotation></semantics></math>，由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∪</mo><mi>B</mi><mo>=</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">A\cup B=X</annotation></semantics></math>
+可知x必须属于B。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><mi>A</mi><mo>⊆</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">X\setminus A\subseteq B</annotation></semantics></math>，两集合相等。</p>
+</details>
+<span id="q-T03-03-E003" class="content-anchor"></span><h2 id="练习-b教材习题3.3第3题">练习 B：教材习题3.3第3题</h2>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>,</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X,\tau)</annotation></semantics></math>
+为拓扑空间。证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>,</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X,\tau)</annotation></semantics></math>
+不连通，当且仅当存在非空、不相交的真开子集A和B，使
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∪</mo><mi>B</mi><mo>=</mo><mi>X</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+A\cup B=X.
+</annotation></semantics></math></div></p>
+<span id="answer-T03-03-E003" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试原题后展开双向证明
+</summary>
+<p>若X不连通，存在非平凡闭开集A，即A开、A闭、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>≠</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">A\ne\varnothing</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>≠</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">A\ne X</annotation></semantics></math>。令
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mi>X</mi><mo>\</mo><mi>A</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+B=X\setminus A.
+</annotation></semantics></math></div>
+A闭说明B开；A非空且不等于X说明B也非空，且A、B都是真子集。它们互补，所以不交且并为X。</p>
+<p>反过来，设A、B是非空、不交的真开子集，且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∪</mo><mi>B</mi><mo>=</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">A\cup B=X</annotation></semantics></math>。例题A给出
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mi>X</mi><mo>\</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">B=X\setminus A</annotation></semantics></math>。B开，所以A的补集开，即A闭。A本身又开、非空且不等于X，因此A是非平凡闭开集。故X不连通。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>非平凡闭开集与一对互补非空开集是同一分离现象的两种写法。</p>
+</article></div>
+<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T03-03-M019.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

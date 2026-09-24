@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.8">
+<title>无无限T1子空间时出现初始段或末尾段 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T04-03-M031"><h1
+id="无无限t1子空间时出现初始段或末尾段">无无限T1子空间时出现初始段或末尾段</h1>
+<p>固定编号：T04-03-M031<br />
+内容版本：0.2<br />
+教材出处：《没有眼泪的拓扑》，书内第 72 页 / PDF 第 72
+页，习题4.3第8(iv)双星题；作者官网2024英文版第107页。<br />
+学习目标：在正确的“没有无限T1子空间”条件下，用单点闭包偏序与无限Ramsey定理完整构造初始段或末尾段子空间。</p>
+<blockquote>
+<p><strong>本段主线：</strong>完成Ginsburg–Sands五类无限子空间定理的T0非T1分支。<br />
+<strong>当前环节：</strong>先校正中文版漏掉的条件，再排除无限反链并处理无限链。<br />
+<strong>这一步只做：</strong>把偏序中的单调序列精确翻译成子空间的全部开集。</p>
+</blockquote>
+<p>来源说明：中文版把条件印为“T0但非T1”；作者官网2024英文版实际为“T0且没有无限T1子空间”。证明结构另对照Ginsburg与Sands原论文
+<em>Minimal Infinite Topological Spaces</em>, <em>American Mathematical
+Monthly</em> 86 (1979), 574–576，DOI
+10.2307/2320588。本模块保留中文版差异，给出字面反例，并完整证明英文原题。</p>
+<h2
+id="来源校正中文版字面命题不成立">来源校正：中文版字面命题不成立</h2>
+<p>取两点Sierpiński空间S与一个可数无限离散空间D的拓扑和
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mi>S</mi><mo>⊔</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">X=S\sqcup D</annotation></semantics></math>。X是无限T0空间，但不是T1空间。</p>
+<p>X的每个无限子空间都包含D中的无限多个点，这些点在子空间中都是孤立点。初始段拓扑或末尾段拓扑都不可能有无限多个孤立点，所以X没有题述两类子空间。由此可见，中文版仅写“非T1”时命题为假；缺少的条件不能省略。</p>
+<h2
+id="组合引理无限偏序中取得单调序列">组合引理：无限偏序中取得单调序列</h2>
+<p><strong>引理。</strong>每个可数无限偏序都含有无限反链，或含有形如
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>x</mi><mn>2</mn></msub><mo>&lt;</mo><msub><mi>x</mi><mn>3</mn></msub><mo>&lt;</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">
+x_1&lt;x_2&lt;x_3&lt;\cdots
+</annotation></semantics></math></div> 的严格上升序列，或含有形如
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>x</mi><mn>2</mn></msub><mo>&gt;</mo><msub><mi>x</mi><mn>3</mn></msub><mo>&gt;</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">
+x_1&gt;x_2&gt;x_3&gt;\cdots
+</annotation></semantics></math></div> 的严格下降序列。</p>
+<p><strong>证明。</strong>先把偏序元素枚举为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>2</mn></msub><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">y_1,y_2,\ldots</annotation></semantics></math>。对每个二元子集着两色：可比较着0色，不可比较着1色。无限Ramsey定理给出无限齐次子集；1色齐次就是无限反链，0色齐次就是无限链。</p>
+<p>在无限链中再按原枚举次序给每对
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>&lt;</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i&lt;j</annotation></semantics></math>
+着色：若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>i</mi></msub><mo>&lt;</mo><msub><mi>y</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">y_i&lt;y_j</annotation></semantics></math>
+着0色，若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>j</mi></msub><mo>&lt;</mo><msub><mi>y</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">y_j&lt;y_i</annotation></semantics></math>
+着1色。再次应用无限Ramsey定理，得到严格上升或严格下降的无限子序列。引理得证。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>设T0空间Y中的点满足
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>x</mi><mn>2</mn></msub><mo>&lt;</mo><msub><mi>x</mi><mn>3</mn></msub><mo>&lt;</mo><mi>⋯</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">
+x_1&lt;x_2&lt;x_3&lt;\cdots,
+</annotation></semantics></math></div> 其中
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≤</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x\le y</annotation></semantics></math>
+表示
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mover><mrow><mo stretchy="false" form="prefix">{</mo><mi>y</mi><mo stretchy="false" form="postfix">}</mo></mrow><mo accent="true">¯</mo></mover></mrow><annotation encoding="application/x-tex">x\in\overline{\{y\}}</annotation></semantics></math>。证明Y中每个含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>n</mi></msub><annotation encoding="application/x-tex">x_n</annotation></semantics></math>
+的开集都含所有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>m</mi></msub><annotation encoding="application/x-tex">x_m</annotation></semantics></math>（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>&gt;</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">m&gt;n</annotation></semantics></math>），并构造迹恰为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>x</mi><mi>m</mi></msub><mo>:</mo><mi>m</mi><mo>≥</mo><mi>n</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{x_m:m\ge n\}</annotation></semantics></math>
+的开集。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A
+</summary>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>n</mi></msub><mo>≤</mo><msub><mi>x</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">x_n\le x_m</annotation></semantics></math>
+的定义等价于：每个含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>n</mi></msub><annotation encoding="application/x-tex">x_n</annotation></semantics></math>
+的开集都含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>m</mi></msub><annotation encoding="application/x-tex">x_m</annotation></semantics></math>，所以第一项成立。</p>
+<p>当
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n&gt;1</annotation></semantics></math>
+时，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>n</mi></msub><mo>≰</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">x_n\not\le x_{n-1}</annotation></semantics></math>，故存在开集U含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>n</mi></msub><annotation encoding="application/x-tex">x_n</annotation></semantics></math>
+而不含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">x_{n-1}</annotation></semantics></math>。U自动包含所有后项。若U含某个更早的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>j</mi></msub><annotation encoding="application/x-tex">x_j</annotation></semantics></math>，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>j</mi></msub><mo>≤</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">x_j\le x_{n-1}</annotation></semantics></math>
+会迫使U含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">x_{n-1}</annotation></semantics></math>，矛盾。因此
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>∩</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>x</mi><mi>m</mi></msub><mo>:</mo><mi>m</mi><mo>≥</mo><mi>n</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+U\cap\{x_1,x_2,\ldots\}=\{x_m:m\ge n\}.
+</annotation></semantics></math></div> 对n=1取整个空间即可。</p>
+</details>
+<span id="q-T04-03-E008-iv" class="content-anchor"></span><h2 id="练习-b教材习题4.3第8iv题双星来源校正">练习
+B：教材习题4.3第8(iv)题（双星，来源校正）</h2>
+<p>中文版印为：设X为无限T0但非T1空间，证明X含有与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℕ</mi><annotation encoding="application/x-tex">\mathbb N</annotation></semantics></math>
+上初始段拓扑或末尾段拓扑同胚的子空间。</p>
+<p>作者官网2024英文原题的准确条件是：设X为无限T0空间，并且X没有无限T1子空间。证明X含有上述两类子空间之一。</p>
+<p>说明中文版字面命题为何失败，并证明英文原题。</p>
+<div class="practice-controls" data-question-id="T04-03-E008-iv" data-module-id="T04-03-M031" data-mode="guided" data-answer-anchor="answer-T04-03-E008-iv"></div><span id="answer-T04-03-E008-iv" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试原题后展开完整证明
+</summary>
+<p>中文版字面命题由本模块开头的拓扑和反例否定。下面证明作者英文版的正确命题。</p>
+<p>从X中选一个可数无限子空间Y。T0性遗传给子空间；Y也没有无限T1子空间。</p>
+<p>在Y上定义
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≤</mo><mi>y</mi><mspace width="1.0em"></mspace><mo>⇔</mo><mspace width="1.0em"></mspace><mi>x</mi><mo>∈</mo><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>Y</mi></msub><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">{</mo><mi>y</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+x\le y\quad\Longleftrightarrow\quad x\in\operatorname{cl}_Y(\{y\}).
+</annotation></semantics></math></div> 这个关系自反、传递。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≤</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x\le y</annotation></semantics></math>
+且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>≤</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">y\le x</annotation></semantics></math>，则两点有相同的开邻域成员关系；Y为T0迫使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x=y</annotation></semantics></math>。所以它是偏序。</p>
+<p>应用上面的组合引理。若得到无限反链A，则对A中不同点x、y都有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∉</mo><mover><mrow><mo stretchy="false" form="prefix">{</mo><mi>y</mi><mo stretchy="false" form="postfix">}</mo></mrow><mo accent="true">¯</mo></mover></mrow><annotation encoding="application/x-tex">x\notin\overline{\{y\}}</annotation></semantics></math>。于是存在A中的相对开集含x而不含y；交换两点也成立，因此A是T1子空间，与假设矛盾。</p>
+<p>所以存在严格上升或严格下降序列。若
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>x</mi><mn>2</mn></msub><mo>&lt;</mo><msub><mi>x</mi><mn>3</mn></msub><mo>&lt;</mo><mi>⋯</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">
+x_1&lt;x_2&lt;x_3&lt;\cdots,
+</annotation></semantics></math></div> 令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>x</mi><mi>n</mi></msub><mo>:</mo><mi>n</mi><mo>∈</mo><mi mathvariant="double-struck">ℕ</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">Z=\{x_n:n\in\mathbb N\}</annotation></semantics></math>。每个Z中开集只要含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>n</mi></msub><annotation encoding="application/x-tex">x_n</annotation></semantics></math>，就必须含所有后项，因此每个非空相对开集都是一个末尾段。例题A又证明每个末尾段
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>x</mi><mi>n</mi></msub><mo>,</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">
+\{x_n,x_{n+1},\ldots\}
+</annotation></semantics></math></div>
+确实相对开。因此Z的开集恰为空集、Z和全部末尾段；映射
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>n</mi></msub><mo>↦</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">x_n\mapsto n</annotation></semantics></math>
+是到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℕ</mi><annotation encoding="application/x-tex">\mathbb N</annotation></semantics></math>
+末尾段拓扑的同胚。</p>
+<p>若得到严格下降序列
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>x</mi><mn>2</mn></msub><mo>&gt;</mo><msub><mi>x</mi><mn>3</mn></msub><mo>&gt;</mo><mi>⋯</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">
+x_1&gt;x_2&gt;x_3&gt;\cdots,
+</annotation></semantics></math></div> 同理，每个含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>n</mi></msub><annotation encoding="application/x-tex">x_n</annotation></semantics></math>
+的开集都含所有更早项。又因
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>n</mi></msub><mo>≰</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">x_n\not\le x_{n+1}</annotation></semantics></math>，存在开集含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>n</mi></msub><annotation encoding="application/x-tex">x_n</annotation></semantics></math>
+而不含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">x_{n+1}</annotation></semantics></math>；若它含任何更后项，就会被迫含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">x_{n+1}</annotation></semantics></math>。所以每个有限初始段
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">
+\{x_1,\ldots,x_n\}
+</annotation></semantics></math></div>
+相对开，且所有非空真开集都具有这种形状。于是Z同胚于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℕ</mi><annotation encoding="application/x-tex">\mathbb N</annotation></semantics></math>
+的初始段拓扑。</p>
+<p>两种情形均得到题述子空间，证明完成。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>正确条件排除了无限T1反链；无限Ramsey定理留下单调链，而单点闭包偏序把上升链、下降链分别精确翻译为末尾段、初始段拓扑。</p>
+</article></div>
+<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>

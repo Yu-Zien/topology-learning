@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.8">
+<title>含全部极限点推出闭集 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="runtime/app.css"></head>
+<body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
+<p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
+<div id="app-view"><article id="lesson-content" data-module-id="T03-01-M009"><h1 id="含全部极限点推出闭集">含全部极限点推出闭集</h1>
+<p>固定编号：T03-01-M009<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 48 页 / PDF 第 48
+页，命题3.1.6方向(ii)及正文读者验证。<br />
+学习目标：对A外每一点用“不是极限点”取得与A不交的开集，证明补集是这些开集的并。</p>
+<blockquote>
+<p><strong>本段主线：</strong>完成极限点闭集判别。<br />
+<strong>当前环节：</strong>已证闭集包含极限点；现在反向从包含关系推出闭性。<br />
+<strong>这一步只做：</strong>证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">X\setminus A</annotation></semantics></math>
+开。</p>
+</blockquote>
+<p>来源说明：教材给出构造并要求验证并等式；本模块补齐。A/B新增。</p>
+<h2 id="方法">方法</h2>
+<p>假设A包含所有A的极限点。任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>∈</mo><mi>X</mi><mo>\</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">z\in X\setminus A</annotation></semantics></math>，z不是极限点，所以存在含z开集U_z，其中没有A中不同于z的点。又z∉A，因此实际上
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>z</mi></msub><mo>∩</mo><mi>A</mi><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">U_z\cap A=\varnothing</annotation></semantics></math>，即
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>z</mi></msub><mo>⊆</mo><mi>X</mi><mo>\</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">U_z\subseteq X\setminus A</annotation></semantics></math>。</p>
+<p>于是
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><mi>A</mi><mo>=</mo><munder><mo>⋃</mo><mrow><mi>z</mi><mo>∈</mo><mi>X</mi><mo>\</mo><mi>A</mi></mrow></munder><msub><mi>U</mi><mi>z</mi></msub><mo>,</mo></mrow><annotation encoding="application/x-tex">
+X\setminus A=\bigcup_{z\in X\setminus A}U_z,
+</annotation></semantics></math></div> 补集开，A闭。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>为什么“U_z不含A中不同于z的点”在z∉A时可加强为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>z</mi></msub><mo>∩</mo><mi>A</mi><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">U_z\cap A=\varnothing</annotation></semantics></math>？</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A
+</summary>
+<p>若U_z还含某个A点a，因为z∉A，必有a≠z，这就成为A中不同于z的点，违背U_z的选择。因此交必须为空。</p>
+</details>
+<span id="q-T03-01-M009-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>完整证明：若A包含所有A的极限点，则A闭；须验证补集与开集并相等。</p>
+<div class="practice-controls" data-question-id="T03-01-M009-B" data-module-id="T03-01-M009" data-mode="guided" data-answer-anchor="answer-T03-01-M009-B"></div><span id="answer-T03-01-M009-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开证明
+</summary>
+<p>对每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>∈</mo><mi>X</mi><mo>\</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">z\in X\setminus A</annotation></semantics></math>，z不是极限点，取含z开集U_z使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>z</mi></msub><mo>∩</mo><mi>A</mi><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">U_z\cap A=\varnothing</annotation></semantics></math>。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>z</mi></msub><mo>⊆</mo><mi>X</mi><mo>\</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">U_z\subseteq X\setminus A</annotation></semantics></math>，右侧并包含于补集。</p>
+<p>反过来，每个补集点z属于自己的U_z，所以补集包含于右侧并。两边相等。右侧是开集的任意并，故补集开，A闭。</p>
+</details>
+<h2 id="简短回顾与命题结论">简短回顾与命题结论</h2>
+<p>A闭当且仅当它不遗漏任何自身极限点；反向证明的核心是把补集逐点覆盖为与A不交的开集之并。</p>
+</article></div>
+<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+</main><script type="module" src="runtime/app.js"></script></body></html>

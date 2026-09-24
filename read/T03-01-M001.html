@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.8">
+<title>没有距离函数时怎样表达“接近” · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T03-01-M001"><h1 id="没有距离函数时怎样表达接近">没有距离函数时怎样表达“接近”</h1>
+<p>固定编号：T03-01-M001<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 46 页 / PDF 第 46
+页，第三章导言。<br />
+学习目标：从数列
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">1/n</annotation></semantics></math>
+接近0的例子，说明拓扑将用“每个含该点的开集都遇到集合”替代距离语言。</p>
+<blockquote>
+<p><strong>本段主线：</strong>引入极限点，并用它理解闭集与闭包。<br />
+<strong>当前环节：</strong>先把实数轴上的接近直觉翻译成开集语言。<br />
+<strong>这一步只做：</strong>识别“无论把开集缩得多小都能遇到集合”的结构，正式定义留到M002。</p>
+</blockquote>
+<p>来源说明：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.1</mn><mo>,</mo><mn>0.01</mn><mo>,</mo><mn>0.001</mn><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">0.1,0.01,0.001,\ldots</annotation></semantics></math>、0作为极限点及一般拓扑没有距离函数的说明来自教材导言；A/B新增。</p>
+<h2 id="短讲解">短讲解</h2>
+<p>集合
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>10</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>100</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">
+A=\{1,1/10,1/100,\ldots\}
+</annotation></semantics></math></div>
+不含0，但每个含0的实数开区间都会含A中的某一项。拓扑学把这种“不断接近”写成开集条件，因此无需先有距离函数。</p>
+<p>极限点将帮助判断闭集；本章还会引入连通性，但本模块不提前定义它。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>说明为什么开区间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>0.001</mn><mo>,</mo><mn>0.001</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-0.001,0.001)</annotation></semantics></math>
+中仍有A的点。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A
+</summary>
+取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>10000</mn><mo>=</mo><mn>0.0001</mn></mrow><annotation encoding="application/x-tex">1/10000=0.0001</annotation></semantics></math>。它属于A，并满足
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0.001</mn><mo>&lt;</mo><mn>0.0001</mn><mo>&lt;</mo><mn>0.001</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+-0.001&lt;0.0001&lt;0.001.
+</annotation></semantics></math></div>
+</details>
+<span id="q-T03-01-M001-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>给定任意
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\varepsilon&gt;0</annotation></semantics></math>，说明怎样找到正整数n使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mi>n</mi><mo>∈</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>ε</mi><mo>,</mo><mi>ε</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">1/n\in(-\varepsilon,\varepsilon)</annotation></semantics></math>。</p>
+<span id="answer-T03-01-M001-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开答案
+</summary>
+<p>由阿基米德性质取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&gt;</mo><mn>1</mn><mi>/</mi><mi>ε</mi></mrow><annotation encoding="application/x-tex">n&gt;1/\varepsilon</annotation></semantics></math>。则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo>&lt;</mo><mi>ε</mi></mrow><annotation encoding="application/x-tex">0&lt;1/n&lt;\varepsilon</annotation></semantics></math>，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">1/n</annotation></semantics></math>
+落在该区间中。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>“接近0”可以表达为：每个含0的开区间都碰到集合A，而不必先计算点到集合的距离。</p>
+</article></div>
+<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T03-01-M001.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

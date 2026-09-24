@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.8">
+<title>每个开矩形内可放小开等边三角形 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T02-03-M012"><h1
+id="每个开矩形内可放小开等边三角形">每个开矩形内可放小开等边三角形</h1>
+<p>固定编号：T02-03-M012<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 42—43 页 / PDF 第 42—43
+页，例2.3.5图形略证的反向局部细化及结论。<br />
+学习目标：对开矩形中的任意点构造以该点为重心、底边水平的小开等边三角形，并用命题2.3.4完成同拓扑证明。</p>
+<blockquote>
+<p><strong>本段主线：</strong>完成例2.3.5：开等边三角形基生成平面欧几里得拓扑。<br />
+<strong>当前环节：</strong>M011已证明三角形内能放开矩形；现在证明矩形内也能放同型三角形。<br />
+<strong>这一步只做：</strong>给出明确顶点与尺寸，再合并双向局部细化。</p>
+</blockquote>
+<p>来源说明：教材用图示给出这一方向并直接得出同拓扑结论；本模块补出重心坐标、边长控制和命题2.3.4的两项对应。A/B为新增讲练。</p>
+<h2
+id="方法用到矩形四边的最小余量控制三角形">方法：用到矩形四边的最小余量控制三角形</h2>
+<p>设</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>×</mo><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>p</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>R</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+R=(a,b)\times(c,d),
+\qquad p=(x,y)\in R.
+</annotation></semantics></math></div></p>
+<p>令</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo>−</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>−</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>−</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo>−</mo><mi>y</mi><mo stretchy="false" form="postfix">}</mo><mo>&gt;</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><mi>ℓ</mi><mo>=</mo><mfrac><mi>m</mi><mn>2</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+m=\min\{x-a,b-x,y-c,d-y\}&gt;0,
+\qquad \ell=\frac m2.
+</annotation></semantics></math></div></p>
+<p>取以p为重心、边长为ℓ、底边水平且尖端向上的等边三角形。它的三个顶点为</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>−</mo><mfrac><mi>ℓ</mi><mn>2</mn></mfrac><mo>,</mo><mi>y</mi><mo>−</mo><mfrac><mrow><msqrt><mn>3</mn></msqrt><mi>ℓ</mi></mrow><mn>6</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mfrac><mi>ℓ</mi><mn>2</mn></mfrac><mo>,</mo><mi>y</mi><mo>−</mo><mfrac><mrow><msqrt><mn>3</mn></msqrt><mi>ℓ</mi></mrow><mn>6</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>+</mo><mfrac><mrow><msqrt><mn>3</mn></msqrt><mi>ℓ</mi></mrow><mn>3</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\left(x-\frac\ell2,y-\frac{\sqrt3\ell}{6}\right),
+\quad
+\left(x+\frac\ell2,y-\frac{\sqrt3\ell}{6}\right),
+\quad
+\left(x,y+\frac{\sqrt3\ell}{3}\right).
+</annotation></semantics></math></div></p>
+<p>三个顶点在每个坐标方向离p都小于m；开矩形R是凸集，所以整个三角形都包含于R，而p作为重心位于其内部。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>在开正方形
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>×</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">R=(-1,1)\times(-1,1)</annotation></semantics></math>
+中，以原点为重心构造一个底边水平、边长
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math>
+的开等边三角形，并写出三个顶点。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的三个顶点
+</summary>
+<p>取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\ell=1/2</annotation></semantics></math>。三个顶点为</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>,</mo><mi>−</mi><mfrac><msqrt><mn>3</mn></msqrt><mn>12</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>,</mo><mi>−</mi><mfrac><msqrt><mn>3</mn></msqrt><mn>12</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mfrac><msqrt><mn>3</mn></msqrt><mn>6</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\left(-\frac14,-\frac{\sqrt3}{12}\right),
+\quad
+\left(\frac14,-\frac{\sqrt3}{12}\right),
+\quad
+\left(0,\frac{\sqrt3}{6}\right).
+</annotation></semantics></math></div></p>
+<p>每个顶点的两个坐标绝对值都小于1，所以均在R中。R为凸集，三顶点的凸包也在R中；去掉边界得到的开三角形仍在R中。原点是三顶点平均值，即重心，所以属于开三角形内部。</p>
+</details>
+<span id="q-T02-03-M012-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>设R为任意坐标轴平行开矩形，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∈</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">p\in R</annotation></semantics></math>。按本模块公式构造底边水平的开等边三角形T，使</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∈</mo><mi>T</mi><mo>⊆</mo><mi>R</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+p\in T\subseteq R.
+</annotation></semantics></math></div></p>
+<p>结合M011，用命题2.3.4证明例2.3.5的三角形基与开矩形基生成同一拓扑。</p>
+<span id="answer-T02-03-M012-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开构造与同拓扑证明
+</summary>
+<p>写
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>×</mo><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">R=(a,b)\times(c,d)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p=(x,y)</annotation></semantics></math>，并令</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo>−</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>−</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>−</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo>−</mo><mi>y</mi><mo stretchy="false" form="postfix">}</mo><mo>&gt;</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><mi>ℓ</mi><mo>=</mo><mi>m</mi><mi>/</mi><mn>2</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+m=\min\{x-a,b-x,y-c,d-y\}&gt;0,
+\qquad \ell=m/2.
+</annotation></semantics></math></div></p>
+<p>按正文给出的三个顶点构造开等边三角形T。其水平偏移至多
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mi>/</mi><mn>2</mn><mo>&lt;</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">\ell/2&lt;m</annotation></semantics></math>，向下偏移为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>3</mn></msqrt><mi>ℓ</mi><mi>/</mi><mn>6</mn><mo>&lt;</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">\sqrt3\ell/6&lt;m</annotation></semantics></math>，向上偏移为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>3</mn></msqrt><mi>ℓ</mi><mi>/</mi><mn>3</mn><mo>&lt;</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">\sqrt3\ell/3&lt;m</annotation></semantics></math>。所以三顶点在R中；R凸，整个T包含于R。p是重心，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∈</mo><mi>T</mi></mrow><annotation encoding="application/x-tex">p\in T</annotation></semantics></math>。</p>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℛ</mi><annotation encoding="application/x-tex">\mathcal R</annotation></semantics></math>
+为开矩形基、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">𝒯</mi><annotation encoding="application/x-tex">\mathcal T</annotation></semantics></math>
+为三角形基。刚才证明：每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>∈</mo><mi mathvariant="script">ℛ</mi></mrow><annotation encoding="application/x-tex">R\in\mathcal R</annotation></semantics></math>、每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∈</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">p\in R</annotation></semantics></math>
+都有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>∈</mo><mi mathvariant="script">𝒯</mi></mrow><annotation encoding="application/x-tex">T\in\mathcal T</annotation></semantics></math>
+满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∈</mo><mi>T</mi><mo>⊆</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">p\in T\subseteq R</annotation></semantics></math>。M011证明了反向：每个三角形内点都有内部开矩形。命题2.3.4的两项局部细化均成立，所以两组基生成同一拓扑，即平面欧几里得拓扑。</p>
+</details>
+<h2 id="精选复习">精选复习</h2><details class="prepared-review"><summary>精选复习内容（仅回看，不记分）</summary><p class="notice">这里保留课件中的预设问题与答案。计分复习在讲练间隙进行；只回看不会改变排期。</p><h3 id="t02-03-r004">T02-03-R004</h3>
+<p><strong>问题：</strong>为什么只证明三角形族满足命题2.2.8还不能称它为欧几里得基？还需哪两个局部细化方向？</p>
+<details>
+<summary>
+回忆后查看答案
+</summary>
+<p>命题2.2.8只说明三角形族生成某个拓扑。要识别为欧几里得拓扑，还要证明每个三角形内点有内部开矩形，以及每个开矩形内点有内部同型三角形；命题2.3.4再由双向细化给出拓扑相等。</p>
+</details>
+</details><h2 id="简短回顾与例2.3.5结论">简短回顾与例2.3.5结论</h2>
+<p>矩形和底边水平的开等边三角形能在每个点处互相缩小进去，因此两组基生成同一个平面欧几里得拓扑。</p>
+</article></div>
+<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T02-03-M012.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

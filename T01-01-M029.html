@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.6">
+<meta name="application-version" content="0.3.8">
 <title>关系式的层次 3(i)—(l) · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -54,8 +54,9 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <strong>当前环节：</strong>前八项都是属于关系，现在开始把包含关系放在一起比较。<br />
 <strong>这一步只做：</strong>看到包含号就检查左边的每个元素，看到属于号就检查左边整个对象。</p>
 </blockquote>
-<p>来源说明：B 保留原题第 3(i)—(l) 项；讲解与 A
-为新增。普通点标签约定继续沿用 M027。</p>
+<p>来源说明：B 保留中文版原题第 3(i)—(l) 项；讲解与 A
+为新增。普通点标签约定继续沿用M027；作者官网2024英文版第(k)项的右边是X而不是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>。</p>
 <h2 id="方法把包含于展开一层">方法：把“包含于”展开一层</h2>
 <p>例如，若
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">𝒞</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo>,</mo><mi>Y</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathcal C=\{\varnothing,Y\}</annotation></semantics></math>，判断
@@ -126,7 +127,7 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 \text{(k) }\{\varnothing\}\subset\tau;\qquad
 \text{(l) }a\in X.
 </annotation></semantics></math></div></p>
-<p class="notice pending-practice">本组原题待核验，仅供查阅约定及条件化解答；不记录正常评分或进入复习排期。</p><span id="answer-T01-01-E003-i" class="content-anchor"></span><span id="answer-T01-01-E003-j" class="content-anchor"></span><span id="answer-T01-01-E003-k" class="content-anchor"></span><span id="answer-T01-01-E003-l" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<div class="practice-controls" data-question-id="T01-01-E003-i" data-module-id="T01-01-M029" data-mode="guided" data-answer-anchor="answer-T01-01-E003-i"></div><div class="practice-controls" data-question-id="T01-01-E003-j" data-module-id="T01-01-M029" data-mode="guided" data-answer-anchor="answer-T01-01-E003-j"></div><div class="practice-controls" data-question-id="T01-01-E003-k" data-module-id="T01-01-M029" data-mode="guided" data-answer-anchor="answer-T01-01-E003-k"></div><div class="practice-controls" data-question-id="T01-01-E003-l" data-module-id="T01-01-M029" data-mode="guided" data-answer-anchor="answer-T01-01-E003-l"></div><span id="answer-T01-01-E003-i" class="content-anchor"></span><span id="answer-T01-01-E003-j" class="content-anchor"></span><span id="answer-T01-01-E003-k" class="content-anchor"></span><span id="answer-T01-01-E003-l" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
 <details>
 <summary>
 做过 B 后，展开四项解答
@@ -142,13 +143,13 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
 为唯一元素的集合；这个集合不是所列的点之一。</li>
 <li><strong>(k)
-成立，且是真包含。</strong>左边的唯一元素是空集，而拓扑条件 (i) 保证
+按中文版原式成立，且是真包含。</strong>左边的唯一元素是空集，而拓扑条件
+(i) 保证
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>⌀</mi><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\varnothing\in\tau</annotation></semantics></math>，故
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo stretchy="false" form="postfix">}</mo><mo>⊆</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\{\varnothing\}\subseteq\tau</annotation></semantics></math>。此外
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">X\in\tau</annotation></semantics></math>
 且
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>≠</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">X\ne\varnothing</annotation></semantics></math>，所以右边至少多一个成员
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>，两边不相等。</li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>≠</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">X\ne\varnothing</annotation></semantics></math>，所以右边至少多一个成员X，两边不相等。</li>
 <li><strong>(l) 成立。</strong>原题的底集清单直接列出了点
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>，所以
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">a\in X</annotation></semantics></math>。</li>
@@ -159,9 +160,13 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo stretchy="false" form="postfix">}</mo><mo>∈</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\{\varnothing\}\in\tau</annotation></semantics></math>。这解释了它为什么可以与前面
 (c) 的判断不同。</li>
 </ol>
+<p><strong>版本核对：</strong>作者官网2024英文版第(k)项为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo stretchy="false" form="postfix">}</mo><mo>⊆</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">\{\varnothing\}\subseteq X</annotation></semantics></math>。按普通点标签语境，英文第(k)项不成立；中文版把右边印成
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>
+后才成为成立项。课程保留中文版题面，同时明示英文原式，不静默替换。</p>
 </details>
 <h2 id="简短回顾">简短回顾</h2>
 <p>单元素集合的包含关系，要检查那个唯一元素是否属于右边；属于关系则检查左边整个对象。原题已完成十二项，最后四项继续检验这个区别。</p>
 </article></div>
-<footer><span data-app-version="0.3.6">网站版本 0.3.6</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
 </main><script type="module" src="runtime/app.js"></script></body></html>

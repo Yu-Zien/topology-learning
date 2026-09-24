@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.8">
+<title>所有开矩形构成欧几里得基 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T02-03-M016"><h1 id="所有开矩形构成欧几里得基">所有开矩形构成欧几里得基</h1>
+<p>固定编号：T02-03-M016<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 43 页 / PDF 第 43
+页，习题2.3第1(iv)题；回指例2.2.9。<br />
+学习目标：按平面欧几里得拓扑的定义，完整说明所有坐标轴平行开矩形正是已采用的一组基。</p>
+<blockquote>
+<p><strong>本段主线：</strong>继续判断各类平面图形能否作为欧几里得基。<br />
+<strong>当前环节：</strong>正方形与圆盘已经处理；本项回到教材定义平面拓扑时使用的开矩形。<br />
+<strong>这一步只做：</strong>把回指结论写成完整基判定，不增加新图形估计。</p>
+</blockquote>
+<p>来源说明：B为教材习题2.3第1(iv)题。例2.2.9已经用命题2.2.8建立开矩形基并以其生成的拓扑定义平面欧几里得拓扑；A/B为新增回顾。</p>
+<h2
+id="方法这是平面欧几里得拓扑的定义基">方法：这是平面欧几里得拓扑的定义基</h2>
+<p>例2.2.9令</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">ℛ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>×</mo><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo stretchy="false" form="postfix">)</mo><mo>:</mo><mi>a</mi><mo>&lt;</mo><mi>b</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>c</mi><mo>&lt;</mo><mi>d</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">
+\mathcal R=\{(a,b)\times(c,d):a&lt;b,\ c&lt;d\}
+</annotation></semantics></math></div></p>
+<p>并证明它满足覆盖与交条件。随后教材把
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℛ</mi><annotation encoding="application/x-tex">\mathcal R</annotation></semantics></math>
+生成的拓扑命名为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\mathbb R^2</annotation></semantics></math>
+的欧几里得拓扑。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℛ</mi><annotation encoding="application/x-tex">\mathcal R</annotation></semantics></math>
+是这一定义拓扑的一组基。</p>
+<p>也可用命题2.3.2直接检查：每个欧几里得开集按定义是开矩形之并，所以其中每个点至少落在一个参与矩形中。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>设</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>×</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>∪</mo><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">)</mo><mo>×</mo><mo stretchy="false" form="prefix">(</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+U=((0,2)\times(-1,1))\cup((3,4)\times(5,7)).
+</annotation></semantics></math></div></p>
+<p>对点
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p=(1,0)</annotation></semantics></math>，指出一个开矩形基元素R满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∈</mo><mi>R</mi><mo>⊆</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">p\in R\subseteq U</annotation></semantics></math>。</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A 的局部基元素
+</summary>
+<p>可直接取</p>
+<p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>×</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+R=(0,2)\times(-1,1).
+</annotation></semantics></math></div></p>
+<p>p的两个坐标分别满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mn>1</mn><mo>&lt;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">0&lt;1&lt;2</annotation></semantics></math>
+与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn><mo>&lt;</mo><mn>0</mn><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1&lt;0&lt;1</annotation></semantics></math>，所以p∈R；R又是U的一个并参与者，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>⊆</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">R\subseteq U</annotation></semantics></math>。</p>
+</details>
+<span id="q-T02-03-E001-iv" class="content-anchor"></span><h2 id="练习-b教材习题2.3第1iv题">练习 B：教材习题2.3第1(iv)题</h2>
+<p>判断由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\mathbb R^2</annotation></semantics></math>
+中所有开矩形组成的集合簇，是否为平面欧几里得拓扑的一组基，并给出理由。</p>
+<span id="answer-T02-03-E001-iv" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试教材第1(iv)题后展开完整回答
+</summary>
+<p>答案是是。</p>
+<p>例2.2.9已经证明所有开矩形组成的族满足命题2.2.8，并把它生成的拓扑定义为平面欧几里得拓扑。因此按定义，这个开矩形族就是该拓扑的一组基。</p>
+<p>若从局部判别看，任意欧几里得开集U是若干开矩形的并；任取x∈U，x属于其中某个参与矩形R，且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>R</mi><mo>⊆</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in R\subseteq U</annotation></semantics></math>。命题2.3.2同样给出基结论。</p>
+</details>
+<h2 id="简短回顾">简短回顾</h2>
+<p>开矩形族不是后来猜出的候选；平面欧几里得拓扑正是由它生成并命名的，所以它天然是一组基。</p>
+</article></div>
+<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T02-03-M016.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>

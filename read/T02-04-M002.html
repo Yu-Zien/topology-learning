@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Local Pandoc MathML learning runtime">
+<meta name="application-version" content="0.3.8">
+<title>三个基判别命题各解决什么问题 · 拓扑学习</title><style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.9; }
+.sheet { width: min(900px, calc(100% - 32px)); margin: 30px auto; padding: 32px 48px 42px; background: #fff; border: 1px solid #e0e5dc; border-radius: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 12px 22px; padding-bottom: 16px; border-bottom: 1px solid #e1e6df; font-size: 14px; }
+nav a { text-decoration: none; }
+h1 { font-size: 1.8rem; line-height: 1.45; margin: 27px 0 20px; letter-spacing: -.02em; }
+h2 { font-size: 1.3rem; line-height: 1.6; margin: 36px 0 16px; }
+h3 { font-size: 1.1rem; margin-top: 26px; }
+p, ul, ol, table { margin: 15px 0; }
+li + li { margin-top: 7px; }
+a { color: #246a50; text-underline-offset: 3px; }
+blockquote { margin: 22px 0; padding: 5px 20px; background: #f1f6f0; border-left: 3px solid #7c9f77; }
+blockquote p { margin: 10px 0; }
+details { border: 1px solid #d8e0d4; border-radius: 8px; margin: 16px 0 24px; padding: 0 18px; background: #fcfdfb; }
+summary { cursor: pointer; padding: 13px 0; color: #315b41; font-weight: 600; }
+details[open] { padding-bottom: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: .96em; }
+th, td { border: 1px solid #dce3d8; padding: 10px 13px; text-align: left; vertical-align: top; }
+th { background: #f2f5ef; font-weight: 600; }
+math { font-family: math; font-size: 1.04em; }
+.math-display { overflow-x: auto; padding: 8px 2px; margin: 20px 0; }
+.math-display math { margin: 0 auto; }
+.notice, footer { color: #66736b; font-size: 14px; }
+footer { margin-top: 36px; padding-top: 15px; border-top: 1px solid #e1e6df; }
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { padding: 12px 0; border-bottom: 1px solid #e6eae2; }
+.lesson-list span { display: inline-block; font-size: 13px; min-width: 128px; color: #66736b; }
+.status { display: inline-block; margin-left: 12px; padding: 1px 8px; border-radius: 4px; background: #eef3eb; color: #466448; font-size: 12px; white-space: nowrap; }
+.status-review { background: #fff0d8; color: #855719; }
+.status-written { background: #eef0f1; color: #657077; }
+code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4px; }
+@media (max-width: 620px) { body { font-size: 16px; } .sheet { width: calc(100% - 16px); margin: 8px auto; padding: 20px 18px 28px; } h1 { font-size: 1.5rem; } th, td { padding: 8px; } }
+@media print { .sheet { margin: 0; border: 0; width: 100%; padding: 0; } nav { display: none; } body { background: white; } }
+</style>
+<link rel="stylesheet" href="../runtime/app.css"></head>
+<body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
+
+<div id="app-view"><article id="lesson-content" data-module-id="T02-04-M002"><h1 id="三个基判别命题各解决什么问题">三个基判别命题各解决什么问题</h1>
+<p>固定编号：T02-04-M002<br />
+内容版本：0.1<br />
+教材出处：《没有眼泪的拓扑》，书内第 45 页 / PDF 第 45
+页，§2.4后记第二至三段。<br />
+学习目标：根据题目是否给定拓扑、是否比较两组基，选择命题2.2.8、2.3.2或2.3.4。</p>
+<blockquote>
+<p><strong>本段主线：</strong>整理第二章的证明工具。<br />
+<strong>当前环节：</strong>教材回顾反证法、“当且仅当”和三组基判别。<br />
+<strong>这一步只做：</strong>把问题类型与正确命题配对。</p>
+</blockquote>
+<p>来源说明：证明方法与三命题对照来自后记；A/B新增。</p>
+<h2 id="方法先辨认问题输入">方法：先辨认问题输入</h2>
+<ul>
+<li><strong>命题2.2.8：</strong>只给X上的候选子集族，问它能否生成
+<strong>某个拓扑</strong>；检查覆盖与基元素交。</li>
+<li><strong>命题2.3.2：</strong>已经给定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>,</mo><mi>τ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X,\tau)</annotation></semantics></math>，问候选开集族是否为
+<strong>这个τ</strong> 的基；检查每个开集每个点的内部细化。</li>
+<li><strong>命题2.3.4：</strong>两组基各自生成拓扑，问两拓扑是否相同；检查双向局部细化。</li>
+</ul>
+<p>“当且仅当”证明必须覆盖两个方向；否定开性或候选条件时，反证法和一个失败见证常常最有效。</p>
+<h2 id="例题-a">例题 A</h2>
+<p>要证明有理端点开区间生成的正是欧几里得拓扑，应选哪个命题？为什么命题2.2.8不够？</p>
+<h2 id="a-解答">A 解答</h2>
+<details>
+<summary>
+展开 A
+</summary>
+<p>应使用命题2.3.2，逐点证明每个欧几里得开集内都有有理端点区间。命题2.2.8只能证明候选族生成某个拓扑，不能识别它就是预先指定的欧几里得拓扑。</p>
+</details>
+<span id="q-T02-04-M002-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
+<p>把下列任务分别匹配到命题：①证明圆盘族能生成某拓扑；②证明圆盘基与矩形基生成同一拓扑；③证明圆盘族是已给欧几里得拓扑的基。</p>
+<span id="answer-T02-04-M002-B" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
+<details>
+<summary>
+尝试 B 后展开答案
+</summary>
+<p>①用2.2.8，检查覆盖与圆盘交可由小圆盘并成。②用2.3.4，检查圆盘与矩形双向局部细化。③用2.3.2，证明圆盘本身开且每个欧几里得开集点有内部圆盘。</p>
+</details>
+<h2 id="精选复习">精选复习</h2><details class="prepared-review"><summary>精选复习内容（仅回看，不记分）</summary><p class="notice">这里保留课件中的预设问题与答案。计分复习在讲练间隙进行；只回看不会改变排期。</p><h3 id="t02-04-r001">T02-04-R001</h3>
+<p><strong>问题：</strong>2.2.8、2.3.2、2.3.4分别回答什么问题？</p>
+<details>
+<summary>
+回忆后查看答案
+</summary>
+<p>依次是：候选族能否生成某个拓扑；候选开集族是否为给定拓扑的基；两组基是否生成同一拓扑。</p>
+</details>
+</details><h2 id="简短回顾">简短回顾</h2>
+<p>三个命题的公式相似，但目标不同；先看拓扑是否已给定、是否正在比较两组基，才能选对工具。</p>
+</article></div>
+<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T02-04-M002.md">Markdown 原文（含公式）</a></footer>
+</main></body></html>
