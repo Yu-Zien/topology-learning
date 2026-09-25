@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.8">
+<meta name="application-version" content="0.3.9">
 <title>同胚映射的四个条件 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -44,7 +44,7 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 
 <div id="app-view"><article id="lesson-content" data-module-id="T04-02-M001"><h1 id="同胚映射的四个条件">同胚映射的四个条件</h1>
 <p>固定编号：T04-02-M001<br />
-内容版本：0.1<br />
+内容版本：0.2<br />
 教材出处：《没有眼泪的拓扑》，书内第 62—63 页 / PDF 第 62—63
 页，定义4.2.1；Q21。<br />
 学习目标：完整读出同胚映射的双射、逆像开和像开四项条件。</p>
@@ -81,7 +81,14 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <summary>
 展开 A
 </summary>
-<p>双射只对应点。若某个开集的像不是开集，或目标开集的逆像不是开集，开集结构就没有被双向保留，所以拓扑不同。</p>
+<p>双射只对应点。若某个源开集的像不是开集，或某个目标开集的逆像不是开集，只能说明<strong>这个双射</strong>没有双向保留开集，因此它不是同胚映射。</p>
+<p>这还不能断定两个空间不同胚，因为也许存在另一个双射满足四项条件。例如同一空间
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>τ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mi>X</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">
+X=\{a,b\},\qquad \tau=\{\varnothing,\{a\},X\}
+</annotation></semantics></math></div> 到自身的交换映射把开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a\}</annotation></semantics></math>
+送到不开的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{b\}</annotation></semantics></math>，所以交换映射不是同胚；恒等映射却显然是同胚。要证明两个空间不同胚，必须排除所有可能的同胚，而不能只否定一个候选映射。</p>
 </details>
 <span id="q-T04-02-M001-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
 <p>按“集合条件”和“拓扑条件”给四项条件分组。</p>
@@ -95,5 +102,5 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <h2 id="简短回顾">简短回顾</h2>
 <p>同胚是既双射又双向保留开集的映射。</p>
 </article></div>
-<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T04-02-M001.md">Markdown 原文（含公式）</a></footer>
+<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T04-02-M001.md">Markdown 原文（含公式）</a></footer>
 </main></body></html>

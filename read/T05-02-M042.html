@@ -2,8 +2,8 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.8">
-<title>原题11(iii)：局部路径连通时路径分量闭开 · 拓扑学习</title><style>
+<meta name="application-version" content="0.3.9">
+<title>原题11(iii)：每点有路径连通邻域时路径分量闭开 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
 body { margin: 0; font-size: 17px; line-height: 1.9; }
@@ -43,18 +43,21 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <body><main class="sheet"><nav><a href="index.html">只读课件目录</a><a href="../index.html">进入学习页面</a></nav>
 
 <div id="app-view"><article id="lesson-content" data-module-id="T05-02-M042"><h1
-id="原题11iii局部路径连通时路径分量闭开">原题11(iii)：局部路径连通时路径分量闭开</h1>
+id="原题11iii每点有路径连通邻域时路径分量闭开">原题11(iii)：每点有路径连通邻域时路径分量闭开</h1>
 <p>固定编号：T05-02-M042<br />
-内容版本：0.1<br />
+内容版本：0.2<br />
 教材出处：《没有眼泪的拓扑》，书内第 84 页 / PDF 第 84
 页，习题5.2第11(iii)题。<br />
 学习目标：由每点具有路径连通邻域，证明每个路径分量逐点包含开邻域，再由分量划分推出其补集开。</p>
 <blockquote>
-<p><strong>本段主线：</strong>说明局部路径连通怎样让路径分量成为可见的闭开块。<br />
+<p><strong>本段主线：</strong>说明“每点有一个路径连通邻域”怎样让路径分量成为可见的闭开块。<br />
 <strong>当前环节：</strong>先证明路径分量开，再利用其他路径分量也开推出闭。<br />
 <strong>这一步只做：</strong>把与分量相交的路径连通邻域吸收到该分量中。</p>
 </blockquote>
 <p>来源说明：B为教材原题11(iii)；A为新增吸收步骤。</p>
+<h2 id="术语说明">术语说明</h2>
+<p>本题只假设每个点<strong>存在一个</strong>路径连通邻域。通常的“局部路径连通”要求更强：对点x的每个给定邻域U，都能找到路径连通的开邻域V，使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>V</mi><mo>⊆</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in V\subseteq U</annotation></semantics></math>。标准的局部路径连通性当然蕴含本题假设，但下面的证明只使用教材写出的较弱条件。</p>
 <h2 id="例题-a">例题 A</h2>
 <p>若P是路径分量，N路径连通且
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>∩</mo><mi>P</mi><mo>≠</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">N\cap P\ne\varnothing</annotation></semantics></math>，为什么
@@ -84,7 +87,7 @@ x\in U\subseteq N.
 <p>路径分量两两相同或不交，并覆盖X。P的补集是其余路径分量的并；每个路径分量都按上述论证开，所以补集开。因此P也闭。</p>
 </details>
 <h2 id="精选复习">精选复习</h2><details class="prepared-review"><summary>精选复习内容（仅回看，不记分）</summary><p class="notice">这里保留课件中的预设问题与答案。计分复习在讲练间隙进行；只回看不会改变排期。</p><h3 id="t05-02-r016">T05-02-R016</h3>
-<p><strong>问题：</strong>局部路径连通时，为什么路径分量既开又闭？</p>
+<p><strong>问题：</strong>每点有一个路径连通邻域时，为什么路径分量既开又闭？</p>
 <details>
 <summary>
 回忆后查看答案
@@ -92,7 +95,7 @@ x\in U\subseteq N.
 <p>分量中每点的路径连通邻域与分量相交，因而整个被吸收进分量；其中再取开邻域，说明分量开。其他路径分量也开，原分量的补集是它们的并，所以原分量闭。</p>
 </details>
 </details><h2 id="简短回顾">简短回顾</h2>
-<p>局部路径连通让每个路径分量逐点含有开片；分量划分再把开放性转成闭性。</p>
+<p>每点存在路径连通邻域，使每个路径分量逐点含有开片；分量划分再把开放性转成闭性。</p>
 </article></div>
-<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T05-02-M042.md">Markdown 原文（含公式）</a></footer>
+<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T05-02-M042.md">Markdown 原文（含公式）</a></footer>
 </main></body></html>

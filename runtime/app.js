@@ -11,7 +11,7 @@ const now = () => testConfig?.now || new Date().toISOString();
 const esc = x => String(x ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const uuid = () => crypto.randomUUID();
 const fmt = iso => iso ? new Date(iso).toLocaleString('zh-CN', {hour12:false}) : '尚无排期';
-let catalog, store, state, route = {view:'home'}, epoch = 0, busy = false, positionTimer, restoring = false, retryAction = null;
+let catalog, store, state, route = {view:'home'}, epoch = 0, busy = false, busyPromise = Promise.resolve(), releaseBusy = null, positionTimer, restoring = false, retryAction = null;
 const drafts = new Map();
 const htmlCache = new Map();
 const sheet = document.querySelector('main.sheet');
@@ -39,6 +39,15 @@ function addHTML(parent, html, cls='') {const n=document.createElement('div'); n
 function task(){return currentTask(state,catalog);}
 function plan(){return sectionPlans(catalog).find(s=>s.id===task()?.sectionId);}
 function moduleById(id) {return catalog.modules.find(m=>m.id===id);}
+function orderedModules(){return catalog.modules.filter(m=>m.status!=='unwritten').slice().sort((a,b)=>a.order-b.order);}
+function adjacentModule(id,offset){const items=orderedModules(),index=items.findIndex(m=>m.id===id);return index<0?null:items[index+offset]||null;}
+function studyFocusModule(){
+  const t=task();
+  if(state.study?.block?.afterModuleId)return state.study.block.afterModuleId;
+  if(t?.moduleId)return t.moduleId;
+  const section=sectionPlans(catalog).find(s=>s.id===t?.sectionId);
+  return section?.moduleIds.at(-1)||null;
+}
 function question(id) {return catalog.exercises.find(q=>q.id===id) || catalog.practice.find(q=>q.id===id) || catalog.reviews.find(q=>q.id===id);}
 function activeAttempts(id) {return state.attempts.filter(a=>a.questionId===id&&!a.undoneAt);}
 function lastAttempt(id) {return activeAttempts(id).at(-1);}
@@ -51,13 +60,16 @@ function showError(error, retry=null) {
   renderStatus('保存失败，请重试',true);
 }
 function clearError(){errorBox.hidden=true;errorBox.replaceChildren();retryAction=null;}
+function beginBusy(){busy=true;busyPromise=new Promise(resolve=>{releaseBusy=resolve;});}
+function endBusy(){busy=false;releaseBusy?.();releaseBusy=null;}
+async function waitForIdle(){if(busy)await busyPromise;}
 async function commit(action, after=null) {
   if(busy) return false;
-  busy=true; renderStatus('正在保存…'); clearError();
+  beginBusy(); renderStatus('正在保存…'); clearError();
   try {
     const next=await store.dispatch(action); if(!state||next.revision>=state.revision)state=next;
-    renderStatus('已保存到当前浏览器');busy=false;
-  } catch(e) {busy=false;showError(e,()=>commit(action,after));return false;}
+    renderStatus('已保存到当前浏览器');endBusy();
+  } catch(e) {endBusy();showError(e,()=>commit(action,after));return false;}
   if(after)try{await after();}catch(e){errorBox.hidden=false;errorBox.textContent=`记录已保存，但页面显示失败：${e.message}。可刷新后继续。`;}
   return true;
 }
@@ -84,9 +96,13 @@ function wirePresentation(node,id) {
   node.querySelectorAll('details').forEach((d,i)=>{d.dataset.viewKey=id+':d'+i;d.addEventListener('toggle',queuePosition);});
 }
 function queuePosition(){clearTimeout(positionTimer);if(!restoring)positionTimer=setTimeout(flushPosition,180);}
-async function flushPosition(){
-  clearTimeout(positionTimer);const p=presentation();
-  if(p&&!busy&&JSON.stringify(p)!==JSON.stringify(state.study?.presentation))await commit({type:'presentation',presentation:p});
+async function flushPosition({required=false}={}){
+  clearTimeout(positionTimer);await waitForIdle();const p=presentation();
+  if(p&&JSON.stringify(p)!==JSON.stringify(state.study?.presentation)){
+    const saved=await commit({type:'presentation',presentation:p});
+    if(!saved&&required)return false;
+  }
+  return true;
 }
 function restorePresentation(node,id,anchor='') {
   restoring=true;
@@ -101,8 +117,9 @@ function restorePresentation(node,id,anchor='') {
 }
 window.addEventListener('scroll',queuePosition,{passive:true});
 
-async function go(r,{push=true}={}) {
-  clearTimeout(positionTimer); const n=++epoch;
+async function go(r,{push=true,flush=true}={}) {
+  if(flush&&!await flushPosition({required:true}))return false;
+  const n=++epoch;
   state=await store.read(); if(n!==epoch)return;
   route={...r}; clearError();
   if(route.view==='review')route={view:'main'};
@@ -119,12 +136,18 @@ async function go(r,{push=true}={}) {
   else if(route.view==='exercises'||route.view==='exercise')renderExercises(route.questionId);
   else if(route.view==='lesson')await renderLesson(n);
   if(route.view!=='lesson'&&!(route.view==='main'&&state.study?.block))window.scrollTo(0,0);
+  return true;
 }
 async function continueCourse({schedule=true}={}){
   state=await store.read();
   if(!state.study&&!await commit({type:'syncContent'}))return;
   if(schedule&&!await commit({type:'continueSession'}))return;
   await go({view:'main'});
+}
+async function returnToStudy(){
+  if(!await flushPosition({required:true}))return;
+  state=await store.read();
+  await go({view:'main'},{flush:false});
 }
 function renderHome(){
   view.innerHTML='<h1>拓扑课件 · 继续学习</h1>';
@@ -171,16 +194,28 @@ async function lessonHTML(m) {
   }
   return htmlCache.get(m.href);
 }
+function lessonNavigation(parent,m,{bottom=false}={}){
+  const row=actions(parent),previous=adjacentModule(m.id,-1),next=adjacentModule(m.id,1);
+  row.classList.add('lesson-navigation');
+  row.append(button('上一知识点',()=>previous&&go({view:'lesson',moduleId:previous.id,mode:'browse'}),{disabled:!previous,name:'browse-prev'}));
+  if(route.mode==='browse')row.append(button('下一知识点',()=>next&&go({view:'lesson',moduleId:next.id,mode:'browse'}),{disabled:!next,name:'browse-next'}));
+  row.append(button('课程目录',()=>go({view:'progress'}),{name:'lesson-catalog'}));
+  if(route.mode==='browse')row.append(button('回到正在学习',returnToStudy,{primary:true,name:'return-study'}));
+  else if(bottom)row.append(button('本知识点学完，继续',()=>{
+    clearTimeout(positionTimer);
+    commit({type:'complete',moduleId:m.id},()=>continueCourse({schedule:false}));
+  },{primary:true,name:'complete-module'}));
+  return row;
+}
 async function renderLesson(n) {
   const m=moduleById(route.moduleId);if(!m){view.innerHTML='<p>没有找到课件，请从目录选择。</p>';return;}
   view.innerHTML='<p>正在读取课件…</p>';
   try {
     const html=await lessonHTML(m);if(n!==epoch)return;
     view.replaceChildren();
-    const top=addHTML(view,`<div class="runtime-status-line"><span>${route.mode==='new'?'新课讲练':'临时回看'}</span><span>制作状态：${m.status==='usable'?'可用':'待核验'}</span><span>本轮学习：${state.modules[m.id]?.completedAt?'已完成':state.modules[m.id]?.startedAt?'进行中':'未开始'}</span></div>`,'runtime-toolbar');
+    const top=addHTML(view,`<div class="runtime-status-line"><span>${route.mode==='new'?'新课讲练':'回看中，不改变学习进度'}</span><span>制作状态：${m.status==='usable'?'可用':'待核验'}</span><span>本轮学习：${state.modules[m.id]?.completedAt?'已完成':state.modules[m.id]?.startedAt?'进行中':'未开始'}</span></div>`,'runtime-toolbar');
     if(m.status!=='usable')addHTML(top,`<p>${esc(m.statusText||'本课存在需要核查的说明。可查阅，不计入正常完成与排期。')}</p>`,'runtime-warning');
-    const a=actions(top);
-    if(route.mode==='browse')a.append(button('继续学习',continueCourse,{name:'return-course'}));
+    lessonNavigation(top,m);
 
     const article=document.createElement('article');article.id='lesson-content';article.dataset.moduleId=m.id;article.append(fragments(html));view.append(article);
     if(route.mode==='new')for(const id of m.practice)drafts.delete(id);
@@ -193,10 +228,10 @@ async function renderLesson(n) {
       const isExercise=exerciseStart>=0&&section.moduleIds.indexOf(m.id)>=exerciseStart;
       addHTML(top,`<p class="runtime-small">§${esc(section.number)} · ${isExercise?'本节教材习题与配套讲练':'微模块讲练'} → 本节收尾。当前只需完成本模块的讲练。</p>`);
       const bottom=addHTML(view,'<p>本轮学到这里即可继续。题目可以不评价；还不会也不需要订正或通关。</p>','runtime-toolbar');
-      actions(bottom).append(button('本知识点学完，继续',()=>{
-        clearTimeout(positionTimer);
-        commit({type:'complete',moduleId:m.id},()=>continueCourse({schedule:false}));
-      },{primary:true,name:'complete-module'}));
+      lessonNavigation(bottom,m,{bottom:true});
+    }else if(route.mode==='browse'){
+      const bottom=addHTML(view,'<p>当前是只读回看；翻页和返回都不会完成知识点或改变复习排期。</p>','runtime-toolbar');
+      lessonNavigation(bottom,m,{bottom:true});
     }
     wirePresentation(article,m.id);
     if(route.mode==='new')restorePresentation(article,m.id,route.anchor||'');
@@ -292,24 +327,72 @@ function renderBoundary(){
 }
 function renderProgress() {
   const mods=catalog.modules.filter(m=>m.kind==='module'),usable=mods.filter(m=>m.status==='usable'),done=usable.filter(m=>state.modules[m.id]?.completedAt);
-  view.innerHTML=`<h1>目录与进度</h1><p>当前可用微模块中，本轮已完成 <strong>${done.length} / ${usable.length}</strong>。另有 ${mods.filter(m=>m.status!=='usable').length} 个已编写待核模块；未生成章节仍待制作。</p><p class="runtime-small">制作状态与学习状态分别列出，不显示整体掌握率。</p>`;
+  const current=task(),focusId=studyFocusModule(),currentSection=sectionPlans(catalog).find(s=>s.id===current?.sectionId||s.moduleIds.includes(focusId)||s.optionalChecks?.includes(focusId));
+  const locationText=state.study?.block?'知识点间隙 · 简短回顾':taskTitle(current,catalog);
+  view.innerHTML=`<h1>课程目录</h1><p>按章、节和知识点定位。打开目录条目只进入回看，不改变真实学习位置。</p>`;
+  const location=addHTML(view,`<h2>当前正在学习</h2><p><strong>${esc(locationText)}</strong>${focusId?`<br><span class="runtime-small">${esc(focusId)} · ${esc(moduleById(focusId)?.title||'')}</span>`:''}</p><p class="runtime-small">已完成 ${done.length} / ${usable.length} 个可用微模块。制作状态与学习状态分开显示。</p>`,'runtime-card current-location');
+  const locationActions=actions(location);
+  locationActions.append(button('回到正在学习',returnToStudy,{primary:true,name:'return-study'}));
+
+  const finder=addHTML(view,'<label for="catalog-search"><strong>查找知识点</strong></label><input id="catalog-search" type="search" placeholder="输入标题、编号或术语"><p id="catalog-search-status" class="runtime-small" aria-live="polite"></p>','catalog-finder');
+  const tree=document.createElement('div');tree.className='course-tree';view.append(tree);
+  const chapterMap=new Map();
+  for(const section of sectionPlans(catalog)){
+    const chapter=section.number.split('.')[0];
+    if(!chapterMap.has(chapter))chapterMap.set(chapter,[]);
+    chapterMap.get(chapter).push(section);
+  }
+  for(const [chapter,sections] of chapterMap){
+    const chapterNode=document.createElement('details');chapterNode.className='catalog-chapter';chapterNode.dataset.chapter=chapter;
+    chapterNode.open=currentSection?.number.split('.')[0]===chapter;
+    const total=sections.reduce((n,s)=>n+orderedModules().filter(m=>m.section===s.number).length,0);
+    const chapterSummary=document.createElement('summary');chapterSummary.textContent=`第 ${chapter} 章 · ${total} 个知识点`;chapterNode.append(chapterSummary);
+    for(const section of sections){
+      const sectionNode=document.createElement('details');sectionNode.className='catalog-section';sectionNode.dataset.section=section.id;sectionNode.open=section.id===currentSection?.id;
+      const sectionModules=orderedModules().filter(m=>m.section===section.number);
+      const sectionDone=sectionModules.filter(m=>state.modules[m.id]?.completedAt).length;
+      const summary=document.createElement('summary');summary.textContent=`§${section.number} ${section.title} · ${sectionDone}/${sectionModules.length}`;sectionNode.append(summary);
+      const list=document.createElement('ul');list.className='runtime-list catalog-list';sectionNode.append(list);
+      for(const m of sectionModules){
+        const prog=state.modules[m.id],li=document.createElement('li');li.className='catalog-item';li.dataset.moduleId=m.id;
+        li.dataset.search=[m.id,m.title,m.goal,...(m.anchors||[]).map(a=>a.label)].join(' ').toLocaleLowerCase('zh-CN');
+        if(m.id===focusId){li.classList.add('current');li.dataset.current='true';}
+        li.innerHTML=`<strong>${esc(m.title)}</strong><span class="catalog-id">${esc(m.id)}</span><p class="runtime-small">${prog?.completedAt?'已完成本轮':prog?.startedAt?'正在学习':'未学习'} · ${m.status==='usable'?'课件可用':'内容待核'}${m.kind==='check'?' · 阶段任务':''}</p>`;
+        actions(li).append(button('打开回看',()=>go({view:'lesson',moduleId:m.id,mode:'browse'}),{name:'browse-module'}));list.append(li);
+      }
+      chapterNode.append(sectionNode);
+    }
+    tree.append(chapterNode);
+  }
+  const locateCurrent=()=>{
+    const item=tree.querySelector(`[data-module-id="${CSS.escape(focusId||'')}"]`);
+    if(!item){renderStatus('当前任务不是知识点页面，可直接回到正在学习');return;}
+    let node=item.parentElement;while(node&&node!==tree){if(node.tagName==='DETAILS')node.open=true;node=node.parentElement;}
+    item.scrollIntoView({block:'center'});item.focus?.();renderStatus('已定位当前知识点');
+  };
+  locationActions.prepend(button('定位当前',locateCurrent,{name:'locate-current',disabled:!focusId}));
+  const search=finder.querySelector('#catalog-search'),searchStatus=finder.querySelector('#catalog-search-status');
+  search.addEventListener('input',()=>{
+    const query=search.value.trim().toLocaleLowerCase('zh-CN');let shown=0;
+    tree.querySelectorAll('.catalog-item').forEach(item=>{item.hidden=!!query&&!item.dataset.search.includes(query);if(!item.hidden)shown+=1;});
+    tree.querySelectorAll('.catalog-section').forEach(section=>{const has=[...section.querySelectorAll('.catalog-item')].some(item=>!item.hidden);section.hidden=!has;if(query&&has)section.open=true;});
+    tree.querySelectorAll('.catalog-chapter').forEach(chapter=>{const has=[...chapter.querySelectorAll('.catalog-section')].some(section=>!section.hidden);chapter.hidden=!has;if(query&&has)chapter.open=true;});
+    searchStatus.textContent=query?`找到 ${shown} 个知识点`:`共 ${catalog.modules.length} 个知识点与阶段任务`;
+  });
+  search.dispatchEvent(new Event('input'));
+
+  const management=document.createElement('details');management.className='runtime-management';
+  const managementSummary=document.createElement('summary');managementSummary.textContent='进度、设置与备份';management.append(managementSummary);view.append(management);
+  addHTML(management,'<p class="runtime-small">以下保留制作说明、旧确认记录、暂缓项、复习间隔和备份工具。</p>');
   for(const section of sectionPlans(catalog)){
     const count=section.requiredExercises.filter(id=>state.flow?.confirmations[id]).length;
-    const c=addHTML(view,`<h2>§${esc(section.number)} 本次安排</h2><p>${esc(section.scopeNote)}</p><p>旧版原题做过证据：${count} 项，仅保留历史，不代表会做。</p><p>当前任务：${esc(taskTitle(task(),catalog))}。从目录继续学习时，会带回尚未结束的知识点；已学内容始终可以回看。</p>`,'runtime-card');
+    const c=addHTML(management,`<h2>§${esc(section.number)} 制作与旧记录</h2><p>${esc(section.scopeNote)}</p><p>旧版原题做过证据：${count} 项，仅保留历史，不代表会做。</p>`,'runtime-card');
     for(const id of section.requiredExercises){const q=question(id);addHTML(c,`<p class="runtime-small">原题 ${esc(q?.number)} · ${state.flow?.confirmations[id]?'有旧版做过记录':'不要求逐题确认'}</p>`);}
     for(const [id,d] of Object.entries(state.flow?.deferred||{}))if(d.sectionId===section.id)addHTML(c,`<p class="runtime-small">已暂缓（内容问题）：${esc(id)} · ${esc(fmt(d.at))}，未记为学过或做过。</p>`);
   }
-  const list=document.createElement('ul');list.className='runtime-list';view.append(list);
-  for(const m of catalog.modules){
-    const prog=state.modules[m.id],li=document.createElement('li');
-    li.innerHTML=`<strong>${esc(m.id)} · ${esc(m.title)}</strong><p class="runtime-small">制作：${m.status==='usable'?'可用':'待核验'}；个人：${prog?.completedAt?'已完成本轮':prog?.startedAt?'进行中':'未开始'}${m.kind==='check'?' · 阶段任务':''}</p>`;
-    const a=actions(li);a.append(button('打开回看',()=>go({view:'lesson',moduleId:m.id,mode:'browse'})));
-    if(m.status==='usable'&&!m.delayed)a.append(button('从这里继续学习',()=>continueCourse({schedule:false})));
-    list.append(li);
-  }
-  const settings=addHTML(view,`<h2>讲练间隙</h2><label>每学完 <input type="number" id="review-every" min="1" max="20" value="${state.settings.reviewEvery}"> 个新知识点，检查精选 FSRS 回顾</label><p class="runtime-small">只计首次完成的知识点，自评、查资料和重复完成不增加次数。达到次数而暂无可安排项目时，后续知识点结束会继续检查；只有实际呈现精选 FSRS 项的块才重新计数；普通再练单独成块不会清零。课间重新开始或无新课时，也会检查到期巩固。</p><label>每次精选 FSRS 上限 <input type="number" id="review-limit" min="1" max="10" value="${state.settings.reviewLimit}"> 项（实际最多 2 项）</label><p class="runtime-small">普通题再练在知识点结束时另行检查，最多另加 1 项，不占上述上限。因此上限设为 1 时合计最多 2 项，设为 2 或更大时合计最多 3 项；不要求做完或答对才能继续。</p>`,'runtime-card');
+  const settings=addHTML(management,`<h2>讲练间隙</h2><label>每学完 <input type="number" id="review-every" min="1" max="20" value="${state.settings.reviewEvery}"> 个新知识点，检查精选 FSRS 回顾</label><p class="runtime-small">只计首次完成的知识点，自评、查资料和重复完成不增加次数。达到次数而暂无可安排项目时，后续知识点结束会继续检查；只有实际呈现精选 FSRS 项的块才重新计数；普通再练单独成块不会清零。课间重新开始或无新课时，也会检查到期巩固。</p><label>每次精选 FSRS 上限 <input type="number" id="review-limit" min="1" max="10" value="${state.settings.reviewLimit}"> 项（实际最多 2 项）</label><p class="runtime-small">普通题再练在知识点结束时另行检查，最多另加 1 项，不占上述上限。因此上限设为 1 时合计最多 2 项，设为 2 或更大时合计最多 3 项；不要求做完或答对才能继续。</p>`,'runtime-card');
   actions(settings).append(button('保存间隙设置',()=>commit({type:'settings',reviewEvery:Number(settings.querySelector('#review-every').value),reviewLimit:Number(settings.querySelector('#review-limit').value)})));
-  const backups=addHTML(view,'<h2>备份与恢复</h2><p>备份包含继续位置、完成状态、作答日志、精选复习卡及设置。更换浏览器或清除网站数据前，请先导出。</p>','runtime-card');
+  const backups=addHTML(management,'<h2>备份与恢复</h2><p>备份包含继续位置、完成状态、作答日志、精选复习卡及设置。更换浏览器或清除网站数据前，请先导出。</p>','runtime-card');
   addHTML(backups,'<p class="runtime-small">“导出备份”保存当前进度。“升级前备份”只在本浏览器首次把已有旧状态写成连续学习格式时保留一次，不随以后的学习更新；新用户或仅查资料时不会生成。它不能代替当前进度备份。</p>');
   const a=actions(backups);a.append(button('导出备份',()=>exportBackup(),{name:'export-backup'}),button('导出升级前备份',()=>exportBackup(true),{name:'export-before-upgrade'}));
   const input=document.createElement('input');input.type='file';input.accept='.json,application/json';input.id='backup-file';input.setAttribute('aria-label','选择学习记录备份');backups.append(input);
@@ -321,9 +404,9 @@ function renderProgress() {
       const backup=JSON.parse(await file.text()),result=validateBackup(backup,catalog);
       const c=addHTML(importArea,`<h3>已校验，等待你确认替换</h3><p>此备份含 ${result.state.attempts.length} 条自评事件、${Object.keys(result.state.flow?.confirmations||{}).length} 道练习确认及 ${Object.keys(result.state.flow?.deferred||{}).length} 处内容暂缓。替换会覆盖当前浏览器的现有学习记录。</p><p>${esc((result.warnings||[]).join('；'))}</p>`,'runtime-confirm');
       const aa=actions(c);aa.append(button('先导出当前备份',()=>exportBackup()),button('确认替换当前学习记录',async()=>{
-        if(busy)return;busy=true;renderStatus('正在恢复…');
-        try{const r=await store.replace(backup);state=r.state;drafts.clear();busy=false;renderStatus('备份已恢复并保存');await go({view:'progress'});}
-        catch(e){busy=false;showError(e);}
+        if(busy)return;beginBusy();renderStatus('正在恢复…');
+        try{const r=await store.replace(backup);state=r.state;drafts.clear();endBusy();renderStatus('备份已恢复并保存');await go({view:'progress'});}
+        catch(e){endBusy();showError(e);}
       },{name:'confirm-restore'}),button('取消',()=>{importArea.replaceChildren();input.value='';}));
     }catch(e){addHTML(importArea,`<p>备份无效，未修改现有记录：${esc(e.message)}</p>`,'runtime-error');}
   });

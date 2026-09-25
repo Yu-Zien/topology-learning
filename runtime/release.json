@@ -1,9 +1,9 @@
 {
-  "version": "0.3.8",
-  "contentVersion": "9d262816a98a6805ab3122e85de8a7e7ec0f760910a4cd4dd4cf3fe1aab938d8",
+  "version": "0.3.9",
+  "contentVersion": "6a8963c462653423dd2334c36ec8732ea81ea547a3417321c03d78240c6f87ac",
   "runtimeSha256": {
-    "app.css": "cb53d3c96d71ca4de7887eb4ca3aa0a33c1c91726e2d0db2580a37703a231968",
-    "app.js": "45578b36de8ecb57847b2ac1f5e6b2a69d57799ee0b7c3b8510a4ab32e67d1c5",
+    "app.css": "cf72b44950b9f0bfe394f49e4fb3acb4d0f5edc32fdb0dedc240032e1389acc7",
+    "app.js": "cc9074ac63685b8c4fa0575e1ce363a73b59cc994e2e157a66a8827100f54c68",
     "db.js": "988eda05832e5a412648080bad62508908800ee30b7622c8eaee399434082e39",
     "flow.js": "1244b3931a27d9211f2d308f9ca33a115198ef82680d9c5df256b295490b646e",
     "scheduler.js": "30784e5913e3bddac39b8ba691ea9829ef2cb2afd975b8466afaa54483cf905c",

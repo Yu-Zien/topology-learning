@@ -1,6 +1,6 @@
 {
-  "appVersion": "0.3.8",
-  "contentVersion": "9d262816a98a6805ab3122e85de8a7e7ec0f760910a4cd4dd4cf3fe1aab938d8",
+  "appVersion": "0.3.9",
+  "contentVersion": "6a8963c462653423dd2334c36ec8732ea81ea547a3417321c03d78240c6f87ac",
   "modules": [
     {
       "id": "T01-01-M001",
@@ -2398,7 +2398,7 @@
       "page": "44",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@120af2c1a2d2",
+      "version": "0.2@246a1636cea3",
       "html": "T02-03-M026.html",
       "markdown": "T02-03-M026.md"
     },
@@ -2744,11 +2744,11 @@
     },
     {
       "id": "T03-01-M021",
-      "title": "原题1(a)(i)：底集X的全部极限点",
+      "title": "编辑补题：底集X的全部极限点",
       "page": "50",
       "status": "usable",
-      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@2c653250bf41",
+      "statusText": "可用：原页复现＋来源分类修订＋AI逐段复核",
+      "version": "0.2@66158cf27f3c",
       "html": "T03-01-M021.html",
       "markdown": "T03-01-M021.md"
     },
@@ -2794,11 +2794,11 @@
     },
     {
       "id": "T03-01-M026",
-      "title": "原题1(b)：由极限点集求五个闭包",
+      "title": "原题1(b)：由极限点集求四个闭包",
       "page": "50",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@09415837a974",
+      "version": "0.2@ceaf32ea5ca8",
       "html": "T03-01-M026.html",
       "markdown": "T03-01-M026.md"
     },
@@ -2808,7 +2808,7 @@
       "page": "50",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@c946f7e72964",
+      "version": "0.2@1f012bb37b3f",
       "html": "T03-01-M027.html",
       "markdown": "T03-01-M027.md"
     },
@@ -3718,7 +3718,7 @@
       "page": "59",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@f9fa18e14d6a",
+      "version": "0.2@2891384bc9e1",
       "html": "T04-01-M009.html",
       "markdown": "T04-01-M009.md"
     },
@@ -4078,7 +4078,7 @@
       "page": "62—63",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@b711d4641194",
+      "version": "0.2@07311e178907",
       "html": "T04-02-M001.html",
       "markdown": "T04-02-M001.md"
     },
@@ -4268,7 +4268,7 @@
       "page": "67",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@0d4e509ceaea",
+      "version": "0.2@7c7adaf58bc3",
       "html": "T04-02-M020.html",
       "markdown": "T04-02-M020.md"
     },
@@ -4678,7 +4678,7 @@
       "page": "72",
       "status": "usable",
       "statusText": "可用：中英文原页与Ginsburg–Sands来源核对＋完整Ramsey偏序证明",
-      "version": "0.2@0e6be5dc1b50",
+      "version": "0.3@2537fe250d4c",
       "html": "T04-03-M031.html",
       "markdown": "T04-03-M031.md"
     },
@@ -5188,7 +5188,7 @@
       "page": "81",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@438ff8ec70cc",
+      "version": "0.2@5a811b908632",
       "html": "T05-02-M009.html",
       "markdown": "T05-02-M009.md"
     },
@@ -5378,7 +5378,7 @@
       "page": "83",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@b45f026362ae",
+      "version": "0.2@50ad463a3303",
       "html": "T05-02-M028.html",
       "markdown": "T05-02-M028.md"
     },
@@ -5514,11 +5514,11 @@
     },
     {
       "id": "T05-02-M042",
-      "title": "原题11(iii)：局部路径连通时路径分量闭开",
+      "title": "原题11(iii)：每点有路径连通邻域时路径分量闭开",
       "page": "84",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@319087061085",
+      "version": "0.2@f4801a897216",
       "html": "T05-02-M042.html",
       "markdown": "T05-02-M042.md"
     },

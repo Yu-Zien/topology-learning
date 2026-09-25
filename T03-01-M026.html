@@ -2,8 +2,8 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.8">
-<title>原题1(b)：由极限点集求五个闭包 · 拓扑学习</title><style>
+<meta name="application-version" content="0.3.9">
+<title>原题1(b)：由极限点集求四个闭包 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
 body { margin: 0; font-size: 17px; line-height: 1.9; }
@@ -42,19 +42,19 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <link rel="stylesheet" href="runtime/app.css"></head>
 <body><main class="sheet"><nav aria-label="课程导航"><a href="index.html">继续学习</a><a href="index.html?view=exercises">教材习题</a><a href="index.html?view=progress">目录与进度</a></nav>
 <p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
-<div id="app-view"><article id="lesson-content" data-module-id="T03-01-M026"><h1 id="原题1b由极限点集求五个闭包">原题1(b)：由极限点集求五个闭包</h1>
+<div id="app-view"><article id="lesson-content" data-module-id="T03-01-M026"><h1 id="原题1b由极限点集求四个闭包">原题1(b)：由极限点集求四个闭包</h1>
 <p>固定编号：T03-01-M026<br />
-内容版本：0.1<br />
+内容版本：0.2<br />
 教材出处：《没有眼泪的拓扑》，书内第 50 页 / PDF 第 50
 页，习题3.1第1(b)题。<br />
-学习目标：对原题1(a)的五个集合分别计算
+学习目标：对原题1(a)明确列出的四个集合分别计算
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>A</mi><mo accent="true">¯</mo></mover><mo>=</mo><mi>A</mi><mo>∪</mo><msup><mi>A</mi><mo>′</mo></msup></mrow><annotation encoding="application/x-tex">\overline A=A\cup A&#39;</annotation></semantics></math>，保留孤立原点并加入外部极限点。</p>
 <blockquote>
 <p><strong>本段主线：</strong>完成有限拓扑原题1的闭包部分。<br />
-<strong>当前环节：</strong>五个极限点集已经逐点求出。<br />
+<strong>当前环节：</strong>四个原题极限点集已经逐点求出；M021另有一个编辑补题。<br />
 <strong>这一步只做：</strong>逐项与原集合取并，不重新猜闭包。</p>
 </blockquote>
-<p>来源说明：B为教材原题1(b)；A与完整汇总新增。</p>
+<p>来源说明：B为教材原题1(b)，只处理第1(a)原页明确列出的(ii)—(v)四个集合；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>的闭包计算保留在M021的编辑补题中，不冒充第五个原题对象。A与完整汇总为新增。</p>
 <h2 id="共同条件">共同条件</h2>
 <p>沿用
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo>,</mo><mi>e</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">X=\{a,b,c,d,e,f\}</annotation></semantics></math>
@@ -78,18 +78,17 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 </annotation></semantics></math></div>
 </details>
 <span id="q-T03-01-E001-b" class="content-anchor"></span><h2 id="练习-b教材习题3.1第1b题">练习 B：教材习题3.1第1(b)题</h2>
-<p>利用第1(a)题，求X、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{b,c\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a,c,d\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>d</mi><mo>,</mo><mi>e</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{b,d,e,f\}</annotation></semantics></math>
+<p>利用第1(a)题，求
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{b,c\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a,c,d\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>d</mi><mo>,</mo><mi>e</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{b,d,e,f\}</annotation></semantics></math>
 的闭包。</p>
 <div class="practice-controls" data-question-id="T03-01-E001-b" data-module-id="T03-01-M026" data-mode="guided" data-answer-anchor="answer-T03-01-E001-b"></div><span id="answer-T03-01-E001-b" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
 <details>
 <summary>
-尝试原题后展开五项答案
+尝试原题后展开四项答案
 </summary>
 <p>逐项使用
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>A</mi><mo accent="true">¯</mo></mover><mo>=</mo><mi>A</mi><mo>∪</mo><msup><mi>A</mi><mo>′</mo></msup></mrow><annotation encoding="application/x-tex">\overline A=A\cup A&#39;</annotation></semantics></math>：
-<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">¯</mo></mover><mo>=</mo><mi>X</mi><mo>,</mo><mspace width="2.0em"></mspace><mover><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo></mrow><mo accent="true">¯</mo></mover><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
-\overline X=X,
-\qquad
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo></mrow><mo accent="true">¯</mo></mover><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
 \overline{\{a\}}=\{a\},
 </annotation></semantics></math></div>
 <div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">}</mo></mrow><mo accent="true">¯</mo></mover><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo>,</mo><mi>e</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
@@ -101,11 +100,13 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>d</mi><mo>,</mo><mi>e</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo></mrow><mo accent="true">¯</mo></mover><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo>,</mo><mi>e</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
 \overline{\{b,d,e,f\}}=\{b,c,d,e,f\}.
 </annotation></semantics></math></div></p>
+<p>作为M021编辑补题的核对，当然另有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">¯</mo></mover><mo>=</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">\overline X=X</annotation></semantics></math>；它不计入本题原页列出的四项。</p>
 </details>
 <h2 id="简短回顾">简短回顾</h2>
 <p>闭包必须保留原集合中的孤立点，同时加入全部极限点；因此不能只把
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>A</mi><mo>′</mo></msup><annotation encoding="application/x-tex">A&#39;</annotation></semantics></math>
 当作闭包。</p>
 </article></div>
-<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
 </main><script type="module" src="runtime/app.js"></script></body></html>

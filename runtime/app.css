@@ -19,6 +19,20 @@ button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visibl
 .runtime-list { list-style: none; padding: 0; }
 .runtime-list li { border-bottom: 1px solid #e0e6dc; padding: 13px 0; }
 .runtime-list .runtime-actions { margin-top: 7px; }
+.lesson-navigation { align-items: center; }
+.catalog-finder { margin: 22px 0 16px; }
+.catalog-finder input[type="search"] { width: 100%; margin-top: 8px; padding: 10px 12px; border: 1px solid #bfcbbd; border-radius: 7px; font: inherit; }
+.course-tree { margin: 16px 0 28px; }
+.course-tree details { margin: 10px 0; background: #fff; }
+.course-tree .catalog-section { margin: 10px 0 14px 18px; background: #fbfcfa; }
+.catalog-list { margin: 0; }
+.catalog-item { position: relative; padding-left: 12px !important; }
+.catalog-item.current { border-left: 4px solid #2f7358; background: #f0f7f1; }
+.catalog-item[hidden], .catalog-section[hidden], .catalog-chapter[hidden] { display: none; }
+.catalog-id { display: block; color: #66736b; font-size: 13px; margin-top: 2px; }
+.current-location { border-color: #94b59b; }
+.runtime-management { margin-top: 28px; }
+.runtime-management > summary { font-size: 1.08rem; }
 .runtime-pill { display: inline-block; font-size: 12px; padding: 2px 7px; border-radius: 5px; background: #edf3e9; margin-left: 9px; color: #516547; }
 .runtime-pill.pending { background: #fff0d8; color: #855719; }
 .runtime-empty { color: #6a776d; padding: 10px 0; }

@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.8">
+<meta name="application-version" content="0.3.9">
 <title>连续尖峰区分两种函数拓扑 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -44,7 +44,7 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 
 <div id="app-view"><article id="lesson-content" data-module-id="T02-03-M026"><h1 id="连续尖峰区分两种函数拓扑">连续尖峰区分两种函数拓扑</h1>
 <p>固定编号：T02-03-M026<br />
-内容版本：0.1<br />
+内容版本：0.2<br />
 教材出处：《没有眼泪的拓扑》，书内第 44 页 / PDF 第 44
 页，星号习题2.3第4(iii)题。<br />
 学习目标：构造积分距离任意小而一致距离固定为2的连续三角尖峰，证明存在
@@ -142,7 +142,24 @@ B：教材习题2.3第4(iii)题（星号题）</h2>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">U(0,1)</annotation></semantics></math>
 也在
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>
-中开。由命题2.3.2，存在ε&gt;0使</p>
+中开。由命题2.3.2，先只能得到某个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∈</mo><mi>C</mi><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">f\in C[0,1]</annotation></semantics></math>
+和
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r&gt;0</annotation></semantics></math>，使
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>∈</mo><mi>M</mi><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo><mo>⊆</mo><mi>U</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+0\in M(f,r)\subseteq U(0,1).
+</annotation></semantics></math></div></p>
+<p>现在把球心细化到0。因为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>∈</mo><mi>M</mi><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">0\in M(f,r)</annotation></semantics></math>，有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">d_1(f,0)&lt;r</annotation></semantics></math>。取
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>=</mo><mfrac><mrow><mi>r</mi><mo>−</mo><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><mn>2</mn></mfrac><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\varepsilon=\frac{r-d_1(f,0)}2&gt;0.
+</annotation></semantics></math></div> 若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>g</mi><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mi>ε</mi></mrow><annotation encoding="application/x-tex">d_1(0,g)&lt;\varepsilon</annotation></semantics></math>，则由M022使用过的三角不等式，
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mi>g</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>g</mi><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>ε</mi><mo>&lt;</mo><mi>r</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+d_1(f,g)\le d_1(f,0)+d_1(0,g)
+&lt;d_1(f,0)+\varepsilon&lt;r.
+</annotation></semantics></math></div> 所以</p>
 <p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>∈</mo><mi>M</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>ε</mi><mo stretchy="false" form="postfix">)</mo><mo>⊆</mo><mi>U</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
 0\in M(0,\varepsilon)\subseteq U(0,1).
 </annotation></semantics></math></div></p>
@@ -192,5 +209,5 @@ d_\infty(0,g_n)=2&gt;1,
 严格细于
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>。</p>
 </article></div>
-<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T02-03-M026.md">Markdown 原文（含公式）</a></footer>
+<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T02-03-M026.md">Markdown 原文（含公式）</a></footer>
 </main></body></html>

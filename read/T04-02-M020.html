@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.8">
+<meta name="application-version" content="0.3.9">
 <title>闭矩形与闭圆盘同胚 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -44,7 +44,7 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 
 <div id="app-view"><article id="lesson-content" data-module-id="T04-02-M020"><h1 id="闭矩形与闭圆盘同胚">闭矩形与闭圆盘同胚</h1>
 <p>固定编号：T04-02-M020<br />
-内容版本：0.1<br />
+内容版本：0.2<br />
 教材出处：《没有眼泪的拓扑》，书内第 67 页 / PDF 第 67
 页，习题4.2第4(iii)题。<br />
 学习目标：沿原点射线把闭矩形边界送到圆周，并给出显式逆映射与0点开集估计。</p>
@@ -110,9 +110,17 @@ G(w)=\frac{\|w\|}{R}\frac{w}{p(w)}.
 <p>在原点，存在常数界
 <div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">∥</mo><mo>=</mo><mi>R</mi><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mfrac><mi>R</mi><mrow><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo stretchy="false" form="postfix">∥</mo><mi>z</mi><mo stretchy="false" form="postfix">∥</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
 \|F(z)\|=Rp(z)\le\frac{R}{\min(a,b)}\|z\|,
-</annotation></semantics></math></div> 以及
-<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>G</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">∥</mo><mo>≤</mo><mfrac><mrow><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><mi>R</mi></mfrac><mo stretchy="false" form="postfix">∥</mo><mi>w</mi><mo stretchy="false" form="postfix">∥</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
-\|G(w)\|\le\frac{\max(a,b)}R\|w\|.
+</annotation></semantics></math></div> 另一方面，由
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>w</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>a</mi><mspace width="0.167em"></mspace><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">|</mo><msub><mi>w</mi><mn>2</mn></msub><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>b</mi><mspace width="0.167em"></mspace><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+|w_1|\le a\,p(w),\qquad |w_2|\le b\,p(w)
+</annotation></semantics></math></div> 得到
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>w</mi><mo stretchy="false" form="postfix">∥</mo><mo>≤</mo><msqrt><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></msqrt><mspace width="0.167em"></mspace><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\|w\|\le\sqrt{a^2+b^2}\,p(w).
+</annotation></semantics></math></div> 因此
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>G</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">∥</mo><mo>=</mo><mfrac><mrow><mo stretchy="false" form="postfix">∥</mo><mi>w</mi><msup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msup></mrow><mrow><mi>R</mi><mspace width="0.167em"></mspace><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>≤</mo><mfrac><msqrt><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></msqrt><mi>R</mi></mfrac><mo stretchy="false" form="postfix">∥</mo><mi>w</mi><mo stretchy="false" form="postfix">∥</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\|G(w)\|
+=\frac{\|w\|^2}{R\,p(w)}
+\le\frac{\sqrt{a^2+b^2}}R\|w\|.
 </annotation></semantics></math></div>
 所以任给目标中含0的小开圆盘，都能在源中取足够小的开圆盘使其像落入其中；逆向同理。故F与G在所有点都满足开集逆像开。F双射且逆映射G也满足该条件，因此F是同胚。</p>
 </details>
@@ -127,5 +135,5 @@ G(w)=\frac{\|w\|}{R}\frac{w}{p(w)}.
 </details><h2 id="简短回顾">简短回顾</h2>
 <p>同胚可以改变边界的几何形状；径向坐标保留方向，只重新标定每条射线上的距离。</p>
 </article></div>
-<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T04-02-M020.md">Markdown 原文（含公式）</a></footer>
+<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T04-02-M020.md">Markdown 原文（含公式）</a></footer>
 </main></body></html>

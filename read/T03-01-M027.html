@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.8">
+<meta name="application-version" content="0.3.9">
 <title>原题1(c)：用最小闭集复核闭包 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -44,16 +44,18 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 
 <div id="app-view"><article id="lesson-content" data-module-id="T03-01-M027"><h1 id="原题1c用最小闭集复核闭包">原题1(c)：用最小闭集复核闭包</h1>
 <p>固定编号：T03-01-M027<br />
-内容版本：0.1<br />
+内容版本：0.2<br />
 教材出处：《没有眼泪的拓扑》，书内第 50 页 / PDF 第 50
 页，习题3.1第1(c)题，回用例3.1.11方法。<br />
-学习目标：列出六点拓扑的全部闭集，为五个目标集合选择最小包含闭集，并与M026交叉核对。</p>
+学习目标：列出六点拓扑的全部闭集，为原题的四个目标集合选择最小包含闭集，并与M026交叉核对。</p>
 <blockquote>
 <p><strong>本段主线：</strong>用第二种方法独立核验原题1的闭包。<br />
 <strong>当前环节：</strong>上一模块从极限点求闭包；现在只看闭集表。<br />
 <strong>这一步只做：</strong>寻找最小含目标集合的闭集。</p>
 </blockquote>
-<p>来源说明：B为教材原题1(c)；闭集表和逐项核对新增。</p>
+<p>来源说明：B为教材原题1(c)，按原页只复核第1(a)列出的四个集合；M021的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+是编辑补题。闭集表和逐项核对新增。</p>
 <h2 id="闭集表">闭集表</h2>
 <p>对τ中开集取相对X的补集，得到
 <div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>⌀</mi><mo>,</mo><mi>X</mi><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo>,</mo><mi>e</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>e</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>e</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
@@ -77,13 +79,13 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 </annotation></semantics></math></div>
 </details>
 <span id="q-T03-01-E001-c" class="content-anchor"></span><h2 id="练习-b教材习题3.1第1c题">练习 B：教材习题3.1第1(c)题</h2>
-<p>用例3.1.11的“列出闭集并选最小者”方法，重新求第1(b)题五个集合的闭包。</p>
+<p>用例3.1.11的“列出闭集并选最小者”方法，重新求第1(b)题四个集合的闭包。</p>
 <span id="answer-T03-01-E001-c" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
 <details>
 <summary>
 尝试原题后展开复核
 </summary>
-<p>X的最小包含闭集是X；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a\}</annotation></semantics></math>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a\}</annotation></semantics></math>
 本身闭；含
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{b,c\}</annotation></semantics></math>
 的最小闭集是
@@ -91,7 +93,8 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>d</mi><mo>,</mo><mi>e</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{b,d,e,f\}</annotation></semantics></math>
 的最小闭集仍是
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo>,</mo><mi>e</mi><mo>,</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{b,c,d,e,f\}</annotation></semantics></math>。</p>
-<p>所得五项与M026完全一致。</p>
+<p>所得四项与M026完全一致。另有编辑补题
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">¯</mo></mover><mo>=</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">\overline X=X</annotation></semantics></math>，但它不属于本题原页的四项。</p>
 </details>
 <h2 id="精选复习">精选复习</h2><details class="prepared-review"><summary>精选复习内容（仅回看，不记分）</summary><p class="notice">这里保留课件中的预设问题与答案。计分复习在讲练间隙进行；只回看不会改变排期。</p><h3 id="t03-01-r010">T03-01-R010</h3>
 <p><strong>问题：</strong>求闭包的两种方法如何互相核验？</p>
@@ -105,5 +108,5 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 </details><h2 id="简短回顾">简短回顾</h2>
 <p>极限点法与最小闭集法从不同方向描述同一闭包，可用于检查有限计算是否遗漏点。</p>
 </article></div>
-<footer><span data-app-version="0.3.8">网站版本 0.3.8</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T03-01-M027.md">Markdown 原文（含公式）</a></footer>
+<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T03-01-M027.md">Markdown 原文（含公式）</a></footer>
 </main></body></html>
