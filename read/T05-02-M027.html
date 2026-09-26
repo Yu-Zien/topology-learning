@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.9">
+<meta name="application-version" content="0.3.10">
 <title>原题6(ii)：求振荡曲线的闭包 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -44,7 +44,7 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 
 <div id="app-view"><article id="lesson-content" data-module-id="T05-02-M027"><h1 id="原题6ii求振荡曲线的闭包">原题6(ii)：求振荡曲线的闭包</h1>
 <p>固定编号：T05-02-M027<br />
-内容版本：0.1<br />
+内容版本：0.2<br />
 教材出处：《没有眼泪的拓扑》，书内第 83 页 / PDF 第 83
 页，习题5.2第6(ii)题。<br />
 学习目标：双向验证振荡曲线Y的闭包恰好增加
@@ -55,7 +55,10 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <strong>当前环节：</strong>既要证明整条竖直线段都能被曲线逼近，也要排除其他新增点。<br />
 <strong>这一步只做：</strong>完成闭包集合的两个包含方向。</p>
 </blockquote>
-<p>来源说明：B为教材原题6(ii)；A为新增的竖直极限点构造。</p>
+<p>来源说明：B为教材原题6(ii)；A为新增的竖直极限点构造。本页的闭包都在环境空间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\mathbb R^2</annotation></semantics></math>
+中计算；下一页再用<a
+href="T05-02-M025.html">M025的闭包保持连通结论</a>。</p>
 <h2 id="例题-a">例题 A</h2>
 <p>固定
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mn>0</mn></msub><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">y_0\in[-1,1]</annotation></semantics></math>。选择实数
@@ -64,7 +67,10 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mi>θ</mi><mo>=</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\sin\theta=y_0</annotation></semantics></math>，并令
 <div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>n</mi></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mi>θ</mi><mo>+</mo><mn>2</mn><mi>π</mi><mi>n</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">
 x_n=\frac1{\theta+2\pi n}
-</annotation></semantics></math></div> （从使分母为正的n开始）。说明曲线上的点
+</annotation></semantics></math></div> （从使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>+</mo><mn>2</mn><mi>π</mi><mi>n</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\theta+2\pi n\ge1</annotation></semantics></math>
+的n开始，以保证
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><msub><mi>x</mi><mi>n</mi></msub><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0&lt;x_n\le1</annotation></semantics></math>）。说明曲线上的点
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo>,</mo><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x_n,\sin(1/x_n))</annotation></semantics></math>
 趋近哪里。</p>
 <h2 id="a-解答">A 解答</h2>
@@ -106,5 +112,5 @@ x_n=\frac1{\theta+2\pi n}
 <h2 id="简短回顾">简短回顾</h2>
 <p>曲线靠近纵轴时取得-1到1间每个高度；离开纵轴后连续图像不会额外产生别的闭包点。</p>
 </article></div>
-<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T05-02-M027.md">Markdown 原文（含公式）</a></footer>
+<footer><span data-app-version="0.3.10">网站版本 0.3.10</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T05-02-M027.md">Markdown 原文（含公式）</a></footer>
 </main></body></html>

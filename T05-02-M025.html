@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.9">
+<meta name="application-version" content="0.3.10">
 <title>原题5：连通集的闭包及夹层仍连通 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -45,7 +45,7 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <div id="app-view"><article id="lesson-content" data-module-id="T05-02-M025"><h1
 id="原题5连通集的闭包及夹层仍连通">原题5：连通集的闭包及夹层仍连通</h1>
 <p>固定编号：T05-02-M025<br />
-内容版本：0.1<br />
+内容版本：0.2<br />
 教材出处：《没有眼泪的拓扑》，书内第 83 页 / PDF 第 83
 页，习题5.2第5题。<br />
 学习目标：证明连通子空间A的闭包连通，并推广到每个满足
@@ -56,7 +56,29 @@ id="原题5连通集的闭包及夹层仍连通">原题5：连通集的闭包及
 <strong>当前环节：</strong>A在其闭包以及每个夹层B中都稠密。<br />
 <strong>这一步只做：</strong>证明稠密连通子空间所在的整个空间不能出现非平凡闭开分割。</p>
 </blockquote>
-<p>来源说明：B为教材原题5；A为新增稠密性步骤。</p>
+<p>来源说明：B为教材原题5；子空间闭包公式的导出和A为新增稠密性准备。</p>
+<h2
+id="工具先在环境取闭包再取子空间的迹">工具：先在环境取闭包，再取子空间的迹</h2>
+<p>对任意
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>⊆</mo><mi>B</mi><mo>⊆</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">A\subseteq B\subseteq X</annotation></semantics></math>，都有
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>B</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>B</mi><mo>∩</mo><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\operatorname{cl}_B(A)=B\cap\operatorname{cl}_X(A).
+</annotation></semantics></math></div> 这里只用已证明的<a
+href="T03-01-M014.html">闭包最小性</a>与<a
+href="T04-01-M021.html">子空间闭集的迹刻画</a>，把两个包含方向写出即可：</p>
+<p>一方面，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>∩</mo><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">B\cap\operatorname{cl}_X(A)</annotation></semantics></math>
+在B中闭且包含A，由B中的闭包最小性，
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>B</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>⊆</mo><mi>B</mi><mo>∩</mo><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\operatorname{cl}_B(A)\subseteq B\cap\operatorname{cl}_X(A).
+</annotation></semantics></math></div>
+另一方面，任取B中包含A的闭集C。迹刻画给出
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mi>B</mi><mo>∩</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">C=B\cap F</annotation></semantics></math>，其中F在X中闭；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>⊆</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">A\subseteq C</annotation></semantics></math>
+保证
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>⊆</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">A\subseteq F</annotation></semantics></math>，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>⊆</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">\operatorname{cl}_X(A)\subseteq F</annotation></semantics></math>。于是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>∩</mo><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>⊆</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">B\cap\operatorname{cl}_X(A)\subseteq C</annotation></semantics></math>
+对每个这样的C都成立；特别取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>B</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">C=\operatorname{cl}_B(A)</annotation></semantics></math>，得到反向包含。等式成立，不要求B在X中闭。</p>
 <h2 id="例题-a">例题 A</h2>
 <p>若
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>⊆</mo><mi>B</mi><mo>⊆</mo><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">A\subseteq B\subseteq\operatorname{cl}_X(A)</annotation></semantics></math>，证明A在子空间B中稠密。</p>
@@ -65,7 +87,7 @@ id="原题5连通集的闭包及夹层仍连通">原题5：连通集的闭包及
 <summary>
 展开 A
 </summary>
-<p>子空间闭包满足
+<p>由刚证明的子空间闭包公式，
 <div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>B</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>B</mi><mo>∩</mo><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
 \operatorname{cl}_B(A)=B\cap\operatorname{cl}_X(A).
 </annotation></semantics></math></div> 由
@@ -101,10 +123,14 @@ A\subseteq B\subseteq\overline A,
 <summary>
 回忆后查看答案
 </summary>
-<p>一族连通子空间若有公共点，其并连通；公共点迫使所有子空间落在假想分割的同一侧。闭包中原连通集稠密，任何非空相对开片都必须与它相交，因此也不能形成非平凡分割。</p>
+<p>一族连通子空间若有公共点，其并连通；公共点迫使所有子空间落在假想分割的同一侧。子空间闭包公式
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>B</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>B</mi><mo>∩</mo><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{cl}_B(A)=B\cap\operatorname{cl}_X(A)</annotation></semantics></math>
+来自闭包最小性和闭集迹刻画，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>⊆</mo><mi>B</mi><mo>⊆</mo><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">A\subseteq B\subseteq\operatorname{cl}_X(A)</annotation></semantics></math>
+时A在B中稠密。任何非空相对开片都必须与A相交，B因此不能形成非平凡分割；特别地，闭包连通。</p>
 </details>
 </details><h2 id="简短回顾">简短回顾</h2>
 <p>公共交点允许连通集向外取并；稠密性允许连通集向外扩张到闭包及其间任何子空间。</p>
 </article></div>
-<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+<footer><span data-app-version="0.3.10">网站版本 0.3.10</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
 </main><script type="module" src="runtime/app.js"></script></body></html>

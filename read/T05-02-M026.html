@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.9">
+<meta name="application-version" content="0.3.10">
 <title>原题6(i)：振荡曲线部分连通 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -44,7 +44,7 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 
 <div id="app-view"><article id="lesson-content" data-module-id="T05-02-M026"><h1 id="原题6i振荡曲线部分连通">原题6(i)：振荡曲线部分连通</h1>
 <p>固定编号：T05-02-M026<br />
-内容版本：0.1<br />
+内容版本：0.2<br />
 教材出处：《没有眼泪的拓扑》，书内第 83 页 / PDF 第 83
 页，习题5.2第6(i)题。<br />
 学习目标：把区间
@@ -69,7 +69,8 @@ h:(0,1]\to\mathbb R^2,\qquad h(x)=(x,\sin(1/x)).
 <p>在
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">(0,1]</annotation></semantics></math>
 上，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>↦</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">x\mapsto x</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>↦</mo><mn>1</mn><mi>/</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">x\mapsto1/x</annotation></semantics></math>
-与正弦函数连续，所以两个坐标函数都连续，h连续。其像正是
+与正弦函数连续，所以两个坐标函数都连续；由<a
+href="T05-02-M006.html">M006的坐标连续判据</a>，h连续。其像正是
 <div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>:</mo><mi>y</mi><mo>=</mo><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mn>0</mn><mo>&lt;</mo><mi>x</mi><mo>≤</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
 \{(x,y):y=\sin(1/x), 0&lt;x\le1\}.
 </annotation></semantics></math></div></p>
@@ -88,10 +89,11 @@ Y=\{(x,y):y=\sin(1/x), 0&lt;x\le1\}
 </summary>
 <p>区间
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">(0,1]</annotation></semantics></math>
-连通。例题A中的h连续，并且按Y的定义，h满射到Y。命题5.2.1说明连通空间在连续满射下的像连通。因此Y连通。</p>
+连通。例题A中的h作为平面值映射连续；把值域限制到像Y后，由<a
+href="T05-01-M028.html">子空间限制结论</a>仍连续，并且满射到Y。命题5.2.1说明连通空间在连续满射下的像连通。因此Y连通。</p>
 </details>
 <h2 id="简短回顾">简短回顾</h2>
 <p>振荡次数无限并不破坏连通性：整条曲线仍是连通区间的连续像。</p>
 </article></div>
-<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T05-02-M026.md">Markdown 原文（含公式）</a></footer>
+<footer><span data-app-version="0.3.10">网站版本 0.3.10</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T05-02-M026.md">Markdown 原文（含公式）</a></footer>
 </main></body></html>

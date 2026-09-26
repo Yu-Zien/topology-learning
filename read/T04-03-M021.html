@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.9">
+<meta name="application-version" content="0.3.10">
 <title>相切双圆不同胚于任何区间 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -44,7 +44,7 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 
 <div id="app-view"><article id="lesson-content" data-module-id="T04-03-M021"><h1 id="相切双圆不同胚于任何区间">相切双圆不同胚于任何区间</h1>
 <p>固定编号：T04-03-M021<br />
-内容版本：0.1<br />
+内容版本：0.2<br />
 教材出处：《没有眼泪的拓扑》，书内第 72 页 / PDF 第 72
 页，习题4.3第4(ii)题。<br />
 学习目标：用“恰有一个割点”证明相切双圆空间不同胚于任何实区间。</p>
@@ -61,6 +61,9 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <summary>
 展开 A
 </summary>
+<p>先说明完整圆C连通：取圆上不同两点a、b，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">)</mo><mo>∪</mo><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">C=(C\setminus\{a\})\cup(C\setminus\{b\})</annotation></semantics></math>。两穿孔圆由<a
+href="T04-03-M016.html">M016</a>连通，交也非空；由<a
+href="T04-01-M027.html">相交连通子空间的并</a>，C连通。</p>
 <p>被删点所在圆变成一条连通开弧，仍含切点；另一完整圆也连通并含切点。两个连通子空间有公共切点，所以并仍连通。</p>
 </details>
 <span id="q-T04-03-E004-ii" class="content-anchor"></span><h2 id="练习-b教材习题4.3第4ii题">练习 B：教材习题4.3第4(ii)题</h2>
@@ -70,11 +73,12 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <summary>
 尝试原题后展开证明
 </summary>
-<p>Y恰有一个割点，即切点：删它后不连通，删其他点后由例题A仍连通。</p>
+<p>Y恰有一个割点，即切点：<a
+href="T04-03-M020.html">M020</a>已用相对开半平面证明删切点后出现两个连通闭开块；删其他点后由例题A仍连通。同胚在任意点被删去后仍给出子空间同胚，故某点是否为割点在对应点之间保持，割点集合也一一对应。</p>
 <p>单点区间势不同；开区间每一点都是割点；闭区间除两个端点外每一点都是割点；半开区间除唯一端点外每一点都是割点。没有一种区间恰有一个割点。因此Y不同胚于任何实区间。</p>
 </details>
 <h2 id="简短回顾">简短回顾</h2>
 <p>割点的数量与位置是同胚不变量；相切双圆独有一个割点。</p>
 </article></div>
-<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T04-03-M021.md">Markdown 原文（含公式）</a></footer>
+<footer><span data-app-version="0.3.10">网站版本 0.3.10</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T04-03-M021.md">Markdown 原文（含公式）</a></footer>
 </main></body></html>

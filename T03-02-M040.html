@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.9">
+<meta name="application-version" content="0.3.10">
 <title>Sorgenfrey线中的半开区间是闭集 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -55,10 +55,46 @@ id="sorgenfrey线中的半开区间是闭集">Sorgenfrey线中的半开区间是
 闭。</p>
 <blockquote>
 <p><strong>本段主线：</strong>继续分析Sorgenfrey线的基本性质。<br />
-<strong>当前环节：</strong>已经知道半开区间是基元素，因而是开集。<br />
-<strong>这一步只做：</strong>证明其补集也开。</p>
+<strong>当前环节：</strong>已知有理右端的半开区间是原基元素；先说明任意实右端的情形也开。<br />
+<strong>这一步只做：</strong>建立等价的实端半开基，再证明每个这类区间的补集也开。</p>
 </blockquote>
-<p>来源说明：B为教材原题11(iii)；补集两侧的逐点基证明为新增展开。</p>
+<p>来源说明：B为教材原题11(iii)；原基与等价基的区别、补集两侧的逐点基证明为新增展开。</p>
+<h2
+id="原位短补原基与等价基不是同一个集合族">原位短补：原基与等价基不是同一个集合族</h2>
+<p><a href="T03-02-M038.html">M038</a>中的原基为
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">ℬ</mi><mi mathvariant="double-struck">ℚ</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo><mo>:</mo><mi>a</mi><mo>∈</mo><mi mathvariant="double-struck">ℝ</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>q</mi><mo>∈</mo><mi mathvariant="double-struck">ℚ</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>a</mi><mo>&lt;</mo><mi>q</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\mathcal B_{\mathbb Q}=\{[a,q):a\in\mathbb R,\ q\in\mathbb Q,\ a&lt;q\}.
+</annotation></semantics></math></div> 现在考虑更大的候选族
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">ℬ</mi><mi mathvariant="double-struck">ℝ</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>:</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>∈</mo><mi mathvariant="double-struck">ℝ</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>a</mi><mo>&lt;</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\mathcal B_{\mathbb R}=\{[a,b):a,b\in\mathbb R,\ a&lt;b\}.
+</annotation></semantics></math></div> 例如
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><msqrt><mn>2</mn></msqrt><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">[0,\sqrt2)</annotation></semantics></math>
+不属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="script">ℬ</mi><mi mathvariant="double-struck">ℚ</mi></msub><annotation encoding="application/x-tex">\mathcal B_{\mathbb Q}</annotation></semantics></math>，不能直接称它为原基元素。</p>
+<p>不过，任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">x\in[a,b)</annotation></semantics></math>，由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>&lt;</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">x&lt;b</annotation></semantics></math>
+和有理数稠密性，可取有理数q使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>&lt;</mo><mi>q</mi><mo>&lt;</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">x&lt;q&lt;b</annotation></semantics></math>。于是
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo><mo>⊆</mo><mo stretchy="false" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">[</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><msub><mi mathvariant="script">ℬ</mi><mi mathvariant="double-struck">ℚ</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+x\in[x,q)\subseteq[a,b),\qquad [x,q)\in\mathcal B_{\mathbb Q}.
+</annotation></semantics></math></div>
+因此每个实端半开区间都是原基元素的并，在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>
+中开；任意这些区间的并仍在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>
+中。反向，因为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="script">ℬ</mi><mi mathvariant="double-struck">ℚ</mi></msub><mo>⊆</mo><msub><mi mathvariant="script">ℬ</mi><mi mathvariant="double-struck">ℝ</mi></msub></mrow><annotation encoding="application/x-tex">\mathcal B_{\mathbb Q}\subseteq\mathcal B_{\mathbb R}</annotation></semantics></math>，每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>
+开集原有的基元素并表示也是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="script">ℬ</mi><mi mathvariant="double-struck">ℝ</mi></msub><annotation encoding="application/x-tex">\mathcal B_{\mathbb R}</annotation></semantics></math>
+元素的并。两个方向合起来证明：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="script">ℬ</mi><mi mathvariant="double-struck">ℝ</mi></msub><annotation encoding="application/x-tex">\mathcal B_{\mathbb R}</annotation></semantics></math>
+同样是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\tau_1</annotation></semantics></math>
+的一组基。</p>
+<p>此后可使用这组等价的实端半开基；提到“原基”时仍保留右端有理的条件。下面的闭性证明继续用原基，因而任意实数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>&lt;</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a&lt;b</annotation></semantics></math>
+都被覆盖。</p>
 <h2 id="例题-a">例题 A</h2>
 <p>在Sorgenfrey线中，若
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>&lt;</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">x&lt;a</annotation></semantics></math>，怎样找基元素
@@ -116,7 +152,7 @@ x\in[x,q)\subseteq[b,\infty).
 闭。</p>
 </details>
 <h2 id="简短回顾">简短回顾</h2>
-<p>Sorgenfrey线的基本半开区间既开又闭；补集左右两部分都能用同型半开基元素逐点覆盖。</p>
+<p>任意实端半开区间都开且闭：开性先由有理右端原基逐点细化得到，闭性再由补集逐点细化得到。原基与所有实端半开区间构成的等价基应明确区分。</p>
 </article></div>
-<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+<footer><span data-app-version="0.3.10">网站版本 0.3.10</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
 </main><script type="module" src="runtime/app.js"></script></body></html>

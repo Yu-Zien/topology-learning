@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.9">
+<meta name="application-version" content="0.3.10">
 <title>整数上的有限闭拓扑满足第二可数公理 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -62,9 +62,11 @@ id="整数上的有限闭拓扑满足第二可数公理">整数上的有限闭�
 <p><div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo stretchy="false" form="postfix">}</mo><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi mathvariant="double-struck">ℤ</mi><mo>\</mo><mi>F</mi><mo>:</mo><mi>F</mi><mo>⊆</mo><mi mathvariant="double-struck">ℤ</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> 有限</mtext></mrow><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
 \tau=\{\varnothing\}\cup\{\mathbb Z\setminus F:F\subseteq\mathbb Z\text{ 有限}\}.
 </annotation></semantics></math></div></p>
-<p>对固定非负整数k，所有k元素整数子集可由整数k元组列举，因此至多可数。把
+<p>对固定非负整数k，把k元素整数子集按数值递增写成唯一的整数k元组，再用<a
+href="T02-02-M025.html">M025的有限乘积编号</a>编号，因此该层至多可数；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">k=0</annotation></semantics></math>
+时只有空集。把
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">k=0,1,2,\ldots</annotation></semantics></math>
-各层并起来，全部有限子集族是可数个可数集的并，仍可数。</p>
+各层并起来，使用M025中“层号加层内编号”的对角编码，全部有限子集族仍可数。这里每层的编号已明确给出。</p>
 <p>取补集不会增加数量，所以τ可数。任何拓扑自身都是它的一组基，于是τ有可数基。</p>
 <h2 id="例题-a">例题 A</h2>
 <p>说明整数集的所有至多含两个元素的子集为什么可数；把它们的补集写成有限闭拓扑中的哪些开集。</p>
@@ -105,10 +107,11 @@ id="整数上的有限闭拓扑满足第二可数公理">整数上的有限闭�
 <summary>
 回忆后查看答案
 </summary>
-<p>只要求存在一组可数基。不可数离散空间的任何基都被迫包含不可数多个单点，故失败；整数有限闭拓扑本身只有可数多个开集，取整个拓扑作基就已经可数，故成功。</p>
+<p>只要求存在一组可数基。不可数离散空间的任何基都被迫包含不可数多个单点，故失败；整数有限子集按元素个数分层，每层用有限元组编号，再用<a
+href="T02-02-M025.html">M025的二维编号</a>把层号与层内号合并。因此整数有限闭拓扑本身只有可数多个开集，取整个拓扑作基就已经可数，故成功。</p>
 </details>
 </details><h2 id="简短回顾与第二可数结论">简短回顾与第二可数结论</h2>
 <p>整数有限闭拓扑的开集由有限补集参数化，而整数的有限子集族可数；因此整个拓扑就是一组可数基。</p>
 </article></div>
-<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+<footer><span data-app-version="0.3.10">网站版本 0.3.10</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
 </main><script type="module" src="runtime/app.js"></script></body></html>

@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.9">
+<meta name="application-version" content="0.3.10">
 <title>两个相切圆与单圆不同胚 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -44,7 +44,7 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 
 <div id="app-view"><article id="lesson-content" data-module-id="T04-03-M020"><h1 id="两个相切圆与单圆不同胚">两个相切圆与单圆不同胚</h1>
 <p>固定编号：T04-03-M020<br />
-内容版本：0.1<br />
+内容版本：0.2<br />
 教材出处：《没有眼泪的拓扑》，书内第 71—72 页 / PDF 第 71—72
 页，习题4.3第4(i)题。<br />
 学习目标：删除两个圆的切点得到两个分离分支，与单圆任意删点仍连通相比较。</p>
@@ -53,7 +53,55 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <strong>当前环节：</strong>单圆性质已经掌握。<br />
 <strong>这一步只做：</strong>识别相切点是割点。</p>
 </blockquote>
-<p>来源说明：B为教材原题4(i)。</p>
+<p>来源说明：B为教材原题4(i)；下面的有限连通闭开块引理及两块／三块讲练为编辑短补。</p>
+<h2
+id="原位短补什么时候可以比较连通块数">原位短补：什么时候可以比较连通块数</h2>
+<p><strong>有限连通闭开块引理。</strong>设空间P被有限个两两不交的集合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>C</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">C_1,\ldots,C_r</annotation></semantics></math>
+覆盖，每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>i</mi></msub><annotation encoding="application/x-tex">C_i</annotation></semantics></math>
+都非空、连通且在P中既开又闭。那么P的任意非空连通子集都包含在某一个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>i</mi></msub><annotation encoding="application/x-tex">C_i</annotation></semantics></math>
+中。若另一个空间Q也有这样的分解
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>D</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">D_1,\ldots,D_s</annotation></semantics></math>，且P与Q同胚，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">r=s</annotation></semantics></math>。</p>
+<p><strong>证明。</strong>若连通子集A既遇到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>i</mi></msub><annotation encoding="application/x-tex">C_i</annotation></semantics></math>
+又遇到其补集，则
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∩</mo><msub><mi>C</mi><mi>i</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>A</mi><mo>∩</mo><mo stretchy="false" form="prefix">(</mo><mi>P</mi><mo>\</mo><msub><mi>C</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+A\cap C_i,\qquad A\cap(P\setminus C_i)
+</annotation></semantics></math></div>
+是A中两个不交、非空的相对开集，且并为A，与连通性矛盾。选A中任一点所在的块，就知道整个A都落在那一块。特别地，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>i</mi></msub><annotation encoding="application/x-tex">C_i</annotation></semantics></math>
+不能再扩大为更大的连通子集。</p>
+<p>设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>P</mi><mo>→</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">f:P\to Q</annotation></semantics></math>
+同胚。已学的连通性不变量保证
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>C</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(C_i)</annotation></semantics></math>
+连通，故它包含在某个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>D</mi><mi>j</mi></msub><annotation encoding="application/x-tex">D_j</annotation></semantics></math>
+中。再用逆同胚：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><msub><mi>D</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f^{-1}(D_j)</annotation></semantics></math>
+连通且包含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>i</mi></msub><annotation encoding="application/x-tex">C_i</annotation></semantics></math>，由上一段只能包含在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>i</mi></msub><annotation encoding="application/x-tex">C_i</annotation></semantics></math>
+中。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>C</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>D</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">f(C_i)=D_j</annotation></semantics></math>。每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>D</mi><mi>j</mi></msub><annotation encoding="application/x-tex">D_j</annotation></semantics></math>
+非空，取其中一点并取原像，又知它必由某个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>i</mi></msub><annotation encoding="application/x-tex">C_i</annotation></semantics></math>
+对应而来；不同块的像也不交。所以这些块一一对应，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">r=s</annotation></semantics></math>。这里仅证明本题所需的有限闭开分块情形。</p>
+<h3 id="示范-a两个区间块">示范 A：两个区间块</h3>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>2</mn><mo>,</mo><mi>−</mi><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>∪</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P=(-2,-1)\cup(1,2)</annotation></semantics></math>。两个区间非空、连通；它们在P中开，且互为补集，所以也在P中闭。引理说明任意非空连通子集只能落在左块或右块，不能跨越两块。</p>
+<h3 id="练习-b换成三个区间块">练习 B：换成三个区间块</h3>
+<p>令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>∪</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo stretchy="false" form="postfix">)</mo><mo>∪</mo><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">Q=(0,1)\cup(2,3)\cup(4,5)</annotation></semantics></math>。先核对三个区间符合引理的每个条件，再说明P与Q为什么不同胚。</p>
+<details>
+<summary>
+尝试短补后查看答案
+</summary>
+<p>三个区间两两不交、非空、连通，且都是Q中的相对开集；每个区间的补集是另两个开区间之并，所以每个也相对闭。P有两个这样的块，Q有三个；若有同胚，引理会要求
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">2=3</annotation></semantics></math>，矛盾。只看图上的间隔不够，以上闭开性与连通性才使块数可以使用。</p>
+</details>
 <h2 id="例题-a">例题 A</h2>
 <p>两个单位圆圆心分别为
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,0)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(2,0)</annotation></semantics></math>。它们的唯一公共点是什么？删去后发生什么？</p>
@@ -63,7 +111,18 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 展开 A
 </summary>
 <p>公共点为
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,0)</annotation></semantics></math>。删去它后，两条穿孔圆弧互不相交，并分别是剩余空间中的非空开闭分支，所以剩余空间不连通。</p>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p=(1,0)</annotation></semantics></math>。记剩余空间为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>Y</mi><mo>′</mo></msup><mo>=</mo><mi>Y</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">Y&#39;=Y\setminus\{p\}</annotation></semantics></math>，两条穿孔圆弧分别是
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><msup><mi>Y</mi><mo>′</mo></msup><mo>∩</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>:</mo><mi>x</mi><mo>&lt;</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><msup><mi>Y</mi><mo>′</mo></msup><mo>∩</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>:</mo><mi>x</mi><mo>&gt;</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+C_1=Y&#39;\cap\{(x,y):x&lt;1\},\qquad
+C_2=Y&#39;\cap\{(x,y):x&gt;1\}.
+</annotation></semantics></math></div> 两个半平面开，所以两弧在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Y</mi><mo>′</mo></msup><annotation encoding="application/x-tex">Y&#39;</annotation></semantics></math>
+中相对开；它们不交、非空、覆盖
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Y</mi><mo>′</mo></msup><annotation encoding="application/x-tex">Y&#39;</annotation></semantics></math>，且互为补集，所以也相对闭。每条弧由<a
+href="T04-03-M016.html">M016的圆周删点同胚</a>同胚于实开区间，因而连通。于是这确是引理中的两个连通闭开块，尤其
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Y</mi><mo>′</mo></msup><annotation encoding="application/x-tex">Y&#39;</annotation></semantics></math>
+不连通。</p>
 </details>
 <span id="q-T04-03-E004-i" class="content-anchor"></span><h2 id="练习-b教材习题4.3第4i题">练习 B：教材习题4.3第4(i)题</h2>
 <p>令Y为上述两个相切单位圆之并，X为单位圆。判断Y与X是否同胚，并证明。</p>
@@ -85,10 +144,10 @@ X\setminus\{a\}\cong Y\setminus\{p\}.
 <summary>
 回忆后查看答案
 </summary>
-<p>圆周删任一点仍连通；开区间删任一点断开，半开／闭区间至少有内部点删后断开；相切双圆删切点分成两支。删点限制把这些差异变成不同胚证明。</p>
+<p>圆周删任一点仍连通；开区间删任一点断开，半开／闭区间至少有内部点删后断开；相切双圆删切点分成两个非空连通闭开块。后一事实可由左右开半平面的迹和圆周删点同胚核对。删点限制把这些差异变成不同胚证明；若进一步比较有限块数，需先核对每块非空、连通、相对闭开，才能应用本页引理。</p>
 </details>
 </details><h2 id="简短回顾">简短回顾</h2>
-<p>相切点把两个圆粘在一起，是一个割点；单圆没有割点，因此两空间不同胚。</p>
+<p>相切点把两个圆粘在一起，是一个割点；单圆没有割点，因此两空间不同胚。有限连通闭开块的数量保持，是因为连通子集不能跨块，同胚和逆同胚共同迫使整块一一对应。</p>
 </article></div>
-<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T04-03-M020.md">Markdown 原文（含公式）</a></footer>
+<footer><span data-app-version="0.3.10">网站版本 0.3.10</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T04-03-M020.md">Markdown 原文（含公式）</a></footer>
 </main></body></html>

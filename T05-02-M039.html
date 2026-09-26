@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.9">
+<meta name="application-version" content="0.3.10">
 <title>原题10(vi)：Sorgenfrey线完全不连通 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -70,14 +70,16 @@ id="原题10visorgenfrey线完全不连通">原题10(vi)：Sorgenfrey线完全�
 <summary>
 展开 A
 </summary>
+<p>由<a
+href="T03-02-M040.html">T03-02-M040</a>，任意实端半开区间都已证明在Sorgenfrey拓扑中开，并构成一组等价基。这里b可以是无理数，所以下面的区间不必属于“右端有理”的原基。</p>
 <p>有
 <div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>b</mi><mo>,</mo><mi>∞</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>⋃</mo><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow></munder><mo stretchy="false" form="prefix">[</mo><mi>b</mi><mo>,</mo><mi>b</mi><mo>+</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
 [b,\infty)=\bigcup_{n\ge1}[b,b+n),
-</annotation></semantics></math></div> 是基元素的并；而
+</annotation></semantics></math></div> 是已证开的实端半开区间的并；而
 <div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>∞</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>⋃</mo><mrow><mi>x</mi><mo>&lt;</mo><mi>b</mi></mrow></munder><mo stretchy="false" form="prefix">[</mo><mi>x</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
 (-\infty,b)=\bigcup_{x&lt;b}[x,b),
 </annotation></semantics></math></div>
-也是基元素的并。因此二者都开，并且互为补集，所以也都闭。</p>
+同样是这类开区间的并。因此二者都开，并且互为补集，所以也都闭。</p>
 </details>
 <span id="q-T05-02-E010-vi" class="content-anchor"></span><h2 id="练习-b教材习题5.2第10vi题">练习 B：教材习题5.2第10(vi)题</h2>
 <p>证明Sorgenfrey线是完全不连通的。</p>
@@ -103,10 +105,11 @@ id="原题10visorgenfrey线完全不连通">原题10(vi)：Sorgenfrey线完全�
 <p>有理数用缺失的无理切点；可数平面子空间用未被坐标投影采用的竖线或水平线；Sorgenfrey线用互补的闭开半轴
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mi>∞</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-\infty,b)</annotation></semantics></math>
 与
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>b</mi><mo>,</mo><mi>∞</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">[b,\infty)</annotation></semantics></math>。</p>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>b</mi><mo>,</mo><mi>∞</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">[b,\infty)</annotation></semantics></math>。半轴开性来自<a
+href="T03-02-M040.html">M040已建立的实端半开等价基</a>，不要求切点b有理。</p>
 </details>
 </details><h2 id="简短回顾">简短回顾</h2>
 <p>Sorgenfrey半开基让每个切点产生闭开左右分割，所以任何两个不同点都不能留在同一连通块中。</p>
 </article></div>
-<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+<footer><span data-app-version="0.3.10">网站版本 0.3.10</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
 </main><script type="module" src="runtime/app.js"></script></body></html>

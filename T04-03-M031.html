@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.9">
+<meta name="application-version" content="0.3.10">
 <title>无无限T1子空间时出现初始段或末尾段 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -45,7 +45,7 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <div id="app-view"><article id="lesson-content" data-module-id="T04-03-M031"><h1
 id="无无限t1子空间时出现初始段或末尾段">无无限T1子空间时出现初始段或末尾段</h1>
 <p>固定编号：T04-03-M031<br />
-内容版本：0.3<br />
+内容版本：0.4<br />
 教材出处：《没有眼泪的拓扑》，书内第 72 页 / PDF 第 72
 页，习题4.3第8(iv)双星题；作者官网2024英文版第107页。<br />
 学习目标：在正确的“没有无限T1子空间”条件下，用单点闭包偏序与无限Ramsey定理完整构造初始段或末尾段子空间。</p>
@@ -72,7 +72,9 @@ id="工具1单点闭包关系为什么是偏序">工具1：单点闭包关系为
 <div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≤</mo><mi>y</mi><mspace width="1.0em"></mspace><mo>⇔</mo><mspace width="1.0em"></mspace><mi>x</mi><mo>∈</mo><mover><mrow><mo stretchy="false" form="prefix">{</mo><mi>y</mi><mo stretchy="false" form="postfix">}</mo></mrow><mo accent="true">¯</mo></mover><mi>.</mi></mrow><annotation encoding="application/x-tex">
 x\le y\quad\Longleftrightarrow\quad x\in\overline{\{y\}}.
 </annotation></semantics></math></div>
-这等价于：<strong>每个含x的开集也含y</strong>。自反性显然；若
+由闭包的开邻域刻画，这等价于：<strong>每个含x的开集也含y</strong>，因为开集与单点集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>y</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{y\}</annotation></semantics></math>
+相交恰好表示含y。自反性显然；若
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≤</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x\le y</annotation></semantics></math>
 且
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>≤</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">y\le z</annotation></semantics></math>，每个含x的开集先含y、再含z，所以
@@ -82,6 +84,38 @@ x\le y\quad\Longleftrightarrow\quad x\in\overline{\{y\}}.
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>≤</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">y\le x</annotation></semantics></math>，x与y属于完全相同的开集；T0性要求不同点可由开集区分，因此只能有
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x=y</annotation></semantics></math>。所以这个关系是偏序。</p>
 <p>偏序中，两点若总能比较，称为<strong>链</strong>；任意两不同点都不能比较，称为<strong>反链</strong>。</p>
+<h2
+id="原位短补一把闭包符号翻译成开集条件">原位短补一：把闭包符号翻译成开集条件</h2>
+<h3 id="示范-a">示范 A</h3>
+<p>在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">Y=\{u,v\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>v</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mi>Y</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\tau=\{\varnothing,\{v\},Y\}</annotation></semantics></math>
+中，含u的唯一开集Y也含v，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>≤</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">u\le v</annotation></semantics></math>。但开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>v</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{v\}</annotation></semantics></math>
+含v不含u，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>≰</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">v\not\le u</annotation></semantics></math>。等价地，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>Y</mi></msub><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">{</mo><mi>v</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">\operatorname{cl}_Y(\{v\})=Y</annotation></semantics></math>，而
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>Y</mi></msub><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\operatorname{cl}_Y(\{u\})=\{u\}</annotation></semantics></math>。</p>
+<h3 id="练习-b">练习 B</h3>
+<p>在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">Y=\{a,b,c\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>c</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mi>Y</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\tau=\{\varnothing,\{c\},\{b,c\},Y\}</annotation></semantics></math>
+中求
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>Y</mi></msub><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{cl}_Y(\{b\})</annotation></semantics></math>。再判断
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a\le b</annotation></semantics></math>
+与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>≤</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">b\le a</annotation></semantics></math>，并为不成立的一向给出开集见证。</p>
+<details>
+<summary>
+尝试闭包翻译后查看答案
+</summary>
+<p>含b的最小闭集为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a,b\}</annotation></semantics></math>，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>Y</mi></msub><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\operatorname{cl}_Y(\{b\})=\{a,b\}</annotation></semantics></math>。含a的每个开集都含b，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a\le b</annotation></semantics></math>；开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{b,c\}</annotation></semantics></math>
+含b却不含a，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>≰</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">b\not\le a</annotation></semantics></math>。注意关系方向：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a\le b</annotation></semantics></math>
+控制的是“含a的开集必含b”。</p>
+</details>
 <h2
 id="工具2本题所需的无限两色ramsey定理">工具2：本题所需的无限两色Ramsey定理</h2>
 <p><strong>结论。</strong>把一个可数无限集的每个二元子集染成红、蓝两色，总能找到一个无限子集，使其中任意二元子集颜色相同。这样的子集称为无限齐次子集。</p>
@@ -98,6 +132,47 @@ a_1,a_2,\ldots,\qquad S_0\supset S_1\supset S_2\supset\cdots,
 <p>颜色序列
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>,</mo><msub><mi>c</mi><mn>2</mn></msub><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">c_1,c_2,\ldots</annotation></semantics></math>
 只有两种颜色，由无限鸽笼原理，其中一种颜色出现无限次。只保留这些下标对应的ai；任意较晚项都属于较早项当时保留的无限尾集，所以任意一对都是同一颜色。这就得到无限齐次子集。</p>
+<h2
+id="原位短补二每一步保留无限尾集">原位短补二：每一步保留无限尾集</h2>
+<h3 id="示范-a-1">示范 A</h3>
+<p>给
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℕ</mi><annotation encoding="application/x-tex">\mathbb N</annotation></semantics></math>
+的二元子集染色：较小数为奇数时染蓝，为偶数时染红。先选
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a_1=1</annotation></semantics></math>，可保留
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mn>1</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">S_1=\{2,3,\ldots\}</annotation></semantics></math>，记蓝色；再选
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>2</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">a_2=2</annotation></semantics></math>，保留
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mn>2</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">S_2=\{3,4,\ldots\}</annotation></semantics></math>，记红色。每轮都取最小剩余数，就有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub><mo>=</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">a_i=i</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>i</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>i</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>i</mi><mo>+</mo><mn>2</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">S_i=\{i+1,i+2,\ldots\}</annotation></semantics></math>。每轮颜色可以不同；最后只取偶数下标的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>2</mn></msub><mo>,</mo><msub><mi>a</mi><mn>4</mn></msub><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">a_2,a_4,\ldots</annotation></semantics></math>，任意一对的较早项对应红色，才得到红色齐次集。</p>
+<h3 id="练习-b-1">练习 B</h3>
+<p>现在不规定染色方式。已得到无限集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>i</mi></msub><annotation encoding="application/x-tex">S_i</annotation></semantics></math>
+后，取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>∈</mo><msub><mi>S</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_{i+1}\in S_i</annotation></semantics></math>，把
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>i</mi></msub><mo>\</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>a</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">S_i\setminus\{a_{i+1}\}</annotation></semantics></math>
+按与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">a_{i+1}</annotation></semantics></math>
+的配对颜色分成两类。为什么总能选择无限的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">S_{i+1}</annotation></semantics></math>？为什么新保留的点仍满足之前每一步的颜色要求？若蓝色在下标
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>i</mi><mn>2</mn></msub><mo>&lt;</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">i_1&lt;i_2&lt;\cdots</annotation></semantics></math>
+无限次出现，说明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>a</mi><msub><mi>i</mi><mi>k</mi></msub></msub><mo>:</mo><mi>k</mi><mo>≥</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a_{i_k}:k\ge1\}</annotation></semantics></math>
+为何齐次。是否需要
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>⋂</mo><mi>i</mi></msub><msub><mi>S</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\bigcap_iS_i</annotation></semantics></math>
+无限？</p>
+<details>
+<summary>
+尝试无限尾集递归后查看答案
+</summary>
+<p>删去一个点后仍无限；若两色类都有限，其并也有限，矛盾，因此至少一类无限。选择这一类作
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>⊆</mo><msub><mi>S</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">S_{i+1}\subseteq S_i</annotation></semantics></math>，它与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">a_{i+1}</annotation></semantics></math>
+配对同色；又因一直取子集，之前的配对颜色要求都保留。对
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>&lt;</mo><mi>ℓ</mi></mrow><annotation encoding="application/x-tex">k&lt;\ell</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><msub><mi>i</mi><mi>ℓ</mi></msub></msub><mo>∈</mo><msub><mi>S</mi><msub><mi>i</mi><mi>k</mi></msub></msub></mrow><annotation encoding="application/x-tex">a_{i_\ell}\in S_{i_k}</annotation></semantics></math>，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>a</mi><msub><mi>i</mi><mi>k</mi></msub></msub><mo>,</mo><msub><mi>a</mi><msub><mi>i</mi><mi>ℓ</mi></msub></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a_{i_k},a_{i_\ell}\}</annotation></semantics></math>
+的颜色是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><msub><mi>i</mi><mi>k</mi></msub></msub><annotation encoding="application/x-tex">c_{i_k}</annotation></semantics></math>，即蓝色。无须各尾集的交无限，甚至无须交非空；示范中的交就是空集。证明用的是“每个较晚选出的点属于每个较早保留的尾集”，不是从无限交中一次取出所有点。</p>
+</details>
 <h2
 id="组合引理无限偏序中取得单调序列">组合引理：无限偏序中取得单调序列</h2>
 <p><strong>引理。</strong>每个可数无限偏序都含有无限反链，或含有形如
@@ -153,6 +228,55 @@ x_1&lt;x_2&lt;x_3&lt;\cdots,
 U\cap\{x_1,x_2,\ldots\}=\{x_m:m\ge n\}.
 </annotation></semantics></math></div> 对n=1取整个空间即可。</p>
 </details>
+<h2
+id="原位短补三从齐次链核对全部开集">原位短补三：从齐次链核对全部开集</h2>
+<h3 id="示范-a-2">示范 A</h3>
+<p>第二次染色约定：对枚举下标
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>&lt;</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i&lt;j</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>i</mi></msub><mo>&lt;</mo><msub><mi>y</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">y_i&lt;y_j</annotation></semantics></math>
+染红，反向染蓝。若抽到红色齐次下标
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>i</mi><mn>2</mn></msub><mo>&lt;</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">i_1&lt;i_2&lt;\cdots</annotation></semantics></math>，重命名
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mi>k</mi></msub><mo>=</mo><msub><mi>y</mi><msub><mi>i</mi><mi>k</mi></msub></msub></mrow><annotation encoding="application/x-tex">z_k=y_{i_k}</annotation></semantics></math>
+后就是严格上升链。上面的例题A构造出迹恰为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>z</mi><mn>3</mn></msub><mo>,</mo><msub><mi>z</mi><mn>4</mn></msub><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{z_3,z_4,\ldots\}</annotation></semantics></math>
+的开集；任意非空相对开集的下标有最小值n，含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mi>n</mi></msub><annotation encoding="application/x-tex">z_n</annotation></semantics></math>
+就含所有后项，故它恰是从n开始的末尾段。这同时检查了“每个开集只能是什么”和“每种允许形状确实开”两向。</p>
+<h3 id="练习-b-2">练习 B</h3>
+<p>若第二次抽到蓝色齐次下标，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>z</mi><mn>2</mn></msub><mo>&gt;</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">z_1&gt;z_2&gt;\cdots</annotation></semantics></math>。设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>z</mi><mi>k</mi></msub><mo>:</mo><mi>k</mi><mo>≥</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">Z=\{z_k:k\ge1\}</annotation></semantics></math>：先解释为什么含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mi>n</mi></msub><annotation encoding="application/x-tex">z_n</annotation></semantics></math>
+的相对开集包含所有更早项；再用
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mi>n</mi></msub><mo>≰</mo><msub><mi>z</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">z_n\not\le z_{n+1}</annotation></semantics></math>
+构造迹恰为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>z</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>z</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{z_1,\ldots,z_n\}</annotation></semantics></math>
+的开集；最后证明每个非空真相对开集都恰是一个有限初始段。</p>
+<details>
+<summary>
+尝试下降链与开集后查看答案
+</summary>
+<p>当
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>&lt;</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">j&lt;n</annotation></semantics></math>
+时有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mi>n</mi></msub><mo>≤</mo><msub><mi>z</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">z_n\le z_j</annotation></semantics></math>，所以每个含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mi>n</mi></msub><annotation encoding="application/x-tex">z_n</annotation></semantics></math>
+的开集都含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mi>j</mi></msub><annotation encoding="application/x-tex">z_j</annotation></semantics></math>。因
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mi>n</mi></msub><mo>≰</mo><msub><mi>z</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">z_n\not\le z_{n+1}</annotation></semantics></math>，存在Y中开集U含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mi>n</mi></msub><annotation encoding="application/x-tex">z_n</annotation></semantics></math>
+而不含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">z_{n+1}</annotation></semantics></math>；若U还含某个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mi>m</mi></msub><annotation encoding="application/x-tex">z_m</annotation></semantics></math>（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>&gt;</mo><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m&gt;n+1</annotation></semantics></math>），由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mi>m</mi></msub><mo>≤</mo><msub><mi>z</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">z_m\le z_{n+1}</annotation></semantics></math>
+又会迫使U含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">z_{n+1}</annotation></semantics></math>，矛盾。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>∩</mo><mi>Z</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>z</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>z</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">U\cap Z=\{z_1,\ldots,z_n\}</annotation></semantics></math>，每个有限初始段确实相对开。</p>
+<p>反过来，对任意非空真相对开集V，取未在V中的最小下标r。因V非空且含任何点都会含所有更早项，有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">r\ge2</annotation></semantics></math>；它包含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>z</mi><mrow><mi>r</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">z_1,\ldots,z_{r-1}</annotation></semantics></math>，且不能含任何下标大于r的点，否则会迫使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mi>r</mi></msub><mo>∈</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">z_r\in V</annotation></semantics></math>。故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>z</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>z</mi><mrow><mi>r</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">V=\{z_1,\ldots,z_{r-1}\}</annotation></semantics></math>。再加空集与Z，便得到全部开集。</p>
+</details>
 <span id="q-T04-03-E008-iv" class="content-anchor"></span><h2 id="练习-b教材习题4.3第8iv题双星来源校正">练习
 B：教材习题4.3第8(iv)题（双星，来源校正）</h2>
 <p>中文版印为：设X为无限T0但非T1空间，证明X含有与
@@ -166,7 +290,7 @@ B：教材习题4.3第8(iv)题（双星，来源校正）</h2>
 尝试原题后展开完整证明
 </summary>
 <p>中文版字面命题由本模块开头的拓扑和反例否定。下面证明作者英文版的正确命题。</p>
-<p>从X中选一个可数无限子空间Y。T0性遗传给子空间；Y也没有无限T1子空间。</p>
+<p>按通常集合论选择约定，从X中选一个可数无限子空间Y。T0性遗传给子空间；Y也没有无限T1子空间。</p>
 <p>在Y上定义
 <div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≤</mo><mi>y</mi><mspace width="1.0em"></mspace><mo>⇔</mo><mspace width="1.0em"></mspace><mi>x</mi><mo>∈</mo><msub><mrow><mi mathvariant="normal">cl</mi><mo>&#8289;</mo></mrow><mi>Y</mi></msub><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">{</mo><mi>y</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
 x\le y\quad\Longleftrightarrow\quad x\in\operatorname{cl}_Y(\{y\}).
@@ -211,7 +335,7 @@ x_1&gt;x_2&gt;x_3&gt;\cdots,
 <p>两种情形均得到题述子空间，证明完成。</p>
 </details>
 <h2 id="简短回顾">简短回顾</h2>
-<p>正确条件排除了无限T1反链；无限Ramsey定理留下单调链，而单点闭包偏序把上升链、下降链分别精确翻译为末尾段、初始段拓扑。</p>
+<p>正确条件排除了无限T1反链；无限Ramsey定理留下单调链，而单点闭包偏序把上升链、下降链分别精确翻译为末尾段、初始段拓扑。操作上要核对三个动作：关系方向对应哪些开集必须含哪些点；递归保留的每个尾集仍无限；开集形状的限制与每个段确实开放必须分别证明。</p>
 </article></div>
-<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+<footer><span data-app-version="0.3.10">网站版本 0.3.10</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
 </main><script type="module" src="runtime/app.js"></script></body></html>

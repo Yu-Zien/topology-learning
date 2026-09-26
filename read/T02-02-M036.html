@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.9">
+<meta name="application-version" content="0.3.10">
 <title>实数轴每个开集都是Fσ与Gδ · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -75,8 +75,9 @@ A_n=\bigcup_{m=1}^{\infty}F_{n,m}
 \bigcup_{n=1}^{\infty}A_n
 =\bigcup_{(n,m)\in\mathbb N^2}F_{n,m}.
 </annotation></semantics></math></div></p>
-<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℕ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\mathbb N^2</annotation></semantics></math>
-可数，所以右边仍是可数个闭集的并。</p>
+<p><a href="T02-02-M025.html">M025的对角编号</a>把
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℕ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\mathbb N^2</annotation></semantics></math>
+双射到正整数，所以右边仍是可数个闭集的并。若各层表示尚未给定，沿用该页明示的可数选择约定；对下面的有理端点区间，也可直接使用§2.1习题8的具体闭区间公式。</p>
 <p>对
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">G_\delta</annotation></semantics></math>
 更直接：任何开集U都可重复写成
@@ -157,7 +158,8 @@ U=\bigcup_{(n,m)\in\mathbb N^2}F_{n,m}.
 <summary>
 回忆后查看答案
 </summary>
-<p>可数有理端点基把开集写成至多可数个开区间的并；每个开区间又是可数闭并，把双索引展平仍可数，所以得到
+<p>可数有理端点基把开集写成至多可数个开区间的并；每个开区间又是可数闭并，用<a
+href="T02-02-M025.html">M025的对角编号</a>把双索引展平，所以得到
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>σ</mi></msub><annotation encoding="application/x-tex">F_\sigma</annotation></semantics></math>。而开集U可直接重复写成
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><msub><mo>⋂</mo><mi>n</mi></msub><mi>U</mi></mrow><annotation encoding="application/x-tex">U=\bigcap_nU</annotation></semantics></math>，所以立即是
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">G_\delta</annotation></semantics></math>。</p>
@@ -167,5 +169,5 @@ U=\bigcup_{(n,m)\in\mathbb N^2}F_{n,m}.
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>σ</mi></msub><mi>/</mi><msub><mi>G</mi><mi>δ</mi></msub></mrow><annotation encoding="application/x-tex">F_\sigma/G_\delta</annotation></semantics></math>
 分类。</p>
 </article></div>
-<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T02-02-M036.md">Markdown 原文（含公式）</a></footer>
+<footer><span data-app-version="0.3.10">网站版本 0.3.10</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T02-02-M036.md">Markdown 原文（含公式）</a></footer>
 </main></body></html>

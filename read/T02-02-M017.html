@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.9">
+<meta name="application-version" content="0.3.10">
 <title>单位圆盘内的小开矩形 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -101,6 +101,48 @@ x^2+y^2&lt;\frac1{64}+\frac1{64}=\frac1{32}&lt;1.
 </annotation></semantics></math></div></p>
 <p>所以整个矩形包含于单位圆盘。</p>
 </details>
+<h2
+id="原位短补中心不在原点时怎样估计">原位短补：中心不在原点时怎样估计</h2>
+<h3 id="示范中心为-p350">示范：中心为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>3</mn><mi>/</mi><mn>5</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p=(3/5,0)</annotation></semantics></math></h3>
+<p>这里
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mn>3</mn><mi>/</mi><mn>5</mn></mrow><annotation encoding="application/x-tex">r=3/5</annotation></semantics></math>，教材公式仍给
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>8</mn><mo>=</mo><mn>1</mn><mi>/</mi><mn>20</mn></mrow><annotation encoding="application/x-tex">\delta=(1-r)/8=1/20</annotation></semantics></math>。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">q=(x,y)</annotation></semantics></math>
+属于以p为中心、半边长为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>20</mn></mrow><annotation encoding="application/x-tex">1/20</annotation></semantics></math>
+的开矩形，则
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>=</mo><msqrt><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><mn>3</mn><mi>/</mi><mn>5</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></msqrt><mo>&lt;</mo><mfrac><msqrt><mn>2</mn></msqrt><mn>20</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\|q-p\|=\sqrt{(x-3/5)^2+y^2}&lt;\frac{\sqrt2}{20}.
+</annotation></semantics></math></div>
+这次估计得到的是q离p的距离，不能把它直接当作q离原点的距离。补上三角不等式便有
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo stretchy="false" form="postfix">∥</mo><mo>≤</mo><mo stretchy="false" form="postfix">∥</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mi>+</mi><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><mfrac><mn>3</mn><mn>5</mn></mfrac><mo>+</mo><mfrac><msqrt><mn>2</mn></msqrt><mn>20</mn></mfrac><mo>&lt;</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\|q\|\le\|p\|+\|q-p\|
+&lt;\frac35+\frac{\sqrt2}{20}&lt;1.
+</annotation></semantics></math></div> 最后一步例如用
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>2</mn></msqrt><mo>&lt;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\sqrt2&lt;2</annotation></semantics></math>
+得右边小于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mi>/</mi><mn>10</mn></mrow><annotation encoding="application/x-tex">7/10</annotation></semantics></math>。所以整个矩形仍在单位圆盘内。</p>
+<h3 id="练习中心为-p045">练习：中心为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>4</mn><mi>/</mi><mn>5</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p=(0,4/5)</annotation></semantics></math></h3>
+<p>按同一公式求半边长δ，并证明以p为中心的该开矩形内每个q都满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\|q\|&lt;1</annotation></semantics></math>。解答中须分别写出
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo></mrow><annotation encoding="application/x-tex">\|q-p\|</annotation></semantics></math>
+的上界和三角不等式。</p>
+<details>
+<summary>
+尝试非原点练习后查看答案
+</summary>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mn>4</mn><mi>/</mi><mn>5</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>8</mn><mo>=</mo><mn>1</mn><mi>/</mi><mn>40</mn></mrow><annotation encoding="application/x-tex">\delta=(1-4/5)/8=1/40</annotation></semantics></math>。矩形内有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><mn>1</mn><mi>/</mi><mn>40</mn></mrow><annotation encoding="application/x-tex">|x|&lt;1/40</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>y</mi><mo>−</mo><mn>4</mn><mi>/</mi><mn>5</mn><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><mn>1</mn><mi>/</mi><mn>40</mn></mrow><annotation encoding="application/x-tex">|y-4/5|&lt;1/40</annotation></semantics></math>，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><msqrt><mn>2</mn></msqrt><mi>/</mi><mn>40</mn></mrow><annotation encoding="application/x-tex">\|q-p\|&lt;\sqrt2/40</annotation></semantics></math>。于是
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo stretchy="false" form="postfix">∥</mo><mo>≤</mo><mo stretchy="false" form="postfix">∥</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mi>+</mi><mo stretchy="false" form="postfix">∥</mo><mi>q</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><mfrac><mn>4</mn><mn>5</mn></mfrac><mo>+</mo><mfrac><msqrt><mn>2</mn></msqrt><mn>40</mn></mfrac><mo>&lt;</mo><mfrac><mn>17</mn><mn>20</mn></mfrac><mo>&lt;</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\|q\|\le\|p\|+\|q-p\|&lt;\frac45+\frac{\sqrt2}{40}&lt;\frac{17}{20}&lt;1.
+</annotation></semantics></math></div> 原点例、这两个非原点例都使用原题的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">(1-r)/8</annotation></semantics></math>；下一题对任意
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a,b)</annotation></semantics></math>
+重复这一动作。</p>
+</details>
 <span id="q-T02-02-E001-i" class="content-anchor"></span><h2 id="练习-b教材习题2.2第1i题">练习 B：教材习题2.2第1(i)题</h2>
 <p>设
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a,b)</annotation></semantics></math>
@@ -152,5 +194,5 @@ R_{(a,b)}=(a-\delta,a+\delta)\times(b-\delta,b+\delta).
 <p>圆盘内点到边界仍有正余量
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">1-r</annotation></semantics></math>；教材给的矩形对角半径小于这段余量，因此矩形不会越出圆盘。</p>
 </article></div>
-<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T02-02-M017.md">Markdown 原文（含公式）</a></footer>
+<footer><span data-app-version="0.3.10">网站版本 0.3.10</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T02-02-M017.md">Markdown 原文（含公式）</a></footer>
 </main></body></html>

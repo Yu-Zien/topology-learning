@@ -1,6 +1,6 @@
 # 拓扑课件目录
 
-网站版本：0.3.9（课件各自的内容版本和固定编号保持不变）
+网站版本：0.3.10（固定编号保持不变；课件内容版本随各自修订更新）
 学习页面：https://yu-zien.github.io/topology-learning/
 只读目录：https://yu-zien.github.io/topology-learning/read/
 

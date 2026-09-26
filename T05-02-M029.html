@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.9">
+<meta name="application-version" content="0.3.10">
 <title>原题7：平面删去双有理点集仍路径连通 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -45,7 +45,7 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <div id="app-view"><article id="lesson-content" data-module-id="T05-02-M029"><h1
 id="原题7平面删去双有理点集仍路径连通">原题7：平面删去双有理点集仍路径连通</h1>
 <p>固定编号：T05-02-M029<br />
-内容版本：0.1<br />
+内容版本：0.2<br />
 教材出处：《没有眼泪的拓扑》，书内第 83 页 / PDF 第 83
 页，习题5.2第7题。<br />
 学习目标：利用具有无理横坐标或纵坐标的水平、竖直线避开所有双有理点，构造分段折线路径。</p>
@@ -95,10 +95,14 @@ id="原题7平面删去双有理点集仍路径连通">原题7：平面删去双
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>α</mi><mo>,</mo><msub><mi>p</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\alpha,p_2)</annotation></semantics></math>，再沿竖直线
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">x=\alpha</annotation></semantics></math>
 走到r，同样避开E。</p>
-<p>对q作同样构造，得到q到r的路径；反向后与p到r的路径拼接，便得到补集中连接p到q的路径。因此补集路径连通。</p>
+<p>每条线段由<a
+href="T05-02-M006.html">M006的坐标判据</a>连续，并可将值域限制到补集；相邻两段端点相接，由<a
+href="T05-02-M010.html">M010的闭分片拼接</a>得到p到r的路径。对q作同样构造，得到q到r的路径；用参数变换
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>↦</mo><mn>1</mn><mo>−</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">t\mapsto1-t</annotation></semantics></math>
+反向，再用同一拼接结论与p到r的路径连接，便得到补集中连接p到q的连续路径。因此补集路径连通。</p>
 </details>
 <h2 id="简短回顾">简短回顾</h2>
 <p>只要让折线的每一段固定一个无理坐标，整段就不会碰到双有理障碍点。</p>
 </article></div>
-<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+<footer><span data-app-version="0.3.10">网站版本 0.3.10</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
 </main><script type="module" src="runtime/app.js"></script></body></html>

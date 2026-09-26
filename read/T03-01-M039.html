@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.9">
+<meta name="application-version" content="0.3.10">
 <title>可数与不可数稠密子集的数量 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -57,6 +57,86 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 </blockquote>
 <p>来源说明：B为教材原题5(v)，其中
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="fraktur">𝔠</mi><mo>=</mo><mo stretchy="false" form="prefix">|</mo><mi mathvariant="double-struck">ℝ</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">\mathfrak c=|\mathbb R|</annotation></semantics></math>；分成正、负无理数的构造及上界核对为新增完整解答。</p>
+<h2 id="原位短补本题所用的基数依据">原位短补：本题所用的基数依据</h2>
+<p>两个集合之间存在双射时称它们等势，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>A</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|A|</annotation></semantics></math>
+记A的基数。<strong>连续统势</strong>定义为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="fraktur">𝔠</mi><mo>=</mo><mo stretchy="false" form="prefix">|</mo><mi mathvariant="double-struck">ℝ</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">\mathfrak c=|\mathbb R|</annotation></semantics></math>；实数不可数沿用<a
+href="T01-03-M045.html">M045明示的基础事实</a>。对任意集合A，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mrow><mo stretchy="false" form="prefix">|</mo><mi>A</mi><mo stretchy="false" form="prefix">|</mo></mrow></msup><annotation encoding="application/x-tex">2^{|A|}</annotation></semantics></math>
+定义为其幂集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">𝒫</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal P(A)</annotation></semantics></math>
+的基数：每个子集对应一个取值为0或1的特征函数。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi mathvariant="fraktur">𝔠</mi></msup><mo>=</mo><mo stretchy="false" form="prefix">|</mo><mi mathvariant="script">𝒫</mi><mo stretchy="false" form="prefix">(</mo><mi mathvariant="double-struck">ℝ</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">2^{\mathfrak c}=|\mathcal P(\mathbb R)|</annotation></semantics></math>
+不是把有限整数的幂次公式直接套用到“无穷”。</p>
+<p><strong>为什么正、负无理数都有连续统势？</strong> 先有显式双射
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>:</mo><mi mathvariant="double-struck">ℝ</mi><mo>→</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>∞</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>h</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>t</mi><mo>+</mo><msqrt><mrow><msup><mi>t</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></msqrt><mo>,</mo><mspace width="2.0em"></mspace><msup><mi>h</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mi>s</mi><mo>−</mo><msup><mi>s</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><mn>2</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+h:\mathbb R\longrightarrow(0,\infty),\qquad
+h(t)=t+\sqrt{t^2+1},\qquad h^{-1}(s)=\frac{s-s^{-1}}2.
+</annotation></semantics></math></div> 平方根严格大于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>t</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|t|</annotation></semantics></math>，所以像为正；把两式代入彼此就验证双射。再把正有理数无重复地排成
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mn>1</mn></msub><mo>,</mo><msub><mi>q</mi><mn>2</mn></msub><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">q_1,q_2,\ldots</annotation></semantics></math>，令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>n</mi></msub><mo>=</mo><mi>n</mi><mo>+</mo><msqrt><mn>2</mn></msqrt></mrow><annotation encoding="application/x-tex">d_n=n+\sqrt2</annotation></semantics></math>，它们是互异的正无理数。把这两个可数集交错排成
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mn>2</mn><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>q</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">c_{2n-1}=q_n</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mn>2</mn><mi>n</mi></mrow></msub><mo>=</mo><msub><mi>d</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">c_{2n}=d_n</annotation></semantics></math>。定义
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>d</mi><mi>n</mi></msub><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>s</mi><mo>=</mo><msub><mi>c</mi><mi>n</mi></msub><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mi>s</mi><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>s</mi><mo>∉</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>c</mi><mn>1</mn></msub><mo>,</mo><msub><mi>c</mi><mn>2</mn></msub><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
+g(s)=
+\begin{cases}
+d_n,&amp;s=c_n,\\
+s,&amp;s\notin\{c_1,c_2,\ldots\}.
+\end{cases}
+</annotation></semantics></math></div> 第一支把所有正有理数和所有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>n</mi></msub><annotation encoding="application/x-tex">d_n</annotation></semantics></math>
+一一送到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>d</mi><mi>n</mi></msub><mo>:</mo><mi>n</mi><mo>≥</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{d_n:n\ge1\}</annotation></semantics></math>；第二支原样保留其他正无理数。两部分像不相交且合起来恰是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>I</mi><mo>+</mo></msub><annotation encoding="application/x-tex">I_+</annotation></semantics></math>，所以g是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>∞</mi><mo stretchy="false" form="postfix">)</mo><mo>→</mo><msub><mi>I</mi><mo>+</mo></msub></mrow><annotation encoding="application/x-tex">(0,\infty)\to I_+</annotation></semantics></math>
+的双射。合成
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>∘</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">g\circ h</annotation></semantics></math>
+得
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>I</mi><mo>+</mo></msub><mo stretchy="false" form="prefix">|</mo><mo>=</mo><mi mathvariant="fraktur">𝔠</mi></mrow><annotation encoding="application/x-tex">|I_+|=\mathfrak c</annotation></semantics></math>；再取负号便得
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>I</mi><mo>−</mo></msub><mo stretchy="false" form="prefix">|</mo><mo>=</mo><mi mathvariant="fraktur">𝔠</mi></mrow><annotation encoding="application/x-tex">|I_-|=\mathfrak c</annotation></semantics></math>。这给出了去掉可数多个有理数后基数不变的具体依据。</p>
+<p><strong>怎样核对基数上下界？</strong>
+本题采用Cantor–Bernstein引理：若A、B之间双向存在单射，则存在双射。特别地，若一个实数子集含非空开区间，它便有连续统势：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>↦</mo><mi>t</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mo stretchy="false" form="prefix">|</mo><mi>t</mi><mo stretchy="false" form="prefix">|</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">t\mapsto t/(1+|t|)</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">ℝ</mi><mo>→</mo><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathbb R\to(-1,1)</annotation></semantics></math>
+的双射（逆式为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mo stretchy="false" form="prefix">|</mo><mi>u</mi><mo stretchy="false" form="prefix">|</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">u/(1-|u|)</annotation></semantics></math>），再作平移伸缩可双射到任意非空开区间；另一个方向是到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="double-struck">ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>
+的包含单射。</p>
+<details>
+<summary>
+查看所采用的Cantor–Bernstein引理的短证明
+</summary>
+<p>给定单射
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>A</mi><mo>→</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">f:A\to B</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>:</mo><mi>B</mi><mo>→</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">g:B\to A</annotation></semantics></math>，令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>0</mn></msub><mo>=</mo><mi>A</mi><mo>\</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">A_0=A\setminus g(B)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>A</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">A_{n+1}=g(f(A_n))</annotation></semantics></math>，并记
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><msub><mo>⋃</mo><mrow><mi>n</mi><mo>≥</mo><mn>0</mn></mrow></msub><msub><mi>A</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">C=\bigcup_{n\ge0}A_n</annotation></semantics></math>。在C上用f，在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>\</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">A\setminus C</annotation></semantics></math>
+上用
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>g</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">g^{-1}</annotation></semantics></math>。后一支有定义，因为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>\</mo><mi>C</mi><mo>⊆</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">A\setminus C\subseteq g(B)</annotation></semantics></math>。</p>
+<p>第一支的像恰是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(C)</annotation></semantics></math>。第二支的像恰是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>\</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">B\setminus f(C)</annotation></semantics></math>：若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∉</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">x\notin C</annotation></semantics></math>
+而
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>g</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">g^{-1}(x)\in f(C)</annotation></semantics></math>，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>⊆</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">x\in g(f(C))\subseteq C</annotation></semantics></math>，矛盾；反之，若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∉</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">y\notin f(C)</annotation></semantics></math>，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>∉</mo><msub><mi>A</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">g(y)\notin A_0</annotation></semantics></math>，也不在任一
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>A</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">A_{n+1}=g(f(A_n))</annotation></semantics></math>
+中，否则由g单性得
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">y\in f(C)</annotation></semantics></math>。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>∉</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">g(y)\notin C</annotation></semantics></math>，第二支确实取到y。两支各自单射、像不相交且覆盖B，合起来就是所需双射。</p>
+</details>
+<p>若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>A</mi><mo>→</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">f:A\to B</annotation></semantics></math>
+是双射，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>↦</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">S\mapsto f(S)</annotation></semantics></math>
+也是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">𝒫</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>→</mo><mi mathvariant="script">𝒫</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal P(A)\to\mathcal P(B)</annotation></semantics></math>
+的双射。所以由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>I</mi><mo>−</mo></msub><mo stretchy="false" form="prefix">|</mo><mo>=</mo><mi mathvariant="fraktur">𝔠</mi></mrow><annotation encoding="application/x-tex">|I_-|=\mathfrak c</annotation></semantics></math>
+可合法得到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi mathvariant="script">𝒫</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>I</mi><mo>−</mo></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>=</mo><msup><mn>2</mn><mi mathvariant="fraktur">𝔠</mi></msup></mrow><annotation encoding="application/x-tex">|\mathcal P(I_-)|=2^{\mathfrak c}</annotation></semantics></math>，下面的计数只调用这些已说明的依据。</p>
 <h2 id="方法要同时检查三件事">方法：要同时检查三件事</h2>
 <p>构造很多稠密子集时，要分别核对：</p>
 <ol type="1">
@@ -123,7 +203,7 @@ D_\alpha=\mathbb Q\cup\{\alpha\}.
 <div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mo>+</mo></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo>∈</mo><mi mathvariant="double-struck">ℝ</mi><mo>\</mo><mi mathvariant="double-struck">ℚ</mi><mo>:</mo><mi>x</mi><mo>&gt;</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>I</mi><mo>−</mo></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo>∈</mo><mi mathvariant="double-struck">ℝ</mi><mo>\</mo><mi mathvariant="double-struck">ℚ</mi><mo>:</mo><mi>x</mi><mo>&lt;</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
 I_+=\{x\in\mathbb R\setminus\mathbb Q:x&gt;0\},\qquad
 I_-=\{x\in\mathbb R\setminus\mathbb Q:x&lt;0\}.
-</annotation></semantics></math></div> 二者的基数都是
+</annotation></semantics></math></div> 本页短补已用明确双射证明二者的基数都是
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="fraktur">𝔠</mi><annotation encoding="application/x-tex">\mathfrak c</annotation></semantics></math>。对每个
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>⊆</mo><msub><mi>I</mi><mo>−</mo></msub></mrow><annotation encoding="application/x-tex">B\subseteq I_-</annotation></semantics></math>，定义
 <div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mi>B</mi></msub><mo>=</mo><mi mathvariant="double-struck">ℚ</mi><mo>∪</mo><msub><mi>I</mi><mo>+</mo></msub><mo>∪</mo><mi>B</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
@@ -165,5 +245,5 @@ E_B=\mathbb Q\cup I_+\cup B.
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi mathvariant="fraktur">𝔠</mi></msup><annotation encoding="application/x-tex">2^{\mathfrak c}</annotation></semantics></math>
 个不可数例。</p>
 </article></div>
-<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T03-01-M039.md">Markdown 原文（含公式）</a></footer>
+<footer><span data-app-version="0.3.10">网站版本 0.3.10</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T03-01-M039.md">Markdown 原文（含公式）</a></footer>
 </main></body></html>

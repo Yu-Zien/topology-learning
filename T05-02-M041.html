@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.9">
+<meta name="application-version" content="0.3.10">
 <title>原题11(ii)：每个路径分量路径连通 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -45,7 +45,7 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <div id="app-view"><article id="lesson-content" data-module-id="T05-02-M041"><h1
 id="原题11ii每个路径分量路径连通">原题11(ii)：每个路径分量路径连通</h1>
 <p>固定编号：T05-02-M041<br />
-内容版本：0.1<br />
+内容版本：0.2<br />
 教材出处：《没有眼泪的拓扑》，书内第 84 页 / PDF 第 84
 页，习题5.2第11(ii)题。<br />
 学习目标：把路径分量中两点各自通向基点a的路径拼接，证明路径分量本身路径连通。</p>
@@ -71,7 +71,12 @@ q(2t-1),&amp;1/2\le t\le1.
 \end{cases}
 </annotation></semantics></math></div> 两段在
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">t=1/2</annotation></semantics></math>
-都取a，所以由粘合引理r连续，且端点为x、y。</p>
+都取a，且定义域两片
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1/2]</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[1/2,1]</annotation></semantics></math>
+在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math>
+中闭，故由<a
+href="T05-02-M010.html">M010已经证明的闭分片粘合</a>，r连续，且端点为x、y。这个结论适用于任意拓扑目标空间，不要求目标空间是欧几里得空间。</p>
 </details>
 <span id="q-T05-02-E011-ii" class="content-anchor"></span><h2 id="练习-b教材习题5.2第11ii题">练习 B：教材习题5.2第11(ii)题</h2>
 <p>证明在任何拓扑空间中，每个路径分量都是路径连通空间。</p>
@@ -82,14 +87,24 @@ q(2t-1),&amp;1/2\le t\le1.
 </summary>
 <p>固定路径分量
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P_X(a)</annotation></semantics></math>，任取
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi><mo>∈</mo><msub><mi>P</mi><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">x,y\in P_X(a)</annotation></semantics></math>。按M040的等价描述，存在路径p连接x到a，存在路径q连接a到y。按例题A拼接得到连接x到y的路径，且两段路径的像都在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi><mo>∈</mo><msub><mi>P</mi><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">x,y\in P_X(a)</annotation></semantics></math>。按M040的等价描述，存在路径p连接x到a，存在路径q连接a到y。两段路径的像都在
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P_X(a)</annotation></semantics></math>
-中。</p>
+中：p上的点
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(s)</annotation></semantics></math>
+由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>↦</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">t\mapsto p(s+(1-s)t)</annotation></semantics></math>
+连到a，q上的点
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">q(s)</annotation></semantics></math>
+由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>↦</mo><mi>q</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">t\mapsto q(st)</annotation></semantics></math>
+从a连到它；这些是连续路径的重参数化。把值域限制到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P_X(a)</annotation></semantics></math>
+后连续性保持，再按例题A拼接得到该子空间中连接x到y的连续路径。</p>
 <p>因此路径分量中任意两点可由其中的路径连接，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P_X(a)</annotation></semantics></math>
 路径连通。</p>
 </details>
 <h2 id="简短回顾">简短回顾</h2>
 <p>路径分量中的每一点都能到达同一基点；两条路径在基点拼接即可连接任意两点。</p>
 </article></div>
-<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+<footer><span data-app-version="0.3.10">网站版本 0.3.10</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
 </main><script type="module" src="runtime/app.js"></script></body></html>

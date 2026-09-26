@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.9">
+<meta name="application-version" content="0.3.10">
 <title>重叠圆空间不同胚于单圆和相切双圆 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -45,14 +45,14 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <div id="app-view"><article id="lesson-content" data-module-id="T04-03-M023"><h1
 id="重叠圆空间不同胚于单圆和相切双圆">重叠圆空间不同胚于单圆和相切双圆</h1>
 <p>固定编号：T04-03-M023<br />
-内容版本：0.1<br />
+内容版本：0.2<br />
 教材出处：《没有眼泪的拓扑》，书内第 72 页 / PDF 第 72
 页，习题4.3第5(ii)题。<br />
-学习目标：用割点区分重叠圆与相切双圆，再用删两个交点后的分支数区分重叠圆与单圆。</p>
+学习目标：用割点区分重叠圆与相切双圆，再用删两个交点后的有限连通闭开块数区分重叠圆与单圆。</p>
 <blockquote>
 <p><strong>本段主线：</strong>完成三个圆周型空间的区分。<br />
 <strong>当前环节：</strong>重叠圆与单圆都没有割点。<br />
-<strong>这一步只做：</strong>升级到删两个特殊点后的分支数。</p>
+<strong>这一步只做：</strong>核对删两个特殊点后的连通闭开块，再使用M020已证的块数不变量。</p>
 </blockquote>
 <p>来源说明：B为教材原题5(ii)。</p>
 <h2 id="例题-a">例题 A</h2>
@@ -62,7 +62,29 @@ id="重叠圆空间不同胚于单圆和相切双圆">重叠圆空间不同胚�
 <summary>
 展开 A
 </summary>
-<p>每个圆被两个交点切成两弧，重叠双圆共留下四条互不相交的开弧；单圆删两点只留下两条开弧。</p>
+<p>设两圆为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>,</mo><msub><mi>C</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">C_1,C_2</annotation></semantics></math>，交点为p、q，过p、q的直线把平面分成两个闭半平面
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mo>+</mo></msub><mo>,</mo><msub><mi>H</mi><mo>−</mo></msub></mrow><annotation encoding="application/x-tex">H_+,H_-</annotation></semantics></math>。在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>Z</mi><mo>′</mo></msup><mo>=</mo><mi>Z</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">Z&#39;=Z\setminus\{p,q\}</annotation></semantics></math>
+中，四条弧是
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mrow><mi>i</mi><mo>,</mo><mi>±</mi></mrow></msub><mo>=</mo><msup><mi>Z</mi><mo>′</mo></msup><mo>∩</mo><msub><mi>C</mi><mi>i</mi></msub><mo>∩</mo><msub><mi>H</mi><mo>±</mo></msub><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+A_{i,\pm}=Z&#39;\cap C_i\cap H_\pm\qquad(i=1,2).
+</annotation></semantics></math></div>
+每个圆被该直线切成两条非空弧；两圆只在已删去的p、q相交，所以四弧两两不交并覆盖
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Z</mi><mo>′</mo></msup><annotation encoding="application/x-tex">Z&#39;</annotation></semantics></math>。</p>
+<p><strong>相对闭开性。</strong>圆周和闭半平面都是欧几里得闭集：在圆周外的点z，可用半径小于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mo stretchy="false" form="postfix">∥</mo><mi>z</mi><mo>−</mo><mi>c</mi><mo stretchy="false" form="postfix">∥</mo><mo>−</mo><mi>r</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|\|z-c\|-r|</annotation></semantics></math>
+的圆盘避开圆心c、半径r的圆周；在闭半平面外也可用半径小于到边界直线距离的圆盘避开它。因此每条
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>A</mi><mrow><mi>i</mi><mo>,</mo><mi>±</mi></mrow></msub><annotation encoding="application/x-tex">A_{i,\pm}</annotation></semantics></math>
+都是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Z</mi><mo>′</mo></msup><annotation encoding="application/x-tex">Z&#39;</annotation></semantics></math>
+与欧几里得闭集的交，在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Z</mi><mo>′</mo></msup><annotation encoding="application/x-tex">Z&#39;</annotation></semantics></math>
+中相对闭。每条弧的补集又是另三条相对闭弧的有限并，故每条弧也相对开。</p>
+<p><strong>连通性。</strong><a
+href="T04-03-M016.html">M016的投影</a>把一个圆删去p后的空间同胚到实轴；再删q，相当于在实轴删去一个点。两个实开区间的原像都连通，不能跨越上面已证的闭开两侧；两侧均非空，而两个原像覆盖该穿孔圆，所以每个原像恰是一侧的弧。于是每条弧同胚于实开区间，四弧满足<a
+href="T04-03-M020.html">M020有限连通闭开块引理</a>的全部条件。</p>
+<p>单圆删去任意两个不同点时，同一论证给出两个非空连通闭开块：仍取两点的连线和两个闭半平面，此时只有一个圆，所以只留下两条弧。</p>
 </details>
 <span id="q-T04-03-E005-ii" class="content-anchor"></span><h2 id="练习-b教材习题4.3第5ii题">练习 B：教材习题4.3第5(ii)题</h2>
 <p>证明Z不同胚于单位圆X，也不同胚于相切双圆Y。</p>
@@ -72,10 +94,12 @@ id="重叠圆空间不同胚于单圆和相切双圆">重叠圆空间不同胚�
 尝试原题后展开证明
 </summary>
 <p>Z没有割点，而Y有唯一割点，所以二者不同胚。</p>
-<p>反设Z同胚于X。把Z的两个交点拉回X中的两个点。删点限制给出删去这两点后的子空间同胚。但例题A说明Z侧有四个连通分支，X侧只有两个；连通分支数不可能由同胚改变，矛盾。因此Z也不同胚于X。</p>
+<p>反设Z同胚于X。把Z的两个交点拉回X中的两个不同点。删点限制给出删去这两点后的子空间同胚。例题A已证明Z侧有四个非空连通闭开块，X侧只有两个；由<a
+href="T04-03-M020.html">M020的有限分块引理</a>，同胚应使这些块一一对应，却有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>≠</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">4\ne2</annotation></semantics></math>，矛盾。因此Z也不同胚于X。</p>
 </details>
 <h2 id="简短回顾">简短回顾</h2>
-<p>单点删去无法区分两个无割点空间时，可以删去一组拓扑上特殊的点，再比较连通分支数。</p>
+<p>单点删去无法区分两个无割点空间时，可以删去一组拓扑上特殊的点，再比较有限连通闭开块数。这里四块与两块的区别已由相对闭开性、区间连通性及M020引理完整支撑，无需提前调用第五章的一般分量理论。</p>
 </article></div>
-<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T04-03-M023.md">Markdown 原文（含公式）</a></footer>
+<footer><span data-app-version="0.3.10">网站版本 0.3.10</span> · 只读课件：保留教材出处、来源说明和疑点；阅读不保存学习状态。 <a href="T04-03-M023.md">Markdown 原文（含公式）</a></footer>
 </main></body></html>

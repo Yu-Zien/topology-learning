@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.9">
+<meta name="application-version" content="0.3.10">
 <title>原题6(iii)：拓扑学家正弦曲线连通 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -45,7 +45,7 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <div id="app-view"><article id="lesson-content" data-module-id="T05-02-M028"><h1
 id="原题6iii拓扑学家正弦曲线连通">原题6(iii)：拓扑学家正弦曲线连通</h1>
 <p>固定编号：T05-02-M028<br />
-内容版本：0.2<br />
+内容版本：0.3<br />
 教材出处：《没有眼泪的拓扑》，书内第 83 页 / PDF 第 83
 页，习题5.2第6(iii)题。<br />
 学习目标：把前两小问与习题5的“连通集闭包连通”组合，证明拓扑学家正弦曲线连通。</p>
@@ -67,7 +67,8 @@ href="T05-02-M009.html">注5.2.7对应的M009</a>。</p>
 <summary>
 展开 A
 </summary>
-<p>习题5证明连通子空间的闭包仍连通，所以
+<p><a
+href="T05-02-M025.html">M025的习题5</a>先由子空间闭包公式得到稠密性，再证明连通子空间的闭包仍连通，所以
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>A</mi><mo accent="true">¯</mo></mover><annotation encoding="application/x-tex">\overline A</annotation></semantics></math>
 连通。</p>
 </details>
@@ -84,8 +85,10 @@ X=Y\cup\{(0,y):-1\le y\le1\}.
 <p>习题6(i)已证明Y连通，习题6(ii)已证明
 <div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>Y</mi><mo accent="true">¯</mo></mover><mo>=</mo><mi>Y</mi><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>:</mo><mi>−</mi><mn>1</mn><mo>≤</mo><mi>y</mi><mo>≤</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo>=</mo><mi>X</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
 \overline Y=Y\cup\{(0,y):-1\le y\le1\}=X.
-</annotation></semantics></math></div>
-由习题5，连通集Y的闭包连通。因此X连通。</p>
+</annotation></semantics></math></div> 由<a
+href="T05-02-M025.html">M025已证明的习题5</a>，连通集Y在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\mathbb R^2</annotation></semantics></math>
+中的闭包连通。因此X连通。</p>
 <p>这完成了注5.2.7中反例的连通性证明；结合M009已经展开的无路径证明，现已完整得到“X连通但不路径连通”。</p>
 </details>
 <h2 id="精选复习">精选复习</h2><details class="prepared-review"><summary>精选复习内容（仅回看，不记分）</summary><p class="notice">这里保留课件中的预设问题与答案。计分复习在讲练间隙进行；只回看不会改变排期。</p><h3 id="t05-02-r011">T05-02-R011</h3>
@@ -96,10 +99,12 @@ X=Y\cup\{(0,y):-1\le y\le1\}.
 </summary>
 <p>先把曲线部分Y写成连通区间
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">(0,1]</annotation></semantics></math>
-的连续像；再证明其闭包恰为Y加上竖直极限线段；最后用连通集的闭包连通，得到X连通。</p>
+的连续像，连续性用M006的坐标判据；再证明它在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\mathbb R^2</annotation></semantics></math>
+中的闭包恰为Y加上竖直极限线段；最后用M025从闭包公式与稠密性推出的“连通集的闭包连通”，得到X连通。</p>
 </details>
 </details><h2 id="简短回顾">简短回顾</h2>
 <p>振荡曲线部分连通，而添上的竖直线段正是其闭包点；闭包操作保留连通性。</p>
 </article></div>
-<footer><span data-app-version="0.3.9">网站版本 0.3.9</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+<footer><span data-app-version="0.3.10">网站版本 0.3.10</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
 </main><script type="module" src="runtime/app.js"></script></body></html>
