@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.10">
+<meta name="application-version" content="0.3.11">
 <title>路径连通必连通：命题与反设 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -44,7 +44,7 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
 <div id="app-view"><article id="lesson-content" data-module-id="T05-02-M007"><h1 id="路径连通必连通命题与反设">路径连通必连通：命题与反设</h1>
 <p>固定编号：T05-02-M007<br />
-内容版本：0.1<br />
+内容版本：0.2<br />
 教材出处：《没有眼泪的拓扑》，书内第 81 页 / PDF 第 81
 页，命题5.2.6陈述与证明前半。<br />
 学习目标：完整陈述“路径连通蕴含连通”，并从非平凡闭开集两侧选择端点与连接路径。</p>
@@ -81,7 +81,7 @@ f:[0,1]\to X
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f^{-1}(U)</annotation></semantics></math>
 包含0却不包含1，从而成为
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math>
-的真非空子集。若两个端点都在U中，这两个关键信息都无法得到。</p>
+的真非空子集。若两个端点都在U中，仍能由0、1属于逆像保证它非空，但不能再用端点1证明逆像不是整个<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math>；因此无法仅靠这两个端点得到所需的“真子集”信息。</p>
 </details>
 <span id="q-T05-02-M007-B" class="content-anchor"></span><h2 id="练习-b">练习 B</h2>
 <p>设X路径连通但存在真非空闭开集C。写出应怎样选择x、y以及路径g的两个端点条件，使
@@ -105,5 +105,5 @@ g(0)=x,\qquad g(1)=y.
 <h2 id="简短回顾">简短回顾</h2>
 <p>不连通把空间分出闭开两侧；路径连通则要求一条连续路径从一侧端点走到另一侧端点。</p>
 </article></div>
-<footer><span data-app-version="0.3.10">网站版本 0.3.10</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+<footer><span data-app-version="0.3.11">网站版本 0.3.11</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
 </main><script type="module" src="runtime/app.js"></script></body></html>

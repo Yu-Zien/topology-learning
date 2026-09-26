@@ -1,6 +1,6 @@
 {
-  "appVersion": "0.3.10",
-  "contentVersion": "15d21b633eaf91e889cfb3669aa436d9d9804791f3f8263ef17405cd9f532bcb",
+  "appVersion": "0.3.11",
+  "contentVersion": "b461cee4cb90aaac0b7d0fcd05ee14fc6769f1d6ec53da85df76bac681831314",
   "hashPolicy": {
     "algorithm": "SHA-256",
     "sourceSha256": "UTF-8 encoding of the authoritative Markdown read with universal newline normalization; equals runtime module.contentHash.",
@@ -963,12 +963,12 @@
       "title": "有限个闭集的并",
       "page": "20",
       "status": "usable",
-      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@bf5fa4015482",
+      "statusText": "可用：原页复核撤销误报Q14＋AI逐段复核＋浏览器显示核验",
+      "version": "0.2@878cd070ba56",
       "html": "T01-02-M011.html",
       "markdown": "T01-02-M011.md",
-      "sourceSha256": "bf5fa4015482ece2c247478c8a1c22d936eea1cf4acfb948612eba100adff803",
-      "publishedMarkdownSha256": "bf5fa4015482ece2c247478c8a1c22d936eea1cf4acfb948612eba100adff803",
+      "sourceSha256": "878cd070ba5691eeb66adb4ab07e4cfc3d934c2266a95ffc918c6004f079cc57",
+      "publishedMarkdownSha256": "878cd070ba5691eeb66adb4ab07e4cfc3d934c2266a95ffc918c6004f079cc57",
       "sourceLinkRewrites": []
     },
     {
@@ -1146,11 +1146,11 @@
       "page": "21",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋有限枚举及页面核验",
-      "version": "0.1@3e950d125cfe",
+      "version": "0.2@a22cd3853c21",
       "html": "T01-02-M025.html",
       "markdown": "T01-02-M025.md",
-      "sourceSha256": "3e950d125cfece2eda6e78bba651aee71532399c681c5238df8a4230fa459008",
-      "publishedMarkdownSha256": "3e950d125cfece2eda6e78bba651aee71532399c681c5238df8a4230fa459008",
+      "sourceSha256": "a22cd3853c21c1e2b7a7f22aea5e3653a87ec502a2f200d068232e1569b48955",
+      "publishedMarkdownSha256": "a22cd3853c21c1e2b7a7f22aea5e3653a87ec502a2f200d068232e1569b48955",
       "sourceLinkRewrites": []
     },
     {
@@ -3147,12 +3147,12 @@
       "title": "子基：有限交先形成基",
       "page": "44",
       "status": "usable",
-      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@ec5584659258",
+      "statusText": "可用：中英文范围差异明示＋AI逐段复核＋浏览器显示核验",
+      "version": "0.2@8785e05c2528",
       "html": "T02-03-M027.html",
       "markdown": "T02-03-M027.md",
-      "sourceSha256": "ec5584659258a730671afafdc5dd8df181c699c64a3b2083a07f9abab3d46c05",
-      "publishedMarkdownSha256": "ec5584659258a730671afafdc5dd8df181c699c64a3b2083a07f9abab3d46c05",
+      "sourceSha256": "8785e05c25289201bc89880f963076360a3a37869dec3e9afd986dcc2327fc6f",
+      "publishedMarkdownSha256": "8785e05c25289201bc89880f963076360a3a37869dec3e9afd986dcc2327fc6f",
       "sourceLinkRewrites": []
     },
     {
@@ -4239,12 +4239,12 @@
       "title": "用补集内部刻画稠密",
       "page": "53",
       "status": "usable",
-      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@1d5d5e14c454",
+      "statusText": "可用：设问语义修正＋AI逐段复核＋浏览器显示核验",
+      "version": "0.2@e0d98c5c7186",
       "html": "T03-02-M032.html",
       "markdown": "T03-02-M032.md",
-      "sourceSha256": "1d5d5e14c4544242c3ff0729f090a2feceb456cdc60197b022494fc4819f635b",
-      "publishedMarkdownSha256": "1d5d5e14c4544242c3ff0729f090a2feceb456cdc60197b022494fc4819f635b",
+      "sourceSha256": "e0d98c5c7186bc9f1c1add269056178feb2d6f445f3f3fc51af9076a3c334ff0",
+      "publishedMarkdownSha256": "e0d98c5c7186bc9f1c1add269056178feb2d6f445f3f3fc51af9076a3c334ff0",
       "sourceLinkRewrites": []
     },
     {
@@ -5539,12 +5539,12 @@
       "title": "两个闭矩形同胚",
       "page": "66",
       "status": "usable",
-      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@85865e7df46b",
+      "statusText": "可用：两个对象、正参数及诱导拓扑补全＋AI逐段复核＋浏览器显示核验",
+      "version": "0.2@c924578637b8",
       "html": "T04-02-M018.html",
       "markdown": "T04-02-M018.md",
-      "sourceSha256": "85865e7df46b65e1ea3cb42026bc59fa5d95c706cb1a5cc53f559bbe4b34b9d5",
-      "publishedMarkdownSha256": "85865e7df46b65e1ea3cb42026bc59fa5d95c706cb1a5cc53f559bbe4b34b9d5",
+      "sourceSha256": "c924578637b8e36393c6a30af6ad295c2dc3240aa5ac898d341d9fdc6a804088",
+      "publishedMarkdownSha256": "c924578637b8e36393c6a30af6ad295c2dc3240aa5ac898d341d9fdc6a804088",
       "sourceLinkRewrites": []
     },
     {
@@ -5552,12 +5552,12 @@
       "title": "两个闭圆盘同胚",
       "page": "67",
       "status": "usable",
-      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@a4d2e950a450",
+      "statusText": "可用：两个对象、正参数及诱导拓扑补全＋AI逐段复核＋浏览器显示核验",
+      "version": "0.2@1d2fc280ab8c",
       "html": "T04-02-M019.html",
       "markdown": "T04-02-M019.md",
-      "sourceSha256": "a4d2e950a450b5a53f7f4d82f5113b6c9f5d568526280db9803412c3562320a9",
-      "publishedMarkdownSha256": "a4d2e950a450b5a53f7f4d82f5113b6c9f5d568526280db9803412c3562320a9",
+      "sourceSha256": "1d2fc280ab8ca3dc79b02524a8fb800882fd9369a311298939d8b194e8014e7e",
+      "publishedMarkdownSha256": "1d2fc280ab8ca3dc79b02524a8fb800882fd9369a311298939d8b194e8014e7e",
       "sourceLinkRewrites": []
     },
     {
@@ -5565,12 +5565,12 @@
       "title": "闭矩形与闭圆盘同胚",
       "page": "67",
       "status": "usable",
-      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.2@7c7adaf58bc3",
+      "statusText": "可用：共享对象与正参数补全＋AI逐段复核＋浏览器显示核验",
+      "version": "0.3@2ac5e00a32ca",
       "html": "T04-02-M020.html",
       "markdown": "T04-02-M020.md",
-      "sourceSha256": "7c7adaf58bc3e654e2a210a9520009e895e2876a63cde5693a9d984e21c9b381",
-      "publishedMarkdownSha256": "7c7adaf58bc3e654e2a210a9520009e895e2876a63cde5693a9d984e21c9b381",
+      "sourceSha256": "2ac5e00a32ca5d481cd730cfd7e05ce3d92bba334b010c71f34b4f4b9374f41c",
+      "publishedMarkdownSha256": "2ac5e00a32ca5d481cd730cfd7e05ce3d92bba334b010c71f34b4f4b9374f41c",
       "sourceLinkRewrites": []
     },
     {
@@ -6060,11 +6060,11 @@
       "page": "72",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@9936fc09c523",
+      "version": "0.2@3c7568169316",
       "html": "T04-03-M028.html",
       "markdown": "T04-03-M028.md",
-      "sourceSha256": "9936fc09c523ae0f740468892f233db8e9e9350777474b771dbeba03648c8ab3",
-      "publishedMarkdownSha256": "9936fc09c523ae0f740468892f233db8e9e9350777474b771dbeba03648c8ab3",
+      "sourceSha256": "3c756816931636d52186f1488f2bf862b694e205d8ddebcadd6f7748c27daee5",
+      "publishedMarkdownSha256": "3c756816931636d52186f1488f2bf862b694e205d8ddebcadd6f7748c27daee5",
       "sourceLinkRewrites": []
     },
     {
@@ -6108,15 +6108,15 @@
     },
     {
       "id": "T04-03-M032",
-      "title": "五类正整数拓扑两两不同胚",
+      "title": "五类正整数拓扑的存在与两两不同胚",
       "page": "72",
       "status": "usable",
       "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@9737343a3d9b",
+      "version": "0.2@387a0afcc1b8",
       "html": "T04-03-M032.html",
       "markdown": "T04-03-M032.md",
-      "sourceSha256": "9737343a3d9b5c78d5d8958dc3eee93b7b8929f3d7cb83c934c6dc83c659efdd",
-      "publishedMarkdownSha256": "9737343a3d9b5c78d5d8958dc3eee93b7b8929f3d7cb83c934c6dc83c659efdd",
+      "sourceSha256": "387a0afcc1b814fce2a5479c9ffc67124f7bd23dce3a70e0b7982094fc149ed7",
+      "publishedMarkdownSha256": "387a0afcc1b814fce2a5479c9ffc67124f7bd23dce3a70e0b7982094fc149ed7",
       "sourceLinkRewrites": []
     },
     {
@@ -6735,12 +6735,12 @@
       "title": "路径连通必连通：命题与反设",
       "page": "81",
       "status": "usable",
-      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@395a8234a9bd",
+      "statusText": "可用：端点同侧时逆像信息修正＋AI逐段复核＋浏览器显示核验",
+      "version": "0.2@bd57b0580ebe",
       "html": "T05-02-M007.html",
       "markdown": "T05-02-M007.md",
-      "sourceSha256": "395a8234a9bd2bb577c01b49e91fde134966353aadeda9524462f743a825725a",
-      "publishedMarkdownSha256": "395a8234a9bd2bb577c01b49e91fde134966353aadeda9524462f743a825725a",
+      "sourceSha256": "bd57b0580ebe805b73b558c80eb1a91878c4cca1c63aa0118ee513a25ce38aa7",
+      "publishedMarkdownSha256": "bd57b0580ebe805b73b558c80eb1a91878c4cca1c63aa0118ee513a25ce38aa7",
       "sourceLinkRewrites": []
     },
     {
@@ -7370,14 +7370,14 @@
     {
       "id": "T05-03-M003",
       "title": "不动点、分量与第五章收尾",
-      "page": "85",
+      "page": "84—85",
       "status": "usable",
-      "statusText": "可用：原页核对＋AI逐段复核＋浏览器显示核验",
-      "version": "0.1@5f4709dd1c09",
+      "statusText": "可用：来源范围修正＋AI逐段复核＋浏览器显示核验",
+      "version": "0.2@35bc28cae65b",
       "html": "T05-03-M003.html",
       "markdown": "T05-03-M003.md",
-      "sourceSha256": "5f4709dd1c09f83be00f9ad6dd1c730d3a7fd38782758708c0405ddfc7f60588",
-      "publishedMarkdownSha256": "5f4709dd1c09f83be00f9ad6dd1c730d3a7fd38782758708c0405ddfc7f60588",
+      "sourceSha256": "35bc28cae65b78ec92af968ec299fbc689238a2b407c5c75158d15eb9b695975",
+      "publishedMarkdownSha256": "35bc28cae65b78ec92af968ec299fbc689238a2b407c5c75158d15eb9b695975",
       "sourceLinkRewrites": []
     }
   ]

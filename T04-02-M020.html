@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Local Pandoc MathML learning runtime">
-<meta name="application-version" content="0.3.10">
+<meta name="application-version" content="0.3.11">
 <title>闭矩形与闭圆盘同胚 · 拓扑学习</title><style>
 :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #26342f; background: #f6f7f3; }
 * { box-sizing: border-box; }
@@ -44,7 +44,7 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <p id="save-status" role="status"></p><div id="runtime-error" class="runtime-error" role="alert" hidden></div>
 <div id="app-view"><article id="lesson-content" data-module-id="T04-02-M020"><h1 id="闭矩形与闭圆盘同胚">闭矩形与闭圆盘同胚</h1>
 <p>固定编号：T04-02-M020<br />
-内容版本：0.2<br />
+内容版本：0.3<br />
 教材出处：《没有眼泪的拓扑》，书内第 67 页 / PDF 第 67
 页，习题4.2第4(iii)题。<br />
 学习目标：沿原点射线把闭矩形边界送到圆周，并给出显式逆映射与0点开集估计。</p>
@@ -53,7 +53,7 @@ code { font-size: .9em; background: #f0f3ed; padding: 2px 5px; border-radius: 4p
 <strong>当前环节：</strong>矩形间、圆盘间同胚已完成。<br />
 <strong>这一步只做：</strong>构造矩形到圆盘的径向同胚。</p>
 </blockquote>
-<p>来源说明：B为教材原题4(iii)；径向公式和局部核对为新增。</p>
+<p>来源说明：B为教材原题4(iii)；径向公式和局部核对为新增。题面把所引用的<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>,</mo><msub><mi>D</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">X_1,D_1</annotation></semantics></math>及<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><msub><mi>b</mi><mn>1</mn></msub><mo>,</mo><msub><mi>c</mi><mn>1</mn></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a_1,b_1,c_1&gt;0</annotation></semantics></math>重新写明，使本小问不依赖页面外不可见的共享条件。</p>
 <h2 id="记号与映射">记号与映射</h2>
 <p>对
 <div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>:</mo><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>a</mi><mo>,</mo><mo stretchy="false" form="prefix">|</mo><mi>y</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>D</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">)</mo><mo>:</mo><msup><mi>u</mi><mn>2</mn></msup><mo>+</mo><msup><mi>v</mi><mn>2</mn></msup><mo>≤</mo><msup><mi>R</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">}</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
@@ -81,11 +81,13 @@ F(z)=R\,p(z)\frac{z}{\|z\|}.
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p(z)&lt;1</annotation></semantics></math>，像的长度小于R，落在圆盘内部。</p>
 </details>
 <span id="q-T04-02-E004-iii" class="content-anchor"></span><h2 id="练习-b教材习题4.2第4iii题">练习 B：教材习题4.2第4(iii)题</h2>
-<p>证明任一题给闭矩形
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mn>1</mn></msub><annotation encoding="application/x-tex">X_1</annotation></semantics></math>
-与闭圆盘
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>D</mi><mn>1</mn></msub><annotation encoding="application/x-tex">D_1</annotation></semantics></math>
-同胚。</p>
+<p>设<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><msub><mi>b</mi><mn>1</mn></msub><mo>,</mo><msub><mi>c</mi><mn>1</mn></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a_1,b_1,c_1&gt;0</annotation></semantics></math>，并令
+<div class="math-display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mn>2</mn></msup><mo>:</mo><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">|</mo><mi>y</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msub><mi>b</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>D</mi><mn>1</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><msup><mi mathvariant="double-struck">ℝ</mi><mn>2</mn></msup><mo>:</mo><msup><mi>u</mi><mn>2</mn></msup><mo>+</mo><msup><mi>v</mi><mn>2</mn></msup><mo>≤</mo><msub><mi>c</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">}</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+X_1=\{(x,y)\in\mathbb R^2:|x|\le a_1,\ |y|\le b_1\},
+\qquad
+D_1=\{(u,v)\in\mathbb R^2:u^2+v^2\le c_1\},
+</annotation></semantics></math></div>
+两者均带<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi mathvariant="double-struck">ℝ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\mathbb R^2</annotation></semantics></math>欧几里得拓扑诱导的子空间拓扑。证明<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>≅</mo><msub><mi>D</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">X_1\cong D_1</annotation></semantics></math>。</p>
 <div class="practice-controls" data-question-id="T04-02-E004-iii" data-module-id="T04-02-M020" data-mode="guided" data-answer-anchor="answer-T04-02-E004-iii"></div><span id="answer-T04-02-E004-iii" class="content-anchor"></span><h2 id="b-解答">B 解答</h2>
 <details>
 <summary>
@@ -135,5 +137,5 @@ G(w)=\frac{\|w\|}{R}\frac{w}{p(w)}.
 </details><h2 id="简短回顾">简短回顾</h2>
 <p>同胚可以改变边界的几何形状；径向坐标保留方向，只重新标定每条射线上的距离。</p>
 </article></div>
-<footer><span data-app-version="0.3.10">网站版本 0.3.10</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
+<footer><span data-app-version="0.3.11">网站版本 0.3.11</span> · 记录只保存在当前浏览器；线上与本机记录独立。迁移进度：在原地址导出备份，再到本页「目录与进度」恢复。 <a href="read/">只读课件目录（可分享给聊天窗口）</a></footer>
 </main><script type="module" src="runtime/app.js"></script></body></html>
